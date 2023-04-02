@@ -61,19 +61,48 @@
     </div>
 
     <div class="container">
-        <div class="item">
-            <h2>My information</h2>
-            <h3>Do you see with real charts clients’ emotions?</h3>
-            <p>Are you interested in receiving an honest review on anything? You can add your personal product, service,
-                art. Even yourself. </p>
-            <div class="addproduct-button">
-                <a href="addaproduct.html">Add a product</a>
-            </div>
+        <div>
+            <h3>My information</h3>
+            <a href="sendfeedback.html">Save changes</a>
         </div>
+        <table>
+            <tr>
+                <td>
+                    Username:
+                </td>
 
-        <div class="item2">
-            <img src="assets\images\rituals.png" alt="rituals">
-        </div>
+                <td>
+                    <p>{{user.username}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password:
+                </td>
+
+                <td>
+                    <p>{{user.password}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email Address:
+                </td>
+
+                <td>
+                    <p>{{user.email}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Age:
+                </td>
+
+                <td>
+                    <p>{{user.age}}</p>
+                </td>
+            </tr>
+        </table>
     </div>
 
     <div class="container2">
