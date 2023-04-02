@@ -4,6 +4,60 @@
 
 <head>
     <style>
+        .sidenav {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .sidenav a {
+            padding: 6px 8px 15px 16px;
+            text-decoration: none;
+            font-size: 19px;
+            color: #818181;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .main {
+            margin-left: 160px;
+            /* Same as the width of the sidenav */
+            font-size: 20px;
+            /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        .main a:link {
+            color: #6d7d85;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        .main a:hover {
+            color: #b8c5f6;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
         html * {
             color: #0a0a0f;
             line-height: 1.3;
@@ -40,295 +94,342 @@
 </head>
 
 <body class=>
+    <div class="sidenav">
+        <br>
+        <a href="#Introduction">Introduction</a>
+        <a href="#OverallDescription">Overall Description</a>
+        <a href="#References">References</a>
+        <a href="#ExternalInterfaceRequirements">External Interface Requirements</a>
+        <a href="#SystemFeatures">SystemFeatures</a>
+        <a href="#OtherNonfunctionalRequirements">Other Nonfunctional Requirements</a>
+        <a target="_blank" href="https://github.com/elenaopait/EmoF">Github Repository</a>
 
+    </div>
     <header>
 
         <center><img src="Images/FII.jpg" alt="Facultatea de Informatică Iași" class="center" width="110" height="110">
 
             <h1>Emotion-based Feedback</h1>
             <p>Miruna-Elena Iousb,<br> Elena-Ecaterina Opaiț</p>
-            <p><small>supervised by Dr. Andrei Panu<br>Web Technologies, 2<sup>nd</sup> year</small></p>
+            <p><small>supervised by Conf. dr. Andrei Panu<br>Web Technologies, 2<sup>nd</sup> year</small></p>
         </center>
     </header>
 
+    <div class="main">
+        <section id="Introduction" typeof="sa:Introduction">
+            <h2> &ensp; Introduction</h2>
 
-    <section id="Introduction" typeof="sa:Introduction">
-        <h2> &ensp; Introduction</h2>
+            <section id="Purpose" typeof="sa:Purpose">
+                <h3>&emsp; Purpose</h3>
+                <p1>&emsp; Our collective acknowledgment of the importance of having a tool that gives real and
+                    accurate
+                    feedback
+                    led
+                    us in the decision for the creation of this application.
+                    The main goal is to bring closer together the people who need feedback, and the people willing to
+                    provide
+                    it.
+                    It also reduces the time spend reading all the reviews, by interpreting the messages beforehand,
+                    easing
+                    the
+                    provider's process of having a bigger picture of the customer's emotions and opinions regarding the
+                    displayed product or service.
+                </p1>
 
-        <section id="Purpose" typeof="sa:Purpose">
-            <h3>&emsp; Purpose</h3>
-            <p1>&emsp; Our collective acknowledgment of the importance of having a tool that gives real and
-                accurate
-                feedback
-                led
-                us in the decision for the creation of this application.
-                The main goal is to bring closer together the people who need feedback, and the people willing to
-                provide
-                it.
-                It also reduces the time spend reading all the reviews, by interpreting the messages beforehand, easing
-                the
-                provider's process of having a bigger picture of the customer's emotions and opinions regarding the
-                displayed product or service.
-            </p1>
+            </section>
+            <section id="IntendedAudienceAndReadingSuggestions" typeof="sa:IntendedAudienceAndReadingSuggestions">
+                <h3>&emsp; Intended Audience and Reading Suggestions</h3>
+                <p1>&emsp;
+                    The intended audience of this paper are developers, testers, project managers, marketing staff,
+                    users
+                    and any other category that is interested in developing or using our application.
+                    In case of inexperienced regular users who want to know more about the ways of using, we recommend
+                    our
+                    <a href="#OverallDescription">Overall Description</a>, <a href="#UserInterfaces"> User
+                        Interfaces</a>
+                    <a href="#SystemFeatures"> System Features</a>, as well as any
+                    other section that raises
+                    interest, starting with the Introduction, <a href="#OverallDescription"> Overall
+                        Description</a>, <a href="#ExternalInterfaceRequirements">
+                        External Interface
+                        Requirements</a> and finishing off with <a href="#OtherNonfunctionalRequirements"> Other
+                        Nonfunctional Requirements</a>.
+                </p1>
+            </section>
+
+
+            <section id="ProductScope" typeof="sa:ProductScope">
+                <h3>&emsp; Product Scope</h3>
+                <p1>&emsp;
+                    Our initiative is to bring together any type of provider to their clients. By doing so, the time
+                    spent
+                    by the providers of goods will be exponentially reduced and they will have a clearer picture of
+                    their
+                    customers' opinions on their service. It is useful especially for people that want to launch a new
+                    product and that do not have the resources to analyse the market on their own before taking the big
+                    step. Our goal is also to create a safe space accessible to anyone that wants to share their
+                    experience
+                    or thoughts on a product, or service.
+                </p1>
+
+            </section>
+
+
+            <section id="References" typeof="sa:References">
+                <h3>&emsp; References</h3>
+                <p1>&emsp;
+                    More information about our scope can be found on our Web Technologies teacher, Conf. dr. Andrei Panu
+                    <a href="https://profs.info.uaic.ro/~andrei.panu/webprojects.html">here</a>., as well as the
+                    following articles:
+
+                    <br><br>
+                    <small>Nikhil Dawer </small><br>
+                    <a
+                        href="https://www.zonkafeedback.com/blog/importance-of-product-feedback#:~:text=Why%20Product%20Feedback%20is%20Important,approach%20to%20run%20your%20business.">Importance
+                        of Product Feedback.</a><br>
+
+
+                    <br><br>
+                    <small>Chen Pei-Yu, Wu Shin-yi and Yoon Jungsun</small><br>
+                    <a href="https://aisel.aisnet.org/icis2004/58/"> The Impact of Online Recommendations and Consumer
+                        Feedback on Sales.</a><br>
+
+                    <br><br>
+                    <small>Georg Lackermair, Daniel Kailer, Kenan Kanmaz</small><br>
+                    <a href="https://www.commercegurus.com/wp-content/uploads/2019/07/importance-product-reviews.pdf">
+                        Importance of Online Product Reviews from a Consumer’s Perspective</a><br>
+                    Munich University of Applied Sciences, Germany January 2013.
+
+
+                    <br><br>
+                    <small>Zhe Qu</small><br>
+                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S0167923608001413">Determinants of
+                        online merchant rating: Content analysis of consumer comments about
+                        Yahoo merchants. </a><br>
+                    DecisionSupport Systems December 2008.
+                </p1>
+            </section>
 
         </section>
-        <section id="IntendedAudienceAndReadingSuggestions" typeof="sa:IntendedAudienceAndReadingSuggestions">
-            <h3>&emsp; Intended Audience and Reading Suggestions</h3>
-            <p1>&emsp;
-                The intended audience of this paper are developers, testers, project managers, marketing staff, users
-                and any other category that is interested in developing or using our application.
-                In case of inexperienced regular users who want to know more about the ways of using, we recommend our
-                <a href="#OverallDescription">Overall Description</a>, <a href="#UserInterfaces"> User
-                    Interfaces</a>
-                <a href="#SystemFeatures"> System Features</a>, as well as any
-                other section that raises
-                interest, starting with the Introduction, <a href="#OverallDescription"> Overall
-                    Description</a>, <a href="#ExternalInterfaceRequirements">
-                    External Interface
-                    Requirements</a> and finishing off with <a href="#OtherNonfunctionalRequirements"> Other
-                    Nonfunctional Requirements</a>.
-            </p1>
+
+        -------------------------------------------------------------------------------------
+
+
+        <section id="OverallDescription" typeof="sa:OverallDescription">
+
+            <h2> &ensp; Overall Description</h2>
+
+            <section id="ProductPerspective" typeof="sa:ProductPerspective">
+                <h3>&emsp; Product Perspective</h3>
+                <p1>
+
+
+                </p1>
+            </section>
+
+
+
+            <section id="ProductFunctions" typeof="sa:ProductFunctions">
+                <h3>&emsp; Product Functions</h3>
+                <p1>
+
+
+                </p1>
+            </section>
+
+
+
+
+            <section id="UserClassesAndCharacteristics" typeof="sa:UserClassesAndCharacteristics">
+                <h3>&emsp; User Classes and Characteristics</h3>
+                <p1>
+
+
+                </p1>
+            </section>
+
+
+
+
+            <section id="OperatingEnvironment" typeof="sa:OperatingEnvironment">
+                <h3>&emsp; Operating Environment</h3>
+                <p1>
+
+
+                </p1>
+            </section>
+
+
+
+            <section id="DesignAndImplementationConstraints" typeof="sa:DesignAndImplementationConstraints">
+                <h3>&emsp; Design and Implementation Constraints</h3>
+                <p1>
+
+
+                </p1>
+            </section>
+
+            <section id="UserDocumentation" typeof="sa:UserDocumentation">
+                <h3>&emsp; User Documentation</h3>
+                <p1>
+
+
+                </p1>
+            </section>
+
+            <section id="AssumptionsAndDependencies" typeof="sa:AssumptionsAndDependencies">
+                <h3>&emsp; Assumptions and Dependencies</h3>
+                <p1>
+
+
+                </p1>
+            </section>
+
+
+        </section>
+
+        -----------------------------------------------------------------------
+
+        <section id="ExternalInterfaceRequirements" typeof="sa:ExternalInterfaceRequirements">
+            <h2>&emsp; External Interface Requirements</h3>
+
+
+                <section id="UserInterfaces" typeof="sa:UserInterfaces">
+                    <h3>&emsp; User Interfaces</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
+                <section id="HardwareInterfaces" typeof="sa:HardwareInterfaces">
+                    <h3>&emsp; Hardware Interfaces</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
+                <section id="SoftwareInterfaces" typeof="sa:SoftwareInterfaces">
+                    <h3>&emsp; Software Interfaces</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
+
+                <section id="CommunicationsInterfaces" typeof="sa:CommunicationsInterfaces">
+                    <h3>&emsp; Communications Interfaces</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
         </section>
 
 
-        <section id="ProductScope" typeof="sa:ProductScope">
-            <h3>&emsp; Product Scope</h3>
-            <p1>
+
+        -----------------------------------------------------------------
 
 
-            </p1>
+
+        <section id="SystemFeatures" typeof="sa:SystemFeatures">
+            <h2>&emsp; System Features</h3>
+
+
+
+                <section id="sa:OtherNonfunctionalRequirements" typeof="sa: System Feature 1 -- give a name">
+                    <h3>&emsp; System Feature 1 -- give a name</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+                <section id="sa:OtherNonfunctionalRequirements" typeof="sa: System Feature 2 -- give a name">
+                    <h3>&emsp; System Feature 2 -- give a name</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+                <section id="sa:OtherNonfunctionalRequirements" typeof="sa:SystemFeature n -- give a name">
+                    <h3>&emsp; System Feature n -- give a name</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
 
         </section>
 
-
-        <section id="References" typeof="sa:References">
-            <h3>&emsp; References</h3>
-            <p1>
+        --------------------------------------------------------------
 
 
-            </p1>
+        <section id="OtherNonfunctionalRequirements" typeof="#sa:OtherNonfunctionalRequirements">
+            <h2>&emsp; Other Nonfunctional Requirements</h3>
+
+
+
+                <section id="PerformanceRequirements" typeof="sa:PerformanceRequirements">
+                    <h3>&emsp; Performance Requirements</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
+
+                <section id="SafetyRequirements" typeof="sa: SafetyRequirements">
+                    <h3>&emsp; Safety Requirements</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
+                <section id="SecurityRequirements" typeof="sa:SecurityRequirements">
+                    <h3>&emsp; Security Requirements</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
+
+
+                <section id="sa:OtherNonfunctionalRequirements" typeof="sa: Software Quality Attributes">
+                    <h3>&emsp; Software Quality Attributes</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
+
+                <section id="sa:OtherNonfunctionalRequirements" typeof="sa: Business Rules">
+                    <h3>&emsp; Business Rules</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
         </section>
 
-    </section>
-
-    -------------------------------------------------------------------------------------
-
-
-    <section id="References" typeof="sa:References">
-
-        <h2> &ensp; Overall Description</h2>
-
-        <section id="ProductPerspective" typeof="sa:ProductPerspective">
-            <h3>&emsp; Product Perspective</h3>
-            <p1>
-
-
-            </p1>
-        </section>
-
-
-
-        <section id="ProductFunctions" typeof="sa:ProductFunctions">
-            <h3>&emsp; Product Functions</h3>
-            <p1>
-
-
-            </p1>
-        </section>
-
-
-
-
-        <section id="UserClassesAndCharacteristics" typeof="sa:UserClassesAndCharacteristics">
-            <h3>&emsp; User Classes and Characteristics</h3>
-            <p1>
-
-
-            </p1>
-        </section>
-
-
-
-
-        <section id="OperatingEnvironment" typeof="sa:OperatingEnvironment">
-            <h3>&emsp; Operating Environment</h3>
-            <p1>
-
-
-            </p1>
-        </section>
-
-
-
-        <section id="DesignAndImplementationConstraints" typeof="sa:DesignAndImplementationConstraints">
-            <h3>&emsp; Design and Implementation Constraints</h3>
-            <p1>
-
-
-            </p1>
-        </section>
-
-        <section id="UserDocumentation" typeof="sa:UserDocumentation">
-            <h3>&emsp; User Documentation</h3>
-            <p1>
-
-
-            </p1>
-        </section>
-
-        <section id="AssumptionsAndDependencies" typeof="sa:AssumptionsAndDependencies">
-            <h3>&emsp; Assumptions and Dependencies</h3>
-            <p1>
-
-
-            </p1>
-        </section>
-
-
-    </section>
-
-    -----------------------------------------------------------------------
-
-    <section id="ExternalInterfaceRequirements" typeof="sa:ExternalInterfaceRequirements">
-        <h2>&emsp; External Interface Requirements</h3>
-
-
-            <section id="UserInterfaces" typeof="sa:UserInterfaces">
-                <h3>&emsp; User Interfaces</h3>
-                <p1>
-
-
-                </p1>
-            </section>
-
-
-            <section id="HardwareInterfaces" typeof="sa:HardwareInterfaces">
-                <h3>&emsp; Hardware Interfaces</h3>
-                <p1>
-
-
-                </p1>
-            </section>
-
-
-            <section id="SoftwareInterfaces" typeof="sa:SoftwareInterfaces">
-                <h3>&emsp; Software Interfaces</h3>
-                <p1>
-
-
-                </p1>
-            </section>
-
-
-
-            <section id="CommunicationsInterfaces" typeof="sa:CommunicationsInterfaces">
-                <h3>&emsp; Communications Interfaces</h3>
-                <p1>
-
-
-                </p1>
-            </section>
-
-
-    </section>
-
-
-
-    -----------------------------------------------------------------
-
-
-
-    <section id="SystemFeatures" typeof="sa:SystemFeatures">
-        <h2>&emsp; System Features</h3>
-
-
-
-            <section id="sa:OtherNonfunctionalRequirements" typeof="sa: System Feature 1 -- give a name">
-                <h3>&emsp; System Feature 1 -- give a name</h3>
-                <p1>
-
-
-                </p1>
-            </section>
-
-            <section id="sa:OtherNonfunctionalRequirements" typeof="sa: System Feature 2 -- give a name">
-                <h3>&emsp; System Feature 2 -- give a name</h3>
-                <p1>
-
-
-                </p1>
-            </section>
-
-            <section id="sa:OtherNonfunctionalRequirements" typeof="sa:SystemFeature n -- give a name">
-                <h3>&emsp; System Feature n -- give a name</h3>
-                <p1>
-
-
-                </p1>
-            </section>
-
-    </section>
-
-    --------------------------------------------------------------
-
-
-    <section id="OtherNonfunctionalRequirements" typeof="#sa:OtherNonfunctionalRequirements">
-        <h2>&emsp; Other Nonfunctional Requirements</h3>
-
-
-
-            <section id="PerformanceRequirements" typeof="sa:PerformanceRequirements">
-                <h3>&emsp; Performance Requirements</h3>
-                <p1>
-
-
-                </p1>
-            </section>
-
-
-
-            <section id="SafetyRequirements" typeof="sa: SafetyRequirements">
-                <h3>&emsp; Safety Requirements</h3>
-                <p1>
-
-
-                </p1>
-            </section>
-
-
-            <section id="SecurityRequirements" typeof="sa:SecurityRequirements">
-                <h3>&emsp; Security Requirements</h3>
-                <p1>
-
-
-                </p1>
-            </section>
-
-
-
-
-            <section id="sa:OtherNonfunctionalRequirements" typeof="sa: Software Quality Attributes">
-                <h3>&emsp; Software Quality Attributes</h3>
-                <p1>
-
-
-                </p1>
-            </section>
-
-
-
-            <section id="sa:OtherNonfunctionalRequirements" typeof="sa: Business Rules">
-                <h3>&emsp; Business Rules</h3>
-                <p1>
-
-
-                </p1>
-            </section>
-
-
-    </section>
-
-
+    </div>
 
 </body>
 
