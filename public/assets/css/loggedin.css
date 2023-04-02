@@ -141,3 +141,42 @@ body{
     height: 100%;
     object-fit: cover;
   }
+
+  /*--------------------------*/
+  *{
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .footer{
+    background-color: #008080;
+    padding-top: 30px;
+    margin-top: 100px;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 50px;
+    color: white;
+  }
+  
+  .footer a{
+    text-decoration: none;
+    border-bottom: 1px solid black;
+    border-radius: 10px;
+    color: white;
+    padding: 15px;
+  }
+  
+  .footer-container{
+    display: flex; 
+    box-sizing: border-box;
+  }
+  
+  .footer-container p{
+    margin-left: 100px;
+  }
+  
+  .footer-container .second-item{
+    margin-left: 500px;
+    margin-top: 60px;
+  }
