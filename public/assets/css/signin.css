@@ -7,6 +7,7 @@ body{
     background-color: #F0F8FF;
   }
   
+
   nav {
     font-family: 'Taviraj';
     font-style: normal;
@@ -20,11 +21,13 @@ body{
     align-items: center;
     padding: 10px;
   }
+
   
   .logo img {
     height: 100px;
     margin-left: 40px;
   }
+
 
   
   .grid-container {
@@ -38,15 +41,18 @@ body{
     padding-top: 30px;
   }
 
+
   .grid-container h3{
     text-size-adjust: 100;
     margin-bottom: 40px;
   }
 
+
   .grid-container table{
     padding-left: 50px;
 
   }
+
 
   .registerbtn {
     background-color: black;
@@ -61,9 +67,11 @@ body{
     padding: 15px;
   }
   
+
   .registerbtn:hover {
     opacity:1;
   }
+
 
 
   /*-----------------------------*/
@@ -73,6 +81,8 @@ body{
     margin-right: 0;
     margin-bottom: 0;
   }
+
+  
   .footer{
     background-color: #008080;
     padding-top: 5px;
@@ -84,6 +94,7 @@ body{
     font-size: 70%;
   }
   
+
   .footer a{
     text-decoration: none;
     border-bottom: 1px solid black;
@@ -96,14 +107,17 @@ body{
     display: flex; 
     box-sizing: border-box;
   }
+
   
   .footer-container p{
     margin-left: 100px;
   }
   
+
   .footer-container .second-item{
     margin-left: 600px;
     margin-top:25px;
   }
 
+  
 /*----------------------*/
