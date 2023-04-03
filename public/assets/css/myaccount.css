@@ -113,6 +113,7 @@ nav {
 .container h3{
   margin-left: 100px;
   margin-top: 80px;
+  margin-bottom: 20px;
 }
 
 .container a{
@@ -134,7 +135,6 @@ nav {
 
 
 /*-----------------------------*/
-
 .container2 {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -146,29 +146,28 @@ nav {
 }
 
 
-
 .item3 {
   background-color: #fff;
   padding: 20px;
-  text-align: center;
+  text-align: center;  
   background-color: #84dbdb;
+  padding-bottom: 30px;
 }
 
 
-
-.item3 p {
+.item3 p{
   font-size: 20px;
+  margin-bottom: 30px;
 }
 
 
-
-.item3 a {
+.item3 a{
   text-decoration: none;
   border: 1px solid black;
   border-radius: 10px;
   padding: 15px;
+  color:#000000;
 }
-
 
 
 .item3 img {

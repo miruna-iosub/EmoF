@@ -37,9 +37,15 @@ body{
     border-left: 100px solid #F0F8FF;
     border-right: 100px solid #F0F8FF;
     background-color:  #96DBDB;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
     padding-top: 30px;
   }
+
+
+  table{
+    margin-left: 400px;;
+  }
+
 
 
   .grid-container h3{
@@ -58,13 +64,13 @@ body{
     background-color: black;
     border-radius: 10px;
     color: white;
-    padding: 5px;
     text-align: center;
     border: none;
     cursor: pointer;
     opacity: 0.9;
     text-decoration: none;
     padding: 15px;
+    margin-top: 30px;
   }
   
 
@@ -86,7 +92,7 @@ body{
   .footer{
     background-color: #008080;
     padding-top: 5px;
-    margin-top: 35px;
+    margin-top: 26px;
     bottom: 0;
     width: 100%;
     padding-bottom: 30px;

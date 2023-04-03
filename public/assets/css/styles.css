@@ -144,30 +144,28 @@ nav {
 }
 
 
-
 .item3 {
   background-color: #fff;
   padding: 20px;
   text-align: center;  
   background-color: #84dbdb;
+  padding-bottom: 30px;
 }
-
 
 
 .item3 p{
   font-size: 20px;
+  margin-bottom: 30px;
 }
-
 
 
 .item3 a{
   text-decoration: none;
   border: 1px solid black;
   border-radius: 10px;
-  color:black;
   padding: 15px;
+  color:#000000;
 }
-
 
 
 .item3 img {
@@ -176,13 +174,13 @@ nav {
   object-fit: cover;
 }
 
+/*-----------------------------*/
 
 *{
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 0;
 }
-/*-----------------------------*/
 
 .footer{
   background-color: #008080;
