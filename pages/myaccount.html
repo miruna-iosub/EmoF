@@ -43,22 +43,53 @@
                 
                 
                 <div class="dropdown">
-                    <a href="#">
+                    <li>           
+                        <a href="#">
                         <ion-icon name="menu-outline">
-
+            
                         </ion-icon> Search by category
-                    </a>
-
-
-                    <div class="dropdown-content">
-                        <a href="#">Service</a>
-                        <a href="#">Person</a>
-                        <a href="#">Product</a>
-                        <a href="#">Event</a>
-                        <a href="#">Artistic Artefacts</a>
-                        <a href="#">Geographical places</a>
-                    </div>
-                </div>
+                       </a>
+                    
+                        <ul>
+                            <li><a href="">Service</a>
+                                <ul>
+                                  <li><a href="">Event organiser</a></li>
+                                  <li><a href="">Small business</a></li>
+                                  <li><a href="#">Cleaning</a></li>
+                                  <li><a href="">Clinic</a></li>
+                              </ul>
+                            </li>
+                            <li><a href="">Person</a>
+                              <ul>
+                                <li><a href="">Teacher</a></li>
+                                <li><a href="">Artist</a></li>
+                            </ul>
+                          </li>
+                            <li><a href="#">Product</a>
+                                <ul>
+                                    <li><a href="">Skincare</a></li>
+                                    <li><a href="">Drink</a></li>
+                                    <li><a href="#">Eyewear</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Artistic Artefact</a>
+                                <ul>
+                                  <li><a href="">Artwork</a></li>
+                                  <li><a href="">Photography</a></li>
+                                  <li><a href="#">Home-made</a></li>
+                              </ul>
+                            </li>
+                            <li><a href="">Geographical place</a>
+                              <ul>
+                                <li><a href="">Monument</a></li>
+                                <li><a href="">Mall</a></li>
+                                <li><a href="#">Airport</a></li>
+                            </ul>
+                          </li>
+        
+                        </ul>
+                    </li>
+                  </div>
             </ul>
         </div>
     </nav>
@@ -96,45 +127,19 @@
         </div>
 
 
-        <table>
-            <tr>
-                <td>
-                    Username:
-                </td>
+            <form class="accountForm">
+                <input class="formRow" type="text" id="name" name="name" placeholder="Name" required>
+                
+                <input class="formRow" type="email" id="email" name="email" placeholder="Email" required>
 
-                <td>
-                    <p>{{user.username}}</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Password:
-                </td>
+                <input class="formRow" type="dropdown" id="age" name="age" placeholder="Age">
 
-                <td>
-                    <p>{{user.password}}</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Email Address:
-                </td>
+                <input class="formRow" type="password" id="password" name="password" placeholder="Password" required>
 
-                <td>
-                    <p>{{user.email}}</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Age:
-                </td>
+                <input class="formRow" type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password" required>
 
-                <td>
-                    <p>{{user.age}}</p>
-                </td>
-            </tr>
-        </table>
-
+                <input class="topButton" type="submit" value="Update">
+            </form>
 
     </div>
 
