@@ -1,4 +1,4 @@
-body{
+body {
   font-family: 'Taviraj';
   font-style: normal;
   font-weight: 300;
@@ -57,7 +57,7 @@ nav {
   grid-template-rows: auto;
   border-left: 100px solid #F0F8FF;
   border-right: 100px solid #F0F8FF;
-  background-color:  #96DBDB;
+  background-color: #96DBDB;
 }
 
 
@@ -69,12 +69,12 @@ nav {
 }
 
 
-.grid-item:nth-child(2){
+.grid-item:nth-child(2) {
   margin-right: 20px;
   text-align: center;
 }
 
-.grid-item:nth-child(2) h2{
+.grid-item:nth-child(2) h2 {
   grid-column: 2 / 2;
   text-align: center;
   margin-top: 120px;
@@ -83,15 +83,17 @@ nav {
 
 
 
-.grid-item:nth-child(2) a{
+.grid-item:nth-child(2) a {
   text-decoration: none;
   margin-right: 20px;
   margin-left: 12rem;
   border: 1px solid black;
   border-radius: 10px;
   color: black;
+
   padding: 15px;
 }
+
 /*---
 
 -------------------------*/
@@ -103,20 +105,21 @@ nav {
   border-left: 100px solid #F0F8FF;
   border-right: 100px solid #F0F8FF;
   margin-top: 100px;
-  background-color:  #96DBDB;
+  background-color: #96DBDB;
   padding-left: 100px;
   padding-top: 50px;
 }
 
 
 
-.container .item h3, p{
+.container .item h3,
+p {
   margin-top: 50px;
 }
 
 
 
-.container a{
+.container a {
   text-decoration: none;
   margin-right: 20px;
   margin-left: 9rem;
@@ -129,7 +132,8 @@ nav {
 
 
 
-.container a:visited, .grid-item:nth-child(2) a:hover{
+.container a:visited,
+.grid-item:nth-child(2) a:hover {
   background-color: #008080;
 }
 
@@ -151,7 +155,7 @@ nav {
 .item3 {
   background-color: #fff;
   padding: 20px;
-  text-align: center;  
+  text-align: center;
   background-color: #84dbdb;
   padding-bottom: 30px;
   padding-right: 20px;
@@ -159,18 +163,18 @@ nav {
 }
 
 
-.item3 p{
+.item3 p {
   font-size: 20px;
   margin-bottom: 30px;
 }
 
 
-.item3 a{
+.item3 a {
   text-decoration: none;
   border: 1px solid black;
   border-radius: 10px;
   padding: 15px;
-  color:#000000;
+  color: #000000;
 }
 
 
@@ -180,15 +184,107 @@ nav {
   object-fit: cover;
 }
 
-/*-----------------------------*/
+/*items -----------------------------*/
 
-*{
+.container3 {
+  display: grid;
+  border-left: 100px solid #F0F8FF;
+  border-right: 100px solid #F0F8FF;
+
+}
+
+
+.item4 {
+  padding: 20px;
+  text-align: left;
+  padding-bottom: 30px;
+  padding-right: 20px;
+  font-size: medium;
+}
+
+
+.item4 p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+
+.item4 a {
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  color: #000000;
+}
+
+.head {
+  font-size: 40px;
+  border-radius: 10px;
+  padding: 15px;
+  color: #000000;
+}
+
+.emotion-type {
+  font-size: 35px;
+  border-radius: 10px;
+  padding: 15px;
+  color: #000000;
+}
+
+.repeat-emotions {
+  border-radius: 10px;
+  padding: 15px;
+  color: #000000;
+  padding-bottom: 30px;
+
+
+}
+
+
+/*------ border: 1px solid black;------------------------*/
+.emotions {
+  grid-template-columns: 1fr 2fr;
+  text-align: center;
+}
+
+.emotion-section {
+  grid-column: 1/2;
+}
+
+.emotion-section p {
+  font-size: 40px;
+}
+
+.intensity-section {
+  grid-column: 2/2;
+
+}
+
+output {
+  display: inline;
+  font-size: 50px;
+  color: #84dbdb;
+}
+
+
+
+
+
+
+
+/*------ border: 1px solid black;------------------------*/
+
+
+
+
+
+* {
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 0;
 }
 
-.footer{
+.footer {
   background-color: #008080;
   padding-top: 30px;
   margin-top: 100px;
@@ -198,7 +294,7 @@ nav {
   color: white;
 }
 
-.footer a{
+.footer a {
   text-decoration: none;
   border-bottom: 1px solid black;
   border-radius: 10px;
@@ -206,20 +302,20 @@ nav {
   padding: 15px;
 }
 
-.footer-container{
-  display: flex; 
+.footer-container {
+  display: flex;
   box-sizing: border-box;
 }
 
 
 
-.footer-container p{
+.footer-container p {
   margin-left: 100px;
 }
 
 
 
-.footer-container .second-item{
+.footer-container .second-item {
   margin-left: 500px;
 }
 
@@ -230,14 +326,15 @@ nav {
   display: inline-block;
   position: relative;
 }
+
 .dropdown-content {
   display: none;
   position: absolute;
   width: 100%;
   overflow: auto;
-  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
   background: #F0F8FF;
-  
+
 }
 
 

@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="icon" type="image/x-icon" href="..\images\logo.png">
   <link rel="stylesheet" href="../css/sendfeedback.css" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,7 +15,8 @@
   <title>EmoF</title>
 </head>
 
-<body>
+<body onload="repeatEmotion()">
+
   <!-- Start Navbar -->
   <nav>
     <div class="logo">
@@ -84,76 +86,86 @@
   </div>
 
 
-  <div class="container">
-    <div class="item">
-      <h2>Add a product</h2>
-      <h3>Do you see with real charts clients’ emotions?</h3>
-      <p>Are you interested in receiving an honest review on anything? You can add your personal product, service, art.
-        Even yourself. </p>
-      <div class="addproduct-button">
-        <a href="addaproduct.html">Add a product</a>
-      </div>
+
+  <div class="container3">
+    <br><br>
+    <div class="head">How would you rate the following aspects?</div>
+
+
+
+
+    <script type="text/javascript">
+      function repeatEmotion() {
+        var i;
+        for (i = 0; i < 4; i++) {
+          document.getElementById("repeat-emotions").innerHTML += '<fieldset class="emotions" id="emotions"> <legend>Thing-to-be-reviewed</legend><div class="emotion-section"> <label for="emotion' + i + '">Choose an emotion<label><br> <select name="emotion' + i + '" id="emotion' + i + '"> <option value="happy">Happy</option><option value="surprised">Surprised</option><option value="sad">Sad</option><option value="fearful">Fearful</option>  <option value="discusted">Discusted</option>  <option value="angry">Angry</option> <option value="appreciation">Apreciation</option>  <option value="expectant">Expectant</option> </select></div> <div class="intensity-section">  <label for="intensity">Choose an intensity</label> <form oninput="x.value=getIntensityNames(parseInt(intensity.value),' + i + ');">   <input type="range" value="1" max="2" id="intensity" name="intensity"><br><br>  <output name="x" for="intensity"> <p>  </p></output>  </form> </div> </fieldset> </div>';
+        }
+      }
+    </script>
+
+    <div class="emotion-type">Default aspects:</div>
+
+    <div class="repeat-emotions" id="repeat-emotions">
+
+
     </div>
 
 
-    <div class="item2">
-      <img src="..\images\rituals.png" alt="rituals">
+    <div class="emotion-type">Chosen by owner:</div>
+
+    <div class="repeat-emotions" id="repeat-emotions">
+      <fieldset class="emotions" id="emotions">
     </div>
   </div>
 
 
-  <div class="container2">
-    <div class="item3" style="grid-column: 1/2; grid-row: 1/2;">
-      <p>Luxorius <b>Eyewear</b><br> Elevate your style with these luxurious and fashionable eyewear pieces from one of
-        the most iconic brands in the world. </p>
-      <a class="sendfeedback-button" href="sendfeedback.html">Send Feedback</a>
-    </div>
+  <form name="passa" id="passa">
+
+    <select class=''>
+      <option value="">Choose</option>
+      <optgroup label="Volvo">
+        <option value="V70"> V70 </option>
+        <option value="XC60"> XC60 </option>
+        <option value="XC90"> XC90 </option>
+      </optgroup>
+      <optgroup label="Volkswagen">
+        <option value="Golf"> Golf </option>
+        <option value="Polo"> Polo </option>
+        <option value="Scirocco"> Scirocco </option>
+        <option value="Touareg"> Touareg </option>
+      </optgroup>
+      <optgroup label="BMW">
+        <option value="M6"> M6 </option>
+        <option value="X5"> X5 </option>
+        <option value="Z3"> Z3 </option>
+      </optgroup>
+    </select>
+
+    <input type="submit" name="azione" id="azione" value="Submit">
+  </form>
 
 
-    <div class="item3" style="grid-column: 2/3; grid-row: 1/2;">
-      <img src="..\images\sunglasses.png" alt="sunglasses">
-    </div>
 
 
-    <div class="item3" style="grid-column: 1/2; grid-row: 2/3;">
-      <p>Gift an <b>Artefact</b><br> Artefacts exist as a result of behavioural and transformational processes,
-        manufacturing these for a specific purpose and then discarding after use. </p>
-      <a class="sendfeedback-button" href="sendfeedback.html">Send Feedback</a>
-    </div>
 
 
-    <div class="item3" style="grid-column: 2/3; grid-row: 2/3;">
-      <img src="..\images\artefacts.png" alt="art">
-    </div>
 
 
-    <div class="item3" style="grid-column: 1/2; grid-row: 3/4;">
-      <p>Arizona <b>Green Tea </b><br>Arizona's Green Tea is a premium blend of green tea, with just the right amount of
-        ginseng, honey and cane sugar. 100% NATURAL: Contains 100% natural green tea. </p>
-      <a class="sendfeedback-button" href="sendfeedback.html">Send Feedback</a>
-    </div>
 
 
-    <div class="item3" style="grid-column: 2/3; grid-row: 3/4;">
-      <img src="..\images\arizona.png" alt="art">
-    </div>
 
 
-    <div class="item3" style="grid-column: 1/2; grid-row: 4/5;">
-      <p><b>Green</b> Wall Art<br> Green wall art is a great way to bring a bit of nature into your space, or just to
-        channel the calming influence of the outdoors. Green is proven to calm us, so introduce this colour in sleeping
-        or resting spaces.</p>
-      <a class="sendfeedback-button" href="sendfeedback.html">Send Feedback</a>
-    </div>
 
 
-    <div class="item3" style="grid-column: 2/3; grid-row: 4/5;">
-      <img src="..\images\painting.png" alt="painting">
-    </div>
+
 
 
   </div>
 
+
+
+
+  <script src="../scripts/sendfeedback.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
