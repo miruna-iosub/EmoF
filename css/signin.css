@@ -43,13 +43,25 @@ body{
   }
 
 
+  table{
+    margin-left: 400px;;
+  }
+
+
+
   .grid-container h3{
     text-size-adjust: 100;
     margin-bottom: 40px;
   }
 
 
-  #submit_id{
+  .grid-container table{
+    padding-left: 50px;
+
+  }
+
+
+  .registerbtn {
     background-color: black;
     border-radius: 10px;
     color: white;
@@ -63,26 +75,10 @@ body{
   }
   
 
-  .submit_id:hover {
+  .registerbtn:hover {
     opacity:1;
   }
 
-/*-----------------*/
-#form_id {
-  flex-direction: column;
-}
-
-.txt_field {
-  margin-bottom: 10px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-
-  /*-----------------------------*/
 
 
   /*-----------------------------*/

@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="..\images\logo.png">
     <link rel="stylesheet" href="../css/signup.css" type="text/css">
-    <script src="../scripts/signup.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,39 +25,71 @@
     </nav>
 
     <div class="grid-container">
-        <h3>Sign Up</h3>
-        <form id="form_id" action="index.html" name="myform">
-            <div class="txt_field">
-                <label>Username</label>
-                <span></span>
-                <input type="text" name="username" id="username_id" required>
+        <form>
+
+
+            <h3>Sign Up</h3>
+            <table>
+                <tr>
+                    <td>
+                        Username:
+                    </td>
+
+                    <td>
+                        <input type="username" placeholder=”Username” name=””>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        Password:
+                    </td>
+
+                    <td>
+                        <input type=”Password” placeholder=”Password” name=””>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        Email Address:
+                    </td>
+
+                    <td>
+                        <input type=”mail” placeholder=”Email” name=””>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        Age:
+                    </td>
+
+                    <td>
+                        <input type="age" placeholder=”Age” name=””>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Your occupation:
+                    </td>
+
+                    <td>
+                        <input type="occupation" placeholder=”Occupation” name=””>
+                    </td>
+                </tr>
+
+
+            </table>
+            <div class=”btn”>
+                <button type="submit" class="registerbtn">
+                    Register
+                </button>
             </div>
-            <div class="txt_field">
-                <label>Email</label>
-                <span></span>
-                <input type="text" name="email" id="email_id" required>
-            </div>
-            <div class="txt_field">
-                <label>Age</label>
-                <span></span>
-                <input type="age" name="age" id="age_id" required>
-            </div>
-            <div class="txt_field">
-                <label>Your occupation</label>
-                <span></span>
-                <input type="occupation" name="occupation" id="occupation_id" required>
-            </div>
-            <div class="txt_field">
-                <label>Password</label>
-                <span></span>
-                <input type="password" name="password" id="password_id" required>
-            </div>
-            <div class="txt_field">
-                <label>Repeat Password</label>
-                <span></span>
-                <input type="password" name="repeat_password" id="repeat_password_id" required>
-            </div>
-            <input type="submit" value="Sign Up"  id="signup_id" onclick="validate()">
         </form>
     </div>
 

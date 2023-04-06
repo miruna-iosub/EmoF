@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+<head>
+    <style>
+        .sidenav {
+            height: 100%;
+            width: 157px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #011111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .sidenav a {
+            padding: 6px 8px 15px 16px;
+            text-decoration: none;
+            font-size: 19px;
+            color: #324B4B;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            color: #DBEFE8;
+        }
+
+        .main {
+            margin-left: 160px;
+            /* Same as the width of the sidenav */
+            font-size: 20px;
+            /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        .main a:link {
+            color: #95B0B1;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        .main a:hover {
+            color: #95B0B1;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        html * {
+            color: #000404;
+            line-height: 1.3;
+
+        }
+
+        h1 {
+            color: #000404;
+            line-height: 1.3;
+            font-size: 27px;
+        }
+
+        body {
+            counter-reset: section;
+        }
+
+        h2 {
+            counter-reset: subsection;
+        }
+
+        h2:before {
+            counter-increment: section;
+            content: counter(section) ". ";
+            font-weight: bold;
+        }
+
+        h3:before {
+            counter-increment: subsection;
+            content: counter(section) "." counter(subsection) " ";
+            counter-reset: subsubsection;
+        }
+
+        h4 {
+            font-weight: normal;
+        }
+
+        h4:before {
+            counter-increment: subsubsection;
+            content: counter(subsubsection) ". ";
+
+        }
+    </style>
+    <title>
+        Emotion-based Feedback Documentation
+    </title>
+</head>
+
+<body>
+    <div class="sidenav">
+        <br>
+        <a href="#Introduction">Introduction</a>
+        <a href="#OverallDescription">Overall description</a>
+        <a href="#References">References</a>
+        <a href="#ExternalInterfaceRequirements">External interface requirements</a>
+        <a href="#SystemFeatures">System features</a>
+        <a href="#OtherNonfunctionalRequirements">Other nonfunctional requirements</a>
+        <a target="_blank" href="https://github.com/elenaopait/EmoF">Github Repository</a>
+
+    </div>
+    <header>
+
+        <center>
+            <img src="Images/FII.jpg" alt="Facultatea de Informatică Iași" class="center" width="130" height="130">
+            <h1>Emotion-based Feedback</h1>
+            <section typeof="sa:AuthorsList">
+                <p>Miruna-Elena Iousb,<br> Elena-Ecaterina Opaiț</p>
+                <p><small>supervised by Conf. dr. Andrei Panu<br>Web Technologies, 2<sup>nd</sup> year</small></p>
+            </section>
+     
+        </center>
+    </header>
+
+    <div class="main">
+        <section id="Introduction" typeof="sa:Introduction">
+            <h2> &ensp; Introduction</h2>
+
+            <section id="Purpose" typeof="sa:Purpose">
+                <h3>&emsp; Purpose</h3>
+                <p1>&emsp; Our collective acknowledgment of the importance of having a tool that gives real and
+                    accurate
+                    feedback
+                    led
+                    us in the decision for the creation of this application.
+                    The main goal is to bring closer together the people who need feedback, and the people willing to
+                    provide
+                    it.
+                    It also reduces the time spend reading all the reviews, by interpreting the messages beforehand,
+                    easing
+                    the
+                    provider's process of having a bigger picture of the customer's emotions and opinions regarding the
+                    displayed product or service.
+                </p1>
+
+            </section>
+            <section id="IntendedAudienceAndReadingSuggestions" typeof="sa:IntendedAudienceAndReadingSuggestions">
+                <h3>&emsp; Intended Audience and Reading Suggestions</h3>
+                <p1>&emsp;
+                    The intended audience of this paper are developers, testers, project managers, marketing staff,
+                    users
+                    and any other category that is interested in developing or using our application.
+                    In case of inexperienced regular users who want to know more about the ways of using, we recommend
+                    our
+                    <a href="#OverallDescription">Overall Description</a>, <a href="#UserInterfaces"> User
+                        Interfaces</a>,
+                    <a href="#SystemFeatures"> System Features</a>, as well as any
+                    other section that raises
+                    interest, starting with the Introduction, <a href="#OverallDescription"> Overall
+                        Description</a>, <a href="#ExternalInterfaceRequirements">
+                        External Interface
+                        Requirements</a> and finishing off with <a href="#OtherNonfunctionalRequirements"> Other
+                        Nonfunctional Requirements</a>.
+                </p1>
+            </section>
+
+
+            <section id="ProductScope" typeof="sa:ProductScope">
+                <h3>&emsp; Product Scope</h3>
+                <p1>&emsp;
+                    Our initiative is to bring together any type of provider to their clients. By doing so, the time
+                    spent
+                    by the providers of goods is be exponentially reduced and they have have a clearer picture of
+                    their
+                    customers' opinions on their service. It is useful especially for people that want to launch a new
+                    product and that do not have the resources to analyse the market on their own before taking the big
+                    step. Our goal is also to create a safe space accessible to anyone that wants to share their
+                    experience
+                    or thoughts on a product, or service.
+                </p1>
+
+            </section>
+
+
+            <section id="References" typeof="sa:References">
+                <h3>&emsp; References</h3>
+                <p1>&emsp;
+                    More information about our scope can be found on our Web Technologies teacher's website, Conf. dr.
+                    Andrei Panu
+                    <a target="_blank" href="https://profs.info.uaic.ro/~andrei.panu/webprojects.html">here</a>, as well
+                    as the
+                    following articles:
+
+                    <br><br>
+                    <small>Nikhil Dawer </small><br>
+                    <a target="_blank"
+                        href="https://www.zonkafeedback.com/blog/importance-of-product-feedback#:~:text=Why%20Product%20Feedback%20is%20Important,approach%20to%20run%20your%20business.">Importance
+                        of Product Feedback.</a><br>
+
+
+                    <br><br>
+                    <small>Chen Pei-Yu, Wu Shin-yi and Yoon Jungsun</small><br>
+                    <a target="_blank" href="https://aisel.aisnet.org/icis2004/58/"> The Impact of Online
+                        Recommendations and Consumer
+                        Feedback on Sales.</a><br>
+
+                    <br><br>
+                    <small>Georg Lackermair, Daniel Kailer, Kenan Kanmaz</small><br>
+                    <a target="_blank"
+                        href="https://www.commercegurus.com/wp-content/uploads/2019/07/importance-product-reviews.pdf">
+                        Importance of Online Product Reviews from a Consumer’s Perspective</a><br>
+                    <small>Munich University of Applied Sciences, Germany January 2013.</small>
+
+
+                    <br><br>
+                    <small>Zhe Qu</small><br>
+                    <a target="_blank"
+                        href="https://www.sciencedirect.com/science/article/abs/pii/S0167923608001413">Determinants of
+                        online merchant rating: Content analysis of consumer comments about
+                        Yahoo merchants. </a><br>
+                    <small> DecisionSupport Systems December 2008.</small>
+                </p1>
+            </section>
+
+        </section>
+
+        -------------------------------------------------------------------------------------
+
+
+        <section id="OverallDescription" typeof="sa:OverallDescription">
+
+            <h2> &ensp; Overall Description</h2>
+
+            <section id="ProductPerspective" typeof="sa:ProductPerspective">
+                <h3>&emsp; Product Perspective</h3>
+                <p1>&emsp;
+                    Our product checks both the functional and quality requirements for products of its kind, so we will
+                    go deeper into some of its most important characteristics, which will be detailed in the sections
+                    below. <br>
+                    &emsp; The functional requirements that define its behaviour are the possibility of creating an
+                    account if
+                    not existent, leaving room for users that are not logged to use the application in a similar manner
+                    to reviewers. However, the functionality that describes uploading products as forms that expire, as
+                    well as the interpreted results is only available to the users that already have an
+                    account.<br>
+                    The application also fits quality requirements, as it is precise in generating information, highly
+                    throughput and exceedingly safe for both registered users and guests, in terms of confidentiality
+                    while using the app and data management.
+                    <br>
+                    &emsp; The problem which we identified is the well known need of business owners and management
+                    teams, as
+                    well as artists and regular people to centralise and analyse information about their specific
+                    product or provided service. These features shift the product perspective as a powerful tool that
+                    can significantly reduce, or even fully cover the time spent researching. As users leave
+                    anonymous reviews, the level of honesty is increased and the application’s analysis of the reviews
+                    are be indubitably accurate.
+
+                </p1>
+            </section>
+
+
+
+            <section id="ProductFunctions" typeof="sa:ProductFunctions">
+                <h3>&emsp; Product Functions</h3>
+                <p1>We will split the functionalities into more main categories, as follows:
+
+                    <section id="LoggedUsersFunctions" typeof="sa:LoggedUsersFunctions">
+                        <h4>&emsp;Logged Users Functions <h4>
+                                <p1>
+                                    Creating an account.<br>
+                                </p1>
+                                <p2> 2. Uploading a form as a “post” and request reviews from any category of people
+                                    that
+                                    are
+                                    willing to
+                                    help, or are interested in giving their review, in case they personally benefited
+                                    from
+                                    its usage, or
+                                    from the provided service, such as events, firms, sole proprietorships and any other
+                                    kind of service
+                                    providers.<br>
+                                </p2> 3. Set an expiration date for the uploaded form and wait for the reviews to pile
+                                up.
+                                Once the expiration date has passed, a graphical analysis of the messages is
+                                provided by the
+                                application, that consists of elegantly structured data, that sums up the
+                                emotions that
+                                people felt while writing the message. The form uploaders are also able to see the
+                                detected emotion
+                                of each comment.<br>
+                                <p3> 4. See personalised suggestions on products they might also want to review.<br>
+                                </p3>
+                                <p4> 5. Access their personal data and update any information about themselves.
+                                </p4>
+
+                                <section id="UnLoggedUsersFunctions" typeof="sa:UnLoggedUsersFunctions">
+                                    <h4>&emsp;Unlogged Users Functions <h4>
+                                            <p1>
+                                                Anyone can access the site and leave a review, and only their message
+                                                are
+                                                stored,
+                                                which makes
+                                                the process fully anonymous. For users that have an account, however,
+                                                the
+                                                message is
+                                                linked to
+                                                their information.The information is not publicly accessible, as it is
+                                                only
+                                                used by
+                                                the
+                                                application in order to better detect the patterns of behaviour each
+                                                client has
+                                                and
+                                                provide a better
+                                                analysis of the feedback for the product uploaders.<br>
+                                            </p1>
+                                            <p2>2. See what products are tranding and acces reviews uploaded by other
+                                                users.
+                                            </p2>
+                                </section>
+                    </section>
+                </p1>
+            </section>
+
+
+
+
+            <section id="UserClassesAndCharacteristics" typeof="sa:UserClassesAndCharacteristics">
+                <h3>&emsp; User Classes and Characteristics</h3>
+                <p1>&emsp;
+                    The indentified users from the practical point of view are people that present the difficulties
+                    presented above.<br>
+
+                    &emsp;Approaching from a more theoretical perspective, the identified users are split
+                    into three main categories, as users without accounts, with limited access to the provided features,
+                    and users with accounts that have different accessibility levels, depending on whether they uploaded
+                    a product or service, or just reviewed other posts anonymously.<br>
+
+                    &emsp;For a clearer view, the diagram below pictures the use-cases and the users, by their type.
+                    Note that
+                    any user can log in, so only the less-obvious relations are pictured.
+
+                    <center> <img src="Images/UseCaseDiagram.jpg" alt="Enotion-based Feedback Use-case Diagram"
+                            width="740" height="410">
+                    </center>
+                </p1>
+            </section>
+
+
+
+
+            <section id="OperatingEnvironment" typeof="sa:OperatingEnvironment">
+                <h3>&emsp; Operating Environment</h3>
+                <p1>
+
+
+                </p1>
+            </section>
+
+
+
+            <section id="DesignAndImplementationConstraints" typeof="sa:DesignAndImplementationConstraints">
+                <h3>&emsp; Design and Implementation Constraints</h3>
+                <p1>
+
+
+                </p1>
+            </section>
+
+            <section id="UserDocumentation" typeof="sa:UserDocumentation">
+                <h3>&emsp; User Documentation</h3>
+                <p1>
+
+
+                </p1>
+            </section>
+
+            <section id="AssumptionsAndDependencies" typeof="sa:AssumptionsAndDependencies">
+                <h3>&emsp; Assumptions and Dependencies</h3>
+                <p1>
+
+
+                </p1>
+            </section>
+
+
+        </section>
+
+        -----------------------------------------------------------------------
+
+        <section id="ExternalInterfaceRequirements" typeof="sa:ExternalInterfaceRequirements">
+            <h2>&emsp; External Interface Requirements</h3>
+
+
+                <section id="UserInterfaces" typeof="sa:UserInterfaces">
+                    <h3>&emsp; User Interfaces</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
+                <section id="HardwareInterfaces" typeof="sa:HardwareInterfaces">
+                    <h3>&emsp; Hardware Interfaces</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
+                <section id="SoftwareInterfaces" typeof="sa:SoftwareInterfaces">
+                    <h3>&emsp; Software Interfaces</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
+
+                <section id="CommunicationsInterfaces" typeof="sa:CommunicationsInterfaces">
+                    <h3>&emsp; Communications Interfaces</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
+        </section>
+
+
+
+        -----------------------------------------------------------------
+
+
+
+        <section id="SystemFeatures" typeof="sa:SystemFeatures">
+            <h2>&emsp; System Features</h3>
+
+
+
+                <section id="sa:OtherNonfunctionalRequirements" typeof="sa: System Feature 1 -- give a name">
+                    <h3>&emsp; System Feature 1 -- give a name</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+                <section id="sa:OtherNonfunctionalRequirements" typeof="sa: System Feature 2 -- give a name">
+                    <h3>&emsp; System Feature 2 -- give a name</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+                <section id="sa:OtherNonfunctionalRequirements" typeof="sa:SystemFeature n -- give a name">
+                    <h3>&emsp; System Feature n -- give a name</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+        </section>
+
+        --------------------------------------------------------------
+
+
+        <section id="OtherNonfunctionalRequirements" typeof="#sa:OtherNonfunctionalRequirements">
+            <h2>&emsp; Other Nonfunctional Requirements</h3>
+
+
+
+                <section id="PerformanceRequirements" typeof="sa:PerformanceRequirements">
+                    <h3>&emsp; Performance Requirements</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
+
+                <section id="SafetyRequirements" typeof="sa: SafetyRequirements">
+                    <h3>&emsp; Safety Requirements</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
+                <section id="SecurityRequirements" typeof="sa:SecurityRequirements">
+                    <h3>&emsp; Security Requirements</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
+
+
+                <section id="sa:OtherNonfunctionalRequirements" typeof="sa: Software Quality Attributes">
+                    <h3>&emsp; Software Quality Attributes</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
+
+                <section id="sa:OtherNonfunctionalRequirements" typeof="sa: Business Rules">
+                    <h3>&emsp; Business Rules</h3>
+                    <p1>
+
+
+                    </p1>
+                </section>
+
+
+        </section>
+
+    </div>
+
+</body>
+
+
+</html>
