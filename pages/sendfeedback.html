@@ -15,7 +15,7 @@
   <title>EmoF</title>
 </head>
 
-<body onload="repeatEmotion()">
+<body onload="repeatEmotion();repeatEmotion1()">
 
   <!-- Start Navbar -->
   <nav>
@@ -81,6 +81,7 @@
           products based on the floral aroma of lotus flower and white tea.
           The gift box contains a shower foam 200 ml,
           an interior perfume 250 ml, a body cream 100 g and a body scrub 125 g.</p>
+        <br>
       </div>
     </div>
   </div>
@@ -98,7 +99,7 @@
       function repeatEmotion() {
         var i;
         for (i = 0; i < 4; i++) {
-          document.getElementById("repeat-emotions").innerHTML += '<fieldset class="emotions" id="emotions"> <legend>Thing-to-be-reviewed</legend><div class="emotion-section"> <label for="emotion' + i + '">Choose an emotion<label><br> <select name="emotion' + i + '" id="emotion' + i + '"> <option value="happy">Happy</option><option value="surprised">Surprised</option><option value="sad">Sad</option><option value="fearful">Fearful</option>  <option value="discusted">Discusted</option>  <option value="angry">Angry</option> <option value="appreciation">Apreciation</option>  <option value="expectant">Expectant</option> </select></div> <div class="intensity-section">  <label for="intensity">Choose an intensity</label> <form oninput="x.value=getIntensityNames(parseInt(intensity.value),' + i + ');">   <input type="range" value="1" max="2" id="intensity" name="intensity"><br><br>  <output name="x" for="intensity"> <p>  </p></output>  </form> </div> </fieldset> </div>';
+          document.getElementById("repeat-emotions").innerHTML += '<fieldset class="emotions" id="emotions' + i + '"> <legend>Thing-to-be-reviewed</legend><div class="emotion-section"> <label for="emotion' + i + '">Choose an emotion<label><br> <select name="emotion' + i + '" id="emotion' + i + '"> <option value="happy">Happy</option><option value="surprised">Surprised</option><option value="sad">Sad</option><option value="fearful">Fearful</option>  <option value="discusted">Discusted</option>  <option value="angry">Angry</option> <option value="appreciation">Apreciation</option>  <option value="expectant">Expectant</option> </select></div> <div class="intensity-section">  <label for="intensity">Choose an intensity</label> <form oninput="x.value=getIntensityNames(parseInt(intensity.value),' + i + ');">   <input type="range" value="1" max="2" id="intensity" name="intensity"><br><br>  <output name="x" for="intensity"> <p>  </p></output>  </form> </div> </fieldset> </div><br><br>';
         }
       }
     </script>
@@ -106,60 +107,27 @@
     <div class="emotion-type">Default aspects:</div>
 
     <div class="repeat-emotions" id="repeat-emotions">
-
-
     </div>
 
-
+    <script type="text/javascript">
+      function repeatEmotion1() {
+        var i;
+        var begin = 4;
+        for (i = begin; i < begin + 4; i++) {
+          document.getElementById("repeat-emotions1").innerHTML += '<fieldset class="emotions" id="emotions' + i + '"> <legend>Thing-to-be-reviewed</legend><div class="emotion-section"> <label for="emotion' + i + '">Choose an emotion<label><br> <select name="emotion' + i + '" id="emotion' + i + '"> <option value="happy">Happy</option><option value="surprised">Surprised</option><option value="sad">Sad</option><option value="fearful">Fearful</option>  <option value="discusted">Discusted</option>  <option value="angry">Angry</option> <option value="appreciation">Apreciation</option>  <option value="expectant">Expectant</option> </select></div> <div class="intensity-section">  <label for="intensity">Choose an intensity</label> <form oninput="x.value=getIntensityNames(parseInt(intensity.value),' + i + ');">   <input type="range" value="1" max="2" id="intensity" name="intensity"><br><br>  <output name="x" for="intensity"> <p>  </p></output>  </form> </div> </fieldset> </div><br><br>';
+        }
+      }
+    </script>
     <div class="emotion-type">Chosen by owner:</div>
 
-    <div class="repeat-emotions" id="repeat-emotions">
-      <fieldset class="emotions" id="emotions">
+    <div class="repeat-emotions" id="repeat-emotions1">
+
     </div>
+
+
+
   </div>
-
-
-  <form name="passa" id="passa">
-
-    <select class=''>
-      <option value="">Choose</option>
-      <optgroup label="Volvo">
-        <option value="V70"> V70 </option>
-        <option value="XC60"> XC60 </option>
-        <option value="XC90"> XC90 </option>
-      </optgroup>
-      <optgroup label="Volkswagen">
-        <option value="Golf"> Golf </option>
-        <option value="Polo"> Polo </option>
-        <option value="Scirocco"> Scirocco </option>
-        <option value="Touareg"> Touareg </option>
-      </optgroup>
-      <optgroup label="BMW">
-        <option value="M6"> M6 </option>
-        <option value="X5"> X5 </option>
-        <option value="Z3"> Z3 </option>
-      </optgroup>
-    </select>
-
-    <input type="submit" name="azione" id="azione" value="Submit">
-  </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <a class="submitbtn" href="reviewconfirmation.html">Submit</a>
   </div>
 
 
