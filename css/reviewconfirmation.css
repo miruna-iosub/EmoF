@@ -58,8 +58,12 @@ nav {
     border-right: 100px solid #F0F8FF;
     background-color: #96DBDB;
     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+
+
+
     margin-top: 80px;
     margin-bottom: 77px;
+
     padding-bottom: 75px;
     padding-top: 30px;
 }
@@ -148,3 +152,6 @@ table {
     margin-left: 600px;
     margin-top: 25px;
 }
+
+}
+
