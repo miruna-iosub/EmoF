@@ -109,11 +109,9 @@ nav {
   padding-left: 50px;
 }
 
-
-
 .container h3{
   margin-left: 100px;
-  margin-top: 80px;
+  margin-top: 100px;
   margin-bottom: 20px;
 }
 
@@ -145,6 +143,15 @@ nav {
   font-size: 20px;
 }
 
+#update_id{
+  background-color: black;
+  text-decoration: none;
+  margin-right: 20px;
+  border: 1px solid black;
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+}
 
 /*-----------------------------*/
 .container2 {
@@ -157,6 +164,10 @@ nav {
   grid-gap: 20px;
 }
 
+h3{
+  margin-left: 100px;
+  margin-top: 70px;
+}
 
 .item3 {
   background-color: #fff;

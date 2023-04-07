@@ -7,7 +7,7 @@ function validate(){
     var repeat_password = document.getElementById("repeat_password_id").value;
 
   
-    if ( username == "" || email == "" || age == "" || occupation == "" || password == "" || repeat_password == "" ){
+    if ( username == "" || email == "" || age == "" || occupation == "" || password == "" || repeat_password == ""){
         alert ("Please fill all the fields!");
         return false;
     }
@@ -20,7 +20,7 @@ function validate(){
         return false;
     }
     else{
-        window.location = "../pages/index.html"; 
+        window.location = "../pages/signupconfirmation.html"; 
         return true;
     }
 }
