@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/signup.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="..\images\logo.png">
+    <link rel="stylesheet" href="../css/signup.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,16 +18,14 @@
     <!-- Start Navbar -->
     <nav>
         <div class="logo">
-            <a href="homepage.html">
-                <img src="assets\images\logo.png" alt="Logo">
+            <a href="index.html">
+                <img src="..\images\logo.png" alt="Logo">
             </a>
         </div>
     </nav>
 
     <div class="grid-container">
         <form>
-
-
             <h3>Sign Up</h3>
             <table>
                 <tr>
@@ -72,12 +71,54 @@
                     </td>
                 </tr>
 
+                <tr>
+                    <td>
+                        Your occupation:
+                    </td>
+
+                    <td>
+                        <input type="occupation" placeholder=”Occupation” name=””>
+                    </td>
+                </tr>
+
 
             </table>
             <div class=”btn”>
                 <button type="submit" class="registerbtn">
                     Register
                 </button>
+        <h3>Sign Up</h3>
+        <form id="form_id" action="signupconfirmation.html" name="myform">
+            <div class="txt_field">
+                <label>Username</label>
+                <span></span>
+                <input type="text" name="username" id="username_id" required>
+            </div>
+            <div class="txt_field">
+                <label>Email</label>
+                <span></span>
+                <input type="text" name="email" id="email_id" required>
+            </div>
+            <div class="txt_field">
+                <label>Age</label>
+                <span></span>
+                <input type="age" name="age" id="age_id" required>
+            </div>
+            <div class="txt_field">
+                <label>Your occupation</label>
+                <span></span>
+                <input type="occupation" name="occupation" id="occupation_id" required>
+            </div>
+            <div class="txt_field">
+                <label>Password</label>
+                <span></span>
+                <input type="password" name="password" id="password_id" required>
+            </div>
+            <div class="txt_field">
+                <label>Repeat Password</label>
+                <span></span>
+                <input type="password" name="repeat_password" id="repeat_password_id" required>
+
             </div>
         </form>
     </div>
