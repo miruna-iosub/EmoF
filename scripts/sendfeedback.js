@@ -183,6 +183,14 @@ function showHowManyTimes() {
 
 }
 
+function sendFeedback() {
+    var numberOfTimes = 5;
+
+}
+
+
+
+
 //function showFieldXTimes() {
 //   var numberOfTmes = 5;
 //   var i;

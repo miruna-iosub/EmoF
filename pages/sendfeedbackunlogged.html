@@ -20,7 +20,7 @@
   <!-- Start Navbar -->
   <nav>
     <div class="logo">
-      <a href="homepage-loggedin.html">
+      <a href="homepage-unloggedin.html">
         <img src="..\images\logo.png" alt="Logo">
       </a>
     </div>
@@ -120,20 +120,19 @@
     </script>
     <div class="emotion-type">Chosen by owner:</div>
 
-    <div class="repeat-emotions" id="repeat-emotions1">
+    <div class="repeat-emotions" id="repeat-emotions1"> </div>
 
+    <div class="container3">
+      <input type="sendfeedback" value="Send Feedback" id="sendfeedback"
+        onclick="sendFeedback(); window.location = '../pages/reviewconfirmation-unlogged.html'">
     </div>
 
-
-
-  </div>
-  <a class="submitbtn" href="reviewconfirmation.html">Submit</a>
   </div>
 
 
 
 
-  <script src="../scripts/sendfeedback.js"></script>
+  <script src=" ../scripts/sendfeedback.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

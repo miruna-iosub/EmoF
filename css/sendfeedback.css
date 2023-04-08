@@ -22,6 +22,19 @@ nav {
   padding: 10px;
 }
 
+navlogged {
+  font-family: 'Taviraj';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 44px;
+  letter-spacing: -1.125px;
+  background-color: #F0F8FF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
 
 .logo img {
   height: 100px;
@@ -268,6 +281,28 @@ output {
 }
 
 
+.container4 {
+  display: grid;
+  border-left: 50px solid #F0F8FF;
+  border-right: 50px solid #F0F8FF;
+
+}
+
+
+#sendfeedback {
+  background-color: black;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  text-decoration: none;
+  padding: 30px;
+  margin-top: 30px;
+  font-size: 24px;
+}
+
 
 .submitbtn {
   margin-right: 31rem;
@@ -284,7 +319,6 @@ output {
   margin-top: 15px;
   font-size: 30px;
 }
-
 
 
 
