@@ -13,13 +13,13 @@
             left: 0;
             background-color: #011111;
             overflow-x: hidden;
-            padding-top: 20px;
+            padding-top: 18px;
         }
 
         .sidenav a {
-            padding: 6px 8px 15px 16px;
+            padding: 6px 8px 14px 14px;
             text-decoration: none;
-            font-size: 19px;
+            font-size: 18px;
             color: #324B4B;
             display: block;
         }
@@ -52,11 +52,22 @@
             text-decoration: none;
         }
 
+        .main a {
+
+            background-color: transparent;
+            text-decoration: none;
+        }
+
         .main a:hover {
             color: #95B0B1;
             background-color: transparent;
             text-decoration: none;
         }
+
+        .main u:hover {
+            color: #95B0B1;
+        }
+
 
         html * {
             color: #000404;
@@ -100,17 +111,23 @@
             content: counter(subsubsection) ". ";
             font-size: 20px;
         }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
+
 
     <title>
         Emotion-based Feedback Documentation
     </title>
+    <link rel="icon" type="image/x-icon" href="Images/logo.png">
+
 </head>
 
 <body>
-
     <header>
-
         <center>
             <img src="Images/FII.jpg" alt="Facultatea de Informatică Iași" width="130" height="130">
             <h1>Emotion-based Feedback</h1>
@@ -121,19 +138,23 @@
 
         </center>
     </header>
-    <div class="sidenav">
-        <br>
-        <a href="#Introduction">Introduction</a>
-        <a href="#OverallDescription">Overall description</a>
-        <a href="#ExternalInterfaceRequirements">External interface requirements</a>
-        <a href="#SystemFeatures">System features</a>
-        <a href="#OtherNonfunctionalRequirements">Other nonfunctional requirements</a>
-        <a target="_blank" href="https://github.com/elenaopait/EmoF">Github Repository</a>
-        <a target="_blank"
-            href="https://www.figma.com/file/roQXo0e0agj7Os4Wpa4ara/ECommerce-(Community)?node-id=2-6&t=bgmUtrEWDOOwFXyV-0">Figma
-            project</a>
-        <a href="#FurtherDevelopment">Further Development Strategies</a>
-        <a href="#ResourcesDocumentation">Project Documentation</a>
+
+
+    <div class="responsive">
+        <div class="sidenav" class="responsive">
+            <br>
+            <a href="#Introduction">Introduction</a>
+            <a href="#OverallDescription">Overall description</a>
+            <a href="#ExternalInterfaceRequirements">External interface requirements</a>
+            <a href="#SystemFeatures">System features</a>
+            <a href="#OtherNonfunctionalRequirements">Other nonfunctional requirements</a>
+            <a href="#FurtherDevelopment">Further Development Strategies</a>
+            <a href="#ResourcesDocumentation">Project Documentation</a>
+            <a target="_blank" href="https://github.com/elenaopait/EmoF">Github Repository</a>
+            <a target="_blank"
+                href="https://www.figma.com/file/roQXo0e0agj7Os4Wpa4ara/ECommerce-(Community)?node-id=2-6&t=bgmUtrEWDOOwFXyV-0">Figma
+                project</a>
+        </div>
     </div>
 
 
@@ -145,10 +166,10 @@
                 <h3>&emsp; Purpose</h3>
                 <p1>&emsp; Our collective acknowledgment of the importance of having a tool that gives real and accurate
                     feedback led us in the decision for the creation of this application. The main goal is to bring
-                    closer together the people who need feedback and the people willing to provide it. It also reduces
-                    the time spend reading all the reviews, by interpreting the selected emotions beforehand, easing the
-                    product providers' process of creating a bigger picture of the customers' emotions and opinions
-                    regarding the displayed product or service.
+                    closer together the people who need feedback and the people willing to provide it. We also want
+                    to reduce the time spend reading all the reviews, by interpreting the selected emotions beforehand,
+                    easing the product providers' process of creating a bigger picture of the customers' emotions and
+                    opinions regarding the displayed product, service, location or even person.
                 </p1>
 
             </section>
@@ -157,40 +178,40 @@
                 <p1>&emsp;
                     The intended audience of this paper are developers, testers, project managers, marketing staff,
                     users and any other category that is interested in developing or using our application. In case of
-                    inexperienced users, who want to know more about the ways of using our application, we recommend our
-                    <a href="#OverallDescription">Overall Description</a>, <a href="#UserInterfaces"> User
-                        Interfaces</a>, <a href="#SystemFeatures"> System Features</a>, as well as any other section
-                    that raises interest, starting with the Introduction, <a href="#OverallDescription"> Overall
-                        Description</a>, <a href="#ExternalInterfaceRequirements"> External Interface Requirements</a>
-                    and finishing off with <a href="#OtherNonfunctionalRequirements"> Other Nonfunctional
-                        Requirements</a>.<br> &emsp;We will address any category that can be uploaded and reviewed,
-                    being a service, person, event, object etc. as a <b>product</b>.
+                    inexperienced users who want to know more about the ways of using our application, we recommend our
+                    <u><a href="#OverallDescription">Overall Description</a></u>, <u><a href="#UserInterfaces"> User
+                            Interfaces</a></u>, <u><a href="#SystemFeatures"> System Features</a></u>, as well as any
+                    other section that raises interest, starting with the Introduction, <u><a
+                            href="#OverallDescription">
+                            Overall Description</a></u>, <u><a href="#ExternalInterfaceRequirements"> External Interface
+                            Requirements</a></u> and finishing
+                    off with <u><a href="#FurtherDevelopment"> Further Development </a></u>.<br>
+                    &emsp;We will generally address any category that can be uploaded and reviewed, being a service,
+                    person, event, object etc. as a <b>product</b>.
                 </p1>
             </section>
 
-
+            <br>
             <section id="ProductScope" typeof="sa:ProductScope">
                 <h3>&emsp; Product Scope</h3>
                 <p1>&emsp;
-                    Our initiative is to bring together any type of provider to their clients. By doing so, the time
+                    Our initiative is to bring together any type of provider and their clients. By doing so, the time
                     spent by the providers of goods is exponentially reduced and they have have a clearer picture of
                     their customers' opinions on their service. It is useful especially for people who want to launch a
                     new product and who do not have the resources to analyse the market on their own before taking the
-                    big step. Our goal is also to create a safe place accessible to anyone that wants to share their
-                    experience and emotions on a product, or service.
+                    big step. Our goal is also to create a safe place, accessible to anyone who wants to share their
+                    experience and emotions on a product.
                 </p1>
-
             </section>
-
+            <br>
 
             <section id="References" typeof="sa:References">
                 <h3>&emsp; References</h3>
                 <p1>&emsp;
                     More information about our scope can be found on our Web Technologies teacher's website, Conf. dr.
                     Andrei Panu
-                    <a target="_blank" href="https://profs.info.uaic.ro/~andrei.panu/webprojects.html">here</a>, as well
-                    as the
-                    following articles:
+                    <u><a target="_blank" href="https://profs.info.uaic.ro/~andrei.panu/webprojects.html">here</a></u>,
+                    as well as the following articles:
 
                     <br><br>
                     <small>Nikhil Dawer </small><br>
@@ -223,8 +244,7 @@
                 </p1>
             </section>
         </section>
-        <br><br><br><br>
-        -------------------------------------------------------------------------------------
+        <br><br><br><br><br>
 
 
         <section id="OverallDescription" typeof="sa:OverallDescription">
@@ -234,14 +254,14 @@
             <section id="ProductPerspective" typeof="sa:ProductPerspective">
                 <h3>&emsp; Product Perspective</h3>
                 <p1>&emsp;
-                    Our product checks both the functional and quality requirements for products of its kind, so we will
-                    go deeper into some of its most important characteristics, which will be detailed in the sections
-                    below. <br>
+                    Our application checks both the functional and quality requirements for products of its kind, so we
+                    will dig deeper into some of its most important characteristics, which will be detailed in the
+                    sections below. <br>
                     &emsp; The functional requirements that define its behaviour are the possibility of creating an
-                    account if not existent, leaving room for users that are not logged to use the application in a
-                    similar manner to reviewers. However, the functionality that describes uploading products as forms
-                    that expire, as well as the interpreted results is only available to the users that already have an
-                    account.<br>
+                    account, if not existent, leaving room for users that are not logged to use the application in a
+                    similar manner to logged reviewers. However, the functionality that describes uploading products as
+                    forms that expire, as well as the interpreted results, is only available to the users that already
+                    have an account.<br>
                     &emsp;The application also fits quality requirements, as it is precise in generating information,
                     highly throughput and exceedingly safe for both registered users and guests, in terms of
                     confidentiality and data management.<br>
@@ -251,55 +271,56 @@
                     tool that can significantly reduce, or even fully dismiss the time spent researching. As users leave
                     anonymous reviews, the level of honesty is increased and the application’s analysis of the reviews
                     are be indubitably accurate.<br>
-                    The evaluated emotions are selected from the Plutchik’s Wheel of Emotions, shown below. Each "petal"
-                    represents an emotion, while the closer to the center the emotion is, the more intense the emotion
-                    is felt.
+                    &emsp;The evaluated emotions are selected from the Plutchik’s Wheel of Emotions, shown below. Each
+                    "petal" represents an emotion, while the closer to the center the emotion is, the more intense the
+                    emotion is felt.
                     <br><br>
                     <center>
-                        <img src="Images/Emotions.jpg" alt="Plutchik’s Wheel of Emotions" width="700">
+                        <img src="Images/Emotions.jpg" alt="Plutchik’s Wheel of Emotions" width="750"
+                            class="responsive">
 
                     </center><br>
 
                 </p1>
             </section>
 
-
+            <br>
 
             <section id="ProductFunctions" typeof="sa:ProductFunctions">
                 <h3>&emsp; Product Functions</h3>
-                <p1>We will split the functionalities into more subcategories, as follows:
+                <p1>&emsp;We will split the functionalities into more subcategories, as follows:
 
                     <section id="LoggedUsersFunctions" typeof="sa:LoggedUsersFunctions">
                         <h4>&nbsp;Logged Users Functions <h4>
-                                <p1>
-                                    Creating an account.<br>
-                                </p1>
-                                <p2> 2. Uploading a form as a “post” and request reviews from any category of people
+                                <p2> Uploading a form as a “post” and request reviews from any category of people
                                     that are willing to help, or are interested in giving their review, in case they
                                     personally benefited from its usage, or from the provided service, such as events,
                                     firms, sole proprietorships and any other kind of service providers.<br>
-                                </p2> 3. Set an expiration date for the uploaded form and wait for the reviews to pile
+                                </p2> 2. Set an expiration date for the uploaded form and wait for the reviews to pile
                                 up. Once the expiration date has passed, a graphical analysis of the messages is
                                 provided by the application, that consists of elegantly structured data, that sums up
-                                the emotions that people felt while writing the message. The form uploaders are also
-                                able to see the emotions inserted by the reviewers for each aspect they chose.<br>
-                                <p3> 4. See personalised suggestions on products they might also want to review.<br>
+                                the emotions chosen by the reviewers when sending feedback on the characteristics
+                                imposed by the owner. The form uploaders are also able to see the emotions inserted by
+                                the reviewers for each aspect they chose.<br>
+                                <p3> 3. See personalised suggestions on products they might also want to review.<br>
                                 </p3>
-                                <p4> 5. Access their personal data and update any information about themselves.
+                                <p4> 4. Access their personal data and update any information about themselves.
                                 </p4>
 
                                 <section id="UnLoggedUsersFunctions" typeof="sa:UnLoggedUsersFunctions">
                                     <h4>&nbsp;Unlogged Users Functions </h4>
                                     <p1>
-                                        1. Anyone can access the site and leave a review, and only their message are
-                                        stored, which makes the process fully anonymous. For users that have an account,
-                                        however, the message is linked to their information.The information is not
-                                        publicly accessible, as it is only used by the application in order to better
-                                        detect the patterns of behaviour each client has and provide a better analysis
-                                        of the feedback for the product uploaders.<br>
+                                        1. Creating an account.<br>
                                     </p1>
-                                    <p2>2. See what products are tranding and acces reviews uploaded by other
-                                        users.
+                                    <p1>
+                                        2. Anyone can access the site and leave a review, and only their responses are
+                                        stored, which makes the process fully anonymous. For users that have an account,
+                                        however, the message is linked to their information. The data is not
+                                        publicly accessible, as it is only used by the application in order to better
+                                        detect the patterns of behaviour each client has, and provide a better analysis
+                                        of the feedback, for the product uploaders.<br>
+                                    </p1>
+                                    <p2>3. See what products are trending.
                                     </p2>
                                 </section>
                             </h4>
@@ -307,112 +328,112 @@
                 </p1>
             </section>
 
-
+            <br>
 
 
             <section id="UserClassesAndCharacteristics" typeof="sa:UserClassesAndCharacteristics">
                 <h3>&emsp; User Classes and Characteristics</h3>
                 <p1>&emsp;
-                    The indentified users from the practical point of view are people that present the difficulties
+                    The indentified users from the practical point of view are people that are exposed the difficulties
                     presented above.<br>
                     &emsp;Approaching from a more theoretical perspective, the identified users are split
                     into three main categories, as users without accounts, with limited access to the provided features,
                     and users with accounts that have different accessibility levels, depending on whether they uploaded
                     a product or service, or just reviewed other posts anonymously.<br>
-                    &emsp;For a clearer view, the <a href="#UseCaseDiagram"> Use Case Diagram</a> can be consulted,
-                    found in the <a href="#SoftwareInterfaces"> Software Interfaces</a> section, containing the types of
-                    users and
-                    functionalities.
+                    &emsp;For a clearer view, the <u><a href="#UseCaseDiagram"> Use Case Diagram</a></u> can be
+                    consulted,
+                    found in the <u><a href="#SoftwareInterfaces"> Software Interfaces</a></u> section, containing the
+                    types of users and functionalities.
                 </p1>
             </section>
 
-
+            <br>
             <section id="OperatingEnvironment" typeof="sa:OperatingEnvironment">
                 <h3>&emsp; Operating Environment</h3>
-                <p1>
+                <p1>&emsp;
                     Given the fact that this is an web application, it is browser-dependent, so the only requirement is
                     for a browser to be present, in order for the application to work properly.
                 </p1>
             </section>
-
-
-
-            <section id="DesignAndImplementationConstraints" typeof="sa:DesignAndImplementationConstraints">
-                <h3>&emsp; Design and Implementation Constraints</h3>
-                <p1>
-                    ///////////////////////////////////////////////////
-
-                </p1>
-            </section>
-
+            <br>
             <section id="UserDocumentation" typeof="sa:UserDocumentation">
                 <h3>&emsp; User Documentation</h3>
-                <p1>&emsp; In order to get a view of the surface-lever of our application, we recommend accesing
-                    our <a target="_blank"
-                        href="https://www.figma.com/file/roQXo0e0agj7Os4Wpa4ara/ECommerce-(Community)?node-id=2-6&t=bgmUtrEWDOOwFXyV-0">Figma
-                        Project here</a> and discover the design of our interface, from the link between buttons, to the
-                    unfolding of the pages. This will construct a better understanding of the flow of the application.
+                <p1>&emsp; In order to get a better view of the surface-lever of our application, we recommend accesing
+                    our <u><a target="_blank"
+                            href="https://www.figma.com/file/roQXo0e0agj7Os4Wpa4ara/ECommerce-(Community)?node-id=2-6&t=bgmUtrEWDOOwFXyV-0">Figma
+                            Project</a></u> and discover the design of our interface, from the link between buttons, to
+                    the unfolding of the pages. This will construct a better understanding of the flow of the
+                    application.
 
                 </p1>
             </section>
-
+            <br>
             <section id="AssumptionsAndDependencies" typeof="sa:AssumptionsAndDependencies">
                 <h3>&emsp; Assumptions and Dependencies</h3>
                 <p1>&emsp;
                     There are no commercial or third-party components included in this application, as well as no
-                    impotred software, meaning that no
-                    requirement will be oppressed by running the application in any other another environment.
+                    impotred software, meaning that no requirement will be oppressed by running the application in any
+                    other another environment.
                 </p1>
             </section>
 
 
         </section>
         <br><br><br><br>
-        -----------------------------------------------------------------------
+
 
         <section id="ExternalInterfaceRequirements" typeof="sa:ExternalInterfaceRequirements">
             <h2>&emsp; External Interface Requirements</h2>
 
             <section id="UserInterfaces" typeof="sa:UserInterfaces">
                 <h3>&emsp; User Interfaces</h3>
-                <p1>&emsp;The graphical UI consists of multiple windows.The application opens up on the Homepage, for
+                <p1>&emsp;The graphical UI consists of multiple windows. The application opens up on the Homepage, for
                     both classes of users. The only difference in UX design between the logged and unlogged users lays
-                    in the headers and footers.<br>
+                    in the headers, footers and the recommended sections of products.<br>
 
                     &emsp;Below, the unlogged users header is shown.
                     <br><br>
                     <center>
-                        <img src="Design/UnloggedHeader.png" alt="Facultatea de Informatică Iași" width="700">
+                        <img src="Design/UnloggedHeader.png" alt="Unlogged Header" width="560">
 
                     </center>
                     <br><br>
 
-                    &emsp;The logged users header has less buttons, as shown in the next picture.
+                    &emsp;The logged users header has different buttons, as shown in the next picture.
                     <br><br>
                     <center>
-                        <img src="Design/LoggedHeader.png" alt="Facultatea de Informatică Iași" width="700">
+                        <img src="Design/LoggedHeader.png" alt="Logged Header" width="560">
                     </center>
                     <br><br>
-                    &emsp;The unlogged footer has the following structure for unlogged users.
+                    &emsp;The footer has the following structure for unlogged users.
 
                     <br><br>
                     <center>
-                        <img src="Design/UnloggedFooter.png" alt="Facultatea de Informatică Iași" width="700">
+                        <img src="Design/UnloggedFooter.png" alt="Unlogged Footer" width="700">
                     </center>
                     <br><br>
 
-                    &emsp;Users who posses an account, however, will have less information and functionalities on
+                    &emsp;Users who posses an account, however, will have the following information and functionalities
+                    on
                     the footer.
 
                     <br><br>
                     <center>
-                        <img src="Design/LoggedFooter.png" alt="Facultatea de Informatică Iași" width="700">
+                        <img src="Design/LoggedFooter.png" alt="Logged Footer" width="700">
                     </center>
                     <br><br>
-                    &emsp;On the Homepage, users can see the “product of
-                    the week”, meaning the most reviewed product. Beneath, the “Add a product” feature is
-                    implemented, however, it will redirect the unlogged users to the “Sign In” page. Following up
-                    are the “Recently Added” and “Most Reviewed”, as a top following the “Product Of The Week”. By
+
+                    &emsp;In order to go to the Homepage users must press the
+                    icon on the top left corner of all pages, as it does not matter if they are logged or not.
+                    <br><br>
+                    <center>
+                        <img src="Images/logo.png" alt="EmoF Logo" width="230">
+                    </center>
+                    <br><br>
+                    &emsp;On the Homepage, users can see the “Product Of
+                    The Week”, meaning the most reviewed product. Beneath, the “Add a product” feature is
+                    implemented. However, it will redirect the unlogged users to the “Sign In” page. Following up
+                    are the “Recently Added” and “Most Reviewed”, following the “Product Of The Week”. By
                     clicking on any of the “Send feedback” buttons, the unlogged user is able to add an anonymous
                     review.<br>
                     &emsp;The header of the Homepage consists of three buttons with different functionalities. The
@@ -422,142 +443,181 @@
                     Below is the full example.
                     <br><br>
                     <center>
-                        <img src="Design/UnloggedHomepage.jpg" alt="Facultatea de Informatică Iași" width="700">
+                        <img src="Design/UnloggedHomepage.png" alt="Unlogged Homepage Page" width="700">
                     </center>
                     <br><br>
 
                     &emsp;The logged users have the same features, however, the "Add A Product" redirects the user to
-                    the "Add Product" page, which will be presented later.<br> The "Recent" section shows the products
+                    the "Add Product" page, which will be presented later.<br>
+                    &emsp;The "Recent" section shows the products
                     which the user last reviewed, while the "For You" presents the products recommended to review, based
-                    on the main and subcategory the user most reviewed on, as well as the trending and most reviewed
+                    on the category and subcategory the user mostly reviewed on, as well as the trending and most
+                    reviewed
                     products in the frequented categories, overall.
 
                     <br><br>
                     <center>
-                        <img src="Design/LoggedHomepage.jpg" alt="Facultatea de Informatică Iași" width="700">
+                        <img src="Design/LoggedHomepage.png" alt="Logged Homepage Page" width="700">
                     </center>
                     <br><br>
-                    In order to sign up or log in, a new page will open up, as such.
+                    &emsp;In order to sign up or log in, a new page will open up, as such.
                     <br><br>
                     <center>
-                        <img src="Design/SignUpPage.jpg" alt="Facultatea de Informatică Iași" width="700">
+                        <img src="Design/SignUpPage.png" alt="SignUp Page" width="700">
                     </center>
                     <br><br>
+                    <center>
+                        <img src="Design/LogInPage.png" alt="LogIn Page" width="700">
+                    </center>
+                    <br><br>
+                    &emsp;After creating an account, the confirmation page will ensure and redirect the user to the
+                    Homepage.
                     <br><br>
                     <center>
-                        <img src="Design/LogInPage.jpg" alt="Facultatea de Informatică Iași" width="700">
+                        <img src="Design/SignupConfirm.png" alt="SignUp Conformation Page" width="700">
+                    </center>
+                    <br><br>
+                    &emsp;Both the users with an account and those without are able to review products uploaded by
+                    others and their identity will not be known.<br>
+                    &emsp;The reviewed characteristics of the product are selected by category, then a specific
+                    intensity
+                    of the chosen emotion is chosen, as seen in the example below.
+                    <br><br>
+                    <center>
+                        <img src="Design/SendFeedback.png" alt="Send Feedback Page" width="700">
                     </center>
                     <br><br>
 
-                    Both the users with an account and those without are be able to review products uploaded by
-                    others and their identity will not be known.<br>
-                    The reviewed characteristics of the product are selected by category, then a specific intensity
-                    of the chosen emotin is chosen, as seen in the example below.
-                    <br><br>
-                    <center>
-                        <img src="Design/AddReview.jpg" alt="Facultatea de Informatică Iași" width="700">
-                    </center>
-                    <br><br>
+                    &emsp;Then, the confirmation page will ensure the user that the data has been submitted with
+                    success.
                     Once logged, the user can upload a product, by setting a name, a description and a representative
                     picture. Each category has default characteristics to be reviewed, which will be compared, when the
                     form is closed, between the products belonging to the same category. Each uploader will decide which
                     characteristics seem fit and which characteristics they want to compare with other products'. They
-                    also can also write some specific characteristics they want users to review.<br> Each form with a
+                    can also write some specific characteristics they want users to review.<br>
+                    &emsp;Each form with a
                     product is being kept available to users for a period of time selected by the uploader, at the time
                     of uploading. The form submission process can be seen below.
                     <br><br>
                     <center>
-                        <img src="Design/AddProduct.png" alt="Facultatea de Informatică Iași" width="700">
+                        <img src="Design/AddProducts.png" alt="Add Product Page" width="700">
                     </center>
                     <br><br>
-                    Logged users can access their information on the top right button and view their profile. The
+                    &emsp; Logged users can access their information on the top right button and view their profile. The
                     personal data and profile description can be updated at any time. This data will be used
                     anonymously, in order to create detailed statistics.<br>
-                    A special section for the products that the user has already reviewed is also accesible from this
+                    &emsp; Users can also log out by pressing the "Log Out" button anytime. <br>
+                    &emsp;A special section for the products that the user uploaded also accesible from this
                     page.
 
                     <br><br>
                     <center>
-                        <img src="Design/EditMyData.jpg" alt="Facultatea de Informatică Iași" width="700">
-                    </center>
-                    <br><br>
-                    On the lower part of the page, the user can see their most reviewed product and access the full
-                    list of uploaded products, if any are present. In case they exist, the following page will open
-                    up, and the uploader will be able to see both the forms that are ongoing and the ones that
-                    passed the closing date.<br>
-                    The ongoing forms can be closed, or deleted, while on the other hand, for the closed forms,
-                    the uploader is able to see an interpreted result of the emotions felt, which is downloadable in
-                    many formats, such as HTML, CSV and JSON, as well as with more user-friendly data representation, in
-                    a PDF format.
-                    <br><br>
-                    <center>
-                        <img src="Design/MyProducts.jpg" alt="Facultatea de Informatică Iași" width="700">
+                        <img src="Design/EditMyData.png" alt="My Account Page" width="700">
                     </center>
                     <br><br>
 
-                    Our implemented main categories of products, that can be accessed from the top right header
-                    button are the following.
+                    &emsp; On the lower part of the page, the user can access the full
+                    list of uploaded products, if any are present. In case they exist, the uploader will be able to see
+                    both the forms that are ongoing and the ones that
+                    passed the closing date.<br>
+                    &emsp;The ongoing forms can be closed, or deleted, while on the other hand, for the closed forms,
+                    the uploader is able to see an interpreted result of the emotions felt, which is downloadable in
+                    many formats, such as HTML, CSV and JSON, as well as with more user-friendly data representation, in
+                    a PDF format.<br>
+                    &emsp;Once products have been deleted, the conformation page opens up.
+
                     <br><br>
                     <center>
-                        <img src="Design/ProductCategories.jpg" alt="Facultatea de Informatică Iași" width="170">
+                        <img src="Design/DeleteConfirm.png" alt="Delete Confirmation Page" width="700">
                     </center>
                     <br><br>
-                    Each contains a subcategory, such that searching for the desired product can be done with ease,
-                    and the interpretation can be done with as many common characteristics as possible.
+
+                    &emsp;Our implemented main categories of products, that can be accessed from the top right header
+                    button are the following.
+
+                    <br><br>
+                    <center>
+                        <img src="Design/MenuAllProducts.png" alt="Menu And All Products Page" width="700">
+                    </center>
+                    <br><br>
+                    &emsp;Each contains a subcategory, such that searching for the desired product can be done with
+                    ease, and the interpretation can be developed with as many common characteristics as possible.<br>
+                    &emsp;In the backgroud, the entire list of products from the selected category or subcategory are
+                    shown.
             </section>
 
         </section>
 
-
+        <br>
         <section id="HardwareInterfaces" typeof="sa:HardwareInterfaces">
             <h3>&emsp; Hardware Interfaces</h3>
             <p1>
-                From the Hardware Interfaces' point of view, there are no specific requirements for users, except a
-                basic keypad, as well as a mouse or puchpad. No specific characteristics are required.
+                &emsp;From the Hardware Interfaces' point of view, there are no requirements for users, except a
+                basic keypad, as well as a mouse or touchpad. No specific characteristics are required.
             </p1>
         </section>
 
-
+        <br>
 
         <section id="SoftwareInterfaces" typeof="sa:SoftwareInterfaces">
             <h3>&emsp; Software Interfaces
-                The used technologies are as follows:
-
-                <h4><b>&nbsp;Frontend</b>
+                <h4><b>&nbsp;Frontend</b><br>
                     <p1>
-                        The project will be sectioned by pages and the full structure can be found in our <a
-                            target="_blank" href="https://github.com/elenaopait/EmoF">Github Repository</a>, as well
-                        as in the Use Case Diagram, and <a target="_blank"
-                            href="
+                        The project will be sectioned by pages and the full structure can be found in our <u><a
+                                target="_blank" href="https://github.com/elenaopait/EmoF">Github Repository</a></u>, as
+                        well
+                        as in the <u><a href="#UseCaseDiagram"> Use Case Diagram</a></u>, and <u><a target="_blank"
+                                href="
                                 https://www.figma.com/file/roQXo0e0agj7Os4Wpa4ara/ECommerce-(Community)?node-id=2-6&t=bgmUtrEWDOOwFXyV-0">Figma
-                            Project</a>, to get a better understanding of the pages' flow.
+                                Project</a></u>, to get a better understanding of the pages' flow. The main structure
+                        consists of three folders, each containing a different format of files, HTML, CSS and
+                        Javascript. Each HTML file has a personal CSS file, while Javascript files are separated by the
+                        type of functionalities they have, such as repeating code, validating input data, or formatting
+                        information from files to be shown in the HTML divisions. The folowing types of files will put
+                        together the frontend of the application:
                         <ul>
                             <li><b>HTML</b> as markup in order to implement the structure and basic features.
                             </li>
                             <li><b>CSS</b> for implementing the style and for adding features where HTML is
-                                limitied.</li>
+                                limitied, such as grids and divisions classes, in order to assure the responsiveness.
+                            </li>
+                            <li><b>Javascript</b> used to implement important functions that replicate sections of code
+                                and to disaplay the needed information about the account, if logged, the displayed
+                                products, as well as to validate basic structures of information on input, an example
+                                being the email-input section at signup. The Json files will also be recived here
+                                in the needed fromat, in order to create the duplicated HTML divisions with products
+                                information.</li>
                         </ul>
                     </p1>
 
                 </h4>
 
-                <h4>&nbsp;Backend
+                <h4><b>&nbsp;Backend</b>
                     <p1>
 
                         <ul>
-                            <li><b>Node.js</b> to create the server and run the web application outside the
-                                client's browser.
+                            <li><b>Node.js</b> as runtime enviroment for JavaScript code, to create the server and run
+                                the web application outside the browser and create the API. As it is non-blocking and
+                                single threaded, it is highly scalable.
+                                The requests differ from multi-threaded servers, as there is no process where the thread
+                                is being picked up from the thread pool, an then each thread runs independently. This
+                                implies that for each request, no data sharing between the threads is needed.
+
                             </li>
                         </ul>
                     </p1>
                 </h4>
 
                 <h4>&nbsp;Communication
-                    <p1>
-                        <ul>
-                            <li><b></b>
-                            </li>
-                        </ul>
+                    <p1>The communication between the backend, frontend and the database will be done using Json files
+                        mainly, as there will be information such as froms, account and product data, which will be
+                        stored and passed with ease.<br>
+                        Although the used server can also initiate the request geven it's nature, the request-response
+                        format is used uni-directionaly for our project, as the interraction is conditioned by the forms
+                        that are passed from the client.<br>
+                        The connectio will be ensured by pooling, which have TCP Keep-Alive enabled for them, although
+                        new connections might be required. More on the connection and communication implementation <u><a
+                                target="_blank" href="https://nodejs.org/api/http.html">here</a></u>.
                     </p1>
                 </h4>
                 <br>
@@ -566,7 +626,8 @@
                     <p1>
                         <ul>
                             <li><b>PostgreSql</b>, the open-source relational database management system, to keep
-                                all information and media - with the database schema shown below.
+                                all information and media, with the schema of what teh database must contain shown
+                                below.
                             </li>
                         </ul>
                     </p1>
@@ -579,32 +640,40 @@
             </h3>
         </section>
 
-
+        <br>
         <section id="CommunicationInterfaces" typeof="sa:CommunicationInterfaces">
             <h3>&emsp; Communication Interfaces</h3>
 
-            The application has the following communication requirements, in order to work properly:
+            &emsp; The application has the following communication requirements, in order to work properly:
             <ul>
                 <li>Connection and constant communication with the relational database, in order to extract and upload
                     data.</li>
                 <li>Access to the network while being run, as it requires a browser. </li>
                 <li>Using HTTP, the frontend will send simple requests to the backend, while the backend will respond
-                    with static files, such as images, for profiles, and JS files, for any other kind of information
-                    extracted from the database, as well as HTML-formatted responses. </li>
+                    with static files, such as images, for profiles, and JavaScript files, for any other kind of
+                    information extracted from the database and interpreted in the backend, as well as HTML-formatted
+                    responses. In order to support the full spectrum of possible HTTP applications, the Node.js HTTP API
+                    is very low-level. This means that the communication will be done with stream handling and message
+                    parsing only.
+                </li>
             </ul>
         </section>
-
+        &emsp; The basic project structure:
+        <br>
+        <center> <img src="Images/Structure.jpg" alt="Enotion-based Feedback Structure" width="500" id="UseCaseDiagram">
+        </center>
+        <br>
         </section>
 
         <br><br><br><br>
 
-        -----------------------------------------------------------------
+
 
 
         <section id="SystemFeatures" typeof="sa:SystemFeatures">
             <h2>&emsp; System Features</h2>
 
-            Use case diagram:
+            &emsp;Below is the Use Case diagram:
             <br>
             <center> <img src="Images/UseCaseDiagram.jpg" alt="Enotion-based Feedback Use-case Diagram" width="550"
                     id="UseCseDiagram">
@@ -612,12 +681,7 @@
             <br>
 
 
-            The full project structure:
-            <br>
-            <center> <img src="Images/Structure.jpg" alt="Enotion-based Feedback Structure" width="600"
-                    id="UseCaseDiagram">
-            </center>
-            <br>
+
 
             <section id="CreatingAnAccount" typeof="sa:CreatingAnAccount">
                 <h3>&emsp; Creating an account</h3>
@@ -629,96 +693,181 @@
                     user wants to log in, or new statistics are requested.<br>
                     <b>Functional Requirements:</b> In case the process has an error, the user can refresh the page
                     safely and try inserting the information again. The invalid inputs will also create an error, such
-                    as wrongly formatted emails, in whitch case the process will hold, and the user has to type a
-                    correct format.
+                    as wrongly formatted emails from the Javascript functions, in whitch case, the process will hold,
+                    and
+                    the user has to type a
+                    correct format. The information and the encrypted password must be sent to the database and stored
+                    in order to be validated at the
+                    next login process.
                 </p1>
             </section>
-
-
-            <section id="AddProduct" typeof="sa:AddProduct">
-                <h3>&emsp;Adding a new product</h3>
-                <p1>
-                    <b>Priority:</b> High.<br>
-                    <b>Stimulus:</b> After possesing an account, the user will be able to create add a new product by
-                    accessing the top button. A new form is dispalyed and the uploader can choose the category and basic
-                    points to be reviewed, and add new features that are specific to their product.Adding a deadline is
-                    mandatory. A picture and a basic desription can also be provided. The information about the product
-                    is then added in the database.<br>
-                    <b>Functional Requirements:</b> If an error occurs, the inserted information about the project will
-                    be lost and must be inserted again.
-                </p1>
-            </section>
-
-
-            <section id="ReviewProduct" typeof="sa:ReviewProduct">
-                <h3>&emsp; Reviewing product</h3>
-                <p1>
-                    <b>Priority:</b> High.<br>
-                    <b>Stimulus:</b> By accessing the full list of products from a category, or by scrolling through the
-                    popular, or "For You" sections and pressing the button displayed for adding a review, a new page
-                    with a form will open. The form will be generated based on the infoarmation in the database, as the
-                    uploader chose which aspects to be reviewed. <br>
-                    <b>Functional Requirements:</b>In case of interruptions, the form will not be saved.
-                </p1>
-            </section>
-
-
-            <section id="ManageProducts" typeof="sa:ManageProducts">
-                <h3>&emsp; Manage products </h3>
-                <p1>
-                    <b>Priority:</b> Medium.<br>
-                    <b>Stimulus:</b> The uploaders can access the list of products on their account. The ongoing forms
-                    and the ones that have reached their deadline have different functionalities. The on going ones can
-                    be edited or deleted, while the finalised ones can only provide the files containig the statistics,
-                    extracted from the database and intrepreted and formatted in the backend.<br>
-                    <b>Functional Requirements:</b>If the deletion of a product is done by mistake, the product will
-                    still be available for a few more days on their page.
-                </p1>
-            </section>
-
-
-            <section id="UpdateAccount" typeof="sa:UpdateAccount">
-                <h3>&emsp; Update account information</h3>
-                <p1>
-                    <b>Priority:</b> Low.<br>
-                    <b>Stimulus:</b> By accessing the editing page, users can update, as the information will then be
-                    sent and updated in the database.<br>
-                    <b>Functional Requirements:</b> In case of error, the unmodified information, before editing, is
-                    being kept.
-                </p1>
-            </section>
-
-            <section id="SearchProduct" typeof="sa:SearchProduct">
-                <h3>&emsp; Search for a desired product</h3>
-                <p1>
-                    <b>Priority:</b> Low.<br>
-                    <b>Stimulus:</b>By accessing the side menu, the products will be displayed and the user will be able
-                    to choose what product they want to review.<br>
-                    <b>Functional Requirements:</b>The full list of products must be displayed, by most recent, or by
-                    the most reviewed.<br>
-                </p1>
-            </section>
+            <h3>&emsp; Loggin in </h3>
+            <p1>
+                <b>Priority:</b> High.<br>
+                <b>Stimulus:</b> In order to accces any of the functionalities presented above, at the "Creating an
+                account"
+                section, the user must also be alble to access their account again.<br>
+                <b>Functional Requirements:</b> In case of an error, the user can refresh the page
+                safely and try inserting the information again. Just as above, the invalid inputs will create an error,
+                and the user is requested to type a
+                correct format. The token and other information must then be passed and validated,
+                such that some functionalities are limited to different types of users.
+            </p1>
+        </section>
+        <br>
+        <section id="AddProduct" typeof="sa:AddProduct">
+            <h3>&emsp;Adding a new product</h3>
+            <p1>
+                <b>Priority:</b> High.<br>
+                <b>Stimulus:</b> After possesing an account, the user will be able to add a new product by
+                accessing the top button. A new form is dispalyed and the uploader can choose the category and basic
+                points to be reviewed, and add new features that are specific to their product. Adding a deadline is
+                mandatory. A picture and a basic desription can also be provided. <br>
+                <b>Functional Requirements:</b> If an error occurs, the inserted information about the product will
+                be lost and must be inserted again. File containing information about the product and it's link to the
+                uploader's account will then be validated and sent to the backend, where it will be inserted in the
+                database.
+            </p1>
         </section>
 
+        <br>
+        <section id="ReviewProduct" typeof="sa:ReviewProduct">
+            <h3>&emsp; Reviewing product</h3>
+            <p1>
+                <b>Priority:</b> High.<br>
+                <b>Stimulus:</b> By accessing the full list of products from a category, or by scrolling through the
+                popular, or "For You" sections and pressing the button displayed for adding a review, a new page
+                with a form will open. The form will be generated based on the infoarmation in the database, as the
+                uploader chose which aspects to be reviewed. <br>
+                <b>Functional Requirements:</b>In case of interruptions, the form will not be saved. The file containing
+                all the reviewed aspects, as well as the users data in case they are logged is then stored in the
+                database and the information is used for the statistics of the full category the product belongs to.
+            </p1>
+        </section>
 
-        ------------------------------------
+        <br>
+        <section id="ManageProducts" typeof="sa:ManageProducts">
+            <h3>&emsp; Manage products </h3>
+            <p1>
+                <b>Priority:</b> Medium.<br>
+                <b>Stimulus:</b> The uploaders can access the list of products on their account. The ongoing forms
+                and the ones that have reached their deadline have different functionalities. The on going ones can
+                be edited or deleted, while the finalised ones can only provide the files containig the statistics,
+                extracted from the database, intrepreted and formatted in the backend.<br>
+                <b>Functional Requirements:</b>If the deletion of a product is done by mistake, the product will
+                still be available for a few more days on their page.
+            </p1>
+        </section>
+
+        <br>
+        <section id="UpdateAccount" typeof="sa:UpdateAccount">
+            <h3>&emsp; Update account information</h3>
+            <p1>
+                <b>Priority:</b> Low.<br>
+                <b>Stimulus:</b> By accessing the editing page, users can update, as the information will then be
+                sent and updated in the database.<br>
+                <b>Functional Requirements:</b> In case of error, the unmodified information, before editing, is
+                being kept.
+            </p1>
+        </section>
+        <br>
+        <section id="SearchProduct" typeof="sa:SearchProduct">
+            <h3>&emsp; Search for a desired product</h3>
+            <p1>
+                <b>Priority:</b> Low.<br>
+                <b>Stimulus:</b>By accessing the side menu, the products will be displayed and the user will be able
+                to choose what product they want to review.<br>
+                <b>Functional Requirements:</b>The full list of products must be displayed, by most recent, or by
+                the most reviewed.<br>
+            </p1>
+        </section>
+        </section>
         <br><br><br><br>
+
+
+
+
 
         <section id="FurtherDevelopment" typeof="sa:FurtherDevelopment">
             <h2>&emsp; Further Development Strategies</h2>
-
-            <p1>
+            <p1> &emsp;The project can be further developed by creating a descriptive review of products, such that
+                using NLP, the
+                emotion that is felt can be interpreted directly from the fully written review. Other special faetures
+                can
+                be added aswell, such as seeing overall ratings for products, in order to create a top with the most
+                liked
+                or disliked products. A new type of account can be developed, for "investitors", who could see the top
+                ratings presented above, in order to find products that are worth sponsoring, with more detailed
+                information
+                about the whole market. The admin feature will also be necessary givem the increasig number of account
+                types.<br>
+                &emsp; Given the project's structure and implementation, the ground for improvement has been already
+                prepared,
+                therefore, the source can be further developed, not modified, straightforwardly.
             </p1>
         </section>
 
 
-        ------------------------------------
         <br><br><br><br>
         <section id="ResourcesDocumentation" typeof="sa:ResourcesDocumentation">
-            <h2>&emsp; Resources for this documentation</h2>
-
+            <h2>&emsp; Project documentation</h2>
             <p1>
+                <small> Mozilla Foundation</small><br>
+                <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML: HyperText Markup
+                    Language.</a><br>
+
+                <br>
+                <small> WHATWG community</small><br>
+                <a target="_blank" href="https://html.spec.whatwg.org/multipage/">HTML
+                    Living Standard.</a><br>
+
+                <br>
+                <small> Mozilla Foundation</small><br>
+                <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML">CSS: Cascading Style
+                    Sheets.</a><br>
+
+
+                <br>
+                <small> Mozilla Foundation</small><br>
+                <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML">An overview of HTTP.</a><br>
+
+                <br>
+                <small> Prof.dr. Buraga Sabin Corneliu </small><br>
+                <a target="_blank"
+                    href="https://profs.info.uaic.ro/~busaco/teach/courses/web/presentations/web-ArhitecturaServerWeb.pdf">Arhitectura
+                    Server Web.</a><br>
+
+                <br>
+                <small> Mozilla Foundation </small><br>
+                <a target="_blank"
+                    href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Node_server_without_framework">Node.js
+                    server without a framework.</a><br>
+
+                <br>
+                <small> Node.js</small><br>
+                <a target="_blank" href="https://nodejs.org/api/documentation.html">Node.js Documentation.</a><br>
+
+                <br>
+                <small> PostgreSQL </small><br>
+                <a target="_blank" href="https://www.postgresqltutorial.com/"> Introduction to PostgreSQL.</a><br>
+
+
+
+                <br>
+                <small>Brian Carlson</small><br>
+                <a target="_blank" href="https://node-postgres.com/apis/client">
+                    Node-Postgres Introduction.</a><br>
+                <small>2020.</small><br>
+
+
+                <br>
+                <small>W.S. Toh</small><br>
+                <a target="_blank" href="https://code-boxx.com/simple-javascript-password-encryption-decryption/">Simple
+                    Javascript Password Encryption & Decryption </a><br>
+                <small>February 16, 2023.</small>
             </p1>
+            <br><br><br>
+
         </section>
 
     </div>
