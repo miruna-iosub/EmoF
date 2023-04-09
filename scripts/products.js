@@ -97,17 +97,27 @@ function repeatProduct() {
     var productName = ['Luxorius Eyewear', 'Gift an Artefact', 'Arizona Green Tea', 'Green Wall Art'];
     var productType = ['sunglasses', 'art', 'art', 'painting'];
     var windowLoc;
-    var myacc = 0;
-    if (window.location.href.slice(-20) === "products-logged.html" || window.location.href.slice(-14) === "myaccount.html" || window.location.href.slice(-22) === "homepage-loggedin.html")
+    var button1, button2;
+    var oneContainer = 0;
+    if (window.location.href.slice(-20) === "products-logged.html" || window.location.href.slice(-22) === "homepage-loggedin.html")
         windowLoc = 'sendfeedbacklogged.html';
     else if (window.location.href.slice(-22) === "products-unlogged.html" || window.location.href.slice(-24) === "homepage-unloggedin.html")
         windowLoc = 'sendfeedbackunlogged.html';
     if (window.location.href.slice(-22) === "products-unlogged.html" || window.location.href.slice(-20) === "products-logged.html")
-        myacc = 1;
+        oneContainer = 1;
+    if (window.location.href.slice(-14) === "myaccount.html") {
+        button1 = "Delete Form";
+        button2 = "See Statistics";
+        windowLoc = "undefined.html";
+    }
+    else {
+        button1 = button2 = "Send Feedback";
+    }
+
     for (i = 0; i < 4; i++) {
-        document.getElementById("products").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="' + windowLoc + '">Send Feedback</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + '" alt="' + productType[i] + '"></div></div>';
-        if (myacc != 1)
-            document.getElementById("products1").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="' + windowLoc + '">Send Feedback</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + '" alt="' + productType[i] + '"></div></div>';
+        document.getElementById("products").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="' + windowLoc + '">' + button1 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + '" alt="' + productType[i] + '"></div></div>';
+        if (oneContainer != 1)
+            document.getElementById("products1").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="' + windowLoc + '">' + button2 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + '" alt="' + productType[i] + '"></div></div>';
     }
 }
 
