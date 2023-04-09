@@ -70,9 +70,10 @@ nav {
   border-right: 100px solid #F0F8FF;
 }
 
-.category {
+.category, .name {
   height: 30px;
 }
+
 
 label {
   display: block;
