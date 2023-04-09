@@ -10,9 +10,11 @@ body {
 
 nav {
   font-family: 'Taviraj';
+  font-style: normal;
   font-size: 20px;
   background-color: #F0F8FF;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -35,9 +37,7 @@ nav {
   margin: 0 10px;
 }
 
-.nav-links{
-  margin-left: 40em;
-}
+
 
 .nav-links a {
   text-decoration: none;
