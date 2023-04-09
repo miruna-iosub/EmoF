@@ -102,7 +102,7 @@
             Add a new product!</h3>
     </div>
 
-    <form>
+    <form action="addaproductconfirmation.html">
         <div class="grid-container" action="productconfirmation.html">
             <label for="picture">
                 Upload a picture of your product:
@@ -144,8 +144,17 @@
             <label for="production-date">
                 Choose your questions:
             </label>
-            <input class="category" type="text" name="question" id="question">
-
+            <div class="question-checkboxes">
+                <input type="checkbox" name="question1" value="Question 1">
+                <label for="question1">Question 1</label><br>
+                <input type="checkbox" name="question2" value="Question 2">
+                <label for="question2">Question 2</label><br>
+                <input type="checkbox" name="question3" value="Question 3">
+                <label for="question3">Question 3</label><br>
+                <input type="checkbox" name="question4" value="Question 4">
+                <label for="question3">Question 4</label><br>
+            </div>
+    
 
             <label for="new-question">
                 Add a new question:
