@@ -17,9 +17,9 @@
         }
 
         .sidenav a {
-            padding: 6px 8px 15px 16px;
+            padding: 6px 8px 14px 14px;
             text-decoration: none;
-            font-size: 19px;
+            font-size: 18px;
             color: #324B4B;
             display: block;
         }
@@ -52,11 +52,22 @@
             text-decoration: none;
         }
 
+        .main a {
+
+            background-color: transparent;
+            text-decoration: none;
+        }
+
         .main a:hover {
             color: #95B0B1;
             background-color: transparent;
             text-decoration: none;
         }
+
+        .main u:hover {
+            color: #95B0B1;
+        }
+
 
         html * {
             color: #000404;
@@ -128,12 +139,12 @@
         <a href="#ExternalInterfaceRequirements">External interface requirements</a>
         <a href="#SystemFeatures">System features</a>
         <a href="#OtherNonfunctionalRequirements">Other nonfunctional requirements</a>
+        <a href="#FurtherDevelopment">Further Development Strategies</a>
+        <a href="#ResourcesDocumentation">Project Documentation</a>
         <a target="_blank" href="https://github.com/elenaopait/EmoF">Github Repository</a>
         <a target="_blank"
             href="https://www.figma.com/file/roQXo0e0agj7Os4Wpa4ara/ECommerce-(Community)?node-id=2-6&t=bgmUtrEWDOOwFXyV-0">Figma
             project</a>
-        <a href="#FurtherDevelopment">Further Development Strategies</a>
-        <a href="#ResourcesDocumentation">Project Documentation</a>
     </div>
 
 
@@ -145,10 +156,10 @@
                 <h3>&emsp; Purpose</h3>
                 <p1>&emsp; Our collective acknowledgment of the importance of having a tool that gives real and accurate
                     feedback led us in the decision for the creation of this application. The main goal is to bring
-                    closer together the people who need feedback and the people willing to provide it. It also reduces
-                    the time spend reading all the reviews, by interpreting the selected emotions beforehand, easing the
-                    product providers' process of creating a bigger picture of the customers' emotions and opinions
-                    regarding the displayed product or service.
+                    closer together the people who need feedback and the people willing to provide it. We also want
+                    to reduce the time spend reading all the reviews, by interpreting the selected emotions beforehand,
+                    easing the product providers' process of creating a bigger picture of the customers' emotions and
+                    opinions regarding the displayed product, service, location or even person.
                 </p1>
 
             </section>
@@ -157,14 +168,15 @@
                 <p1>&emsp;
                     The intended audience of this paper are developers, testers, project managers, marketing staff,
                     users and any other category that is interested in developing or using our application. In case of
-                    inexperienced users, who want to know more about the ways of using our application, we recommend our
-                    <a href="#OverallDescription">Overall Description</a>, <a href="#UserInterfaces"> User
-                        Interfaces</a>, <a href="#SystemFeatures"> System Features</a>, as well as any other section
-                    that raises interest, starting with the Introduction, <a href="#OverallDescription"> Overall
-                        Description</a>, <a href="#ExternalInterfaceRequirements"> External Interface Requirements</a>
-                    and finishing off with <a href="#OtherNonfunctionalRequirements"> Other Nonfunctional
-                        Requirements</a>.<br> &emsp;We will address any category that can be uploaded and reviewed,
-                    being a service, person, event, object etc. as a <b>product</b>.
+                    inexperienced users who want to know more about the ways of using our application, we recommend our
+                    <u><a href="#OverallDescription">Overall Description</a></u>, <u><a href="#UserInterfaces"> User
+                            Interfaces</a></u>, <u><a href="#SystemFeatures"> System Features</a></u>, as well as any
+                    other section that raises interest, starting with the Introduction, <u><a
+                            href="#OverallDescription"> Overall Description</a></u>, <u><a
+                            href="#ExternalInterfaceRequirements"> External Interface Requirements</a></u> and finishing
+                    off with <u><a href="#FurtherDevelopment"> Further Development </a></u>.<br>
+                    &emsp;We will generally address any category that can be uploaded and reviewed, being a service,
+                    person, event, object etc. as a <b>product</b>.
                 </p1>
             </section>
 
@@ -172,14 +184,13 @@
             <section id="ProductScope" typeof="sa:ProductScope">
                 <h3>&emsp; Product Scope</h3>
                 <p1>&emsp;
-                    Our initiative is to bring together any type of provider to their clients. By doing so, the time
+                    Our initiative is to bring together any type of provider and their clients. By doing so, the time
                     spent by the providers of goods is exponentially reduced and they have have a clearer picture of
                     their customers' opinions on their service. It is useful especially for people who want to launch a
                     new product and who do not have the resources to analyse the market on their own before taking the
-                    big step. Our goal is also to create a safe place accessible to anyone that wants to share their
-                    experience and emotions on a product, or service.
+                    big step. Our goal is also to create a safe place, accessible to anyone who wants to share their
+                    experience and emotions on a product.
                 </p1>
-
             </section>
 
 
@@ -188,9 +199,8 @@
                 <p1>&emsp;
                     More information about our scope can be found on our Web Technologies teacher's website, Conf. dr.
                     Andrei Panu
-                    <a target="_blank" href="https://profs.info.uaic.ro/~andrei.panu/webprojects.html">here</a>, as well
-                    as the
-                    following articles:
+                    <u><a target="_blank" href="https://profs.info.uaic.ro/~andrei.panu/webprojects.html">here</a></u>,
+                    as well as the following articles:
 
                     <br><br>
                     <small>Nikhil Dawer </small><br>
@@ -223,8 +233,7 @@
                 </p1>
             </section>
         </section>
-        <br><br><br><br>
-        -------------------------------------------------------------------------------------
+        <br><br><br><br><br>
 
 
         <section id="OverallDescription" typeof="sa:OverallDescription">
@@ -234,12 +243,14 @@
             <section id="ProductPerspective" typeof="sa:ProductPerspective">
                 <h3>&emsp; Product Perspective</h3>
                 <p1>&emsp;
-                    Our product checks both the functional and quality requirements for products of its kind, so we will
-                    go deeper into some of its most important characteristics, which will be detailed in the sections
+                    Our application checks both the functional and quality requirements for products of its kind, so we
+                    will
+                    dig deeper into some of its most important characteristics, which will be detailed in the sections
                     below. <br>
                     &emsp; The functional requirements that define its behaviour are the possibility of creating an
-                    account if not existent, leaving room for users that are not logged to use the application in a
-                    similar manner to reviewers. However, the functionality that describes uploading products as forms
+                    account, if not existent, leaving room for users that are not logged to use the application in a
+                    similar manner to logged reviewers. However, the functionality that describes uploading products as
+                    forms
                     that expire, as well as the interpreted results is only available to the users that already have an
                     account.<br>
                     &emsp;The application also fits quality requirements, as it is precise in generating information,
@@ -715,7 +726,7 @@
         ------------------------------------
         <br><br><br><br>
         <section id="ResourcesDocumentation" typeof="sa:ResourcesDocumentation">
-            <h2>&emsp; Resources for this documentation</h2>
+            <h2>&emsp; Project documentation</h2>
 
             <p1>
             </p1>
