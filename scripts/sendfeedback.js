@@ -85,7 +85,7 @@ function getIntensityNames(intensityNumber, emotionType) {
     }
     else if (emotion == "expectant") {
         if (intensityNumber == 0) {
-            return "Intereset";
+            return "Interest";
         }
         else if (intensityNumber == 1) {
             return "Anticipation";

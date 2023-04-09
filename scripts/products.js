@@ -138,7 +138,7 @@ function addBasic() {
         productDescription = "Do you want to receive honest reviews on something? You can add your products, services, art, even yourself.";
         productHeader = "Are you interested in seeing clients' emotions with accurate charts?";
         linkedTo = "addaproduct.html";
-        button = "Sign Up";
+        button = "Add A Product";
     }
     document.getElementById("products4").innerHTML += ' <div class="grid-containerblank" id="addbasic"><div class="grid-item"><img src="' + location + '" alt="' + type + '"></div> <div class="grid-item item2"> <div class="grid-item item2-top"> <h2>' + productHeader + '</h2></div> <div class="grid-item item2-bottom"><p>' + productDescription + '</p> <br></div> <div class="sendfeedback-button"> <a href="' + linkedTo + '">' + button + '</a> </div> </div> </div>';
 
