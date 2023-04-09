@@ -90,7 +90,6 @@ label {
 
 
 /*-----------------------------*/
-
 * {
   margin-left: 0;
   margin-right: 0;
@@ -101,10 +100,10 @@ label {
 .footer {
   background-color: #008080;
   padding-top: 5px;
-  margin-top: 20px;
+  margin-top: 26px;
   bottom: 0;
   width: 100%;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   color: white;
   font-size: 70%;
 }
@@ -118,21 +117,23 @@ label {
   padding: 15px;
 }
 
-
 .footer-container {
-  display: flex;
-  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr auto; 
 }
 
+.second-item {
+  text-align: right; 
+}
 
-.footer-container p {
+.footer-container > div {
+  order: 2; 
+  margin-right: 100px;
+}
+
+.footer-container > div:first-child {
+  order: 1; 
   margin-left: 100px;
-}
-
-
-.footer-container .second-item {
-  margin-left: 600px;
-  margin-top: 25px;
 }
 
 
