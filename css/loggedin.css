@@ -57,6 +57,13 @@ nav {
   background-color: #96DBDB;
 }
 
+.grid-containerblank {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  border-left: 100px solid #F0F8FF;
+  border-right: 100px solid #F0F8FF;
+}
 
 .grid-item img {
   grid-column: 1 / 2;
@@ -128,6 +135,21 @@ p {
   background-color: #008080;
 }
 
+/*-------------------for products category----------*/
+.container3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  border-left: 100px solid #F0F8FF;
+  border-right: 100px solid #F0F8FF;
+  margin-top: 10px;
+  padding-left: 60px;
+  padding-top: 10px;
+}
+
+.products {
+  text-decoration: none;
+}
 
 
 /*-----------------------------*/
@@ -138,10 +160,9 @@ p {
   grid-template-rows: auto auto auto auto;
   border-left: 100px solid #F0F8FF;
   border-right: 100px solid #F0F8FF;
-  margin-top: 100px;
-  grid-gap: 20px;
+  margin-top: 5px;
+  grid-gap: 10px;
 }
-
 
 .item3 {
   background-color: #fff;

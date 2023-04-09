@@ -14,7 +14,7 @@
   <title>EmoF</title>
 </head>
 
-<body>
+<body onload="repeatProduct();accoutInfo() ">
   <!-- Start Navbar -->
   <nav>
     <div class="logo">
@@ -51,39 +51,39 @@
             </a>
 
             <ul>
-              <li><a href="">Service</a>
+              <li><a href="products-logged.html">Service</a>
                 <ul>
-                  <li><a href="">Event organiser</a></li>
-                  <li><a href="">Small business</a></li>
-                  <li><a href="#">Cleaning</a></li>
-                  <li><a href="">Clinic</a></li>
+                  <li><a href="products-logged.html">Event organiser</a></li>
+                  <li><a href="products-logged.html">Small business</a></li>
+                  <li><a href="products-logged.html">Cleaning</a></li>
+                  <li><a href="products-logged.html">Clinic</a></li>
                 </ul>
               </li>
-              <li><a href="">Person</a>
+              <li><a href="products-logged.html">Person</a>
                 <ul>
-                  <li><a href="">Teacher</a></li>
-                  <li><a href="">Artist</a></li>
+                  <li><a href="products-logged.html">Teacher</a></li>
+                  <li><a href="products-logged.html">Artist</a></li>
                 </ul>
               </li>
-              <li><a href="#">Product</a>
+              <li><a href="products-logged.html">Product</a>
                 <ul>
-                  <li><a href="">Skincare</a></li>
-                  <li><a href="">Drink</a></li>
-                  <li><a href="#">Eyewear</a></li>
+                  <li><a href="products-logged.html">Skincare</a></li>
+                  <li><a href="products-logged.html">Drink</a></li>
+                  <li><a href="products-logged.html">Eyewear</a></li>
                 </ul>
               </li>
-              <li><a href="">Artistic Artefact</a>
+              <li><a href="products-logged.html">Artistic Artefact</a>
                 <ul>
-                  <li><a href="">Artwork</a></li>
-                  <li><a href="">Photography</a></li>
-                  <li><a href="#">Home-made</a></li>
+                  <li><a href="products-logged.html">Artwork</a></li>
+                  <li><a href="products-logged.html">Photography</a></li>
+                  <li><a href="products-logged.html">Home-made</a></li>
                 </ul>
               </li>
-              <li><a href="">Geographical place</a>
+              <li><a href="products-logged.html">Geographical place</a>
                 <ul>
-                  <li><a href="">Monument</a></li>
-                  <li><a href="">Mall</a></li>
-                  <li><a href="#">Airport</a></li>
+                  <li><a href="products-logged.html">Monument</a></li>
+                  <li><a href="products-logged.html">Mall</a></li>
+                  <li><a href="products-logged.html">Airport</a></li>
                 </ul>
               </li>
 
@@ -94,30 +94,8 @@
     </div>
   </nav>
 
-  <div class="grid-container">
+  <div class="grid-container" id="myaccount">
 
-    <div class="grid-item">
-      <img src="..\images\sarah.png" alt="user">
-    </div>
-
-
-    <div class="grid-item item2">
-
-      <div class="grid-item item2-top">
-        <h2>Sarah Smith</h2>
-      </div>
-
-
-      <div class="grid-item item2-bottom">
-        <p>My job is to make skincare products and makeup for all skin tones.</p>
-      </div>
-
-
-      <div class="sendfeedback-button">
-        <a href="homepage-loggedin.html">Log Out</a>
-      </div>
-
-    </div>
   </div>
 
   <div class="container">
@@ -145,110 +123,25 @@
 
   </div>
 
-  <h3> My ongoing forms </h3>
 
-  <div class="container2">
-    <div class="item3" style="grid-column: 1/2; grid-row: 1/2;">
-      <p>Luxorius <b>Eyewear</b><br> Elevate your style with these luxurious and fashionable eyewear pieces from one of
-        the most iconic brands in the world. </p>
-      <a class="sendfeedback-button" href="deleteproductconfirmation.html">Delete Form</a>
+
+  <div class="products" id="products">
+    <div class="container3">
+      <h2>Past forms</h2>
     </div>
-
-
-    <div class="item3" style="grid-column: 2/3; grid-row: 1/2;">
-      <img src="..\images\sunglasses.png" alt="sunglasses">
-    </div>
-
-
-    <div class="item3" style="grid-column: 1/2; grid-row: 2/3;">
-      <p>Gift an <b>Artefact</b><br> Artefacts exist as a result of behavioural and transformational processes,
-        manufacturing these for a specific purpose and then discarding after use. </p>
-      <a class="sendfeedback-button" href="deleteproductconfirmation.html">Delete Form</a>
-    </div>
-
-
-    <div class="item3" style="grid-column: 2/3; grid-row: 2/3;">
-      <img src="..\images\artefacts.png" alt="art">
-    </div>
-
-
-    <div class="item3" style="grid-column: 1/2; grid-row: 3/4;">
-      <p>Arizona <b>Green Tea </b><br>Arizona's Green Tea is a premium blend of green tea, with just the right amount of
-        ginseng, honey and cane sugar. 100% NATURAL: Contains 100% natural green tea. </p>
-      <a class="sendfeedback-button" href="deleteproductconfirmation.html">Delete Form</a>
-    </div>
-
-
-    <div class="item3" style="grid-column: 2/3; grid-row: 3/4;">
-      <img src="..\images\arizona.png" alt="art">
-    </div>
-
-
-    <div class="item3" style="grid-column: 1/2; grid-row: 4/5;">
-      <p><b>Green</b> Wall Art<br> Green wall art is a great way to bring a bit of nature into your space, or just to
-        channel the calming influence of the outdoors. Green is proven to calm us, so introduce this colour in sleeping
-        or resting spaces.</p>
-      <a class="sendfeedback-button" href="deleteproductconfirmation.html">Delete Form</a>
-    </div>
-
-
-    <div class="item3" style="grid-column: 2/3; grid-row: 4/5;">
-      <img src="..\images\painting.png" alt="painting">
-    </div>
+    <div class="container2" id="container2"></div>
   </div>
 
-  <h3> Past forms </h3>
-  <div class="container2">
-    <div class="item3" style="grid-column: 1/2; grid-row: 1/2;">
-      <p>Luxorius <b>Eyewear</b><br> Elevate your style with these luxurious and fashionable eyewear pieces from one of
-        the most iconic brands in the world. </p>
-      <a class="sendfeedback-button" href="stats.html">Download Statistics</a>
+  <div class="products" id="products1">
+    <div class="container3">
+      <h2>My ongoing forms</h2>
     </div>
-
-
-    <div class="item3" style="grid-column: 2/3; grid-row: 1/2;">
-      <img src="..\images\sunglasses.png" alt="sunglasses">
-    </div>
-
-
-    <div class="item3" style="grid-column: 1/2; grid-row: 2/3;">
-      <p>Gift an <b>Artefact</b><br> Artefacts exist as a result of behavioural and transformational processes,
-        manufacturing these for a specific purpose and then discarding after use. </p>
-      <a class="sendfeedback-button" href="stats.html">Download Statistics</a>
-    </div>
-
-
-    <div class="item3" style="grid-column: 2/3; grid-row: 2/3;">
-      <img src="..\images\artefacts.png" alt="art">
-    </div>
-
-
-    <div class="item3" style="grid-column: 1/2; grid-row: 3/4;">
-      <p>Arizona <b>Green Tea </b><br>Arizona's Green Tea is a premium blend of green tea, with just the right amount of
-        ginseng, honey and cane sugar. 100% NATURAL: Contains 100% natural green tea. </p>
-      <a class="sendfeedback-button" href="stats.html">Download Statistics</a>
-    </div>
-
-
-    <div class="item3" style="grid-column: 2/3; grid-row: 3/4;">
-      <img src="..\images\arizona.png" alt="art">
-    </div>
-
-
-    <div class="item3" style="grid-column: 1/2; grid-row: 4/5;">
-      <p><b>Green</b> Wall Art<br> Green wall art is a great way to bring a bit of nature into your space, or just to
-        channel the calming influence of the outdoors. Green is proven to calm us, so introduce this colour in sleeping
-        or resting spaces.</p>
-      <a class="sendfeedback-button" href="stats.html">Download Statistics</a>
-    </div>
-
-
-    <div class="item3" style="grid-column: 2/3; grid-row: 4/5;">
-      <img src="..\images\painting.png" alt="painting">
-    </div>
-
-
+    <div class="container2" id="container2"></div>
   </div>
+
+
+  <script type="text/javascript" src="..\scripts\accountinfo.js"> </script>
+  <script type="text/javascript" src="..\scripts\products.js"> </script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

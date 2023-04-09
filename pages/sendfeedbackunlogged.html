@@ -15,7 +15,7 @@
   <title>EmoF</title>
 </head>
 
-<body onload="repeatEmotion();repeatEmotion1()">
+<body onload="repeatEmotion();repeatEmotion1();productToReview();">
 
   <!-- Start Navbar -->
   <nav>
@@ -47,43 +47,60 @@
           <a href="#">
             <ion-icon name="menu-outline">
 
-            </ion-icon> Search by category
-          </a>
-          <div class="dropdown-content">
-            <a href="service.html">Service</a>
-            <a href="person.html">Person</a>
-            <a href="product.html">Product</a>
-            <a href="event.html">Event</a>
-            <a href="artisticartefact.html">Artistic Artefact</a>
-            <a href="geographicalplace.html">Geographical place</a>
-          </div>
-        </div>
+              <div class="dropdown">
+                <li>
+                  <a href="#">
+                    <ion-icon name="menu-outline">
+
+                    </ion-icon> Search by category
+                  </a>
+
+                  <ul>
+                    <li><a href="products-unlogged.html">Service</a>
+                      <ul>
+                        <li><a href="products-unlogged.html">Event organiser</a></li>
+                        <li><a href="products-unlogged.html">Small business</a></li>
+                        <li><a href="products-unlogged.html">Cleaning</a></li>
+                        <li><a href="products-unlogged.html">Clinic</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="products-unlogged.html">Person</a>
+                      <ul>
+                        <li><a href="products-unlogged.html">Teacher</a></li>
+                        <li><a href="products-unlogged.html">Artist</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="products-unlogged.html">Product</a>
+                      <ul>
+                        <li><a href="products-unlogged.html">Skincare</a></li>
+                        <li><a href="products-unlogged.html">Drink</a></li>
+                        <li><a href="products-unlogged.html">Eyewear</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="products-unlogged.html">Artistic Artefact</a>
+                      <ul>
+                        <li><a href="products-unlogged.html">Artwork</a></li>
+                        <li><a href="products-unlogged.html">Photography</a></li>
+                        <li><a href="products-unlogged.html">Home-made</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="products-unlogged.html">Geographical place</a>
+                      <ul>
+                        <li><a href="products-unlogged.html">Monument</a></li>
+                        <li><a href="products-unlogged.html">Mall</a></li>
+                        <li><a href="products-unlogged.html">Airport</a></li>
+                      </ul>
+                    </li>
+
+                  </ul>
+                </li>
+              </div>
       </ul>
     </div>
   </nav>
 
-  <div class="grid-container">
-    <div class="grid-item">
-      <img src="..\images\rituals.png" alt="rituals">
-    </div>
+  <div class="grid-container" id="products5">
 
-
-    <div class="grid-item item2">
-      <div class="grid-item item2-top">
-        <h2>The Ritual of Karma Medium Gift Set</h2>
-      </div>
-
-      <div class="grid-item item2-bottom">
-        <p>Inspired by positivity and civility,
-          The Ritual of More set makes the perfect gift for a friend or
-          family member, or just to treat yourself.
-          Enjoy summer energy all year round with these soothing
-          products based on the floral aroma of lotus flower and white tea.
-          The gift box contains a shower foam 200 ml,
-          an interior perfume 250 ml, a body cream 100 g and a body scrub 125 g.</p>
-        <br>
-      </div>
-    </div>
   </div>
 
 
@@ -94,30 +111,11 @@
 
 
 
-
-    <script type="text/javascript">
-      function repeatEmotion() {
-        var i;
-        for (i = 0; i < 4; i++) {
-          document.getElementById("repeat-emotions").innerHTML += '<fieldset class="emotions" id="emotions' + i + '"> <legend>Thing-to-be-reviewed</legend><div class="emotion-section"> <label for="emotion' + i + '">Choose an emotion<label><br> <select name="emotion' + i + '" id="emotion' + i + '"> <option value="happy">Happy</option><option value="surprised">Surprised</option><option value="sad">Sad</option><option value="fearful">Fearful</option>  <option value="discusted">Discusted</option>  <option value="angry">Angry</option> <option value="appreciation">Apreciation</option>  <option value="expectant">Expectant</option> </select></div> <div class="intensity-section">  <label for="intensity">Choose an intensity</label> <form oninput="x.value=getIntensityNames(parseInt(intensity.value),' + i + ');">   <input type="range" value="1" max="2" id="intensity" name="intensity"><br><br>  <output name="x" for="intensity"> <p>  </p></output>  </form> </div> </fieldset> </div><br><br>';
-        }
-      }
-    </script>
-
     <div class="emotion-type">Default aspects:</div>
 
-    <div class="repeat-emotions" id="repeat-emotions">
-    </div>
+    <div class="repeat-emotions" id="repeat-emotions"></div>
 
-    <script type="text/javascript">
-      function repeatEmotion1() {
-        var i;
-        var begin = 4;
-        for (i = begin; i < begin + 4; i++) {
-          document.getElementById("repeat-emotions1").innerHTML += '<fieldset class="emotions" id="emotions' + i + '"> <legend>Thing-to-be-reviewed</legend><div class="emotion-section"> <label for="emotion' + i + '">Choose an emotion<label><br> <select name="emotion' + i + '" id="emotion' + i + '"> <option value="happy">Happy</option><option value="surprised">Surprised</option><option value="sad">Sad</option><option value="fearful">Fearful</option>  <option value="discusted">Discusted</option>  <option value="angry">Angry</option> <option value="appreciation">Apreciation</option>  <option value="expectant">Expectant</option> </select></div> <div class="intensity-section">  <label for="intensity">Choose an intensity</label> <form oninput="x.value=getIntensityNames(parseInt(intensity.value),' + i + ');">   <input type="range" value="1" max="2" id="intensity" name="intensity"><br><br>  <output name="x" for="intensity"> <p>  </p></output>  </form> </div> </fieldset> </div><br><br>';
-        }
-      }
-    </script>
+
     <div class="emotion-type">Chosen by owner:</div>
 
     <div class="repeat-emotions" id="repeat-emotions1"> </div>
@@ -131,8 +129,8 @@
 
 
 
-
-  <script src=" ../scripts/sendfeedback.js"></script>
+  <script type="text/javascript" src="..\scripts\products.js"> </script>
+  <script type="text/javascript" src="..\scripts\sendfeedback.js"> </script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
