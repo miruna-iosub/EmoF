@@ -106,9 +106,15 @@
             font-size: 20px;
         }
 
+
         h4:before {
             counter-increment: subsubsection;
             content: counter(subsubsection) ". ";
+            font-size: 20px;
+        }
+
+        h5 {
+            font-weight: normal;
             font-size: 20px;
         }
 
@@ -147,7 +153,6 @@
             <a href="#OverallDescription">Overall description</a>
             <a href="#ExternalInterfaceRequirements">External interface requirements</a>
             <a href="#SystemFeatures">System features</a>
-            <a href="#OtherNonfunctionalRequirements">Other nonfunctional requirements</a>
             <a href="#FurtherDevelopment">Further Development Strategies</a>
             <a href="#ResourcesDocumentation">Project Documentation</a>
             <a target="_blank" href="https://github.com/elenaopait/EmoF">Github Repository</a>
@@ -196,7 +201,7 @@
                 <h3>&emsp; Product Scope</h3>
                 <p1>&emsp;
                     Our initiative is to bring together any type of provider and their clients. By doing so, the time
-                    spent by the providers of goods is exponentially reduced and they have have a clearer picture of
+                    spent by the providers of goods is exponentially reduced and they have a clearer picture of
                     their customers' opinions on their service. It is useful especially for people who want to launch a
                     new product and who do not have the resources to analyse the market on their own before taking the
                     big step. Our goal is also to create a safe place, accessible to anyone who wants to share their
@@ -272,8 +277,8 @@
                     anonymous reviews, the level of honesty is increased and the application’s analysis of the reviews
                     are be indubitably accurate.<br>
                     &emsp;The evaluated emotions are selected from the Plutchik’s Wheel of Emotions, shown below. Each
-                    "petal" represents an emotion, while the closer to the center the emotion is, the more intense the
-                    emotion is felt.
+                    "petal" represents an emotion, while the closer to the center the emotion is, the more intense it is
+                    felt.
                     <br><br>
                     <center>
                         <img src="Images/Emotions.jpg" alt="Plutchik’s Wheel of Emotions" width="750"
@@ -372,8 +377,8 @@
                 <h3>&emsp; Assumptions and Dependencies</h3>
                 <p1>&emsp;
                     There are no commercial or third-party components included in this application, as well as no
-                    impotred software, meaning that no requirement will be oppressed by running the application in any
-                    other another environment.
+                    imported software, meaning that no requirement will be oppressed by running the application in any
+                    other environment.
                 </p1>
             </section>
 
@@ -413,7 +418,7 @@
                     </center>
                     <br><br>
 
-                    &emsp;Users who posses an account, however, will have the following information and functionalities
+                    &emsp;Users who possess an account, however, will have the following information and functionalities
                     on
                     the footer.
 
@@ -423,7 +428,7 @@
                     </center>
                     <br><br>
 
-                    &emsp;In order to go to the Homepage users must press the
+                    &emsp;In order to go to the Homepage, users must press the
                     icon on the top left corner of all pages, as it does not matter if they are logged or not.
                     <br><br>
                     <center>
@@ -437,7 +442,7 @@
                     clicking on any of the “Send feedback” buttons, the unlogged user is able to add an anonymous
                     review.<br>
                     &emsp;The header of the Homepage consists of three buttons with different functionalities. The
-                    “Sign Un” and “Log In” buttons will open up the “Sign In”, respectively the “Log In” pages,
+                    “Sign Up” and “Sign In” buttons will open up the “Sign Up”, respectively the “Sign In” pages,
                     while the “Search By Category” button will open up a pop-up menu, where all types of users will
                     be able to filter and find the category of products that they prefer to review.<br>
                     Below is the full example.
@@ -449,11 +454,10 @@
 
                     &emsp;The logged users have the same features, however, the "Add A Product" redirects the user to
                     the "Add Product" page, which will be presented later.<br>
-                    &emsp;The "Recent" section shows the products
-                    which the user last reviewed, while the "For You" presents the products recommended to review, based
-                    on the category and subcategory the user mostly reviewed on, as well as the trending and most
-                    reviewed
-                    products in the frequented categories, overall.
+                    &emsp;The "Recent" section shows the products which the user last reviewed, while the "For You"
+                    presents the products recommended to review based on the category and subcategory the user mostly
+                    reviewed on, as well as the trending and most reviewed products in the frequented categories,
+                    overall.
 
                     <br><br>
                     <center>
@@ -480,8 +484,7 @@
                     &emsp;Both the users with an account and those without are able to review products uploaded by
                     others and their identity will not be known.<br>
                     &emsp;The reviewed characteristics of the product are selected by category, then a specific
-                    intensity
-                    of the chosen emotion is chosen, as seen in the example below.
+                    intensity of the chosen emotion is picked, as seen in the example below.
                     <br><br>
                     <center>
                         <img src="Design/SendFeedback.png" alt="Send Feedback Page" width="700">
@@ -495,9 +498,8 @@
                     form is closed, between the products belonging to the same category. Each uploader will decide which
                     characteristics seem fit and which characteristics they want to compare with other products'. They
                     can also write some specific characteristics they want users to review.<br>
-                    &emsp;Each form with a
-                    product is being kept available to users for a period of time selected by the uploader, at the time
-                    of uploading. The form submission process can be seen below.
+                    &emsp;Each form with a product is being kept available to users for a period of time selected by the
+                    uploader, at the time of uploading. The form submission process can be seen below.
                     <br><br>
                     <center>
                         <img src="Design/AddProducts.png" alt="Add Product Page" width="700">
@@ -507,7 +509,7 @@
                     personal data and profile description can be updated at any time. This data will be used
                     anonymously, in order to create detailed statistics.<br>
                     &emsp; Users can also log out by pressing the "Log Out" button anytime. <br>
-                    &emsp;A special section for the products that the user uploaded also accesible from this
+                    &emsp;A special section for the products that the user uploaded is also accesible from this
                     page.
 
                     <br><br>
@@ -542,7 +544,7 @@
                     <br><br>
                     &emsp;Each contains a subcategory, such that searching for the desired product can be done with
                     ease, and the interpretation can be developed with as many common characteristics as possible.<br>
-                    &emsp;In the backgroud, the entire list of products from the selected category or subcategory are
+                    &emsp;In the background, the entire list of products from the selected category or subcategory are
                     shown.
             </section>
 
@@ -561,9 +563,9 @@
 
         <section id="SoftwareInterfaces" typeof="sa:SoftwareInterfaces">
             <h3>&emsp; Software Interfaces
-                <h4><b>&nbsp;Frontend</b><br>
+                <h5><b>1.&nbsp;Frontend</b><br><br>
                     <p1>
-                        The project will be sectioned by pages and the full structure can be found in our <u><a
+                        &emsp;The project will be sectioned by pages and the full structure can be found in our <u><a
                                 target="_blank" href="https://github.com/elenaopait/EmoF">Github Repository</a></u>, as
                         well
                         as in the <u><a href="#UseCaseDiagram"> Use Case Diagram</a></u>, and <u><a target="_blank"
@@ -573,30 +575,29 @@
                         consists of three folders, each containing a different format of files, HTML, CSS and
                         Javascript. Each HTML file has a personal CSS file, while Javascript files are separated by the
                         type of functionalities they have, such as repeating code, validating input data, or formatting
-                        information from files to be shown in the HTML divisions. The folowing types of files will put
+                        information from files to be shown in the HTML divisions. The following types of files will put
                         together the frontend of the application:
                         <ul>
                             <li><b>HTML</b> as markup in order to implement the structure and basic features.
                             </li>
                             <li><b>CSS</b> for implementing the style and for adding features where HTML is
-                                limitied, such as grids and divisions classes, in order to assure the responsiveness.
+                                limited, such as grids and divisions classes, in order to assure the responsiveness.
                             </li>
                             <li><b>Javascript</b> used to implement important functions that replicate sections of code
                                 and to disaplay the needed information about the account, if logged, the displayed
                                 products, as well as to validate basic structures of information on input, an example
                                 being the email-input section at signup. The Json files will also be recived here
                                 in the needed fromat, in order to create the duplicated HTML divisions with products
-                                information.</li>
+                                information.
+                            </li>
                         </ul>
                     </p1>
+                </h5>
 
-                </h4>
-
-                <h4><b>&nbsp;Backend</b>
+                <h5><b>2.&nbsp;Backend</b>
                     <p1>
-
                         <ul>
-                            <li><b>Node.js</b> as runtime enviroment for JavaScript code, to create the server and run
+                            <li><b>Node.js</b> as runtime environment for JavaScript code, to create the server and run
                                 the web application outside the browser and create the API. As it is non-blocking and
                                 single threaded, it is highly scalable.
                                 The requests differ from multi-threaded servers, as there is no process where the thread
@@ -606,38 +607,42 @@
                             </li>
                         </ul>
                     </p1>
-                </h4>
+                </h5>
 
-                <h4>&nbsp;Communication
-                    <p1>The communication between the backend, frontend and the database will be done using Json files
-                        mainly, as there will be information such as froms, account and product data, which will be
-                        stored and passed with ease.<br>
-                        Although the used server can also initiate the request geven it's nature, the request-response
+                <h5><b>3.&nbsp;Communication</b><br><br>
+                    <p1>&emsp;The communication between the backend, frontend and the database will be done using Json
+                        files mainly, as there will be information such as forms, account and product data, which will
+                        be stored and passed with ease.<br>
+                        Although the used server can also initiate the request given it's nature, the request-response
                         format is used uni-directionaly for our project, as the interraction is conditioned by the forms
                         that are passed from the client.<br>
-                        The connectio will be ensured by pooling, which have TCP Keep-Alive enabled for them, although
+                        The connection will be ensured by pooling, which have TCP Keep-Alive enabled for them, although
                         new connections might be required. More on the connection and communication implementation <u><a
                                 target="_blank" href="https://nodejs.org/api/http.html">here</a></u>.
                     </p1>
-                </h4>
-                <br>
+                </h5>
 
-                <h4>&nbsp;Database
+                <h5><b>4.&nbsp;Database</b><br>
                     <p1>
                         <ul>
                             <li><b>PostgreSql</b>, the open-source relational database management system, to keep
-                                all information and media, with the schema of what teh database must contain shown
-                                below.
+                                all information and media, with the schema of what the database must contain shown
+                                below, while the reviewable aspects that are being held in the database can e seen
+                                lower.
                             </li>
                         </ul>
                     </p1>
-                </h4>
+                </h5>
                 <br>
-                <center> <img src="Images/DatabaseSchema.jpg" alt="Database Schema" width="600" id="UseCaseDiagram">
-                </center>
-                <br>
-                </p1>
             </h3>
+            <center> <img src="Images/DatabaseSchema.png" alt="Database Schema" width="750" id="UseCaseDiagram">
+            </center>
+            <br><br>
+            <center> <img src="Images/Categories.png" alt="Categories" width="700" id="Categories">
+            </center>
+            <br>
+            </p1>
+
         </section>
 
         <br>
@@ -648,7 +653,7 @@
             <ul>
                 <li>Connection and constant communication with the relational database, in order to extract and upload
                     data.</li>
-                <li>Access to the network while being run, as it requires a browser. </li>
+                <li>Access to the network while running, as it requires a browser. </li>
                 <li>Using HTTP, the frontend will send simple requests to the backend, while the backend will respond
                     with static files, such as images, for profiles, and JavaScript files, for any other kind of
                     information extracted from the database and interpreted in the backend, as well as HTML-formatted
@@ -684,11 +689,11 @@
 
 
             <section id="CreatingAnAccount" typeof="sa:CreatingAnAccount">
-                <h3>&emsp; Creating an account</h3>
+                <h3>&emsp; Create an account</h3>
                 <p1>
                     <b>Priority:</b> High.<br>
                     <b>Stimulus:</b> Once the user is on the Homepage, if they want to add a product, having an account
-                    is mandatory. By clicking on the "Sign In" button and providing an username, email, age and
+                    is mandatory. By clicking on the "Sign Up" button and providing an username, email, age and
                     password, the information is sent and inserted in the database. It will be accessed everytime the
                     user wants to log in, or new statistics are requested.<br>
                     <b>Functional Requirements:</b> In case the process has an error, the user can refresh the page
@@ -701,12 +706,11 @@
                     next login process.
                 </p1>
             </section>
-            <h3>&emsp; Loggin in </h3>
+            <h3>&emsp; Log in </h3>
             <p1>
                 <b>Priority:</b> High.<br>
                 <b>Stimulus:</b> In order to accces any of the functionalities presented above, at the "Creating an
-                account"
-                section, the user must also be alble to access their account again.<br>
+                account" section, the user must also be able to access their account again.<br>
                 <b>Functional Requirements:</b> In case of an error, the user can refresh the page
                 safely and try inserting the information again. Just as above, the invalid inputs will create an error,
                 and the user is requested to type a
@@ -719,10 +723,10 @@
             <h3>&emsp;Adding a new product</h3>
             <p1>
                 <b>Priority:</b> High.<br>
-                <b>Stimulus:</b> After possesing an account, the user will be able to add a new product by
+                <b>Stimulus:</b> After possessing an account, the user will be able to add a new product by
                 accessing the top button. A new form is dispalyed and the uploader can choose the category and basic
                 points to be reviewed, and add new features that are specific to their product. Adding a deadline is
-                mandatory. A picture and a basic desription can also be provided. <br>
+                mandatory. A picture and a basic description can also be provided. <br>
                 <b>Functional Requirements:</b> If an error occurs, the inserted information about the product will
                 be lost and must be inserted again. File containing information about the product and it's link to the
                 uploader's account will then be validated and sent to the backend, where it will be inserted in the
@@ -791,19 +795,14 @@
         <section id="FurtherDevelopment" typeof="sa:FurtherDevelopment">
             <h2>&emsp; Further Development Strategies</h2>
             <p1> &emsp;The project can be further developed by creating a descriptive review of products, such that
-                using NLP, the
-                emotion that is felt can be interpreted directly from the fully written review. Other special faetures
-                can
-                be added aswell, such as seeing overall ratings for products, in order to create a top with the most
-                liked
-                or disliked products. A new type of account can be developed, for "investitors", who could see the top
-                ratings presented above, in order to find products that are worth sponsoring, with more detailed
-                information
-                about the whole market. The admin feature will also be necessary givem the increasig number of account
-                types.<br>
+                using NLP, the emotion that is felt can be interpreted directly from the fully written review. Other
+                special faetures can be added aswell, such as seeing overall ratings for products, in order to create a
+                top with the most liked or disliked products. A new type of account can be developed, for "investors",
+                who could see the top ratings presented above, in order to find products that are worth sponsoring, with
+                more detailed information about the whole market. The admin feature will also be necessary givem the
+                increasig number of account types.<br>
                 &emsp; Given the project's structure and implementation, the ground for improvement has been already
-                prepared,
-                therefore, the source can be further developed, not modified, straightforwardly.
+                prepared, therefore, the source can be further developed, not modified, straightforwardly.
             </p1>
         </section>
 
