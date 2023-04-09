@@ -1,4 +1,4 @@
-body{
+body {
   font-family: 'Taviraj';
   font-style: normal;
   font-weight: 300;
@@ -36,20 +36,20 @@ nav {
   grid-template-rows: auto;
   border-left: 100px solid #F0F8FF;
   border-right: 100px solid #F0F8FF;
-  background-color:  #96DBDB;
-  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+  background-color: #96DBDB;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
   padding-bottom: 80px;
   padding-top: 30px;
 }
 
 
-.grid-container h3{
+.grid-container h3 {
   text-size-adjust: 100;
   margin-bottom: 40px;
 }
 
 
-#submit_id{
+#submit_id {
   background-color: black;
   border-radius: 10px;
   color: white;
@@ -64,21 +64,21 @@ nav {
 
 
 .submit_id:hover {
-  opacity:1;
+  opacity: 1;
 }
 
 /*-----------------*/
 #form_id {
-flex-direction: column;
+  flex-direction: column;
 }
 
 .txt_field {
-margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 label {
-display: block;
-margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 
@@ -87,14 +87,14 @@ margin-bottom: 5px;
 
 /*-----------------------------*/
 
-*{
+* {
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 0;
 }
 
 
-.footer{
+.footer {
   background-color: #008080;
   padding-top: 5px;
   margin-top: 26px;
@@ -106,7 +106,7 @@ margin-bottom: 5px;
 }
 
 
-.footer a{
+.footer a {
   text-decoration: none;
   border-bottom: 1px solid black;
   border-radius: 10px;
@@ -114,20 +114,20 @@ margin-bottom: 5px;
   padding: 15px;
 }
 
-.footer-container{
-  display: flex; 
+.footer-container {
+  display: flex;
   box-sizing: border-box;
 }
 
 
-.footer-container p{
+.footer-container p {
   margin-left: 100px;
 }
 
 
-.footer-container .second-item{
+.footer-container .second-item {
   margin-left: 600px;
-  margin-top:25px;
+  margin-top: 25px;
 }
 
 

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../images/logo.png">
-    <link rel="stylesheet" href="../css/addaproduct.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="..\images\logo.png">
+    <link rel="stylesheet" href="../css/products.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,8 +14,7 @@
     <title>EmoF</title>
 </head>
 
-<body>
-    <!-- Start Navbar -->
+<body onload="repeatProduct();">
     <nav>
         <div class="logo">
             <a href="homepage-loggedin.html">
@@ -26,11 +25,11 @@
             <ul>
                 <li>
                     <a href="myaccount.html">
-                        <ion-icon name="person-outline">
-
-                        </ion-icon> Sarah Smith
+                        <ion-icon name="person-outline"></ion-icon>
+                        Sarah Smith
                     </a>
                 </li>
+
 
                 <li>
                     <a href="addaproduct.html">
@@ -51,7 +50,7 @@
                         </a>
 
                         <ul>
-                            <li><a id="service" href="products-logged.html">Service</a>
+                            <li><a href="products-logged.html">Service</a>
                                 <ul>
                                     <li><a href="products-logged.html">Event organiser</a></li>
                                     <li><a href="products-logged.html">Small business</a></li>
@@ -65,7 +64,7 @@
                                     <li><a href="products-logged.html">Artist</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Product</a>
+                            <li><a href="products-logged.html">Product</a>
                                 <ul>
                                     <li><a href="products-logged.html">Skincare</a></li>
                                     <li><a href="products-logged.html">Drink</a></li>
@@ -90,73 +89,40 @@
                         </ul>
                     </li>
                 </div>
-
             </ul>
         </div>
     </nav>
 
-    <div class="description">
-        <h3>Do you want to see what others think about what you bring to the market?
-            Add a new product!</h3>
-    </div>
-    <form>
-        <div class="grid-container">
-            <label for="picture">
-                Upload a picture of your product:
-            </label>
-            <input type="file" id="picture" name="picture">
-            <label for="production-date">
-                Production Date:
-            </label>
-            <input type="date" id="production-date" name="production-date">
-            <label for="expiration-date">
-                Expiration Date:
-            </label>
-            <input type="date" id="expiration-date" name="expiration-date">
 
-            <label for="production-date">
-                Add the category:
-            </label>
-            <textarea class="category" name="category"></textarea>
-
-            <label for="production-date">
-                Add the subcategory:
-            </label>
-            <textarea class="category" name="subcategory"></textarea>
-
-            <label for="production-date">
-                Choose your questions:
-            </label>
-            <textarea class="category" name="subcategory"></textarea>
-
-
-            <label for="new-question">
-                Add a new question:
-            </label>
-            <textarea class="new-question" name="question"></textarea>
-
-            <label for="description">
-                Description:
-            </label>
-            <textarea id="description" name="description"></textarea>
-            <button type="submit">
-                Submit
-            </button>
+    <div class="products" id="products">
+        <div class="container3">
+            <h2>Category: insert here</h2>
         </div>
-    </form>
+        <div class="container2" id="container2">
 
+        </div>
+
+    </div>
+
+
+
+    <script type="text/javascript" src="..\scripts\products.js"> </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
+
 <footer class="footer">
     <div class="footer-container">
+
         <div>
             <p>Leave a review on any product. <br>
                 They are anonymous, whether you logged in or not.</p>
         </div>
+
+
         <div class="second-item">
-            <a href="index.html">Send Feedback</a>
+            <a href="addaproduct.html">Add your products</a>
         </div>
     </div>
 </footer>

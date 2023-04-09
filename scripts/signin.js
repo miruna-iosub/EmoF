@@ -1,18 +1,18 @@
 var attempt = 3; // Variable to count number of attempts.
 
 // Below function Executes on click of login button.
-function validate(){
+function validate() {
     var username = document.getElementById("username_id").value;
     var password = document.getElementById("password_id").value;
-    if ( username == "username" && password == "password"){
+    if (username == "username" && password == "password") {
         window.location = "../pages/index.html"; // Redirecting to other page.
         return false;
     }
-    else{
+    else {
         attempt--; // Decrementing by one.
         alert("You have left " + attempt + " attempt;");
         // Disabling fields after 3 attempts.
-        if( attempt == 0){
+        if (attempt == 0) {
             document.getElementById("username_id").disabled = true;
             document.getElementById("password_id").disabled = true;
             return false;

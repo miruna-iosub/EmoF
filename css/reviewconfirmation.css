@@ -68,6 +68,11 @@ nav {
     padding-top: 30px;
 }
 
+
+
+
+
+
 table {
     margin-left: 400px;
 
@@ -87,24 +92,89 @@ table {
 
 }
 
-.registerbtn {
+
+
+
+body {
+    font-family: 'Taviraj';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 44px;
+    background-color: #F0F8FF;
+}
+
+
+nav {
+    font-family: 'Taviraj';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 44px;
+    letter-spacing: -1.125px;
+    background-color: #F0F8FF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+
+
+.logo img {
+    height: 100px;
+    margin-left: 40px;
+}
+
+
+
+
+.grid-container {
+    display: grid;
+    text-align: center;
+    grid-template-rows: auto;
+    border-left: 100px solid #F0F8FF;
+    border-right: 100px solid #F0F8FF;
+    background-color: #96DBDB;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+    padding-bottom: 75px;
+    padding-top: 30px;
+}
+
+table {
+    margin-left: 400px;
+    ;
+}
+
+
+.grid-container h3 {
+    text-size-adjust: 100;
+    margin-bottom: 30px;
+}
+
+
+#backtohomepage {
     background-color: black;
     border-radius: 10px;
     color: white;
     text-align: center;
     border: none;
     cursor: pointer;
-    opacity: 0.9;
+    opacity: 0.8;
     text-decoration: none;
     padding: 15px;
     margin-top: 15px;
 }
 
 
-.registerbtn:hover {
+#backtohomepage:hover {
     opacity: 1;
 }
 
+/*---------------*/
+
+
+/*--------------*/
 
 
 /*-----------------------------*/
@@ -152,5 +222,3 @@ table {
     margin-left: 600px;
     margin-top: 25px;
 }
-
-
