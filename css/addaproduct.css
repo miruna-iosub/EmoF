@@ -132,12 +132,13 @@ button:hover {
 
 .footer {
   background-color: #008080;
-  padding-top: 20px;
-  margin-top: 50px;
+  padding-top: 5px;
+  margin-top: 26px;
   bottom: 0;
   width: 100%;
   padding-bottom: 30px;
   color: white;
+  font-size: 70%;
 }
 
 
@@ -149,21 +150,24 @@ button:hover {
   padding: 15px;
 }
 
-
 .footer-container {
-  display: flex;
-  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr auto; 
 }
 
+.second-item {
+  text-align: right; 
+}
 
-.footer-container p {
+.footer-container > div {
+  order: 2; 
+  margin-right: 100px;
+  margin-top:50px;
+}
+
+.footer-container > div:first-child {
+  order: 1; 
   margin-left: 100px;
-}
-
-
-.footer-container .second-item {
-  margin-left: 500px;
-  margin-top: 30px;
 }
 
 
