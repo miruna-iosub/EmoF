@@ -95,58 +95,56 @@
         </div>
     </nav>
 
-    <div class="grid-container">
-        <div class="grid-item">
-            <img src="..\images\rituals.png" alt="rituals">
+
+
+
+    <div class="grid-container" id="products5">
+    </div>
+
+
+
+
+    <div class="container3">
+        <br><br>
+        <div class="head">How would you rate the following aspects?</div>
+
+
+
+
+
+
+        <div class="emotion-type">Default aspects:</div>
+
+        <div class="repeat-emotions" id="repeat-emotions">
         </div>
 
+        <script type="text/javascript">
+            function repeatEmotion1() {
+                var i;
+                var begin = 4;
+                for (i = begin; i < begin + 4; i++) {
+                    document.getElementById("repeat-emotions1").innerHTML += '<fieldset class="emotions" id="emotions' + i + '"> <legend>Thing-to-be-reviewed</legend><div class="emotion-section"> <label for="emotion' + i + '">Choose an emotion<label><br> <select name="emotion' + i + '" id="emotion' + i + '"> <option value="happy">Happy</option><option value="surprised">Surprised</option><option value="sad">Sad</option><option value="fearful">Fearful</option>  <option value="discusted">Discusted</option>  <option value="angry">Angry</option> <option value="appreciation">Apreciation</option>  <option value="expectant">Expectant</option> </select></div> <div class="intensity-section">  <label for="intensity">Choose an intensity</label> <form oninput="x.value=getIntensityNames(parseInt(intensity.value),' + i + ');">   <input type="range" value="1" max="2" id="intensity" name="intensity"><br><br>  <output name="x" for="intensity"> <p>  </p></output>  </form> </div> </fieldset> </div><br><br>';
+                }
+            }
+        </script>
+        <div class="emotion-type">Chosen by owner:</div>
 
-        <div class="grid-container" id="products5">
-
-        </div>
-
-
+        <div class="repeat-emotions" id="repeat-emotions1"> </div>
 
         <div class="container3">
-            <br><br>
-            <div class="head">How would you rate the following aspects?</div>
-
-
-
-
-
-
-            <div class="emotion-type">Default aspects:</div>
-
-            <div class="repeat-emotions" id="repeat-emotions">
-            </div>
-
-            <script type="text/javascript">
-                function repeatEmotion1() {
-                    var i;
-                    var begin = 4;
-                    for (i = begin; i < begin + 4; i++) {
-                        document.getElementById("repeat-emotions1").innerHTML += '<fieldset class="emotions" id="emotions' + i + '"> <legend>Thing-to-be-reviewed</legend><div class="emotion-section"> <label for="emotion' + i + '">Choose an emotion<label><br> <select name="emotion' + i + '" id="emotion' + i + '"> <option value="happy">Happy</option><option value="surprised">Surprised</option><option value="sad">Sad</option><option value="fearful">Fearful</option>  <option value="discusted">Discusted</option>  <option value="angry">Angry</option> <option value="appreciation">Apreciation</option>  <option value="expectant">Expectant</option> </select></div> <div class="intensity-section">  <label for="intensity">Choose an intensity</label> <form oninput="x.value=getIntensityNames(parseInt(intensity.value),' + i + ');">   <input type="range" value="1" max="2" id="intensity" name="intensity"><br><br>  <output name="x" for="intensity"> <p>  </p></output>  </form> </div> </fieldset> </div><br><br>';
-                    }
-                }
-            </script>
-            <div class="emotion-type">Chosen by owner:</div>
-
-            <div class="repeat-emotions" id="repeat-emotions1"> </div>
-
-            <div class="container3">
-                <input type="sendfeedback" value="Send Feedback" id="sendfeedback"
-                    onclick="sendFeedback(); window.location = '../pages/reviewconfirmation-loggedin.html'">
-            </div>
-
+            <input type="sendfeedback" value="Send Feedback" id="sendfeedback"
+                onclick="sendFeedback(); window.location = '../pages/reviewconfirmation-loggedin.html'">
         </div>
 
+    </div>
+
+    </div>
 
 
-        <script type="text/javascript" src="..\scripts\products.js"> </script>
-        <script type="text/javascript" src="..\scripts\sendfeedback.js"> </script>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="text/javascript" src="..\scripts\products.js"> </script>
+    <script type="text/javascript" src="..\scripts\sendfeedback.js"> </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 
