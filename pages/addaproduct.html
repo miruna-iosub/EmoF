@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../images/logo.png">
     <link rel="stylesheet" href="../css/addaproduct.css" type="text/css">
+    <script src="../scripts/addaproduct.js" defer></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,8 +101,9 @@
         <h3>Do you want to see what others think about what you bring to the market?
             Add a new product!</h3>
     </div>
+
     <form>
-        <div class="grid-container">
+        <div class="grid-container" action="productconfirmation.html">
             <label for="picture">
                 Upload a picture of your product:
             </label>
@@ -109,48 +112,54 @@
             <label for="product-name">
                 Name:
             </label>
-            <textarea class="category" name="category"></textarea>
+            <input type="text" class="name" name="name" id="name">
+
             
             <label for="production-date">
                 Production Date:
             </label>
-            <input type="date" id="production-date" name="production-date">
+            <input type="date" name="production-date" id="production-date">
+
             
             <label for="expiration-date">
                 Expiration Date:
             </label>
-            <input type="date" id="expiration-date" name="expiration-date">
+            <input class="date" type="date" name="expiration-date" id="expiration-date">
+
+            
 
             <label for="production-date">
                 Add the category:
             </label>
-            <textarea class="category" name="category"></textarea>
+            <input class="category" type="text" name="category" id="category">
+
+
 
             <label for="production-date">
                 Add the subcategory:
             </label>
-            <textarea class="category" name="subcategory"></textarea>
+            <input class="category" type="text" name="subcategory" id="subcategory">
+
 
             <label for="production-date">
                 Choose your questions:
             </label>
-            <textarea class="category" name="subcategory"></textarea>
+            <input class="category" type="text" name="question" id="question">
 
 
             <label for="new-question">
                 Add a new question:
             </label>
-            <textarea class="new-question" name="question"></textarea>
+            <input class="category" type="text" name="new-question" id="new-question">
 
-            <label for="description">
-                Description:
-            </label>
-            <textarea id="description" name="description"></textarea>
-            <button type="submit">
-                Submit
-            </button>
+
+            <label for="description">Description</label>
+            <input type="text" name="description" id="description">
+
+            <input class="button" type="submit" value="Submit" id="submit_id" onclick="addProduct()">
         </div>
     </form>
+
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
