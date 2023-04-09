@@ -1,0 +1,10 @@
+{
+    "name": "EmoF",
+    "version": "1.0.0",
+    "description": "Emotion Based Feedback",
+    "main": "index.html",
+    "scripts": {
+        "start": "node app.js",
+        "test": "echo \"No tests yet\" && exit 1"
+      }
+  }
