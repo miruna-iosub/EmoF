@@ -108,7 +108,7 @@ function repeatProduct() {
     if (window.location.href.slice(-14) === "myaccount.html") {
         button1 = "Delete Form";
         button2 = "See Statistics";
-        windowLoc = "undefined.html";
+        windowLoc = "deleteproductconfirmation.html";
     }
     else {
         button1 = button2 = "Send Feedback";
@@ -127,7 +127,7 @@ function addBasic() {
     var type = "product";
 
     var productDescription, linkedTo, productHeader;
-    if (window.location.href.slice(-20) === "homepage-logged.html") {
+    if (window.location.href.slice(-22) === "homepage-unlogged.html") {
         productDescription = "Are you interested in receiving honest reviews on something? You can add your products, services, art, even yourself.<br>Create an account and add your first product.";
         productHeader = "Create an account or log in to add!";
         linkedTo = "signup.html";
@@ -137,8 +137,8 @@ function addBasic() {
     else {
         productDescription = "Do you want to receive honest reviews on something? You can add your products, services, art, even yourself.";
         productHeader = "Are you interested in seeing clients' emotions with accurate charts?";
-        linkedTo = "addproduct.html";
-        button = "Add Product";
+        linkedTo = "addaproduct.html";
+        button = "Sign Up";
     }
     document.getElementById("products4").innerHTML += ' <div class="grid-containerblank" id="addbasic"><div class="grid-item"><img src="' + location + '" alt="' + type + '"></div> <div class="grid-item item2"> <div class="grid-item item2-top"> <h2>' + productHeader + '</h2></div> <div class="grid-item item2-bottom"><p>' + productDescription + '</p> <br></div> <div class="sendfeedback-button"> <a href="' + linkedTo + '">' + button + '</a> </div> </div> </div>';
 
