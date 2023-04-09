@@ -81,10 +81,6 @@ label {
   margin-bottom: 5px;
 }
 
-
-/*-----------------------------*/
-
-
 /*-----------------------------*/
 
 * {
@@ -115,20 +111,22 @@ label {
 }
 
 .footer-container {
-  display: flex;
-  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr auto; 
 }
 
+.second-item {
+  text-align: right; 
+}
 
-.footer-container p {
+.footer-container > div {
+  order: 2; 
+  margin-right: 100px;
+}
+
+.footer-container > div:first-child {
+  order: 1; 
   margin-left: 100px;
 }
-
-
-.footer-container .second-item {
-  margin-left: 600px;
-  margin-top: 25px;
-}
-
 
 /*----------------------*/
