@@ -11,11 +11,15 @@ body {
 nav {
   font-family: 'Taviraj';
   font-style: normal;
+  font-weight: 300;
   font-size: 20px;
+  line-height: 44px;
+  letter-spacing: -1.125px;
   background-color: #F0F8FF;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
 }
 
 
@@ -38,13 +42,11 @@ nav {
 }
 
 
-
 .nav-links a {
   text-decoration: none;
   color: #333;
   font-weight: lighter;
 }
-
 /*----------------------*/
 
 

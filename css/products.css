@@ -5,45 +5,48 @@ body {
     font-size: 20px;
     line-height: 44px;
     background-color: #F0F8FF;
-}
-
-
-nav {
+  }
+  
+  
+  nav {
     font-family: 'Taviraj';
     font-style: normal;
+    font-weight: 300;
     font-size: 20px;
+    line-height: 44px;
+    letter-spacing: -1.125px;
     background-color: #F0F8FF;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-
-.logo img {
+    padding: 10px;
+  }
+  
+  
+  .logo img {
     height: 100px;
     margin-left: 40px;
-}
-
-
-.nav-links ul {
+  }
+  
+  
+  .nav-links ul {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-
-.nav-links li {
+  }
+  
+  
+  .nav-links li {
     margin: 0 10px;
-}
-
-
-
-.nav-links a {
+  }
+  
+  
+  .nav-links a {
     text-decoration: none;
     color: #333;
     font-weight: lighter;
-}
+  }
 
 /*----------------------*/
 
