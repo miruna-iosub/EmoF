@@ -25,9 +25,10 @@ function addProduct() {
         alert("The name of the product must contain at least 5 characters."); 
         return false;       
     }
-    
+
     else if (!question1Checked && !question2Checked && !question3Checked && !question4Checked) {
         alert('Please choose a question.');
+        return false;
     } 
     else {
         window.location = "../pages/signupconfirmation.html";
