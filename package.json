@@ -6,5 +6,9 @@
     "scripts": {
         "start": "node app.js",
         "test": "echo \"No tests yet\" && exit 1"
-      }
-  }
+    },
+    "dependencies": {
+        "node": "^19.8.1",
+        "pg": "^8.10.0"
+    }
+}
