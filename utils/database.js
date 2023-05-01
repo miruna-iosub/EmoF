@@ -1,20 +1,22 @@
 const dotenv = require('dotenv')
 dotenv.config()
 
-const { Pool } = require('pg')
+const mongodb = require('mongodb')
+const mongoClient = mongodb.MongoClient
 
-const pool = new Pool({
-    host: "localhost",
-    user: "postgres",
-    port: 5432,
-    password: "0806",
-    database: "postgres"
-})
+const Config = require("./config");
 
-const postgresConnect = (callback) => {
-    pool.connect()
-        .then(() => {
-            console.log("[database] Connected to PostgreSQL database!")
+let _database
+
+const mongodbConnect = (callback) => {
+    const config = new Config();
+
+    mongoClient
+        .connect(
+        `mongodb+srv://${config['db_username']}:${config['db_password']}@cluster.5nyiyva.mongodb.net/?retryWrites=true&w=majority`)
+        .then(client => {
+            _database = client.db(config['db'])
+            console.log("[database] Connected to mongodb database!")
             callback()
         })
         .catch(err => {
@@ -24,44 +26,13 @@ const postgresConnect = (callback) => {
 }
 
 const getDb = () => {
-    return pool
+    if(_database) {
+        return _database
+    }
+    else {
+        throw 'No database found!'
+    }
 }
 
-exports.postgresConnect = postgresConnect
+exports.mongodbConnect = mongodbConnect
 exports.getDb = getDb
-
-/*const { Client } = require('pg');
-
-const client = new Client({
-    host: "localhost",
-    user: "postgres",
-    port: 5432,
-    password: "0806",
-    database: "postgres"
-});
-
-client.connect((err) => {
-    if (err) {
-        console.error('Failed to connect to PostgreSQL:', err.stack);
-    } else {
-        console.log('Connected to PostgreSQL database!');
-    }
-});
-
-
-client.query('SELECT * FROM users', (err, res) => {
-    if (err) {
-        console.error('Failed to execute query:', err.stack);
-    } else {
-        console.log('Query result:', res.rows);
-    }
-
-    // close the client object after all queries are executed
-    client.end((endErr) => {
-        if (endErr) {
-            console.error('Failed to close PostgreSQL client:', endErr.stack);
-        } else {
-            console.log('PostgreSQL client has been disconnected.');
-        }
-    });
-});*/

@@ -11,7 +11,7 @@ async function loginUser(event) {
 
     console.log("[login]", username, password)
 
-    await fetch('/signin', {
+    await fetch('/login-user', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ async function loginUser(event) {
         console.log("[login]", json.information)
 
         let date = new Date();
-        date.setTime(date.getTime() + (35 * 60 * 1000)); 
+        date.setTime(date.getTime() + (60 * 60 * 1000)); 
         const expires = date.toUTCString();
         document.cookie = `jwt=${json.information}; expires=${expires}; path=/`; 
 
@@ -35,6 +35,7 @@ async function loginUser(event) {
         window.alert(json.message)
     })
 }
+
 /*var attempt = 3; // Variable to count number of attempts.
 
 // Below function Executes on click of login button.

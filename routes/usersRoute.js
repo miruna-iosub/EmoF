@@ -1,7 +1,8 @@
-const {loginUser} = require('./usersController')
+const { loginUser } = require('../controllers/usersController')
 
 function usersRoute(req, res) {
-    if(req.url === '/signin' && req.method === 'POST') {
+   
+    if(req.url === '/login-user' && req.method === 'POST') {
         loginUser(req, res)
     }
     else {
