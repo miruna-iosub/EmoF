@@ -1,21 +1,3 @@
-.submitbtn {
-    margin-right: 25rem;
-    margin-left: 25rem;
-    background-color: black;
-    border-radius: 20px;
-    color: white;
-    text-align: center;
-    border: none;
-    cursor: pointer;
-    opacity: 0.9;
-    text-decoration: none;
-    padding: 5px 70px;
-    margin-top: 10px;
-    font-size: 25px;
-}
-
-
-
 body {
     font-family: 'Taviraj';
     font-style: normal;
@@ -23,10 +5,10 @@ body {
     font-size: 20px;
     line-height: 44px;
     background-color: #F0F8FF;
-}
-
-
-nav {
+  }
+  
+  
+  nav {
     font-family: 'Taviraj';
     font-style: normal;
     font-weight: 300;
@@ -38,98 +20,19 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-}
-
-
-
-.logo img {
+  }
+  
+  
+  
+  .logo img {
     height: 100px;
     margin-left: 40px;
-}
-
-
-
-
-.grid-container {
-    display: grid;
-    text-align: center;
-    grid-template-rows: auto;
-    border-left: 100px solid #F0F8FF;
-    border-right: 100px solid #F0F8FF;
-    background-color: #96DBDB;
-    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
-
-
-
-    margin-top: 80px;
-    margin-bottom: 77px;
-
-    padding-bottom: 75px;
-    padding-top: 30px;
-}
-
-
-
-
-
-
-table {
-    margin-left: 400px;
-
-}
-
-
-.grid-container h3 {
-    text-size-adjust: 100;
-    margin-bottom: 30px;
-    font-size: 30px;
-}
-
-
-
-.grid-container table {
-    padding-left: 50px;
-
-}
-
-
-
-
-body {
-    font-family: 'Taviraj';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 44px;
-    background-color: #F0F8FF;
-}
-
-
-nav {
-    font-family: 'Taviraj';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 44px;
-    letter-spacing: -1.125px;
-    background-color: #F0F8FF;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
-
-
-
-.logo img {
-    height: 100px;
-    margin-left: 40px;
-}
-
-
-
-
-.grid-container {
+  }
+  
+  
+  
+  
+  .grid-container {
     display: grid;
     text-align: center;
     grid-template-rows: auto;
@@ -139,47 +42,55 @@ nav {
     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
     padding-bottom: 75px;
     padding-top: 30px;
-}
-
-table {
+  }
+  
+  table {
     margin-left: 400px;
     ;
-}
-
-
-.grid-container h3 {
+  }
+  
+  
+  .grid-container h3 {
     text-size-adjust: 100;
     margin-bottom: 30px;
-}
-
-
-#backtohomepage {
+  }
+  
+  
+  #signup_id {
     background-color: black;
     border-radius: 10px;
     color: white;
     text-align: center;
     border: none;
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 0.9;
     text-decoration: none;
     padding: 15px;
     margin-top: 15px;
-}
-
-
-#backtohomepage:hover {
+  }
+  
+  
+  #signup_id:hover {
     opacity: 1;
-}
-
-/*---------------*/
-
-
-/*--------------*/
-
-
-/*-----------------------------*/
-
-* {
+  }
+  
+  /*---------------*/
+  #form_id {
+    flex-direction: column;
+  }
+  
+  .txt_field {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  
+  /*-----------------------------*/
+  * {
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 0;
@@ -218,10 +129,12 @@ table {
   .footer-container > div {
     order: 2; 
     margin-right: 100px;
-    margin-top:50px;
   }
   
   .footer-container > div:first-child {
     order: 1; 
     margin-left: 100px;
   }
+  
+  
+  /*--------------*/

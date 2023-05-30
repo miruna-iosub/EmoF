@@ -10,6 +10,10 @@ async function router(req, res) {
         console.log("[router] login-user api")
         usersRoute(req, res)
     } 
+    else if (req.url === '/add-user') {
+        console.log("[router] save-user api")
+        usersRoute(req, res)
+    } 
     else {
         console.log("[router] 404 error Page Not Found")
         res.writeHead(404, { 'Content-Type': 'application/json' })

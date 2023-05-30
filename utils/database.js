@@ -6,6 +6,7 @@ const mongoClient = mongodb.MongoClient
 
 const Config = require("./config");
 
+
 let _database
 
 const mongodbConnect = (callback) => {
@@ -30,7 +31,7 @@ const getDb = () => {
         return _database
     }
     else {
-        throw 'No database found!'
+        console.log('No database found!AAAAAAAAAAAAAAAAAA')
     }
 }
 
