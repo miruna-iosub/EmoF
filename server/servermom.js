@@ -2,10 +2,11 @@ var http = require('http');
 var qs = require('querystring');
 var fs = require('fs');
 var url = require('url');
-var registerController = require('./microservicii/register/registerController');
-var assetsController = require('./assetsController');
+var registerController = require('./services/registerController');
+var assetsController = require('./services/assetsController');
 const mongodbConnect = require('../utils/database').mongodbConnect
-var loginController = require('./microservicii/register/loginController');
+var loginController = require('./services/loginController');
+const userInfoController = require('./services/userInfoController');
 require("dotenv").config();
 
 
@@ -25,9 +26,10 @@ const server = http.createServer(function (request, response) {
    // }
     //else 
     //if (path === '/login'){
-        loginController.handleRequest(request,response);
+        //loginController.handleRequest(request,response);
 
     //}
+    userInfoController.handleRequest(request,response);
     assetsController.handleRequest(request,response);
     
 });

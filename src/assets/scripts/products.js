@@ -6,25 +6,25 @@ function repeatProduct1() {
             name: 'Luxorius Eyewear',
             type: 'sunglasses',
             description: 'Elevate your style with these luxurious and fashionable eyewear pieces from one of the most iconic brands in the world.',
-            src: '../images/sunglasses.png'
+            src: '../assets/images/sunglasses.png'
         },
         {
             name: 'Gift an Artefact',
             type: 'art',
             description: 'Artefacts exist as a result of behavioural and transformational processes, manufacturing these for a specific purpose and then discarding after use.',
-            src: '../images/artefacts.png'
+            src: '../assets/images/artefacts.png'
         },
         {
             name: 'Arizona Green Tea',
             type: 'art',
             description: 'Arizona\'s Green Tea is a premium blend of green tea, with just the right amount of ginseng, honey and cane sugar. 100% NATURAL: Contains 100% natural green tea.',
-            src: '../images/arizona.png'
+            src: '../assets/images/arizona.png'
         },
         {
             name: 'Green Wall Art',
             type: 'painting',
             description: 'Green wall art is a great way to bring a bit of nature into your space, or just to channel the calming influence of the outdoors. Green is proven to calm us, so introduce this colour in sleeping or resting spaces.',
-            src: '../images/painting.png'
+            src: '../assets/images/painting.png'
         }
     ]
 
@@ -84,7 +84,7 @@ function repeatProduct1() {
 
 
 function productOfTheWeek() {
-    var location = "../images/camera.png";
+    var location = "../assets/images/camera.png";
     var type = "camera";
     var productDescription = "MATOA Way Kambas Maple comes with a material form of Canadian Maple.";
     document.getElementById("products3").innerHTML += ' <div class="grid-container" id="productoftheweek"><div class="grid-item"><img src="' + location + '" alt="' + type + '"></div> <div class="grid-item item2"> <div class="grid-item item2-top"> <h2>Product Of The Week</h2></div> <div class="grid-item item2-bottom"><p>' + productDescription + '</p> </div> <div class="sendfeedback-button"> <a href="sendfeedbackunlogged.html">Send Feedback</a> </div> </div> </div>';
@@ -92,7 +92,7 @@ function productOfTheWeek() {
 
 function repeatProduct() {
     var i;
-    var productImageSource = ["../images/sunglasses.png", '../images/artefacts.png', '../images/arizona.png', '../images/painting.png'];
+    var productImageSource = ["../assets/images/sunglasses.png", '../assets/images/artefacts.png', '../assets/images/arizona.png', '../assets/images/painting.png'];
     var productDescription = ['Elevate your style with these luxurious and fashionable eyewear pieces from one of the most iconic brands in the world.', 'Artefacts exist as a result of behavioural and transformational processes, manufacturing these for a specific purpose and then discarding after use.', 'Arizona\'s Green Tea is a premium blend of green tea, with just the right amount of ginseng, honey and cane sugar. 100% NATURAL: Contains 100% natural green tea.', 'Green wall art is a great way to bring a bit of nature into your space, or just to channel the calming influence of the outdoors. Green is proven to calm us, so introduce this colour in sleeping or resting spaces.'];
     var productName = ['Luxorius Eyewear', 'Gift an Artefact', 'Arizona Green Tea', 'Green Wall Art'];
     var productType = ['sunglasses', 'art', 'art', 'painting'];
@@ -123,7 +123,7 @@ function repeatProduct() {
 
 
 function addBasic() {
-    var location = "../images/rituals.png";
+    var location = "../assets/images/rituals.png";
     var type = "product";
 
     var productDescription, linkedTo, productHeader;
@@ -147,7 +147,7 @@ function addBasic() {
 
 function productToReview() {
 
-    var imagePath = "../images/rituals.png";
+    var imagePath = "../assets/images/rituals.png";
     var type = "rituals";
     var productName = "The Ritual of Karma Medium Gift Set";
     var productDescription = "Inspired by positivity and civility, The Ritual of More set makes the perfect gift for a friend or family member, or just to treat yourself. Enjoy summer energy all year round with these soothing products based on the floral aroma of lotus flower and white tea. The gift box contains a shower foam 200 ml, an interior perfume 250 ml, a body cream 100 g and a body scrub 125 g."

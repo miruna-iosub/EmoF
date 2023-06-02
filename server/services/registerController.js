@@ -1,28 +1,13 @@
 var url = require("url");
 var fs = require("fs");
 var qs = require("querystring");
-var nodemailer = require("nodemailer");
 const randomstring = require("randomstring");
-const { getPostData } = require("../../../utils/utils");
-const User = require("../../../models/usersModel");
-const getDb = require("../../../utils/database").getDb;
+const { getPostData } = require("../../utils/utils");
+const User = require("../../models/usersModel");
+const getDb = require("../../utils/database").getDb;
 
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
 
-const MongoClient = require("mongodb").MongoClient;
-var validator = require("validator");
-var mySecret =
-  "0ffiS416IDCkVfBV5L9U5W-lcc6IXtE7uaNo-Y1UJYCOEtMgv8DWLgHG_6AWJF1mQDVP74vL1VnoFKejwDz7bTQAOfaoTBtVBkvq03GfoIMZX6UvtL8m3N3bWk2g_J7wRbNHfS2AvLJmGlj7i7gdg8DX3uWP1BqX811x0O2dabX_1sR5hMKyxKLJtCCwAIqgkMXrmbj9b1RpB5utMdA9RaMP2Hp1tZWvnkX9beIPXjq8QM4rHQwsyi73zszwzXErQx6oAvq9NZxRTyJkd_mDUIp3rPNbvlXSB_W47jyHaQtPnkBq-HH2MKPC_kG02UJsQluHKH5GKzRsoPfAznAIMg";
-const secondValidator = require("validate-data");
-// const crypto = require('crypto');
-const registrationRules = {
-  required: "email username password",
-  email: "email",
-  string: "email name username firstName lastName interests gender",
-  number: "phone",
-  isSubscribed: "boolean",
-};
 
 function renderHTML(path, response) {
   console.log(__dirname + "aici e renderhtml reg contr");
@@ -208,7 +193,7 @@ module.exports = {
 */
           ///////////////
           fs.readFile(
-            __dirname + "./../../../src/html/homepage-loggedin.html",
+            __dirname + "./../../src/html/homepage-loggedin.html",
             function (error, htmlContent) {
               if (error) {
                 response.writeHead(404);

@@ -1,5 +1,5 @@
 function accoutInfo() {
-    var imagePath = "../images/sarah.png";
+    var imagePath = "../assets/images/sarah.png";
     var type = "user";
     var userName = "Sarah Smith";
     var profileDescription = "My job is to make skincare products and makeup for all skin types."

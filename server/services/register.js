@@ -29,9 +29,9 @@ var serverPort = 8051;
 http.createServer(function (request, response) {
     
     var path = url.parse(request.url).pathname;
-    if (path.startsWith('/register')){
+    //if (path.startsWith('/register')){
         registerController.handleRequest(request,response);
-    }
+    //}
 
 }).listen(serverPort);
 console.log('Server running at localhost:' + serverPort);

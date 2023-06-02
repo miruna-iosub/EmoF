@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/x-icon" href="..\images\logo.png">
-    <link rel="stylesheet" href="../css/sendfeedback.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="..\assets\images\logo.png">
+    <link rel="stylesheet" href="../assets/css/sendfeedback.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
     <nav>
         <div class="logo">
             <a href="homepage-loggedin.html">
-                <img src="..\images\logo.png" alt="Logo">
+                <img src="..\assets\images\logo.png" alt="Logo">
             </a>
         </div>
         <div class="nav-links">
@@ -112,6 +112,7 @@
 
 
 
+        <form form id="form_id" action="/feedback" method="POST">
 
         <div class="emotion-type">Default aspects:</div>
 
@@ -132,17 +133,19 @@
         <div class="repeat-emotions" id="repeat-emotions1"> </div>
 
         <div class="container3">
-            <input type="sendfeedback" value="Send Feedback" id="sendfeedback"
-                onclick="sendFeedback(); window.location = '../pages/reviewconfirmation-loggedin.html'">
+            <input type="submit" value="Send Feedback" id="sendfeedback"
+                onclick="sendFeedback(); window.location = '../html/reviewconfirmation-loggedin.html'">
         </div>
 
-    </div>
+        </form>
 
     </div>
 
+    </div>
 
-    <script type="text/javascript" src="..\scripts\products.js"> </script>
-    <script type="text/javascript" src="..\scripts\sendfeedback.js"> </script>
+
+    <script type="text/javascript" src="..\assets\scripts\products.js"> </script>
+    <script type="text/javascript" src="..\assets\scripts\sendfeedback.js"> </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
