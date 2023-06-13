@@ -4,136 +4,155 @@ var qs = require("querystring");
 const { getPostData } = require("../../utils/utils");
 const User = require("../../models/usersModel");
 const getDb = require("../../utils/database").getDb;
-
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
-
-function renderHTML(path, response) {
-  console.log(__dirname + "aici e renderhtml reg contr");
-  fs.readFile(
-    __dirname + "/../../../src/html/" + path,
-    function (error, htmlContent) {
-      if (error) {
-        response.writeHead(404);
-
-        response.write("Couldn't load HTML / not found");
-      } else {
-        response.writeHead(200, { "Content-Type": "text/html" });
-        response.write(htmlContent);
-      }
-      response.end();
-    }
+defaultHandler = (request, response) => {
+  response.writeHead(200, {
+    "Content-Type": "application/json",
+  });
+  response.write(
+    JSON.stringify({
+      message: `API not found at ${request.url}`,
+    })
   );
-}
+  response.end();
+};
 
+async function patchHandler(request, response) {
+  let responseBody = null;
+  const qs = require("qs");
+  let chunks = [];
 
-function parseFormData(formDataString) {
-  const formData = {};
-  const pairs = formDataString.split("&");
+  request.on("data", (chunk) => {
+    chunks.push(chunk);
+  });
 
-  for (const pair of pairs) {
-    const [key, value] = pair.split("=");
-    const decodedKey = decodeURIComponent(key);
-    const decodedValue = decodeURIComponent(value);
-    formData[decodedKey] = decodedValue;
-  }
+  request.on("end", async () => {
+    const body = Buffer.concat(chunks);
 
-  return formData;
-}
+    const parsedData = JSON.parse(body, (key, value) => {
+      //currentUsername, username, age, password1, password2
+      if (key === "currentUsername") {
+        currentUsername = value;
+        return true;
+      } else if (key === "username") {
+        username = value;
+        return true;
+      } else if (key === "age") {
+        age = value;
+        return true;
+      } else if (key === "password1") {
+        password1 = value;
+        return true;
+      } else if (key === "password2") {
+        password2 = value;
+        return true;
+      }
+      return false;
+    });
 
-function parseFormValues(formDataString) {
-  const formData = parseFormData(formDataString);
+    let hashPassword = bcrypt.hashSync(
+      password2,
+      parseInt(process.env.BCRYPT_SALT)
+    );
+    //let hashPassword = password1
 
-  const { username, email, age, occupation, password, repeat_password } =
-    formData;
+    try {
+      var query = { password1: password1 };
+      const db = getDb();
+      const queryResult = await db.collection("Users").findOne(query);
+      console.log(queryResult);
 
-  return {
-    username,
-    email,
-    age,
-    occupation,
-    password1: password,
-    password2: repeat_password,
-  };
-}
-
-
-module.exports = {
-  handleRequest: async function (request, response) {
-    var path = url.parse(request.url).pathname;
-
-    if (request.method === "GET" && path.includes(".css") === false) {
-      if (path === "/user-info") {
-        renderHTML("myaccount.html", response);
-      } 
-    } else if (request.method === "POST" && path === "/user-info") {
-      console.log("[saveUser]");
-      try {
-        const body = await getPostData(request);
-        //const formValues = parseFormValues(body);
-        //console.log(formValues);
-        //var newData = JSON.stringify(formValues);
-
-        const {currentUsername, username, age, password1, password2 } =
-          JSON.parse(body);
-        console.log(
-          "[user-info-controller]",
-          currentUsername,
-          username,
-          age,
-          password1,
-          password2
-        );
-
-        {
-          let hashPassword = bcrypt.hashSync(
-            password2,
-            parseInt(process.env.BCRYPT_SALT)
-          );
-          //let hashPassword = password1
-
-          var query = { username: currentUsername };
-          const db = getDb();
-          const queryResult = await db.collection("Users").findOne(query);
-          //console.log(user);
-            console.log(bcrypt.compareSync("$2b$10$QkcYRlfLVsH9gKvRzPbv1u5seeZ5TIfXg0hsZFpG4kr1n8dq8EKPa", 'Miruna1234'))
-          if(queryResult){
-            db.collection('Users').updateOne(
-                { username: currentUsername }, // Filter condition
-                {
-                  $set: {
-                    username: username,
-                    age: age,
-                    password: hashPassword,
-                    password1: password2
-                  }
-                }
-              );
-            fs.readFile(
-                __dirname + "./../../src/html/homepage-loggedin.html",
-                function (error, htmlContent) {
-                  if (error) {
-                    response.writeHead(404);
-                    response.write("Couldn't load HTML / not found");
-                    response.end();
-                  } else {
-                    response.writeHead(200, {
-                      "Content-Type": "text/html; charset=UTF-8",
-                      "Transfer-Encoding": "chunked",
-                    });
-                    response.write(htmlContent);
-                    response.end();
-                  }
-                }
-              );
+      if (queryResult && age > 18) {
+        db.collection("Users").updateOne(
+          { username: currentUsername }, // Filter condition
+          {
+            $set: {
+              username: username,
+              age: age,
+              password: hashPassword,
+              password1: password2,
+            },
           }
-        }
-      } catch (err) {
+        );
+        responseBody = "PATCH successful.";
+
+        response.writeHead(200, {
+          "Content-Type": "application/json",
+        });
+        response.write(
+          JSON.stringify({
+            message: responseBody,
+          })
+        );
+        response.end();
+      } else {
+        responseBody =
+          "Old password is wrong and you have to be older than 18!";
+        console.log(responseBody);
+
+        response.writeHead(500, { "Content-Type": "application/json" });
+        response.end(JSON.stringify(responseBody));
+      }
+    } catch (err) {
+      {
+        responseBody = err.toString();
         console.log(err);
 
         response.writeHead(500, { "Content-Type": "application/json" });
         response.end(JSON.stringify(err));
       }
     }
-  },
-};
+  });
+}
+
+async function getHandler(req, res) {
+  // get user GET /api-user-info
+  try {
+    // userId il iau din token-ul din cookie...
+
+    /*let value = ""
+    let token1 = ""
+    const cookieHeader = req.headers?.cookie
+    console.log(cookieHeader)
+    if(cookieHeader) {
+      cookieHeader.split(`;`).forEach(cookie => {
+        let [name, ...rest] = cookie.split(`=`)
+        if(name === "jwt") {
+          value = rest.join(`=`).trim()
+          if(value) {
+            token1 =  decodeURIComponent(value)
+          }
+        }
+      });
+    }
+*/
+    let token =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiNjQ4ODQ2MGI4NDE5ZTk5M2VmZmQyNjJiIiwidXNlcm5hbWUiOiJtaXJ1bmFlbGVuYSJ9LCJpYXQiOjE2ODY2NTI1NzYsImV4cCI6MTY4NjY2MzM3Nn0.wphAkH1L248CgNpiciaRHFCBd5rQJ6OtO0orxghAUIg";
+
+    // decodificare token preluat din cookie
+    const decodedToken = jwt.verify(token, "secret");
+    const username = decodedToken["data"]["username"];
+    console.log(username)
+    // user-ul din sesiunea curenta
+    const user = await User.findByUsername(username);
+    console.log(user)
+
+    const products = await User.findProducts(username);
+
+    const responseData = {
+      user: user,
+      products: products
+    };
+
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(responseData));
+  } catch (err) {
+    console.log(err);
+
+    res.writeHead(500, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(err));
+  }
+}
+module.exports = { defaultHandler, patchHandler, getHandler };

@@ -3,7 +3,7 @@ var controller = require("./services/loginController.js");
 const mongodbConnect = require('../utils/database.js').mongodbConnect
 
 mongodbConnect(async () => {
-    server.listen(3001, () => console.log(`[server] Server running on port ${3001}`))
+    server.listen(3002, () => console.log(`[server] Server running on port ${3002}`))
 })
 
 const server = http.createServer((request, response) => {

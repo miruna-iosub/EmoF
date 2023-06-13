@@ -32,8 +32,9 @@ async function postHandler(request, response, prodId) {
     var val1 = 0;
 
     const cookieHeader = request.headers?.cookie;
+    
     let token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiNjQ3NjFmZjc1NmQyNWNlMTYzYmE2ZTNhIiwidXNlcm5hbWUiOiJtaXJ1bmFlbGVuYSJ9LCJpYXQiOjE2ODY1ODAxMjgsImV4cCI6MTY4NjU5MDkyOH0.AlMmiWHsthfg4q-4Rci8gS7rBlmbSLzLD6_R6-5kKWw";
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiNjQ4ODQ2MGI4NDE5ZTk5M2VmZmQyNjJiIiwidXNlcm5hbWUiOiJtaXJ1bmFlbGVuYSJ9LCJpYXQiOjE2ODY2NTI1NzYsImV4cCI6MTY4NjY2MzM3Nn0.wphAkH1L248CgNpiciaRHFCBd5rQJ6OtO0orxghAUIg";
 
     if (cookieHeader) {
       cookieHeader.split(`;`).forEach((cookie) => {
@@ -56,7 +57,10 @@ async function postHandler(request, response, prodId) {
       if (key === "idProduct") {
         idProduct = value;
         return true;
-      } else if (
+      } else if (key === "category") {
+        category = value;
+        return true;
+      }else if (
         key !== "formFields" &&
         key !== "idProduct" &&
         key !== "" &&
@@ -86,6 +90,7 @@ async function postHandler(request, response, prodId) {
 
     const review = new Review(
       username,
+      category,
       idProduct,
       formfieldsQuestion,
       formfieldsEmotions
@@ -93,7 +98,7 @@ async function postHandler(request, response, prodId) {
 
     try {
       review.save();
-    } catch (err) { 
+    } catch (err) {
       responseBody = err.toString();
       alert(err);
     }
@@ -114,23 +119,21 @@ async function postHandler(request, response, prodId) {
   });
 }
 
-
 async function getHandler(request, response, prodId) {
-  prodId = '6487315d9496eab941a41282'
+  prodId = "6487315d9496eab941a41282";
   const reviews = await Review.findById(prodId);
 
-    response.writeHead(200, {
-        "Content-Type": "application/json",
-    });
+  response.writeHead(200, {
+    "Content-Type": "application/json",
+  });
 
-    response.write(
-        JSON.stringify({
-            reviews
-        })
-    );
+  response.write(
+    JSON.stringify({
+      reviews,
+    })
+  );
 
-    response.end();
-  }
+  response.end();
+}
 
-
-module.exports = {defaultHandler, postHandler, getHandler};
+module.exports = { defaultHandler, postHandler, getHandler };

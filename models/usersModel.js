@@ -1,5 +1,4 @@
 const mongodb = require('mongodb')
-const ObjectId = mongodb.ObjectId
 const getDb = require('../utils/database').getDb
 
 class User {
@@ -23,8 +22,6 @@ class User {
         return String(email).toLowerCase().match(/^(([^$!{}<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
     }
 
-    
-
     save() {
         const db = getDb()
         return db.collection('Users').insertOne(this)
@@ -35,19 +32,19 @@ class User {
         return db.collection('Users').find().toArray()
     }
 
+    static findProducts(name){
+        const db = getDb()
+        return db.collection('Products').find({ username: name }).toArray()
+    }
+
     static findById(id) {
         const db = getDb()
-        return db.collection('Users').find({ _id: new mongodb.ObjectId(id) }).toArray()
+        return db.collection('Users').find({ _id: id }).toArray()
     }
 
     static findByUsername(name) {
         const db = getDb()
         return db.collection('Users').find({ username: name }).toArray()
-    }
-
-    static remove(id) {
-        const db = getDb()
-        db.collection('Users').deleteOne({ _id: new mongodb.ObjectId(id) })
     }
 
 }

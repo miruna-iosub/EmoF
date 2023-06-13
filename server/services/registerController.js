@@ -1,321 +1,226 @@
-var url = require("url");
-var fs = require("fs");
-var qs = require("querystring");
-const randomstring = require("randomstring");
-const { getPostData } = require("../../utils/utils");
-const User = require("../../models/usersModel");
-const getDb = require("../../utils/database").getDb;
-
+const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const User = require("../../models/usersModel");
+const jwt = require("jsonwebtoken");
 
-
-function renderHTML(path, response) {
-  console.log(__dirname + "aici e renderhtml reg contr");
-  fs.readFile(
-    __dirname + "/../../../src/html/" + path,
-    function (error, htmlContent) {
-      if (error) {
-        response.writeHead(404);
-
-        response.write("Couldn't load HTML / not found");
-      } else {
-        response.writeHead(200, { "Content-Type": "text/html" });
-        response.write(htmlContent);
-      }
-      response.end();
-    }
+defaultHandler = (request, response) => {
+  response.writeHead(200, {
+    "Content-Type": "application/json",
+  });
+  response.write(
+    JSON.stringify({
+      message: `API not found at ${request.url}`,
+    })
   );
-}
-
-function renderNotFoundHTML(response) {
-  console.log(__dirname);
-  fs.readFile(
-    __dirname + "/../../../src/html/pageNotFound.html",
-    function (error, htmlContent) {
-      if (error) {
-        response.writeHead(404);
-
-        response.write("Couldn't load HTML / not found");
-      } else {
-        console.log("ERROR");
-        response.writeHead(200, { "Content-Type": "text/html" });
-        response.write(htmlContent);
-      }
-      response.end();
-    }
-  );
-}
-
-function parseFormData(formDataString) {
-  const formData = {};
-  const pairs = formDataString.split("&");
-
-  for (const pair of pairs) {
-    const [key, value] = pair.split("=");
-    const decodedKey = decodeURIComponent(key);
-    const decodedValue = decodeURIComponent(value);
-    formData[decodedKey] = decodedValue;
-  }
-
-  return formData;
-}
-
-function parseFormValues(formDataString) {
-  const formData = parseFormData(formDataString);
-
-  const { username, email, age, occupation, password, repeat_password } =
-    formData;
-
-  return {
-    username,
-    email,
-    age,
-    occupation,
-    password1: password,
-    password2: repeat_password,
-  };
-}
-
-
-function sendJSON(objectResult, response) {
-
-  response.writeHead(200, { 'Content-Type': 'application/json' });
-  // response.write(JSON.stringify(queryResult));
-  console.log(JSON.stringify(objectResult));    
-  response.write(JSON.stringify(objectResult));
   response.end();
-}
+};
 
-module.exports = {
-  handleRequest: async function (request, response) {
-    var path = url.parse(request.url).pathname;
-
-    if (request.method === "GET" && path.includes(".css") === false) {
-      if (path === "/register") {
-        renderHTML("signup.html", response);
-      } else
-       if (path.startsWith("/registerUsername=")) {
-        var usernameToCheck = path.split("=", 2)[1].toLowerCase();
-
-        var jsonResult = {
-          status: 200,
-          response: "valid",
-        };
-
-        db = getDb();
-
-        var query = { username: usernameToCheck };
-
-        const queryResult = await db.collection("Users").find(query).toArray();
-        console.log(queryResult);
-
-        if (!queryResult.length) {
-          jsonResult.response = "invalid";
-          sendJSON(jsonResult, response);
-        } else {
-          sendJSON(jsonResult, response);
-            
+async function postHandler(request, response) {
+    let responseBody = null;
+    const qs = require("qs");
+    let chunks = [];
+  
+    request.on("data", (chunk) => {
+      chunks.push(chunk);
+    });
+  
+    request.on("end", async () => {
+      const body = Buffer.concat(chunks);
+  
+      const parsedData = JSON.parse(body, (key, value) => {
+        if (key === "username") {
+          username = value;
+          return true;
+        } else if (key === "email") {
+          email = value;
+          return true;
+        } else if (key === "age") {
+          age = value;
+          return true;
+        } else if (key === "occupation") {
+          occupation = value;
+          return true;
+        } else if (key === "password1") {
+          password1 = value;
+          return true;
+        } else if (key === "password2") {
+          password2 = value;
+          return true;
         }
-            
-        
-      } else {
-        response.writeHead(404);
-        response.write("Couldn't load HTML / not found");
-      }
-    } else if (request.method === "POST") {
-      console.log("[saveUser]");
+  
+        return false;
+      });
+  
+      let hashPassword = bcrypt.hashSync(
+        password1,
+        parseInt(process.env.BCRYPT_SALT)
+      );
+  
       try {
-        const body = await getPostData(request);
-        //const formValues = parseFormValues(body);
-        //console.log(formValues);
-        //var newData = JSON.stringify(formValues);
-
-        const { username, email, age, occupation, password1, password2 } =
-          JSON.parse(body);
-        console.log(
-          "[register-controller]",
-          username,
-          email,
-          age,
-          occupation,
-          password1,
-          password2
-        );
-
-        {
-          let hashPassword = bcrypt.hashSync(
-            password1,
-            parseInt(process.env.BCRYPT_SALT)
+        if (
+          !User.validateUsernameFormat(username) ||
+          !username ||
+          username === ""
+        ) {
+          console.log(
+            "Username format is invalid. Don't use special characters such as $, <>, ! or {}!"
           );
-          //let hashPassword = password1
-
-          const user = new User(
-            username,
-            hashPassword,
-            email,
-            age,
-            occupation,
-            password1
-          );
-
-          const db = getDb();
-          db.collection("Users").insertOne(user);
-          console.log(user);
-
-          /*response.writeHead(201, { "Content-Type": "application/json" });
-          response.end(
+          responseBody =
+            "Username format is invalid. Don't use special characters such as $, ! or {}!";
+  
+          response.writeHead(200, {
+            "Content-Type": "application/json",
+          });
+          response.write(
             JSON.stringify({
-              route: "/signin.html",
-              message: "Your account has been created successfully!",
+              message: responseBody,
             })
-          );*/
-
-
-          ///////////////
-          
-          /*var newToken = randomstring.generate(64);
-
-          var query = { token: newToken };
-
-          var queryResult = await db.collection("Tokens").find(query).toArray();
-          if (!(queryResult.length === 0)) {
-                  newToken = randomstring.generate(64);
-              } else {
-                  var newTokenRow = {
-                      token: newToken,
-                      createdAt: new Date().toISOString(),
-                      cont_id: user.email
-                  }
-                  const db = getDb()
-                  db.collection("Tokens").insertOne(newTokenRow);
-                }
-
-*/
-          ///////////////
-          fs.readFile(
-            __dirname + "./../../src/html/homepage-loggedin.html",
-            function (error, htmlContent) {
-              if (error) {
-                response.writeHead(404);
-                response.write("Couldn't load HTML / not found");
-                response.end();
-              } else {
-                response.writeHead(200, {
-                  "Content-Type": "text/html; charset=UTF-8",
-                  "Transfer-Encoding": "chunked",
-                });
-                response.write(htmlContent);
-                response.end();
-              }
-            }
           );
+          response.end();
+        } else {
+          const findUser = await User.findByUsername(username);
+  
+          if (!findUser.length) {
+            if (
+              !User.validateEmailFormat(email) ||
+              !email ||
+              email === ""
+            ) {
+              console.log(
+                "[user-controller] Email must not contain special characters such as $, ! or {}!"
+              );
+  
+              responseBody =
+                "Email must not contain special characters such as $, ! or {}!";
+  
+              response.writeHead(200, {
+                "Content-Type": "application/json",
+              });
+              response.write(
+                JSON.stringify({
+                  message: responseBody,
+                })
+              );
+              response.end();
+            } else if (
+              !User.validatePasswordFormat(password1) ||
+              !password1 ||
+              password1 === ""
+            ) {
+              console.log(
+                "[user-controller] Password: 1 number, 1 uppercase, 1 lowercase and at least 8 from the mentioned characters!"
+              );
+              responseBody =
+                "Password: 1 number, 1 uppercase, 1 lowercase and at least 8 from the mentioned characters!";
+  
+              response.writeHead(200, {
+                "Content-Type": "application/json",
+              });
+              response.write(
+                JSON.stringify({
+                  message: responseBody,
+                })
+              );
+              response.end();
+            } else if (password1 !== password2) {
+              console.log(
+                "[user-controller] Please make sure your passwords match!"
+              );
+  
+              responseBody = "Please make sure your passwords match!";
+  
+              response.writeHead(200, {
+                "Content-Type": "application/json",
+              });
+              response.write(
+                JSON.stringify({
+                  message: responseBody,
+                })
+              );
+              response.end();
+            } else {
+              const user = new User(
+                username,
+                hashPassword,
+                email,
+                age,
+                occupation,
+                password2
+              );
+  
+              await user.save();
+  
+              responseBody = "POST successful.";
+  
+              response.writeHead(200, {
+                "Content-Type": "application/json",
+              });
+              response.write(
+                JSON.stringify({
+                  message: responseBody,
+                })
+              );
+              response.end();
+            }
+          } else {
+            console.log(
+              "[user-controller] Username (%s) already exists!",
+              username
+            );
+            response.writeHead(409, { "Content-Type": "application/json" });
+  
+            response.end(
+              JSON.stringify({
+                message: "Username already exists!",
+              })
+            );
+          }
         }
       } catch (err) {
+        responseBody = err.toString();
         console.log(err);
-
+  
         response.writeHead(500, { "Content-Type": "application/json" });
         response.end(JSON.stringify(err));
       }
-    }
-  },
-};
-
-/*const User = require("./usersModel");
-const { getPostData } = require("./utils");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const mongodb = require('mongodb')
-const getDb = require('./database').getDb
-var url = require('url');
-var fs = require('fs');
-
-
-function renderHTML(path, res) {
-    console.log(__dirname);
-    fs.readFile(__dirname + "./../../../src/html/" + path, function (error, htmlContent) {
-        if (error) {
-            response.writeHead(404);
-
-            response.write("Couldn't load HTML / not found");
-        } else {
-            response.writeHead(200, { 'Content-Type': 'text/html' })
-            response.write(htmlContent);
-        }
-        response.end();
     });
-}
+  }
+  
 
-
-function renderNotFoundHTML(res) {
-    console.log(__dirname);
-    fs.readFile(__dirname + "./../../../src/html/pageNotFound.html", function (error, htmlContent) {
-        
-        if (error) {
-            response.writeHead(404);
-            
-            response.write("Couldn't load HTML / not found");
-        } else {
-            console.log('ERROR');
-            response.writeHead(200, { 'Content-Type': 'text/html' })
-            response.write(htmlContent);
-        }
-        response.end();
-    });
-}
-
-module.exports = {
-handleRequest:async function saveUser(req, res) {
-
-    
-    var path = url.parse(request.url).pathname;
-
-    if (request.method === "GET" && path.includes(".css") === false) {
-        
-        if (path === "/register") {
-            renderHTML("signup.html", res);
-        }  else {
-            response.writeHead(404);
-            response.write("Couldn't load HTML / not found");
-        }
-    } 
-else if (request.method === "POST") {
-  console.log("[saveUser]");
+async function getHandler(request, response, id) {
+  // get user GET /register/{id}
   try {
-    const body = await getPostData(req);
+    const user = await User.findById(id);
 
-    const { username, email, age, occupation, password1, password2 } = JSON.parse(body);
-    console.log("[register-controller]", username, email, age, occupation, password1, password2);
-{
-          let hashPassword = bcrypt.hashSync(
-            password1,
-            parseInt(process.env.BCRYPT_SALT)
-          );
-
-          const user = new User(username, hashPassword, email, age, occupation, password1);
-            console.log("[verific db acm");
-        
-            
-         
-        const db = getDb();
-        db.collection('Users').insertOne(user);
-        console.log(user);
-
-        response.writeHead(201, { "Content-Type": "application/json" });
-        response.end(
-          JSON.stringify({
-            route: "/signin.html",
-            message: "Your account has been created successfully!",
-          })
-        );
-      
+    if (!user) {
+      response.writeHead(404, { "Content-Type": "application/json" });
+      response.end(JSON.stringify({ message: "User Not Found" }));
+    } else {
+      response.writeHead(200, { "Content-Type": "application/json" });
+      response.end(JSON.stringify(user));
     }
-      
   } catch (err) {
     console.log(err);
 
     response.writeHead(500, { "Content-Type": "application/json" });
     response.end(JSON.stringify(err));
   }
-}}
 }
-*/
+
+
+// get users GET /get-users
+async function getHandlerAll(req, res) {
+  try {
+    const users = await User.findAll();
+
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(users));
+  } catch (err) {
+    console.log(err);
+
+    res.writeHead(500, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(err));
+  }
+}
+
+module.exports = { defaultHandler, postHandler, getHandler, getHandlerAll };

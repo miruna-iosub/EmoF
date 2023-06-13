@@ -5,8 +5,9 @@ const getDb = require('../utils/database').getDb
 
 class Review {
 
-    constructor(username, productid, fieldsQuestions, fieldsEmotions) {
-        this.username = username
+    constructor(username, category, productid, fieldsQuestions, fieldsEmotions) {
+        this.username = username;
+        this.category = category;
         this.productid = productid;
         this.fieldsQuestions = fieldsQuestions;
         this.fieldsEmotions = fieldsEmotions;
@@ -17,7 +18,7 @@ class Review {
         try {
             db.collection('Reviews').insertOne(this);
         } catch (err) {
-            console.log("[Error]: " + e);
+            console.log("[Error1]: " + e);
         }
     }
 
@@ -26,7 +27,7 @@ class Review {
         try {
             return db.collection('FormFields').find({_id: new mongodb.ObjectId(id)}).toArray();
         } catch (e) {
-            console.log("[Error]: " + e);
+            console.log("[Error1]: " + e);
         }
         return false;
     }
@@ -37,7 +38,7 @@ class Review {
         try{
         return db.collection('FormFields').find({productId: new mongodb.ObjectId(prodId)}).toArray()
         } catch (e) {
-            console.log("[Error]: " + e);
+            console.log("[Error3]: " + e);
         }
         return false;
     }
@@ -48,7 +49,7 @@ class Review {
         try{
         db.collection('Reviews').deleteOne({_id: new mongodb.ObjectId(id)})
         } catch (e) {
-            console.log("[Error]: " + e);
+            console.log("[Error4]: " + e);
         }
         return false;
     }

@@ -1,24 +1,25 @@
 const http = require("http");
-var controller = require("./services/formsController.js");
+var controller = require("./services/userInfoController.js");
 const mongodbConnect = require('../utils/database.js').mongodbConnect
 
 mongodbConnect(async () => {
-    server.listen(3004, () => console.log(`[server] Server running on port ${3004}`))
+    server.listen(3006, () => console.log(`[server] Server running on port ${3006}`))
 })
 
 const server = http.createServer((request, response) => {
     const reqURL = request.url;
     const reqMethod = request.method;
-    switch (reqMethod) {
-        case "POST": {
-            if (reqURL === "/save-review") {
-                controller.postHandler(request, response);
+    
+    switch (reqMethod) { 
+        case "GET": {
+            if (reqURL ==="/get-api-user" ) {
+                controller.getHandler(request, response)
             }
             break;
         }
-        case "GET": {
-            if (reqURL === "/save-review") {
-                controller.getHandler(request, response, "all", null);
+        case "PATCH": {
+            if (reqURL === "/edit-user") {
+                controller.patchHandler(request, response);
             }
             break;
         }
