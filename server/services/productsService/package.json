@@ -1,0 +1,17 @@
+{
+  "name": "products",
+  "version": "1.0.0",
+  "description": "extracts the products from the database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon productsServer.js"
+  },
+  "author": "EmoF",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "mongodb": "^5.5.0",
+    "qs": "^6.11.2"
+  }
+}

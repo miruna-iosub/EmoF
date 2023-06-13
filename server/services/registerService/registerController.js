@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const User = require("../../models/usersModel");
+const User = require("../../../models/usersModel");
 const jwt = require("jsonwebtoken");
 
 defaultHandler = (request, response) => {
