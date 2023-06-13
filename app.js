@@ -3,14 +3,12 @@ const { router } = require('./routes/router')
 const mongodbConnect = require('./utils/database').mongodbConnect
 require("dotenv").config();
 
-const PORT = process.env.PORT || 3000;
 
 mongodbConnect(async () => {
-    server.listen(PORT, () => console.log(`[server] Server running on port ${PORT}`))
-})
+    server.listen(4000, () => console.log(`[server] Server running on port ${4000}`))
+}) 
 
 const server = http.createServer((req, res) => {
-    
-    router(req, res)
+    console.log("@iao")
 
 })
