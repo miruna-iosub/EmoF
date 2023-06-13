@@ -4,7 +4,7 @@
     "description": "Emotion Based Feedback",
     "main": "homepage-unloggedin.html",
     "scripts": {
-        "start": "node app.js",
+        "start": "nodemon app.js",
         "dev": "nodemon app.js",
         "test": "echo \"No tests yet\" && exit 1"
     },

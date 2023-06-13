@@ -32,7 +32,7 @@ async function userRegister(event) {
     }).then(res => {
         return res.json()
     }).then(json => {
-        console.log(`http://localhost:3000{json.route}`)
+        console.log(`http://localhost:3001{json.route}`)
         window.location.href = json.route
         window.alert(json.message)
     })
