@@ -31,7 +31,7 @@ const getDb = () => {
         return _database
     }
     else {
-        console.log('No database found!')
+        console.log('No database found!!!')
     }
 }
 

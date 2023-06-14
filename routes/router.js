@@ -6,12 +6,8 @@ async function router(req, res) {
         console.log("[router] public route", req.url)
         productsRoute(req, res)
     } 
-    else if (req.url === '/login-user') {
+    else if (req.url === '/login') {
         console.log("[router] login-user api")
-        usersRoute(req, res)
-    } 
-    else if (req.url === '/add-user') {
-        console.log("[router] save-user api")
         usersRoute(req, res)
     } 
     else {

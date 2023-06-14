@@ -1,9 +1,9 @@
-const { loginUser, saveUser } = require('../controllers/usersController')
+const login = require("../server/services/loginService/loginController");
 
 function usersRoute(req, res) {
    
-    if(req.url === '/login-user' && req.method === 'POST') {
-        loginUser(req, res)
+    if(req.url === '/login' && req.method === 'POST') {
+        login.postHandler(req, res)
     }
     else if(req.url === '/add-user' && req.method === 'POST') { // register
         saveUser(req, res)

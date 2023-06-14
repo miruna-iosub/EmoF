@@ -81,11 +81,16 @@ function parseFormValues(formDataString) {
   };
 }
 
+
 async function postHandler(request, response) {
   console.log("[loginUser]");
   {
     try {
       const body = await getPostData(request);
+      console.log(body)
+      //const formValues = parseFormValues(body);
+      //console.log(formValues);
+      //var newData = JSON.stringify(formValues);
 
       const { username, password } = JSON.parse(body);
       console.log(username);
@@ -183,5 +188,11 @@ async function postHandler(request, response) {
     }
   }
 }
+
+
+
+
+
+
 
 module.exports = { defaultHandler, postHandler };

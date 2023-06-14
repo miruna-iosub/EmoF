@@ -1,37 +1,46 @@
-const form = document.getElementById('login-form')
-
-form.addEventListener('submit', loginUser)
+const form = document.getElementById('form_id');
+form.addEventListener('submit', loginUser);
 
 async function loginUser(event) {
-    event.preventDefault()
+  event.preventDefault();
 
-    // form data
-    const username = document.getElementById('username_id').value
-    const password = document.getElementById('password_id').value
+  // form data
+  const username = document.getElementById('username_id').value;
+  const password = document.getElementById('password_id').value;
 
-    console.log("[login]", username, password)
+  console.log("[login]", username, password);
 
-    await fetch('/login-user', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            username,
-            password
-        })
-    }).then(res => {
-        return res.json()
-    }).then(json => {
+  try {
+    const response = await fetch('http://localhost:3002/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username,
+        password,
+      }),
+    });
 
-        console.log("[login]", json.information)
+    if (!response.ok) {
+      throw new Error('Login failed');
+    }
 
-        let date = new Date();
-        date.setTime(date.getTime() + (60 * 60 * 1000)); 
-        const expires = date.toUTCString();
-        document.cookie = `jwt=${json.information}; expires=${expires}; path=/`; 
+    const json = await response.json();
 
-        window.location.href = json.route
-        window.alert(json.message)
-    })
+    console.log("[login]", json.information);
+
+    let date = new Date();
+    date.setTime(date.getTime() + (35 * 60 * 1000)); // 35 min cookie
+    const expires = date.toUTCString();
+    document.cookie = `jwt=${json.information}; expires=${expires}; path=/`;
+
+   // window.location.href = json.route;
+   window.location.href =  `${json.route}?username=${encodeURIComponent(username)}`;
+ 
+   window.alert(json.message);
+  } catch (error) {
+    console.error(error);
+    window.alert('Login failed');
+  }
 }
