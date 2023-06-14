@@ -72,6 +72,7 @@ async function postHandler(request, response) {
           });
           response.write(
             JSON.stringify({
+              route: "/signup.html",
               message: responseBody,
             })
           );
@@ -97,6 +98,7 @@ async function postHandler(request, response) {
               });
               response.write(
                 JSON.stringify({
+                  route: "/signup.html",
                   message: responseBody,
                 })
               );
@@ -117,6 +119,7 @@ async function postHandler(request, response) {
               });
               response.write(
                 JSON.stringify({
+                  route: "/signup.html",
                   message: responseBody,
                 })
               );
@@ -133,6 +136,7 @@ async function postHandler(request, response) {
               });
               response.write(
                 JSON.stringify({
+                  route: "/signup.html",
                   message: responseBody,
                 })
               );
@@ -156,6 +160,7 @@ async function postHandler(request, response) {
               });
               response.write(
                 JSON.stringify({
+                  route: "/signin.html",
                   message: responseBody,
                 })
               );
@@ -170,6 +175,7 @@ async function postHandler(request, response) {
   
             response.end(
               JSON.stringify({
+                route: "/signup.html",
                 message: "Username already exists!",
               })
             );

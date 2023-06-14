@@ -10,6 +10,11 @@ const server = http.createServer((request, response) => {
     const reqURL = request.url;
     const reqMethod = request.method;
     
+    response.setHeader('Access-Control-Allow-Origin', 'http://localhost:4000');
+    response.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    response.setHeader('Access-Control-Allow-Credentials', true);
+    
     switch (reqMethod) { 
         case "POST": {
             if (reqURL === "/register") {

@@ -35,9 +35,13 @@ async function loginUser(event) {
     const expires = date.toUTCString();
     document.cookie = `jwt=${json.information}; expires=${expires}; path=/`;
 
-   // window.location.href = json.route;
-   window.location.href =  `${json.route}?username=${encodeURIComponent(username)}`;
- 
+   window.location.href = json.route;
+ /*
+   const encodedUsername = encodeURIComponent(username);
+   const route = `${json.route}`;
+   const newUrl = `?username=${encodedUsername}${route}`;
+   window.history.pushState({ username }, "", newUrl);
+*/
    window.alert(json.message);
   } catch (error) {
     console.error(error);

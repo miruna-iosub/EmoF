@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="stylesheet" href="../assets/css/signup.css" type="text/css">
     <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/signup.css" />
+    <script src="../assets/scripts/signup.js" defer></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@200&display=swap" rel="stylesheet">
@@ -18,7 +19,7 @@
     
 </head>
 
-<body>
+<body onload="userRegister()">
     <!-- Start Navbar -->
     <nav>
         <div class="logo">
@@ -28,7 +29,7 @@
 
     <div class="grid-container">
         <h3>Sign Up</h3>
-        <form id="register-form" action="/register" method="POST">
+        <form id="register-form" action="/" method="POST">
             <div class="txt_field">
                 <label for="username_id">Username</label>
                 <span></span>
@@ -82,5 +83,8 @@
         </div>
     </div>
 </footer>
+
+<script src="../assets/scripts/signup.js"></script>
+
 
 </html>
