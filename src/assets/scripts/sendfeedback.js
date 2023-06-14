@@ -154,7 +154,7 @@ let questions=[];
     }
 }
 
-function productToReviewUnlogged(idRef) {
+function productToReview(idRef) {
     let id=idRef.toString().substring(22,idRef.lastIndexOf("/"));
     var imagePath; //= "../assets/images/rituals.png";
     var type; //= "rituals";

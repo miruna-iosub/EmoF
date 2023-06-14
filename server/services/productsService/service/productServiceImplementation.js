@@ -23,6 +23,15 @@ class ProductService {
         }
         return false;
     }
+    async findFirst() {
+        const db = getDb();
+        try {
+            return db.collection('Products').find().toArray();
+        } catch (e) {
+            console.log("[Error]: " + e);
+        }
+        return false;
+    }
 
 
     async findById(id) {

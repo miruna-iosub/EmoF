@@ -153,6 +153,14 @@ async function getHandler(request, response, type, string) {
     if (type === "all") {
         extractedProducts = await product.findAll();
         number = await product.countAll();
+    } else if (type === "homepage") {
+        extractedProducts = await product.findFirst();
+        for (let index = 6; index < extractedProducts.length; index++) {
+            if (index > extractedProducts.length) {
+                break;
+            }
+            extractedProducts[index] = null;
+        }
     } else if (type === "idorcategory") {
 
         if (string === "product" || string === "event" || string === "geographicalPlace" || string === "service" || string === "artisticArtefact") {
@@ -177,8 +185,8 @@ async function getHandler(request, response, type, string) {
 
     response.writeHead(200, {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin" : "*",
-        "Access-Control-Allow-Credentials" : true
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": true
     });
 
     response.write(

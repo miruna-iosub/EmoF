@@ -15,86 +15,85 @@
     <title>EmoF</title>
 </head>
 
-<body onload="repeatEmotion();repeatEmotion1();productToReview();">
+<body onload="repeatEmotion1(window.location.href);productToReview(window.location.href);">
 
-    <nav>
-        <div class="logo">
-            <a href="homepage-loggedin.html">
-                <img src="..\assets\images\logo.png" alt="Logo">
-            </a>
-        </div>
-        <div class="nav-links">
-            <ul>
+<nav>
+    <div class="logo">
+        <a href="http://localhost:4000/homepage-loggedin.html">
+            <a href=""><img src="../assets/images/logo.png" alt="Logo"></a>            </a>
+        </a>
+    </div>
+    <div class="nav-links">
+        <ul>
+            <li>
+                <a href="http://localhost:4000/myaccount.html">
+                    <ion-icon name="person-outline"></ion-icon>
+                    My account
+                </a>
+            </li>
+
+
+            <li>
+                <a href="http://localhost:4000/addaproduct.html">
+                    <ion-icon name="add-circle-outline">
+
+                    </ion-icon>
+                    Add a product
+                </a>
+            </li>
+
+
+            <div class="dropdown">
                 <li>
-                    <a href="myaccount.html">
-                        <ion-icon name="person-outline"></ion-icon>
-                        Sarah Smith
+                    <a href="all/products-logged.html">
+                        <ion-icon name="menu-outline">
+
+                        </ion-icon> Search by category
                     </a>
+
+                    <ul>
+                        <li><a href="service/products-logged.html">Service</a>
+                            <ul>
+                                <li><a href="service/products-logged.html">Event organiser</a></li>
+                                <li><a href="service/products-logged.html">Small business</a></li>
+                                <li><a href="service/products-logged.html">Cleaning</a></li>
+                                <li><a href="service/products-logged.html">Clinic</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="person/products-logged.html">Person</a>
+                            <ul>
+                                <li><a href="person/products-logged.html">Teacher</a></li>
+                                <li><a href="person/products-logged.html">Artist</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="product/products-logged.html">Product</a>
+                            <ul>
+                                <li><a href="product/products-logged.html">Skincare</a></li>
+                                <li><a href="product/products-logged.html">Drink</a></li>
+                                <li><a href="product/products-logged.html">Eyewear</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="artisticArtefact/products-logged.html">Artistic Artefact</a>
+                            <ul>
+                                <li><a href="artisticArtefact/products-logged.html">Artwork</a></li>
+                                <li><a href="artisticArtefact/products-logged.html">Photography</a></li>
+                                <li><a href="artisticArtefact/products-logged.html">Home-made</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="geographicalPlace/products-logged.html">Geographical place</a>
+                            <ul>
+                                <li><a href="geographicalPlace/products-logged.html">Monument</a></li>
+                                <li><a href="geographicalPlace/products-logged.html">Mall</a></li>
+                                <li><a href="geographicalPlace/products-logged.html">Airport</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
                 </li>
-
-
-                <li>
-                    <a href="addaproduct.html">
-                        <ion-icon name="add-circle-outline">
-
-                        </ion-icon>
-                        Add a product
-                    </a>
-                </li>
-
-
-                <div class="dropdown">
-                    <li>
-                        <a href="#">
-                            <ion-icon name="menu-outline">
-
-                            </ion-icon> Search by category
-                        </a>
-
-                        <ul>
-                            <li><a href="products-logged.html">Service</a>
-                                <ul>
-                                    <li><a href="products-logged.html">Event organiser</a></li>
-                                    <li><a href="products-logged.html">Small business</a></li>
-                                    <li><a href="products-logged.html">Cleaning</a></li>
-                                    <li><a href="products-logged.html">Clinic</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="products-logged.html">Person</a>
-                                <ul>
-                                    <li><a href="products-logged.html">Teacher</a></li>
-                                    <li><a href="products-logged.html">Artist</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="products-logged.html">Product</a>
-                                <ul>
-                                    <li><a href="products-logged.html">Skincare</a></li>
-                                    <li><a href="products-logged.html">Drink</a></li>
-                                    <li><a href="products-logged.html">Eyewear</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="products-logged.html">Artistic Artefact</a>
-                                <ul>
-                                    <li><a href="products-logged.html">Artwork</a></li>
-                                    <li><a href="products-logged.html">Photography</a></li>
-                                    <li><a href="products-logged.html">Home-made</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="products-logged.html">Geographical place</a>
-                                <ul>
-                                    <li><a href="products-logged.html">Monument</a></li>
-                                    <li><a href="products-logged.html">Mall</a></li>
-                                    <li><a href="products-logged.html">Airport</a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
-                </div>
-            </ul>
-        </div>
-    </nav>
-
+            </div>
+        </ul>
+    </div>
+</nav>
 
 
 
@@ -103,170 +102,21 @@
 
 
 
+<div class="container3">
+    <br><br>
+    <div class="head">How would you rate the following aspects?</div>
+
+
+    <div class="emotion-type">Chosen by the product owner:</div>
+
+    <div class="repeat-emotions" id="repeat-emotions1"> </div>
 
     <div class="container3">
-        <br><br>
-        <div class="head">How would you rate the following aspects?</div>
-
-
-
-
-
-
-        <div class="emotion-type">Default aspects:</div>
-
-        <div class="repeat-emotions" id="repeat-emotions">
-        </div>
-
-        <script type="text/javascript">
-            function repeatEmotion1() {
-                var i;
-                var begin = 4;
-                for (i = begin; i < begin + 4; i++) {
-                    document.getElementById("repeat-emotions1").innerHTML += '<fieldset class="emotions" id="emotions' + i + '"> <legend>Thing-to-be-reviewed</legend><div class="emotion-section"> <label for="emotion' + i + '">Choose an emotion<label><br> <select name="emotion' + i + '" id="emotion' + i + '"> <option value="happy">Happy</option><option value="surprised">Surprised</option><option value="sad">Sad</option><option value="fearful">Fearful</option>  <option value="discusted">Discusted</option>  <option value="angry">Angry</option> <option value="appreciation">Apreciation</option>  <option value="expectant">Expectant</option> </select></div> <div class="intensity-section">  <label for="intensity">Choose an intensity</label> <form oninput="x.value=getIntensityNames(parseInt(intensity.value),' + i + ');">   <input type="range" value="1" max="2" id="intensity" name="intensity"><br><br>  <output name="x" for="intensity"> <p>  </p></output>  </form> </div> </fieldset> </div><br><br>';
-                }
-            }
-
-            
-function getIntensityNames(intensityNumber, emotionType) {
-    var emotion = document.getElementById('emotion' + emotionType).value;
-    if (emotion === "happy") {
-        if (intensityNumber === 0) {
-            return "Serenity";
-        }
-        else if (intensityNumber === 1) {
-            return "Joy";
-        }
-        else if (intensityNumber === 2) {
-            return "Ecstasy";
-        }
-
-    }
-    else if (emotion === "surprised") {
-        if (intensityNumber === 0) {
-            return "Amazement";
-        }
-        else if (intensityNumber === 1) {
-            return "Surprised";
-        }
-        else if (intensityNumber === 2) {
-            return "Distraction";
-        }
-    }
-
-    else if (emotion === "sad") {
-        if (intensityNumber === 0) {
-            return "Pensiveness";
-        }
-        else if (intensityNumber === 1) {
-            return "Sadness";
-        }
-        else if (intensityNumber === 2) {
-            return "Grief";
-        }
-    }
-
-    else if (emotion === "fearful") {
-        if (intensityNumber === 0) {
-            return "Apprehension";
-        }
-        else if (intensityNumber === 1) {
-            return "Fear";
-        }
-        else if (intensityNumber === 2) {
-            return "Terrror";
-        }
-    }
-
-    else if (emotion === "discusted") {
-        if (intensityNumber === 0) {
-            return "Boredom";
-        }
-        else if (intensityNumber === 1) {
-            return "Disgust";
-        }
-        else if (intensityNumber === 2) {
-            return "Loathing";
-        }
-    }
-    else if (emotion === "angry") {
-        if (intensityNumber === 0) {
-            return "Annoyance";
-        }
-        else if (intensityNumber === 1) {
-            return "Anger";
-        }
-        else if (intensityNumber === 2) {
-            return "Rage";
-        }
-    }
-    else if (emotion === "appreciation") {
-        if (intensityNumber === 0) {
-            return "Acceptance";
-        }
-        else if (intensityNumber === 1) {
-            return "Trust";
-        }
-        else if (intensityNumber === 2) {
-            return "Admiration";
-        }
-    }
-    else if (emotion === "expectant") {
-        if (intensityNumber === 0) {
-            return "Interest";
-        }
-        else if (intensityNumber === 1) {
-            return "Anticipation";
-        }
-        else if (intensityNumber === 2) {
-            return "Vigilance";
-        }
-    }
-
-}
-
-function showHowManyTimes() {
-    var numberOfTimes = 5;
-
-}
-
-function sendFeedback() {
-    var numberOfTimes = 5;
-
-}
-
-function repeatEmotion() {
-    var i;
-    for (i = 0; i < 4; i++) {
-        document.getElementById("repeat-emotions").innerHTML += '<fieldset class="emotions" id="emotions' + i + '"> <legend>Thing-to-be-reviewed</legend><div class="emotion-section"> <label for="emotion' + i + '">Choose an emotion<label><br> <select name="emotion' + i + '" id="emotion' + i + '"> <option value="happy">Happy</option><option value="surprised">Surprised</option><option value="sad">Sad</option><option value="fearful">Fearful</option>  <option value="discusted">Discusted</option>  <option value="angry">Angry</option> <option value="appreciation">Apreciation</option>  <option value="expectant">Expectant</option> </select></div> <div class="intensity-section">  <label for="intensity">Choose an intensity</label> <form oninput="x.value=getIntensityNames(parseInt(intensity.value),' + i + ');">   <input type="range" value="1" max="2" id="intensity" name="intensity"><br><br>  <output name="x" for="intensity"> <p>  </p></output>  </form> </div> </fieldset> </div><br><br>';
-    }
-}
-
-function repeatEmotion1() {
-    var i;
-    var begin = 4;
-    for (i = begin; i < begin + 4; i++) {
-        document.getElementById("repeat-emotions1").innerHTML += '<fieldset class="emotions" id="emotions' + i + '"> <legend>Thing-to-be-reviewed</legend><div class="emotion-section"> <label for="emotion' + i + '">Choose an emotion<label><br> <select name="emotion' + i + '" id="emotion' + i + '"> <option value="happy">Happy</option><option value="surprised">Surprised</option><option value="sad">Sad</option><option value="fearful">Fearful</option>  <option value="discusted">Discusted</option>  <option value="angry">Angry</option> <option value="appreciation">Apreciation</option>  <option value="expectant">Expectant</option> </select></div> <div class="intensity-section">  <label for="intensity">Choose an intensity</label> <form oninput="x.value=getIntensityNames(parseInt(intensity.value),' + i + ');">   <input type="range" value="1" max="2" id="intensity" name="intensity"><br><br>  <output name="x" for="intensity"> <p>  </p></output>  </form> </div> </fieldset> </div><br><br>';
-    }
-}
-
-            
-        </script>
-        <form form id="form_id" action="/forms" method="POST">
-
-        <div class="emotion-type">Chosen by owner:</div>
-
-        <div class="repeat-emotions" id="repeat-emotions1"> </div>
-
-        <div class="container3">
-            <input type="submit" value="Send Feedback" id="sendfeedback"
-                onclick="sendFeedback(); window.location = '../html/reviewconfirmation-loggedin.html'">
-        </div>
-        </form>
-
+        <input type="sendfeedback" value="Send Feedback" id="sendfeedback"
+               onclick="sendFeedback(); window.location = 'http://localhost:4000/reviewconfirmation-loggedin.html'">
     </div>
 
-    </div>
+</div>
 
 
     <script type="text/javascript" src="..\assets\scripts\products.js"> </script>

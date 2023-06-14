@@ -25,6 +25,9 @@ const server = http.createServer((request, response) => {
             if (reqURL === "/products/all") {
                 controller.getHandler(request, response, "all", null);
             }
+            if (reqURL === "/products/homepage") {
+                controller.getHandler(request, response, "homepage", null);
+            }
             else if (reqURL.slice(0, 9) === "/products") {
                 controller.getHandler(request, response, "idorcategory", reqURL.slice(10));
             }
