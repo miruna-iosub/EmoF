@@ -1,14 +1,15 @@
 
+
 const mongodb = require('mongodb');
 const ObjectId = mongodb.ObjectId;
 const getDb = require('../utils/database').getDb
 
 class Review {
 
-    constructor(username, category, productid, fieldsQuestions, fieldsEmotions) {
-        this.username = username;
+    constructor( category, productid, fieldsQuestions, fieldsEmotions) {
+    //    this.username = username;
         this.category = category;
-        this.productid = productid;
+        this.productid = new ObjectId(productid);
         this.fieldsQuestions = fieldsQuestions;
         this.fieldsEmotions = fieldsEmotions;
     }
@@ -22,16 +23,23 @@ class Review {
         }
     }
 
-    static findFieldsById(id) {
+    async findFieldsObjectId(productIdd) {
         const db = getDb();
         try {
-            return db.collection('FormFields').find({productid: new mongodb.ObjectId(id)}).toArray();
+            return db.collection('FormFields').find({productid: new ObjectId(productIdd)}).toArray();
+        } catch (e) {
+            console.log("[Error]: " + e);
+        }
+    }
+    async findProductById(id) {
+        const db = getDb();
+        try {
+            return db.collection('Products').find({_id: new mongodb.ObjectId(id)}).toArray();
         } catch (e) {
             console.log("[Error1]: " + e);
         }
         return false;
     }
-
 
     static findAll(prodId) {
         const db = getDb()
@@ -53,9 +61,11 @@ class Review {
         }
         return false;
     }
+
+
 }
 
-module.exports = Review
+module.exports = Review;
 
 
 

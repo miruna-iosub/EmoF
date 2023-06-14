@@ -7,19 +7,24 @@ mongodbConnect(async () => {
 })
 
 const server = http.createServer((request, response) => {
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    response.setHeader('Access-Control-Allow-Credentials', true);
 
     const reqURL = request.url;
     const reqMethod = request.method;
     switch (reqMethod) {
+
+
         case "POST": {
-            if (reqURL === "/save-review") {
+            if (reqURL === "/review") {
                 controller.postHandler(request, response);
             }
             break;
         }
         case "GET": {
-            console.log(reqURL.toString().substring(1,reqURL.toString().lastIndexOf("/")));
-            console.log(reqURL.toString().substring(reqURL.toString().lastIndexOf("/")+1));
+
             if (reqURL.toString().substring(1,reqURL.toString().lastIndexOf("/")) === "sendReview") {
                 console.log(reqURL);
                 controller.getHandler(request, response,reqURL.toString().substring(reqURL.toString().lastIndexOf("/")+1), null);
