@@ -22,10 +22,10 @@ class Review {
         }
     }
 
-    static findById(id) {
+    static findFieldsById(id) {
         const db = getDb();
         try {
-            return db.collection('FormFields').find({_id: new mongodb.ObjectId(id)}).toArray();
+            return db.collection('FormFields').find({productid: new mongodb.ObjectId(id)}).toArray();
         } catch (e) {
             console.log("[Error1]: " + e);
         }

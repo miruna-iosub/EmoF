@@ -149,6 +149,7 @@ async function getHandler(request, response, type, string) {
     const product = new ProductService();
     let number;
     let findid = false;
+    console.log(type);
     if (type === "all") {
         extractedProducts = await product.findAll();
         number = await product.countAll();
@@ -176,11 +177,14 @@ async function getHandler(request, response, type, string) {
 
     response.writeHead(200, {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin" : "*",
+        "Access-Control-Allow-Credentials" : true
     });
 
     response.write(
         JSON.stringify({
             numberProducts: number,
+            products:
             extractedProducts
         })
     );

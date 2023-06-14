@@ -2,7 +2,7 @@ var url = require('url');
 var fs = require('fs');
 
 function renderHTML(object, response){
-
+object=object.toString().substring(object.toString().lastIndexOf("/"));
         fs.readFile("./src/html"+object, function (error, htmlContent) {
             if (error) {
                 response.writeHead(404);

@@ -21,7 +21,8 @@ const server = http.createServer((request, response) => {
             break;
         }
         case "GET": {
-            if (reqURL === "/products") {
+            console.log(reqURL)
+            if (reqURL === "/products/all") {
                 controller.getHandler(request, response, "all", null);
             }
             else if (reqURL.slice(0, 9) === "/products") {

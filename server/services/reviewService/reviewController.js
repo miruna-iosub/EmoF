@@ -4,6 +4,8 @@ const jwt = require("jsonwebtoken");
 defaultHandler = (request, response) => {
   response.writeHead(200, {
     "Content-Type": "application/json",
+    "Access-Control-Allow-Origin" : "*",
+    "Access-Control-Allow-Credentials" : true
   });
   response.write(
     JSON.stringify({
@@ -109,6 +111,8 @@ async function postHandler(request, response, prodId) {
 
     response.writeHead(200, {
       "Content-Type": "application/json",
+      "Access-Control-Allow-Origin" : "*",
+      "Access-Control-Allow-Credentials" : true
     });
     response.write(
       JSON.stringify({
@@ -120,16 +124,17 @@ async function postHandler(request, response, prodId) {
 }
 
 async function getHandler(request, response, prodId) {
-  prodId = "6487315d9496eab941a41282";
-  const reviews = await Review.findById(prodId);
+  const reviews = await Review.findFieldsById(prodId);
 
   response.writeHead(200, {
     "Content-Type": "application/json",
+    "Access-Control-Allow-Origin" : "*",
+    "Access-Control-Allow-Credentials" : true
   });
-
+console.log(reviews.toString());
   response.write(
     JSON.stringify({
-      reviews,
+     reviewsFields:reviews,
     })
   );
 

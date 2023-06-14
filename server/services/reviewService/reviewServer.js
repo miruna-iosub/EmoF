@@ -7,6 +7,7 @@ mongodbConnect(async () => {
 })
 
 const server = http.createServer((request, response) => {
+
     const reqURL = request.url;
     const reqMethod = request.method;
     switch (reqMethod) {
@@ -17,8 +18,11 @@ const server = http.createServer((request, response) => {
             break;
         }
         case "GET": {
-            if (reqURL === "/save-review") {
-                controller.getHandler(request, response, "all", null);
+            console.log(reqURL.toString().substring(1,reqURL.toString().lastIndexOf("/")));
+            console.log(reqURL.toString().substring(reqURL.toString().lastIndexOf("/")+1));
+            if (reqURL.toString().substring(1,reqURL.toString().lastIndexOf("/")) === "sendReview") {
+                console.log(reqURL);
+                controller.getHandler(request, response,reqURL.toString().substring(reqURL.toString().lastIndexOf("/")+1), null);
             }
             break;
         }

@@ -5,24 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7a5c9b6-48db-43d9-a853-ef38ef6e3be5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/assetsController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/reviewService/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.bat" beforeDir="false" afterPath="$PROJECT_DIR$/server.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/addaproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/addaproduct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/homepage-loggedin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/homepage-loggedin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/assetsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/assetsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/reviewModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/reviewModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/productsService/productsServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/productsServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/reviewService/reviewController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/reviewService/reviewController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/reviewService/reviewServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/reviewService/reviewServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/userInfoService/userInfoController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/userInfoService/userInfoController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scripts/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scripts/sendfeedback.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/sendfeedback.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/homepage-unloggedin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/homepage-unloggedin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/products-logged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/products-logged.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/products-unlogged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/products-unlogged.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/sendfeedbacklogged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/sendfeedbacklogged.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/signin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/signinconfirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/signinconfirmation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/signupconfirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/signupconfirmation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/reviewconfirmation-unlogged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/reviewconfirmation-unlogged.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/sendfeedbackunlogged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/sendfeedbackunlogged.html" afterDir="false" />
     </list>
-    <list id="dc6aaaf8-48c4-4d8f-b980-94aaccd39e10" name="Changes by Miruna" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +45,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "last_opened_file_path": "E:/M3 SE/EmoF/EmoF",
+    "last_opened_file_path": "E:/M3 SE/EmoF/EmoF/server/services/reviewService",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -56,6 +56,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\M3 SE\EmoF\EmoF\server\services\reviewService" />
       <recent name="E:\M3 SE\EmoF\EmoF\server\services\productsService" />
       <recent name="E:\M3 SE\EmoF\EmoF\server\services" />
       <recent name="E:\M3 SE\EmoF\EmoF\models\productModels" />
@@ -68,28 +69,24 @@
       <recent name="E:\M3 SE\EmoF\EmoF\server\formsService" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start (1)">
-    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/StatsExamp/package.json" />
+  <component name="RunManager" selected="npm.start">
+    <configuration name="app.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="reviewServer.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server/services/reviewService/reviewServer.js" working-dir="$PROJECT_DIR$/server/services/reviewService">
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="build" />
+        <script value="dev" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
     <configuration name="start (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="start (2)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/server/services/productsService/package.json" />
       <command value="run" />
       <scripts>
@@ -100,7 +97,7 @@
       <method v="2" />
     </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/StatsExamp/package.json" />
+      <package-json value="$PROJECT_DIR$/server/services/reviewService/package.json" />
       <command value="run" />
       <scripts>
         <script value="start" />
@@ -111,10 +108,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start (1)" />
-        <item itemvalue="npm.start (2)" />
         <item itemvalue="npm.start" />
-        <item itemvalue="npm.build" />
+        <item itemvalue="npm.start (1)" />
+        <item itemvalue="Node.js.reviewServer.js" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="Node.js.app.js" />
       </list>
     </recent_temporary>
   </component>
@@ -133,7 +131,8 @@
       <workItem from="1686666278078" duration="639000" />
       <workItem from="1686668130482" duration="35000" />
       <workItem from="1686668212309" duration="944000" />
-      <workItem from="1686674926202" duration="11612000" />
+      <workItem from="1686674926202" duration="14990000" />
+      <workItem from="1686729678219" duration="26417000" />
     </task>
     <servers />
   </component>
@@ -155,94 +154,16 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app.js</url>
-          <line>10</line>
+          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
+          <line>187</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/assetsController.js</url>
-          <line>5</line>
+          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
+          <line>185</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/assetsController.js</url>
-          <line>9</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/assetsController.js</url>
-          <line>21</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/assetsController.js</url>
-          <line>19</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/assetsController.js</url>
-          <line>20</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/assetsController.js</url>
-          <line>26</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/assetsController.js</url>
-          <line>35</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/assetsController.js</url>
-          <line>36</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/assetsController.js</url>
-          <line>39</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/assetsController.js</url>
-          <line>40</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app.js</url>
-          <line>14</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app.js</url>
-          <line>16</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app.js</url>
-          <line>18</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app.js</url>
-          <line>20</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="20" />
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

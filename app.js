@@ -11,15 +11,21 @@ function handleRequest(request, response) {
     console.log(reqURL);
     const reqMethod = request.method;
 
-    if (reqURL.substring( reqURL.length-4) === ".css") {
+    if (reqURL.toString().includes(".css")) {
         controller.renderCSS(reqURL, response);
-    } else if (reqURL.substring(reqURL.length - 5) === ".html") {
+    } else if (reqURL.toString().includes( ".html")) {
         controller.renderHTML(reqURL, response);
+<<<<<<< Updated upstream
     } else if (reqURL.substring(reqURL.length - 3) === ".js") {
         controller.renderJavascript(reqURL, response); 
     } else if (reqURL.slice(reqURL.length - 4) === ".png") {
         controller.renderImage(reqURL, response);
     } else if (reqURL.substring(reqURL.length - 3) === ".js") {
+=======
+    } else if (reqURL.toString().includes(  ".js")) {
+        controller.renderJavascript(reqURL, response);
+    } else if (reqURL.toString().includes( ".png")) {
+>>>>>>> Stashed changes
         controller.renderImage(reqURL, response);
     }else {
 

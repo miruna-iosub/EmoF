@@ -10,7 +10,10 @@ const jwt = require("jsonwebtoken");
 defaultHandler = (request, response) => {
   response.writeHead(200, {
     "Content-Type": "application/json",
+    "Access-Control-Allow-Origin" : "*",
+    "Access-Control-Allow-Credentials" : true
   });
+
   response.write(
     JSON.stringify({
       message: `API not found at ${request.url}`,
@@ -146,7 +149,12 @@ async function getHandler(req, res) {
       products: products
     };
 
-    res.writeHead(200, { "Content-Type": "application/json" });
+    res.writeHead(200, {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin" : "*",
+      "Access-Control-Allow-Credentials" : true
+    });
+
     res.end(JSON.stringify(responseData));
   } catch (err) {
     console.log(err);
