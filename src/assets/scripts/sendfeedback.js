@@ -1,69 +1,69 @@
 function getIntensityNames(intensityNumber, emotionType) {
     var emotion = document.getElementById('emotion' + emotionType).value;
-    if (emotion == "happy") {
-        if (intensityNumber == 0) {
-            return "Serenity";
-        } else if (intensityNumber == 1) {
-            return "Joy";
-        } else if (intensityNumber == 2) {
-            return "Ecstasy";
+    if (emotion === "happy") {
+        if (intensityNumber === 0) {
+            return "serenity";
+        } else if (intensityNumber === 1) {
+            return "joy";
+        } else if (intensityNumber === 2) {
+            return "ecstasy";
         }
 
-    } else if (emotion == "surprised") {
-        if (intensityNumber == 0) {
-            return "Amazement";
-        } else if (intensityNumber == 1) {
-            return "Surprised";
-        } else if (intensityNumber == 2) {
-            return "Distraction";
+    } else if (emotion === "surprised") {
+        if (intensityNumber === 0) {
+            return "amazement";
+        } else if (intensityNumber === 1) {
+            return "surprised";
+        } else if (intensityNumber === 2) {
+            return "distraction";
         }
-    } else if (emotion == "sad") {
-        if (intensityNumber == 0) {
-            return "Pensiveness";
-        } else if (intensityNumber == 1) {
-            return "Sadness";
-        } else if (intensityNumber == 2) {
-            return "Grief";
+    } else if (emotion === "sad") {
+        if (intensityNumber === 0) {
+            return "pensiveness";
+        } else if (intensityNumber === 1) {
+            return "sadness";
+        } else if (intensityNumber === 2) {
+            return "grief";
         }
-    } else if (emotion == "fearful") {
-        if (intensityNumber == 0) {
-            return "Apprehension";
-        } else if (intensityNumber == 1) {
-            return "Fear";
-        } else if (intensityNumber == 2) {
-            return "Terrror";
+    } else if (emotion === "fearful") {
+        if (intensityNumber === 0) {
+            return "apprehension";
+        } else if (intensityNumber === 1) {
+            return "fear";
+        } else if (intensityNumber === 2) {
+            return "terror";
         }
-    } else if (emotion == "discusted") {
-        if (intensityNumber == 0) {
-            return "Boredom";
-        } else if (intensityNumber == 1) {
-            return "Disgust";
-        } else if (intensityNumber == 2) {
-            return "Loathing";
+    } else if (emotion === "discussed") {
+        if (intensityNumber === 0) {
+            return "boredom";
+        } else if (intensityNumber === 1) {
+            return "disgust";
+        } else if (intensityNumber === 2) {
+            return "loathing";
         }
-    } else if (emotion == "angry") {
-        if (intensityNumber == 0) {
-            return "Annoyance";
-        } else if (intensityNumber == 1) {
-            return "Anger";
-        } else if (intensityNumber == 2) {
-            return "Rage";
+    } else if (emotion === "angry") {
+        if (intensityNumber === 0) {
+            return "annoyance";
+        } else if (intensityNumber === 1) {
+            return "anger";
+        } else if (intensityNumber === 2) {
+            return "rage";
         }
-    } else if (emotion == "appreciation") {
-        if (intensityNumber == 0) {
-            return "Acceptance";
-        } else if (intensityNumber == 1) {
-            return "Trust";
-        } else if (intensityNumber == 2) {
-            return "Admiration";
+    } else if (emotion === "appreciation") {
+        if (intensityNumber === 0) {
+            return "acceptance";
+        } else if (intensityNumber === 1) {
+            return "trust";
+        } else if (intensityNumber === 2) {
+            return "admiration";
         }
-    } else if (emotion == "expectant") {
-        if (intensityNumber == 0) {
-            return "Interest";
-        } else if (intensityNumber == 1) {
-            return "Anticipation";
-        } else if (intensityNumber == 2) {
-            return "Vigilance";
+    } else if (emotion === "expectant") {
+        if (intensityNumber === 0) {
+            return "interest";
+        } else if (intensityNumber === 1) {
+            return "anticipation";
+        } else if (intensityNumber === 2) {
+            return "vigilance";
         }
     }
 
@@ -78,36 +78,35 @@ async function sendFeedback(idRef) {
     let id = idRef.toString().substring(22, idRef.lastIndexOf("/"));
     let emotions = [];
     let index = 0;
-    let questions=[];
+    let questions = [];
     let fieldsEmotions = document.getElementsByName('x');
     for (let fields of fieldsEmotions) {
-        emotions[index] = fields.value;
+        emotions[index] = fields.value.toString().toLowerCase();
         index++;
     }
 
-                try {
-                    const response = await fetch('http://localhost:3004/review', {
-                        method: 'POST',
-                        body: JSON.stringify({
-                            idProduct:id,
-                            emotions:emotions,
+    try {
+        const response = await fetch('http://localhost:3004/review', {
+            method: 'POST',
+            body: JSON.stringify({
+                idProduct: id,
+                emotions: emotions,
+            }),
+        });
 
-                        }),
-                    });
+        const json = await response.json();
 
-                    const json = await response.json();
+        if (!response.ok) {
+            throw new Error('Eroare');
+        }
 
-                    if (!response.ok) {
-                        throw new Error('Eroare');
-                    }
-
-                    console.log(response.body.toString());
-                    window.location.href = json.route
-                    window.alert(json.message)
-                } catch (error) {
-                    console.error(error);
-                    window.alert('Register failed');
-                }
+        console.log(response.body.toString());
+        window.location.href = json.route
+        window.alert(json.message)
+    } catch (error) {
+        console.error(error);
+        window.alert('Register failed');
+    }
 
 
 }

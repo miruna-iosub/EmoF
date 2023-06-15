@@ -44,6 +44,20 @@ function renderImage(path, response) {
     });
 }
 
+function renderEms(path, response) {
+    fs.readFile("./node_modules/frappe-charts/dist/frappe-charts.min.esm", function (error, ems) {
+        if (error) {
+            response.writeHead(404);
+            response.write("Couldn't load Image / not found");
+        } else {
+            console.log('Success at reading image');
+            response.writeHead(200, {'Content-Type': 'module'})
+            response.write(ems);
+        }
+        response.end();
+    });
+}
+
 function renderJavascript(path, response) {
     fs.readFile("./src" + path, function (error, jafile) {
         if (error) {
@@ -71,4 +85,4 @@ function defaultHandler(response){
     // response.sendfile("../src/assets"+path);
 
 
-module.exports = {renderCSS,renderImage,renderHTML, defaultHandler,renderJavascript}
+module.exports = {renderCSS,renderImage,renderHTML, defaultHandler,renderJavascript,renderEms}

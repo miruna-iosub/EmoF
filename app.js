@@ -1,5 +1,5 @@
 const http = require('http')
-const {router} = require('./routes/router')
+const { router } = require('./routes/router')
 const mongodbConnect = require('./utils/database').mongodbConnect
 const fs = require('fs');
 const controller = require("./controllers/assetsController");
@@ -10,17 +10,19 @@ function handleRequest(request, response) {
     const reqURL = request.url;
     console.log(reqURL);
     const reqMethod = request.method;
- 
+
     if (reqURL.toString().includes(".css")) {
         controller.renderCSS(reqURL, response);
-    } else if (reqURL.toString().includes( ".html")) {
+    } else if (reqURL.toString().includes(".html")) {
         controller.renderHTML(reqURL, response);
-    } else if (reqURL.toString().includes(  ".js")) {
+    } else if (reqURL.toString().includes(".js")) {
         controller.renderJavascript(reqURL, response);
-    } else if (reqURL.toString().includes( ".png")) {
+    } else if (reqURL.toString().includes(".png")) {
         controller.renderImage(reqURL, response);
-    }else { 
- 
+    } else if (reqURL.toString().includes(".esm")) {
+        controller.renderEms(reqURL, response);
+    }
+    else {
         response.writeHead(200, {
             'Content-Type': 'text/html'
         });
@@ -71,7 +73,6 @@ mongodbConnect(async () => {
 })
 
 const server = http.createServer((req, res) => {
-    handleRequest(req,res);
+    handleRequest(req, res);
     //router(req, res);
-  });
-  
+});

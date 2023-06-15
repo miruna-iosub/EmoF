@@ -14,9 +14,9 @@ function addProduct() {
     const question4Checked = document.querySelector('input[name="question4"]').checked;
 
 
-    if (productName == "" || productCategory == "" || 
-    productSubcategory == "" ||
-    newQuestion == "" || desc == "") {
+    if (productName === "" || productCategory === "" ||
+    productSubcategory === "" ||
+    newQuestion === "" || desc === "") {
         alert("Please fill all the fields!");
         return false;
     }  
