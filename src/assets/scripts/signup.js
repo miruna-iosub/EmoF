@@ -17,6 +17,7 @@ async function userRegister(event) {
   try {
     const response = await fetch('http://localhost:3001/register', {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },

@@ -185,7 +185,7 @@ async function getHandler(request, response, type, string) {
 
     response.writeHead(200, {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": "http://localhost:4000",
         "Access-Control-Allow-Credentials": true
     });
 

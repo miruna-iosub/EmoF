@@ -7,7 +7,7 @@ mongodbConnect(async () => {
 })
 
 const server = http.createServer((request, response) => {
-    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Origin', 'http://localhost:4000');
     response.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     response.setHeader('Access-Control-Allow-Credentials', true);

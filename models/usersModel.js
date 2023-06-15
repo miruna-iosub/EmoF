@@ -47,6 +47,11 @@ class User {
         return db.collection('Users').find({ username: name }).toArray()
     }
 
+    static findByPassword(password){
+        const db = getDb()
+        return db.collection('Users').find({ password1: password }).toArray()
+    }
+
 }
 
 module.exports = User

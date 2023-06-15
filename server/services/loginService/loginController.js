@@ -129,7 +129,9 @@ async function postHandler(request, response) {
             );
 
             // Set the cookie
-            //response.setHeader('Set-Cookie', `token=${token}; Path=/; HttpOnly`);
+            response.setHeader('Set-Cookie', `token=${token}; Path=/; HttpOnly`);
+            console.log(token)
+
 
             var newTokenRow = {
               token: token,

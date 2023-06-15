@@ -7,11 +7,25 @@ const getDb = require("../../../utils/database").getDb;
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
+function parseCookieHeader(cookieHeader) {
+  const cookies = {};
+  
+  if (cookieHeader) {
+    const cookiePairs = cookieHeader.split(';');
+    
+    for (const pair of cookiePairs) {
+      const [name, value] = pair.trim().split('=');
+      cookies[name] = decodeURIComponent(value);
+    }
+  }
+  
+  return cookies;
+}
+
 defaultHandler = (request, response) => {
   response.writeHead(200, {
     "Content-Type": "application/json",
-    "Access-Control-Allow-Origin" : "*",
-    "Access-Control-Allow-Credentials" : true
+    "Access-Control-Allow-Origin" : "http://localhost:4000",
   });
 
   response.write(
@@ -23,9 +37,12 @@ defaultHandler = (request, response) => {
 };
 
 async function patchHandler(request, response) {
+  console.log("ajunge aiiiiiici")
+
   let responseBody = null;
   const qs = require("qs");
   let chunks = [];
+  let token=""
 
   request.on("data", (chunk) => {
     chunks.push(chunk);
@@ -33,14 +50,14 @@ async function patchHandler(request, response) {
 
   request.on("end", async () => {
     const body = Buffer.concat(chunks);
-
+    console.log("ajunge aici")
     const parsedData = JSON.parse(body, (key, value) => {
       //currentUsername, username, age, password1, password2
       if (key === "currentUsername") {
         currentUsername = value;
         return true;
-      } else if (key === "username") {
-        username = value;
+      } else if (key === "usernameNew") {
+        usernameNew = value;
         return true;
       } else if (key === "age") {
         age = value;
@@ -56,37 +73,56 @@ async function patchHandler(request, response) {
     });
 
     let hashPassword = bcrypt.hashSync(
-      password2,
+      password1,
       parseInt(process.env.BCRYPT_SALT)
     );
     //let hashPassword = password1
 
     try {
-      var query = { password1: password1 };
       const db = getDb();
-      const queryResult = await db.collection("Users").findOne(query);
-      console.log(queryResult);
 
-      if (queryResult && age > 18) {
+    {
+      const authorizationHeader = request.headers.authorization;
+      if (authorizationHeader && authorizationHeader.startsWith('Bearer ')) {
+          let token = authorizationHeader.substring(7);
+              console.log("NOUL TOKEN")
+              console.log(token)
+
+      // decodificare token preluat din cookie
+      console.log("iar tokenul" + token)
+      const decodedToken = jwt.verify(token, "secret");
+      //const userId = decodedToken['data']['id']
+
+      //const queryResult = await User.findById(decodedToken['data']['id']);
+      const usernameFromToken = decodedToken['data']['username']
+
+      const queryResult = await User.findByUsername(usernameFromToken);
+      console.log(usernameFromToken)
+      if (bcrypt.compareSync(password1, queryResult[0]["password"]))
+      //if (queryResult && age > 18)
+     {
         db.collection("Users").updateOne(
           { username: currentUsername }, // Filter condition
           {
             $set: {
-              username: username,
+              username: usernameNew,
               age: age,
               password: hashPassword,
               password1: password2,
             },
           }
         );
-        responseBody = "PATCH successful.";
+
+        responseBody = "Update successful.";
 
         response.writeHead(200, {
           "Content-Type": "application/json",
+          'Access-Control-Allow-Credentials': true
         });
         response.write(
           JSON.stringify({
-            message: responseBody,
+            route: "/myaccount.html",
+            message: responseBody
           })
         );
         response.end();
@@ -95,27 +131,34 @@ async function patchHandler(request, response) {
           "Old password is wrong and you have to be older than 18!";
         console.log(responseBody);
 
-        response.writeHead(500, { "Content-Type": "application/json" });
+        response.writeHead(500, { 
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials" : true
+        });
         response.end(JSON.stringify(responseBody));
       }
+    }}
     } catch (err) {
       {
         responseBody = err.toString();
         console.log(err);
 
-        response.writeHead(500, { "Content-Type": "application/json" });
+        response.writeHead(500, { "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials" : true
+      });
         response.end(JSON.stringify(err));
       }
     }
   });
 }
 
+
 async function getHandler(req, res) {
   // get user GET /api-user-info
   try {
     // userId il iau din token-ul din cookie...
 
-    /*let value = ""
+   /* let value = ""
     let token1 = ""
     const cookieHeader = req.headers?.cookie
     console.log(cookieHeader)
@@ -149,18 +192,21 @@ async function getHandler(req, res) {
       products: products
     };
 
-    res.writeHead(200, {
+    response.writeHead(200, {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin" : "*",
+      "Access-Control-Allow-Origin" : "http://localhost:4000",
       "Access-Control-Allow-Credentials" : true
     });
 
-    res.end(JSON.stringify(responseData));
+    response.end(JSON.stringify(responseData));
   } catch (err) {
     console.log(err);
 
-    res.writeHead(500, { "Content-Type": "application/json" });
-    res.end(JSON.stringify(err));
+    response.writeHead(500, { 
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Credentials" : true
+  });
+    response.end(JSON.stringify(err));
   }
 }
 module.exports = { defaultHandler, patchHandler, getHandler };

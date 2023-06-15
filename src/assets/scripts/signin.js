@@ -1,6 +1,7 @@
 const form = document.getElementById('form_id');
 form.addEventListener('submit', loginUser);
 
+
 async function loginUser(event) {
   event.preventDefault();
 
@@ -12,6 +13,7 @@ async function loginUser(event) {
 
   try {
     const response = await fetch('http://localhost:3002/login', {
+      credentials: 'include',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -33,15 +35,11 @@ async function loginUser(event) {
     let date = new Date();
     date.setTime(date.getTime() + (35 * 60 * 1000)); // 35 min cookie
     const expires = date.toUTCString();
+    ///document.cookie = `jwt=${json.information}; expires=${expires}; path=/`;
     document.cookie = `jwt=${json.information}; expires=${expires}; path=/`;
 
    window.location.href = json.route;
- /*
-   const encodedUsername = encodeURIComponent(username);
-   const route = `${json.route}`;
-   const newUrl = `?username=${encodedUsername}${route}`;
-   window.history.pushState({ username }, "", newUrl);
-*/
+ 
    window.alert(json.message);
   } catch (error) {
     console.error(error);

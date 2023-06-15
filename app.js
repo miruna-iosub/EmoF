@@ -6,11 +6,11 @@ const controller = require("./controllers/assetsController");
 require("dotenv").config();
 
 function handleRequest(request, response) {
-
+ 
     const reqURL = request.url;
     console.log(reqURL);
     const reqMethod = request.method;
-
+ 
     if (reqURL.toString().includes(".css")) {
         controller.renderCSS(reqURL, response);
     } else if (reqURL.toString().includes( ".html")) {
@@ -19,8 +19,8 @@ function handleRequest(request, response) {
         controller.renderJavascript(reqURL, response);
     } else if (reqURL.toString().includes( ".png")) {
         controller.renderImage(reqURL, response);
-    }else {
-
+    }else { 
+ 
         response.writeHead(200, {
             'Content-Type': 'text/html'
         });
