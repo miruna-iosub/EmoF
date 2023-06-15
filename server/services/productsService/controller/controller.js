@@ -2,10 +2,13 @@ const product = require("../models/product");
 const {ProductService} = require("../service/productServiceImplementation");
 const {Product} = require("../models/product");
 const {Form} = require("../models/form");
+const {isArray} = require("util");
 
 defaultHandler = (request, response) => {
     response.writeHead(200, {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "http://localhost:4000",
+        "Access-Control-Allow-Credentials": true
     });
     response.write(
         JSON.stringify({
@@ -29,7 +32,7 @@ async function postHandler(request, response) {
         const productImport = new ProductService();
         var UserExists = false;
         var username = null,
-            token = null,
+            token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiNjQ3NjFmZjc1NmQyNWNlMTYzYmE2ZTNhIiwidXNlcm5hbWUiOiJtaXJ1bmFlbGVuYSJ9LCJpYXQiOjE2ODY1ODU0NzEsImV4cCI6MTY4NjU5NjI3MX0.b2LeSzZuY2Pbwom2QxG_VBqPyN6dt1xYuEihTQF0JXg",
             name = null,
             description = null,
             type = null,
@@ -70,9 +73,8 @@ async function postHandler(request, response) {
                 } else if (key === "category") {
                     category = value;
                     return true;
-                } else if (key === "fieldName") {
-                    formfields[val] = value;
-                    val++;
+                } else if (isNaN(parseInt(key))&&!isArray(value)) {
+                    formfields[parseInt(key)] = value;
                     return true;
                 }
                 return false;
@@ -113,14 +115,14 @@ async function postHandler(request, response) {
             console.log("[Error] A field is null.")
         } else if (userExists) {
             try {
-                productImport.putObject(pr);
+                await productImport.putObject(pr);
             } catch (err) {
                 responseBody = err.toString();
                 alert(err);
             }
 
             try {
-                productImport.putForm(frm);
+                await productImport.putForm(frm);
             } catch (err) {
                 responseBody = err.toString();
                 alert(err);
@@ -172,7 +174,21 @@ async function getHandler(request, response, type, string) {
             findid = true;
         }
     }
-    if (extractedProducts.length === 0) {
+    else if(type==="formfields"){
+        if (string === "product" || string === "event" || string === "geographicalPlace" || string === "service" || string === "artisticArtefact"|| string === "person") {
+            let extractedProducts1 = await product.findFormFields(string);
+            extractedProducts=extractedProducts1[0];
+            // number = await product.countByCategory(string);
+
+        } else {
+            extractedProducts = await product.findById(string);
+            findid = true;
+        }
+    }
+    if(type==="formfields"){
+        number=1;
+    }
+    else if (extractedProducts.length === 0) {
         number = "No product in this category."
     } else if (!extractedProducts.length > 0) {
         number = "Failed to extract product."
@@ -185,7 +201,7 @@ async function getHandler(request, response, type, string) {
 
     response.writeHead(200, {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:4000",
+        "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Credentials": true
     });
 

@@ -11,6 +11,12 @@ mongodbConnect(async () => {
 //});
 
 const server = http.createServer((request, response) => {
+
+    response.setHeader('Access-Control-Allow-Origin', 'http://localhost:4000');
+    response.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    response.setHeader('Access-Control-Allow-Credentials', true);
+
     const reqURL = request.url;
     const reqMethod = request.method;
     switch (reqMethod) {
@@ -27,6 +33,9 @@ const server = http.createServer((request, response) => {
             }
             if (reqURL === "/products/homepage") {
                 controller.getHandler(request, response, "homepage", null);
+            }
+            else if (reqURL.slice(0, 19) === "/products/category/") {
+                controller.getHandler(request, response, "formfields", reqURL.slice(19));
             }
             else if (reqURL.slice(0, 9) === "/products") {
                 controller.getHandler(request, response, "idorcategory", reqURL.slice(10));

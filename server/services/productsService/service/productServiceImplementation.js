@@ -108,7 +108,16 @@ class ProductService {
         }
 
     }
-   
+
+    async findFormFields(string) {
+        const db = getDb();
+        try {
+            return db.collection('DefaultFormFields').find({productcategory:string}).toArray();
+        } catch (e) {
+            console.log("[Error]: " + e);
+            throw new UserInfoError();
+        }
+    }
 }
 
 module.exports = {ProductService};

@@ -6,7 +6,7 @@ const controller = require("./controllers/assetsController");
 require("dotenv").config();
 
 function handleRequest(request, response) {
- 
+
     const reqURL = request.url;
     console.log(reqURL);
     const reqMethod = request.method;
