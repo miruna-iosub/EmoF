@@ -19,7 +19,7 @@ const server = http.createServer((request, response) => {
     
     switch (reqMethod) { 
         case "GET": {
-            if (reqURL ==="/get-api-user" ) {
+            if (reqURL ==="/userinfo" ) {
                 controller.getHandler(request, response)
             }
             break;
@@ -33,7 +33,7 @@ const server = http.createServer((request, response) => {
         default: {
             controller.defaultHandler(request, response)
             break;
-        }
+        } 
 
     }
 });

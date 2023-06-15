@@ -13,15 +13,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@200&display=swap" rel="stylesheet">
   <script src="../assets/scripts/updateinfo.js" defer></script>
-
   <script src="../assets/scripts/accountinfo.js" defer></script>
+  <script src="../assets/scripts/logout.js" defer></script>
 
     
         <!-- <h1>HEADER</h1> -->
     
 </head>
 
-<body onload="updateInfo();repeatProduct();accoutInfo();">
+<body onload="updateInfo();repeatProduct();accountInfo();">
   <!-- Start Navbar -->
   <nav>
     <div class="logo">
@@ -34,7 +34,7 @@
         <li>
           <a href="myaccount.html">
             <ion-icon name="person-outline"></ion-icon>
-            Sarah Smith
+            My Account
           </a>
         </li>
 
@@ -45,6 +45,16 @@
 
             </ion-icon>
             Add a product
+          </a>
+        </li>
+
+
+        <li>
+          <a href="/index.html"  onclick="delete_cookie('jwt', '/')">
+            <ion-icon name="person-outline">
+
+            </ion-icon>
+            Log out
           </a>
         </li>
 
@@ -117,13 +127,13 @@
             <div class="formRow">
               <label for="username_id_old"></label>
               <span></span>
-              <input type="text" id="username_id_old" placeholder="Old Name" required>
+              <input type="text" id="username_id_old" placeholder="Email" required>
           </div>
       
             <div class="formRow">
               <label for="username_id"></label>
               <span></span>
-              <input type="text" name="username" id="username_id" placeholder="Name" required>
+              <input type="text" name="username" id="username_id" placeholder="Occupation" required>
           </div>
       
           <div class="formRow">
@@ -186,5 +196,8 @@
     </div>
 </footer>
 <script src="../assets/scripts/updateinfo.js"></script>
+<script src="../assets/scripts/accountinfo.js"></script>
+<script src="../assets/scripts/logout.js"></script>
+
 
 </html>

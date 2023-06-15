@@ -15,12 +15,25 @@ function getJWTToken() {
 
 }
 
+function get_cookie(name){
+    return document.cookie.split(';').some(c => {
+        return c.trim().startsWith(name + '=');
+    });
+}
+
+function updateCookie(name, value, path, expires) {
+    const jwtToken = getJWTToken();
+    document.cookie = `jwt=${json.information}; expires=${expires}; path=/`;
+
+    window.alert('Cookie updated!');
+  }
+  
 async function updateInfo(event) {
   event.preventDefault();
 
   // form data
-  const currentUsername = document.getElementById('username_id_old').value;
-  const usernameNew = document.getElementById('username_id').value;
+  const email = document.getElementById('username_id_old').value;
+  const occupation = document.getElementById('username_id').value;
   const age = document.getElementById('age_id').value;
   const password1 = document.getElementById('password_id').value;
   const password2 = document.getElementById('repeat_password_id').value;
@@ -38,20 +51,22 @@ async function updateInfo(event) {
         'Authorization': `Bearer ${jwtToken}`,
       },
       body: JSON.stringify({
-        currentUsername,
-        usernameNew,
+        email,
+        occupation,
         age,
         password1,
         password2,
       }),
     });
-    console.log("[updateInfo]", currentUsername, usernameNew, age, password1, password2, jwtToken);
+    console.log("[updateInfo]", email, occupation, age, password1, password2, jwtToken);
     console.log(response)
     if (!response.ok) {
       throw new Error('Patch failed');
     }
 
     const json = await response.json();
+
+    console.log("[updateinfo]", json.information);
 
     console.log("[response]", json.message);
 

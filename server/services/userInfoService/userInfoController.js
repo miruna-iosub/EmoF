@@ -53,11 +53,11 @@ async function patchHandler(request, response) {
     console.log("ajunge aici")
     const parsedData = JSON.parse(body, (key, value) => {
       //currentUsername, username, age, password1, password2
-      if (key === "currentUsername") {
-        currentUsername = value;
+      if (key === "email") {
+        email = value;
         return true;
-      } else if (key === "usernameNew") {
-        usernameNew = value;
+      } else if (key === "occupation") {
+        occupation = value;
         return true;
       } else if (key === "age") {
         age = value;
@@ -97,22 +97,37 @@ async function patchHandler(request, response) {
       const usernameFromToken = decodedToken['data']['username']
 
       const queryResult = await User.findByUsername(usernameFromToken);
+
+      console.log("username from token")
       console.log(usernameFromToken)
       if (bcrypt.compareSync(password1, queryResult[0]["password"]))
       //if (queryResult && age > 18)
      {
         db.collection("Users").updateOne(
-          { username: currentUsername }, // Filter condition
+          { username: usernameFromToken }, // Filter condition
           {
             $set: {
-              username: usernameNew,
-              age: age,
+              email: email,
+              occupation: occupation,
               password: hashPassword,
               password1: password2,
             },
           }
         );
 
+        const token = jwt.sign(
+          {
+            data: {
+              id: queryResult[0]["_id"],
+              username: queryResult[0]["username"],
+            },
+          },
+          "secret",
+          { expiresIn: "3h" }
+        );
+
+
+        
         responseBody = "Update successful.";
 
         response.writeHead(200, {
@@ -121,8 +136,9 @@ async function patchHandler(request, response) {
         });
         response.write(
           JSON.stringify({
-            route: "/myaccount.html",
-            message: responseBody
+            route: "/homepage-loggedin.html",
+            message: responseBody,
+            information: token
           })
         );
         response.end();
@@ -151,62 +167,45 @@ async function patchHandler(request, response) {
     }
   });
 }
-
-
-async function getHandler(req, res) {
-  // get user GET /api-user-info
+async function getHandler(request, response) {
   try {
-    // userId il iau din token-ul din cookie...
+    let chunks = [];
 
-   /* let value = ""
-    let token1 = ""
-    const cookieHeader = req.headers?.cookie
-    console.log(cookieHeader)
-    if(cookieHeader) {
-      cookieHeader.split(`;`).forEach(cookie => {
-        let [name, ...rest] = cookie.split(`=`)
-        if(name === "jwt") {
-          value = rest.join(`=`).trim()
-          if(value) {
-            token1 =  decodeURIComponent(value)
-          }
-        }
+    console.log("ajunge aiiiiiici")
+    const authorizationHeader = request.headers.authorization;
+    console.log(authorizationHeader)
+    if (authorizationHeader && authorizationHeader.startsWith('Bearer ')) {
+      const token = authorizationHeader.substring(7);
+      const decodedToken = jwt.verify(token, "secret");
+      const username = decodedToken["data"]["username"];
+      console.log("username din decoded " + username)
+      // Retrieve user information from the database
+      const userDetails = await User.findByUsername(username);
+
+      console.log("AAAAAAAAAAAAAAAAAA")
+      console.log(userDetails)
+      // Construct the response data
+      const responseData = {
+        user: userDetails,
+      };
+
+      response.writeHead(200, {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin" : "http://localhost:4000",
+        "Access-Control-Allow-Credentials" : true
       });
+
+      response.end(JSON.stringify(responseData));
     }
-*/
-    let token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiNjQ4ODQ2MGI4NDE5ZTk5M2VmZmQyNjJiIiwidXNlcm5hbWUiOiJtaXJ1bmFlbGVuYSJ9LCJpYXQiOjE2ODY2NTI1NzYsImV4cCI6MTY4NjY2MzM3Nn0.wphAkH1L248CgNpiciaRHFCBd5rQJ6OtO0orxghAUIg";
-
-    // decodificare token preluat din cookie
-    const decodedToken = jwt.verify(token, "secret");
-    const username = decodedToken["data"]["username"];
-    console.log(username)
-    // user-ul din sesiunea curenta
-    const user = await User.findByUsername(username);
-    console.log(user)
-
-    const products = await User.findProducts(username);
-
-    const responseData = {
-      user: user,
-      products: products
-    };
-
-    response.writeHead(200, {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin" : "http://localhost:4000",
-      "Access-Control-Allow-Credentials" : true
-    });
-
-    response.end(JSON.stringify(responseData));
   } catch (err) {
     console.log(err);
 
     response.writeHead(500, { 
       "Content-Type": "application/json",
       "Access-Control-Allow-Credentials" : true
-  });
+    });
     response.end(JSON.stringify(err));
   }
 }
+
 module.exports = { defaultHandler, patchHandler, getHandler };
