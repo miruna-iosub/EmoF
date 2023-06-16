@@ -55,7 +55,7 @@ function accountInfo() {
             age = oneuser.age;
 
         })
-          console.log("AICI ESTE ACCOUNTINFO" + username +age)
+          console.log("AICI ESTE ACCOUNTINFO " + username +age)
         
         // Update the DOM with the retrieved information
         var imagePath = "../assets/images/review.png";
@@ -64,7 +64,7 @@ function accountInfo() {
         var occupation = occupation;
         var email = email;
         var ageText = "Your age is: " + age + "<br>";
-        var occupationText = "Your age is: " + occupation + "<br>";
+        var occupationText = "Your occupation is: " + occupation + "<br>";
         var emailText = "Your email is: " + email + "<br>";
         var text = " <br> Leave a review on any product. <br> They are anonymous, whether you logged in or not."
   

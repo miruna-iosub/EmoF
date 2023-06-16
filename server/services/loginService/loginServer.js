@@ -9,7 +9,7 @@ mongodbConnect(async () => {
 const server = http.createServer((request, response) => {
 
     response.setHeader('Access-Control-Allow-Origin', 'http://localhost:4000');
-    response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, OPTIONS');
+    response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS');
     response.setHeader('Access-Control-Allow-Credentials', true);
     response.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, access-control-allow-credentials');
 
@@ -17,8 +17,14 @@ const server = http.createServer((request, response) => {
     const reqMethod = request.method;
     switch (reqMethod) {
         case "POST": {
-            if (reqURL === "/login") {
+            if (reqURL === "/api/login") {
                 controller.postHandler(request, response);
+            }
+            break;
+        }
+        case "DELETE": {
+            if (reqURL === "/api/delete") {
+                controller.deleteHandler(request, response);
             }
             break;
         }

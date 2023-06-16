@@ -17,13 +17,13 @@ const server = http.createServer((request, response) => {
     
     switch (reqMethod) { 
         case "POST": {
-            if (reqURL === "/register") {
+            if (reqURL === "/api/register") {
                 controller.postHandler(request, response)
             }
             break;
         } 
         case "GET": {
-            if(reqURL === '/get-users') {
+            if(reqURL === '/api/users') {
                 controller.getHandlerAll(request, response)
             }
             else if (reqURL.match(/^\/get-user\/([0-9a-z]{24})$/) ) {

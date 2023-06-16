@@ -5,10 +5,10 @@ const fs = require('fs');
 const controller = require("./controllers/assetsController");
 require("dotenv").config();
 
-function handleRequest(request, response) {
+function handleRequest(request, response) { 
 
     const reqURL = request.url;
-    console.log(reqURL);
+    console.log(reqURL); 
     const reqMethod = request.method;
 
     if (reqURL.toString().includes(".css")) {

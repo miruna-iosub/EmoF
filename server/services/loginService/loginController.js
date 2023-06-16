@@ -126,10 +126,10 @@ async function postHandler(request, response) {
               },
               "secret",
               { expiresIn: "3h" }
-            );
+            ); 
 
             // Set the cookie
-            response.setHeader('Set-Cookie', `token=${token}; Path=/; HttpOnly`);
+           // response.('Set-Cookie', `token=${token}; Path=/; HttpOnly`);
             console.log(token)
 
 
@@ -149,7 +149,7 @@ async function postHandler(request, response) {
                 console.log("Inserted");
               }
             );
-
+              console.log("final de login")
             response.writeHead(200, { "Content-Type": "application/json" });
             response.end(
               JSON.stringify({
@@ -191,10 +191,64 @@ async function postHandler(request, response) {
   }
 }
 
+async function deleteHandler(request, response) {
+  console.log("[DELETE HANDLER]");
+  try{
+  const authorizationHeader = request.headers.authorization;
+  console.log(authorizationHeader)
+  if (authorizationHeader && authorizationHeader.startsWith('Bearer ')) {
+    const token = authorizationHeader.substring(7);
+    const decodedToken = jwt.verify(token, "secret");
+    const username = decodedToken["data"]["username"];
+    console.log("username din decoded " + username)
+ 
+    const user = await User.findByUsername(username);
+    console.log(user)
+    
+    if (!user) {
+      response.writeHead(404, { "Content-Type": "application/json" });
+      response.end(JSON.stringify({ message: "User Not Found" }));
+    } else {
+      await User.remove(username);
+      console.log("username ul userului")
+      console.log(username)
+
+      const user = await User.findByUsername(username);
+      console.log("acesta e userul dupa ce a fost sters : " + user)
+
+      
+              console.log("final de ddelete")
+              response.writeHead(200, {
+                "Content-Type": "application/json",
+                'Access-Control-Allow-Credentials': true
+              });
+              response.write(
+                JSON.stringify({
+                  route: "/deleteaccountconfirmation.html",
+                  message: "User deleted!!",
+                })
+              );
+              response.end();
+    }
+  }
+} catch (err) {
+  console.log(err);
+
+  response.writeHead(500, { 
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Credentials" : true
+  });
+  response.end(JSON.stringify(err));
+}
+  
+}
 
 
 
 
 
 
-module.exports = { defaultHandler, postHandler };
+
+
+
+module.exports = { defaultHandler, postHandler, deleteHandler };

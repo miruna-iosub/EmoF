@@ -52,6 +52,12 @@ class User {
         return db.collection('Users').find({ password1: password }).toArray()
     }
 
+    
+    static remove(id) {
+        const db = getDb()
+        db.collection('Users').deleteOne({ username: id })
+    }
+
 }
 
 module.exports = User

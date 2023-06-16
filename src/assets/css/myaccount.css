@@ -91,6 +91,9 @@ nav {
   margin-top: 50px;
 }
 
+.topButton{
+  margin-top: -50px;
+}
 
 .addproduct-button {
   margin-top: 50px;

@@ -37,7 +37,7 @@ defaultHandler = (request, response) => {
 };
 
 async function patchHandler(request, response) {
-  console.log("ajunge aiiiiiici")
+  console.log("[ patchHandler ]")
 
   let responseBody = null;
   const qs = require("qs");
@@ -50,7 +50,6 @@ async function patchHandler(request, response) {
 
   request.on("end", async () => {
     const body = Buffer.concat(chunks);
-    console.log("ajunge aici")
     const parsedData = JSON.parse(body, (key, value) => {
       //currentUsername, username, age, password1, password2
       if (key === "email") {
@@ -171,7 +170,7 @@ async function getHandler(request, response) {
   try {
     let chunks = [];
 
-    console.log("ajunge aiiiiiici")
+    console.log("[ gethandler userprofile ]")
     const authorizationHeader = request.headers.authorization;
     console.log(authorizationHeader)
     if (authorizationHeader && authorizationHeader.startsWith('Bearer ')) {
@@ -182,7 +181,6 @@ async function getHandler(request, response) {
       // Retrieve user information from the database
       const userDetails = await User.findByUsername(username);
 
-      console.log("AAAAAAAAAAAAAAAAAA")
       console.log(userDetails)
       // Construct the response data
       const responseData = {

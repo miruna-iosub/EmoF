@@ -15,7 +15,7 @@ async function userRegister(event) {
 
 
   try {
-    const response = await fetch('http://localhost:3001/register', {
+    const response = await fetch('http://localhost:3001/api/register', {
       method: 'POST',
       credentials: 'include',
       headers: {
@@ -32,7 +32,7 @@ async function userRegister(event) {
     });
 
     const json = await response.json();
-
+    console.log(json)
     if (!response.ok) {
       throw new Error('Register failed');
     }

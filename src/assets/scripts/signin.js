@@ -12,7 +12,7 @@ async function loginUser(event) {
   console.log("[login]", username, password);
 
   try {
-    const response = await fetch('http://localhost:3002/login', {
+    const response = await fetch('http://localhost:3002/api/login', {
       credentials: 'include',
       method: 'POST',
       headers: {
