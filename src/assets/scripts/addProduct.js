@@ -58,6 +58,15 @@ function addQuestions() {
 
 async function addProduct() {
    // event.preventDefault();
+
+    const input = document.getElementById("picture").querySelector("input");
+    const output = document.querySelector("output");
+    // let picture = []
+    // input.addEventListener("change", () => {
+    //     const file = input.files
+    //     picture=file[0];
+    // });
+
     let username="ok";/////////////////
     let name = document.getElementById("name").value.toString();
     let description = document.getElementById("description").value.toString();
@@ -65,7 +74,7 @@ async function addProduct() {
     let picture = "idk yet";///////////////
     let status = "ongoing";
     let expirationDate = document.getElementById("expiration-date").value.toString();
-    let newFormFields = document.getElementById("new-question").value.toString().split(", ");
+    let newFormFields = document.getElementById("new-question").value.toString().split( ",");
 //    let allDefaultForms = document.getElementsByName("questions-checkboxes");
     let index=newFormFields.length;
     for(let checkbox of document.getElementsByName("defaultQuests")){

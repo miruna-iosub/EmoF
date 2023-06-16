@@ -252,7 +252,13 @@ async function repeatProductAllUnlogged(givenCategory) {
                 //   }
 
                 for (i = 0; i < numberProd; i++) {
-                    document.getElementById("products").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="http://localhost:4000/' + productId[i] + "/" + windowLoc + '">' + button1 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + '" alt="' + productType[i] + '"></div></div>';
+                    document.getElementById("products").innerHTML += ' <div class="container2" id="container2">' +
+                        '<div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '">' +
+                        '<p><b>' + productName[i] + '</b><br>' + productDescription[i] +
+                        '</p><a class="sendfeedback-button" href="http://localhost:4000/' + productId[i] + "/" + windowLoc + '">' + button1 + '</a>  </div>' +
+                        '<div class="item3" style="grid-column: 2/3; grid-row: 1/2;">' +
+                        '<img src="' + productImageSource[i] + '" alt="' + productType[i] + '" >' +
+                        '</div></div>';
                 }
                 document.getElementById("category").innerHTML += '<h2><b>Category: ' + category + '</b></h2>';
             });

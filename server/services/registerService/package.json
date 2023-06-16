@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Emotion Based Feedback",
     "scripts": {
-        "start": "nodemon registerServer.js",
+        "register": "nodemon registerServer.js",
         "test": "echo \"No tests yet\" && exit 1"
     },
     "dependencies": {

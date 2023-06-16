@@ -29,9 +29,9 @@ const server = http.createServer((request, response) => {
         case "GET": {
             console.log(reqURL)
             if (reqURL === "/products/all") {
-                controller.getHandler(request, response, "all", null);
+                controller.getHandler(request, response, "all", "all");
             }
-            if (reqURL === "/products/homepage") {
+            else if (reqURL === "/products/homepage") {
                 controller.getHandler(request, response, "homepage", null);
             }
             else if (reqURL.slice(0, 19) === "/products/category/") {

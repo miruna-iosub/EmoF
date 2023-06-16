@@ -133,7 +133,7 @@ function repeatEmotion1(idRef) {
             .then((data) => {
                     data.reviewsFields.forEach(field => {
 
-                        questions = field.formfields;
+                        questions = field.fields;
                         //index++;
 
                     });
