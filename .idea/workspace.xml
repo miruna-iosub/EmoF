@@ -6,18 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a7a5c9b6-48db-43d9-a853-ef38ef6e3be5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/models/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/models/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/productsServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/productsServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/service/productServiceImplementation.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/service/productServiceImplementation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/reviewService/reviewController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/reviewService/reviewController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/addProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/addProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/addaproduct.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/addaproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/addaproduct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/controller/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scripts/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/statistics.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +68,7 @@
       <recent name="E:\M3 SE\EmoF\EmoF\server\userInfoService" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.products">
+  <component name="RunManager" selected="npm.statistics">
     <configuration name="login" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/server/services/loginService/package.json" />
       <command value="run" />
@@ -130,11 +121,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.statistics" />
         <item itemvalue="npm.products" />
         <item itemvalue="npm.review" />
         <item itemvalue="npm.login" />
         <item itemvalue="npm.register" />
-        <item itemvalue="npm.statistics" />
       </list>
     </recent_temporary>
   </component>
@@ -159,7 +150,7 @@
       <workItem from="1686816722028" duration="3350000" />
       <workItem from="1686821631034" duration="29113000" />
       <workItem from="1686856979470" duration="12546000" />
-      <workItem from="1686902045664" duration="31222000" />
+      <workItem from="1686902045664" duration="32355000" />
     </task>
     <servers />
   </component>

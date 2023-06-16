@@ -25,7 +25,7 @@ class MapObject {
 
 function getChart() {
     try {
-        let prodId = '644ea0054774c1d08dfe0485';
+        let prodId = '648c84c13bbc8ab24a97c074';
         let category = 'product';
         var index = 0;
         fetch('http://localhost:3005/statistics/' + prodId + '/' + category,

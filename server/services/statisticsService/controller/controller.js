@@ -95,7 +95,7 @@ let userExists=true;
             if (userExists) {
                 const fields = await productImport.findFormByObjectId(productId);//toate (doar 1)
                 console.log(fields);
-                for (const field of fields[0].formfields) {
+                for (const field of fields[0].fields) {
                     if (category === "product") {
                         if (defaultFields.productFields.includes(field.toString())) {
                             existingFields[index] = field.toString();

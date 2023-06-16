@@ -4,8 +4,8 @@
   "description": "extracts the products from the database",
   "main": "index.js",
   "scripts": {
-    "statistics": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon statisticsServer.js"
+    "sistics": "echo \"Error: no test specified\" && exit 1",
+    "statistics": "nodemon statisticsServer.js"
   },
   "author": "EmoF",
   "license": "ISC",
