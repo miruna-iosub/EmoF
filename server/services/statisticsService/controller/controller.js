@@ -180,15 +180,6 @@ let userExists=true;
                 }
             }
         console.log(mapsOfEmotionsProduct);
-            /**
-             Toate prod chart:
-             Trebuie un: array cu intrebari, array cu emotii,  array ce simt emotia average per intrebare(titlu intrebare, emotie jos),
-             emotii: []
-             intrebare: [em1 cati, em2 cati etc], [ce simt la al meu cati etc]
-
-             My prod chart:
-
-             */
 
             let arrayOfEmotionsMapsOnlyAll=[];
             for(let index=0;index<mapsOfEmotions.length;index++){

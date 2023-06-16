@@ -6,9 +6,9 @@ class Form {
     productid;
     fields; //->"name":"style"
 
-    constructor(fields, productid) {
+    constructor(fields, productidd) {
         this._id = new ObjectId();
-        this.productid = productid;
+        this.productid = productidd;
         this.fields = fields;
     }
 }

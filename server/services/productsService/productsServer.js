@@ -38,6 +38,9 @@ const server = http.createServer((request, response) => {
             else if (reqURL.slice(0, 19) === "/products/category/") {
                 controller.getHandler(request, response, "formfields", reqURL.slice(19));
             }
+            else if (reqURL=== "/products/userProducts") {
+                controller.getHandlerAuth(request, response);
+            }
             else if (reqURL.slice(0, 9) === "/products") {
                 controller.getHandler(request, response, "idorcategory", reqURL.slice(10));
             }

@@ -118,6 +118,16 @@ class ProductService {
             throw new UserInfoError();
         }
     }
+
+    async getUserByUsername(givenUsername) {
+        const db = getDb();
+        try {
+            return db.collection('Products').find({username:givenUsername}).toArray();
+        } catch (e) {
+            console.log("[Error]: " + e);
+            throw new UserInfoError();
+        }
+    }
 }
 
 module.exports = {ProductService};

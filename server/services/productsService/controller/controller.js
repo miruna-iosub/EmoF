@@ -34,17 +34,17 @@ async function postHandler(request, response) {
         var UserExists = false;
 
         var username = null,
-            token =null,
+            token = null,
             name = null,
             description = null,
             type = null,
             pictureGiven = null,
-            picture=null,
+            picture = null,
             subcategory = null,
             category = null,
-        expirationDate=null;
-        let status="ongoing";
-        let index=0;
+            expirationDate = null;
+        let status = "ongoing";
+        let index = 0;
         let formFields = [];
 
         // console.log(parsedData);
@@ -69,31 +69,31 @@ async function postHandler(request, response) {
                     return true;
                 } else if (key === "picture") {
                     picture = value;
-                    return true;}
-                else if (key === "expirationDate") {
+                    return true;
+                } else if (key === "expirationDate") {
                     expirationDate = value;
-                        return true;
+                    return true;
                 } else if (key === "subcategory") {
                     subcategory = value;
                     return true;
                 } else if (key === "category") {
                     category = value;
                     return true;
-                } else if (key.match(/^[0-9]+$/) != null&&key!==""&&key!==" "&&value!=="" &&value!==" "&&value!==null) {
+                } else if (key.match(/^[0-9]+$/) != null && key !== "" && key !== " " && value !== "" && value !== " " && value !== null) {
                     formFields[index] = value;
                     index++;
                     return true;
                 }
                 return false;
             });
-        if(expirationDate==null||expirationDate==""){
-            var date=new Date();
-            let tomorrow=new Date();
-            tomorrow.setDate(date.getDate()+1);
-            expirationDate=date.toLocaleString();
+        if (expirationDate == null || expirationDate === "") {
+            var date = new Date();
+            let tomorrow = new Date();
+            tomorrow.setDate(date.getDate() + 1);
+            expirationDate = date.toLocaleString();
 
         }
-        expirationDate=expirationDate.replaceAll("-","/");
+        expirationDate = expirationDate.replaceAll("-", "/");
 
         let usernames;
         /** try {
@@ -107,32 +107,39 @@ async function postHandler(request, response) {
         }
          **/
         let userExists = false;
+        let pr;
+        let frm;
         const authorizationHeader = request.headers.authorization;
-        if (authorizationHeader && authorizationHeader.startsWith('Bearer ')) {
-            let token = authorizationHeader.substring(7);
-            const decodedToken = jwt.verify(token, "secret");
-             username = decodedToken['data']['username'];
-        }
-
-
         try {
-            usernames = await productImport.findByUsername(username);
-            console.log(usernames);
-        } catch (err) {
+            if (authorizationHeader && authorizationHeader.startsWith('Bearer ')) {
+                let token = authorizationHeader.substring(7);
+                const decodedToken = jwt.verify(token, "secret");
+                username = decodedToken['data']['username'];
+            }
+
+
+            try {
+                usernames = await productImport.findByUsername(username);
+                console.log(usernames);
+            } catch (err) {
+                userExists = false;
+            }
+            if (usernames.length > 0) {
+                userExists = true;
+            }
+            console.log(userExists);
+            console.log(formFields.toString());
+            console.log("username: " + username + ", name: " + name + ", description: " + description + ", type: " + type + ", picture: " + picture + ", status: " + status + ", category: " + category + ", subcategory: " + subcategory + formFields);
+            pr = new Product(username, name, description, type, picture, status, expirationDate, category, subcategory);
+            frm = new Form(formFields, pr._id);
+            pr.setFormFieldsId(frm._id.toString());
+
+
+            /**if picture is null -> placeholder**/
+        } catch (e) {
+            console.log(e);
             userExists = false;
         }
-        if (usernames.length > 0) {
-            userExists = true;
-        }
-        console.log(userExists);
-        console.log(formFields.toString());
-        console.log("username: " + username + ", name: " + name + ", description: " + description + ", type: " + type + ", picture: " + picture + ", status: " + status + ", category: " + category + ", subcategory: " + subcategory + formFields);
-        const pr = new Product(username, name, description, type, picture, status, expirationDate, category, subcategory);
-        const frm = new Form(formFields, pr._id);
-        pr.setFormFieldsId(frm._id.toString());
-
-
-        /**if picture is null -> placeholder**/
 
 
         if (username === null || name === null || description === null || type === null || picture === null || status === null || category === null || subcategory === null) {
@@ -172,7 +179,7 @@ async function postHandler(request, response) {
 
 
 async function getHandler(request, response, type, string) {
-    let extractedProducts;
+    let extractedProducts = [];
     const product = new ProductService();
     let number;
     let findid = false;
@@ -180,15 +187,16 @@ async function getHandler(request, response, type, string) {
     if (type === "all") {
         extractedProducts = await product.findAll();
         number = await product.countAll();
-        findid=true;
+        findid = true;
     } else if (type === "homepage") {
-        extractedProducts = await product.findFirst();
-        for (let index = 6; index < extractedProducts.length; index++) {
-            if (index > extractedProducts.length) {
+        let extractedProducts1 = await product.findAll();
+        for (let index = 0; index < 5; index++) {
+            if (index > extractedProducts1.length) {
                 break;
             }
-            extractedProducts[index] = null;
+            extractedProducts[index] = extractedProducts1[index];
         }
+        number = extractedProducts1.length;
     } else if (type === "idorcategory") {
 
         if (string === "product" || string === "event" || string === "geographicalPlace" || string === "service" || string === "artisticArtefact") {
@@ -199,22 +207,18 @@ async function getHandler(request, response, type, string) {
             extractedProducts = await product.findById(string);
             findid = true;
         }
-    }
-    else if(type==="formfields"){
-        if (string === "product" || string === "event" || string === "geographicalPlace" || string === "service" || string === "artisticArtefact"|| string === "person") {
+    } else if (type === "formfields") {
+        if (string === "product" || string === "event" || string === "geographicalPlace" || string === "service" || string === "artisticArtefact" || string === "person") {
             let extractedProducts1 = await product.findFormFields(string);
-            extractedProducts=extractedProducts1[0];
+            extractedProducts = extractedProducts1[0];
             // number = await product.countByCategory(string);
 
         } else {
             extractedProducts = await product.findById(string);
             findid = true;
         }
-    }
-    if(type==="formfields"){
-        number=1;
-    }
-    else if (extractedProducts.length === 0) {
+        number = 1;
+    } else if (extractedProducts.length === 0) {
         number = "No product in this category."
     } else if (!extractedProducts.length > 0) {
         number = "Failed to extract product."
@@ -236,4 +240,64 @@ async function getHandler(request, response, type, string) {
     response.end();
 }
 
-module.exports = {defaultHandler, postHandler, getHandler};
+
+async function getHandlerAuth(request, response) {
+    const productImport = new ProductService();
+    let responseBody;
+    let userExists = false;
+    let usernames = [];
+    let username;
+    let id;
+    let extractedProducts=[];
+    const authorizationHeader = request.headers.authorization;
+    let number;
+    try {
+        if (authorizationHeader && authorizationHeader.startsWith('Bearer ')) {
+            let token = authorizationHeader.substring(7);
+            const decodedToken = jwt.verify(token, "secret");
+            username = decodedToken['data']['username'];
+        }
+
+
+        try {
+            usernames = await productImport.findByUsername(username);
+            console.log(usernames);
+        } catch (err) {
+            userExists = false;
+        }
+        if (usernames.length > 0) {
+        //    id=usernames[0]._id.toString();
+            userExists = true;
+        }
+        if (userExists) {
+            try {
+                extractedProducts=await productImport.getUserByUsername(username);
+                if(!extractedProducts.length>0){
+                    number="No products.";
+                }
+            } catch (err) {
+                number = err.toString();
+                alert(err);
+            }
+        }
+
+        response.writeHead(200, {
+            "Content-Type": "application/json",
+        });
+        response.write(
+            JSON.stringify({
+                numberProducts: number,
+                products:
+                extractedProducts
+            })
+        );
+        response.end();
+    }
+    catch (e){
+        console.log(e);
+    }
+}
+
+
+
+module.exports = {defaultHandler, postHandler, getHandler, getHandlerAuth};
