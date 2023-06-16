@@ -8,10 +8,11 @@ class Product {
     type;
     picture;
     status;
+    expirationdate;
     category;
     subcategory;
     formfieldsid;
-    constructor(username, name, description, type, picture, status, category, subcategory) {
+    constructor(username, name, description, type, picture, status, expirationdate, category, subcategory) {
         this._id=new ObjectId();
         this.username = username;
         this.name = name;
@@ -19,6 +20,7 @@ class Product {
         this.type = type;
         this.picture = picture;
         this.status = status;
+        this.expirationdate = expirationdate;
         this.category = category;
         this.subcategory = subcategory;
     }

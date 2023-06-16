@@ -98,10 +98,10 @@ class ProductService {
         }
     }
 
-    async findByToken(givenToken) {
+    async findByUsername(givenUsername) {
         const db = getDb();
         try {
-            return db.collection('Tokens').find({token: givenToken}).toArray();
+            return db.collection('Users').find({username: givenUsername}).toArray();
         } catch (e) {
             console.log("[Error]: " + e);
             throw new UserInfoError();

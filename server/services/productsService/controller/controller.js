@@ -3,6 +3,7 @@ const {ProductService} = require("../service/productServiceImplementation");
 const {Product} = require("../models/product");
 const {Form} = require("../models/form");
 const {isArray, isNumber} = require("util");
+const jwt = require("jsonwebtoken");
 
 defaultHandler = (request, response) => {
     response.writeHead(200, {
@@ -33,18 +34,19 @@ async function postHandler(request, response) {
         var UserExists = false;
 
         var username = null,
-            token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiNjQ3NjFmZjc1NmQyNWNlMTYzYmE2ZTNhIiwidXNlcm5hbWUiOiJtaXJ1bmFlbGVuYSJ9LCJpYXQiOjE2ODY1ODU0NzEsImV4cCI6MTY4NjU5NjI3MX0.b2LeSzZuY2Pbwom2QxG_VBqPyN6dt1xYuEihTQF0JXg",
+            token =null,
             name = null,
             description = null,
             type = null,
-            picture = null,
-            status = null,
+            pictureGiven = null,
+            picture=null,
             subcategory = null,
             category = null,
         expirationDate=null;
+        let status="ongoing";
         let index=0;
         let formFields = [];
-        var val = 0;
+
         // console.log(parsedData);
         const parsedData = JSON.parse(
             data,
@@ -71,24 +73,29 @@ async function postHandler(request, response) {
                 else if (key === "expirationDate") {
                     expirationDate = value;
                         return true;
-                } else if (key === "status") {
-                    status = value;
                 } else if (key === "subcategory") {
                     subcategory = value;
                     return true;
                 } else if (key === "category") {
                     category = value;
                     return true;
-                } else if (key.match(/^[0-9]+$/) != null&&key!==""||(key==="0"&&value!==""&&value!==null)) {
+                } else if (key.match(/^[0-9]+$/) != null&&key!==""&&key!==" "&&value!=="" &&value!==" "&&value!==null) {
                     formFields[index] = value;
                     index++;
                     return true;
                 }
                 return false;
-
             });
+        if(expirationDate==null||expirationDate==""){
+            var date=new Date();
+            let tomorrow=new Date();
+            tomorrow.setDate(date.getDate()+1);
+            expirationDate=date.toLocaleString();
 
-        let tokens;
+        }
+        expirationDate=expirationDate.replaceAll("-","/");
+
+        let usernames;
         /** try {
             userExists = productImport.tokenUsername(token, username);
             if(userExists===false){
@@ -99,23 +106,34 @@ async function postHandler(request, response) {
             userExists = false;
         }
          **/
-
         let userExists = false;
+        const authorizationHeader = request.headers.authorization;
+        if (authorizationHeader && authorizationHeader.startsWith('Bearer ')) {
+            let token = authorizationHeader.substring(7);
+            const decodedToken = jwt.verify(token, "secret");
+             username = decodedToken['data']['username'];
+        }
+
+
         try {
-            tokens = await productImport.findByToken(token);
-            console.log(tokens);
+            usernames = await productImport.findByUsername(username);
+            console.log(usernames);
         } catch (err) {
             userExists = false;
         }
-        if (tokens.length > 0) {
+        if (usernames.length > 0) {
             userExists = true;
         }
         console.log(userExists);
         console.log(formFields.toString());
         console.log("username: " + username + ", name: " + name + ", description: " + description + ", type: " + type + ", picture: " + picture + ", status: " + status + ", category: " + category + ", subcategory: " + subcategory + formFields);
-        const pr = new Product(username, name, description, type, picture, status, category, subcategory);
+        const pr = new Product(username, name, description, type, picture, status, expirationDate, category, subcategory);
         const frm = new Form(formFields, pr._id);
         pr.setFormFieldsId(frm._id.toString());
+
+
+        /**if picture is null -> placeholder**/
+
 
         if (username === null || name === null || description === null || type === null || picture === null || status === null || category === null || subcategory === null) {
             responseBody = responseBody + "Invalid Json format.";

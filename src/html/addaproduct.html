@@ -126,8 +126,9 @@
             Upload a picture of your product:
         </label>
         <!--            <input type="file" id="picture" name="picture" onclick="addPicture()">-->
-        <input type="file" id="picture" name="picture" accept="image/jpeg, image/png, image/jpg">
 
+<!--      <input type="file" id="picture" name="picture" accept="image/jpeg, image/png, image/jpg">-->
+        <input type="file" id="picture" name="picture" onChange="getPath()" accept="">
 
         <!--            <label for="production-date">-->
         <!--                Production Date:-->

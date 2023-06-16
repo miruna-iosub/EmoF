@@ -76,7 +76,7 @@ async function postHandler(request, response, prodId) {
 
         let fields = await new Review().findFieldsObjectId(idProduct);
         i=0;
-        for(let field of fields[0].formfields) {
+        for(let field of fields[0].fields) {
             formfieldsQuestion[i] = field.toString();
             i++;
         }

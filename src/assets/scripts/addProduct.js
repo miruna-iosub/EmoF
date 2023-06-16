@@ -1,6 +1,42 @@
+function getJWTToken() {
+    const cookies = document.cookie.split(';');
+
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+
+        if (cookie.startsWith('jwt=')) {
+            return cookie.substring(4); // Retrieve the value after 'jwt='
+        }
+    }
+    return null; // Return null if JWT token is not found
+
+}
+
+
 var category;
 var subcategory;
-var questions=[];
+var questions = [];
+var fileName;
+
+var today = new Date().toISOString().split('T')[0];
+document.getElementsByName("expiration-date")[0].setAttribute('min', today);
+
+// const getBase64StringFromDataURL = (dataURL) =>
+//     dataURL.replace('data:', '').replace(/^.+,/, '');
+function getPath() {
+
+
+    var file = document.querySelector('input[type=file]')['files'][0];
+    var reader = new FileReader();
+    var baseString;
+    reader.onloadend = function () {
+        fileName = reader.result;
+        console.log(fileName);
+    };
+    reader.readAsDataURL(file);
+
+}
+
 
 function addQuestions() {
     let serviceArray = ['eventOrganiser', 'smallBusiness', 'cleaning', 'clinic'];
@@ -43,11 +79,11 @@ function addQuestions() {
 
                 var elem = document.getElementById("questions-checkboxes1");
                 elem.parentNode.removeChild(elem);
-                document.getElementById("questions-checkboxes").innerHTML +='<div class="question-checkboxes" id="questions-checkboxes1"></div>'
+                document.getElementById("questions-checkboxes").innerHTML += '<div class="question-checkboxes" id="questions-checkboxes1"></div>'
 
                 for (let index = 0; index < questions.length; index++) {
                     document.getElementById("questions-checkboxes1").innerHTML +=
-                        ' <input type="checkbox" name="defaultQuests" value="' + questions[index] + '" id="'+questions[index]+'">' +
+                        ' <input type="checkbox" name="defaultQuests" value="' + questions[index] + '" id="' + questions[index] + '">' +
                         '<label for="question">' + questions[index] + '</label>';
                 }
             });
@@ -56,64 +92,58 @@ function addQuestions() {
     }
 }
 
+
 async function addProduct() {
-   // event.preventDefault();
-
-    const input = document.getElementById("picture").querySelector("input");
-    const output = document.querySelector("output");
-    // let picture = []
-    // input.addEventListener("change", () => {
-    //     const file = input.files
-    //     picture=file[0];
-    // });
-
-    let username="ok";/////////////////
+    let picture = fileName;
     let name = document.getElementById("name").value.toString();
     let description = document.getElementById("description").value.toString();
     let type = document.getElementById("type").value.toString();
-    let picture = "idk yet";///////////////
-    let status = "ongoing";
     let expirationDate = document.getElementById("expiration-date").value.toString();
-    let newFormFields = document.getElementById("new-question").value.toString().split( ",");
-//    let allDefaultForms = document.getElementsByName("questions-checkboxes");
-    let index=newFormFields.length;
-    for(let checkbox of document.getElementsByName("defaultQuests")){
+    let newFormFields = document.getElementById("new-question").value.toString().split(",");
+    let index = newFormFields.length;
+    for (let checkbox of document.getElementsByName("defaultQuests")) {
         console.log(checkbox.checked);
         console.log(checkbox.value);
         console.log(checkbox.name);
 
-    if(checkbox.checked){
-        newFormFields[index]=checkbox.value.toString();
-        index++;
+        if (checkbox.checked) {
+            newFormFields[index] = checkbox.value.toString();
+            index++;
+        }
     }
-}
-
     try {
-        const response = await fetch('http://localhost:3003/products', {
+        const jwtToken = getJWTToken();
+
+        const response = await fetch('http://127.0.0.1:3003/products', {
             method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Credentials': true,
+                'Authorization': `Bearer ${jwtToken}`,
+            },
             body: JSON.stringify({
-                username:username,
-                name:name,
-                description:description,
-                type:type,
-                picture:picture,
-                status:status,
-                category:category,
-                subcategory:subcategory,
-                expirationDate:expirationDate,
-                formFields:newFormFields,
+                token: jwtToken,
+                name: name,
+                description: description,
+                type: type,
+                picture: picture,
+                category: category,
+                subcategory: subcategory,
+                expirationDate: expirationDate,
+                formFields: newFormFields,
             }),
         });
 
-        const json = await response.json();
-
-        if (!response.ok) {
-            throw new Error('Posting product failed');
-        }
-
-        console.log(`http://localhost:3003{json.route}`)
-        window.location.href ="https://localhost:4000/addaproductconfirmation.html"
-        window.alert(json.message)
+        // const json = await response.json();
+        //
+        // if (!response.ok) {
+        //     throw new Error('Posting product failed');
+        // }
+        //
+        // console.log(`http://localhost:3003{json.route}`)
+        //
+        // window.alert(json.message)
     } catch (error) {
         console.error(error);
         window.alert('Posting product failed');

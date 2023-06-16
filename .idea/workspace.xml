@@ -5,25 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7a5c9b6-48db-43d9-a853-ef38ef6e3be5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/services/picturesService/pictureServer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/userInfoService/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/loginService/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/loginService/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/productsService/models/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/models/product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/services/productsService/productsServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/productsServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/registerService/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/registerService/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/reviewService/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/reviewService/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/products.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/products.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/accountinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/accountinfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/productsService/service/productServiceImplementation.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/service/productServiceImplementation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/reviewService/reviewController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/reviewService/reviewController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/scripts/addProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/addProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scripts/addaproduct.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/scripts/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/sendfeedback.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/sendfeedback.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/addaproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/addaproduct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/myaccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/myaccount.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,22 +45,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "last_opened_file_path": "E:/M3 SE/EmoF/EmoF/server/services/userInfoService",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "E:\\IntelliJ\\WebStorm 2023.1.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/M3 SE/EmoF/EmoF/server/services/userInfoService&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;E:\\IntelliJ\\WebStorm 2023.1.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\M3 SE\EmoF\EmoF\server\services\userInfoService" />
@@ -83,7 +77,7 @@
       <recent name="E:\M3 SE\EmoF\EmoF\server\userInfoService" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.review">
+  <component name="RunManager" selected="npm.products">
     <configuration name="login" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/server/services/loginService/package.json" />
       <command value="run" />
@@ -136,8 +130,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.review" />
         <item itemvalue="npm.products" />
+        <item itemvalue="npm.review" />
         <item itemvalue="npm.login" />
         <item itemvalue="npm.register" />
         <item itemvalue="npm.statistics" />
@@ -165,7 +159,7 @@
       <workItem from="1686816722028" duration="3350000" />
       <workItem from="1686821631034" duration="29113000" />
       <workItem from="1686856979470" duration="12546000" />
-      <workItem from="1686902045664" duration="9537000" />
+      <workItem from="1686902045664" duration="31222000" />
     </task>
     <servers />
   </component>
@@ -188,103 +182,83 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>31</line>
+          <line>32</line>
           <option name="timeStamp" value="148" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>35</line>
+          <line>36</line>
           <option name="timeStamp" value="149" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>37</line>
+          <line>38</line>
           <option name="timeStamp" value="150" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>40</line>
-          <option name="timeStamp" value="151" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>41</line>
+          <line>42</line>
           <option name="timeStamp" value="152" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>45</line>
+          <line>47</line>
           <option name="timeStamp" value="153" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>39</line>
+          <line>40</line>
           <option name="timeStamp" value="154" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>38</line>
+          <line>39</line>
           <option name="timeStamp" value="155" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>36</line>
+          <line>37</line>
           <option name="timeStamp" value="156" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>34</line>
+          <line>35</line>
           <option name="timeStamp" value="157" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>32</line>
+          <line>33</line>
           <option name="timeStamp" value="158" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>42</line>
+          <line>43</line>
           <option name="timeStamp" value="159" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>46</line>
-          <option name="timeStamp" value="160" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>52</line>
-          <option name="timeStamp" value="162" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>56</line>
+          <line>58</line>
           <option name="timeStamp" value="163" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>59</line>
+          <line>61</line>
           <option name="timeStamp" value="164" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>62</line>
+          <line>64</line>
           <option name="timeStamp" value="166" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>65</line>
+          <line>67</line>
           <option name="timeStamp" value="167" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>68</line>
+          <line>70</line>
           <option name="timeStamp" value="168" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>74</line>
-          <option name="timeStamp" value="169" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
@@ -303,77 +277,41 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>107</line>
+          <line>121</line>
           <option name="timeStamp" value="174" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>113</line>
+          <line>127</line>
           <option name="timeStamp" value="175" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>124</line>
+          <line>142</line>
           <option name="timeStamp" value="176" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>145</line>
+          <line>163</line>
           <option name="timeStamp" value="177" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>24</line>
-          <option name="timeStamp" value="178" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>27</line>
-          <option name="timeStamp" value="179" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>29</line>
-          <option name="timeStamp" value="180" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/assets/scripts/addProduct.js</url>
-          <line>86</line>
-          <option name="timeStamp" value="181" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/assets/scripts/addProduct.js</url>
-          <line>85</line>
-          <option name="timeStamp" value="182" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/assets/scripts/addProduct.js</url>
-          <line>84</line>
-          <option name="timeStamp" value="183" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>212</line>
+          <line>230</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="188" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>211</line>
+          <line>229</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="189" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
-          <line>213</line>
+          <line>231</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="190" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server/services/productsService/productsServer.js</url>
-          <line>31</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="192" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
@@ -488,6 +426,48 @@
           <line>25</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="211" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
+          <line>73</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="212" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/productsService/productsServer.js</url>
+          <line>33</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="216" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/productsService/productsServer.js</url>
+          <line>30</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="217" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/productsService/productsServer.js</url>
+          <line>29</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="218" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/productsService/productsServer.js</url>
+          <line>23</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="219" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
+          <line>52</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="221" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
+          <line>95</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="226" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
