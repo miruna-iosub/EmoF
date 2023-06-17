@@ -124,7 +124,25 @@ async function postHandler(request, response) {
                 })
               );
               response.end();
-            } else if (password1 !== password2) {
+            } else if(age<18 || isNaN(age)){
+              console.log(
+                "[user-controller] You have to be older than 18 and strings are not allowed!"
+              );
+  
+              responseBody = "You have to be older than 18 and strings are not allowed!";
+  
+              response.writeHead(200, {
+                "Content-Type": "application/json",
+              });
+              response.write(
+                JSON.stringify({
+                  route: "/signup.html",
+                  message: responseBody,
+                })
+              );
+              response.end();
+            }
+            else if (password1 !== password2) {
               console.log(
                 "[user-controller] Please make sure your passwords match!"
               );
