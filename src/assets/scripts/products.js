@@ -85,8 +85,19 @@ function repeatProduct1() {
 function productOfTheWeek() {
     var location = "../assets/images/camera.png";
     var type = "camera";
+    var button;
+    var redirect;
+    if (window.location.href.slice(-22) === "homepage-loggedin.html") {
+        button = "My Account";
+redirect="myaccount.html";
+    } else {
+        button = "Sign Up Now";
+        redirect="signup.html";
+    }
+
+
     var productDescription = "Our initiative is to bring closer together any type of provider and their clients. <br>You can become either anytime.<br><br><br>";
-    document.getElementById("products3").innerHTML += ' <div class="grid-container" id="productoftheweek"><div class="grid-item"><img src="' + location + '" alt="' + type + '"></div> <div class="grid-item item2"> <div class="grid-item item2-top"> <h2>Emotion-based Feedback</h2></div> <div class="grid-item item2-bottom"><p>' + productDescription + '</p> </div><div class="sendfeedback-button"> <a href="signup.html">Sign Up Now</a> </div> </div> </div>';
+    document.getElementById("products3").innerHTML += ' <div class="grid-container" id="productoftheweek"><div class="grid-item"><img src="' + location + '" alt="' + type + '"></div> <div class="grid-item item2"> <div class="grid-item item2-top"> <h2>Emotion-based Feedback</h2></div> <div class="grid-item item2-bottom"><p>' + productDescription + '</p> </div><div class="sendfeedback-button"> <a href="'+redirect+'">'+button+'</a> </div> </div> </div>';
 }
 
 async function repeatProductHomepageLogged() {
@@ -106,7 +117,7 @@ async function repeatProductHomepageLogged() {
             .then((data) => {
                 numberProd = parseInt(data.numberProducts);
                 data.products.forEach(prod => {
-                    if (prod == null) {
+                    if (prod !== null) {
                         productId[index] = prod._id.toString();
                         productImageSource[index] = prod.picture.toString();
                         productType[index] = prod.type.toString();
@@ -125,11 +136,11 @@ async function repeatProductHomepageLogged() {
                 //    if(numberProd!==4)numberProd = 4;
                 let i = 0;
                 while (i < numberProd) {
-                    document.getElementById("products").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="http://localhost:4000/' + productId[i] + '/' + windowLoc + '">' + button1 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + '" alt="' + productType[i] + '></div></div>';
+                    document.getElementById("products").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="http://localhost:4000/' + productId[i] + '/' + windowLoc + '">' + button1 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + '" alt="' + productType[i] + '"></div></div>';
                     console.log(productId[i] + '/' + windowLoc);
                     i++;
                     if (i < numberProd) {
-                        document.getElementById("products1").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="http://localhost:4000/' + productId[i] + "/" + windowLoc + '">' + button2 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + ' alt="' + productType[i] + '></div></div>';
+                        document.getElementById("products1").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="http://localhost:4000/' + productId[i] + "/" + windowLoc + '">' + button2 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + ' alt="' + productType[i] + '"></div></div>';
                     }
                     i++;
                 }
@@ -299,6 +310,9 @@ async function repeatProductAllLogged(givenCategory) {
                 for (i = 0; i < numberProd; i++) {
                     document.getElementById("products").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="http://localhost:4000/' + productId[i] + "/" + windowLoc + '">' + button1 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + '" alt="' + productType[i] + '"></div></div>';
                 }
+                category = category.substring(0, 1).toUpperCase() + category.substring(1, category.length);
+                const result = category.split(/(?=[A-Z])/);
+                category = result.join(" ");
                 document.getElementById("category").innerHTML += '<h2><b>Category: ' + category + '</b></h2>';
             });
     } catch (e) {
@@ -313,7 +327,7 @@ function addBasic() {
     var type = "product";
     let button;
     var productDescription, linkedTo, productHeader;
-    if (window.location.href.slice(-20) === "homepage-logged.html") {
+    if (window.location.href.slice(-22) === "homepage-loggedin.html") {
         productDescription = "Do you want to receive honest reviews on something? You can add your products, services, art, even yourself.";
         productHeader = "Are you interested in seeing clients' emotions with accurate charts?";
         linkedTo = "/addaproduct.html";

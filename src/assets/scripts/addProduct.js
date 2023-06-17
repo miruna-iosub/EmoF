@@ -148,4 +148,5 @@ async function addProduct() {
         console.error(error);
         window.alert('Posting product failed');
     }
+ 
 }
