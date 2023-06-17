@@ -1,7 +1,7 @@
 class Config {
     constructor() {
-       this.db_username = 'mom'
-       this.db_password = 'mom'
+       this.db_username = 'userInfo'
+       this.db_password = 'userInfo'
        this.db = 'EmoF'
     } 
 }

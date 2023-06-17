@@ -5,7 +5,6 @@
     "main": "homepage-unloggedin.html",
     "scripts": {
         "mom": "nodemon app.js",
-        "dev": "nodemon app.js",
         "test": "echo \"No tests yet\" && exit 1"
     },
     "dependencies": {

@@ -5,12 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7a5c9b6-48db-43d9-a853-ef38ef6e3be5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/server/services/loginService/database/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/loginService/database/database.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/loginService/database/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/registerService/database/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/registerService/database/database.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/registerService/database/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/registerService/models/reviewModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/registerService/models/usersModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/reviewService/database/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/reviewService/database/database.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/reviewService/database/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/reviewService/models/reviewModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/reviewService/models/usersModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/userInfoService/models/reviewModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/userInfoService/models/usersModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/userInfoService/utils/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/userInfoService/utils/database.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/userInfoService/utils/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/reviewModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/loginService/models/reviewModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/usersModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/loginService/models/usersModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/loginService/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/loginService/loginController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/loginService/loginServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/loginService/loginServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/picturesService/pictureServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/monitoringService/pictureServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/registerService/registerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/registerService/registerController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/registerService/registerServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/registerService/registerServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/reviewService/reviewController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/reviewService/reviewController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/reviewService/reviewServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/reviewService/reviewServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/userInfoService/userInfoController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/userInfoService/userInfoController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/userInfoService/userInfoServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/userInfoService/userInfoServer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/scripts/addProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/addProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/addaproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/addaproduct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/addaproductconfirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/addaproductconfirmation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/homepage-loggedin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/homepage-loggedin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,29 +65,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/M3 SE/EmoF/EmoF&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;E:\\IntelliJ\\WebStorm 2023.1.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "last_opened_file_path": "E:/M3 SE/EmoF/EmoF/server/services/userInfoService",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "E:\\IntelliJ\\WebStorm 2023.1.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\M3 SE\EmoF\EmoF\server\services\userInfoService" />
-      <recent name="E:\M3 SE\EmoF\EmoF\server\services\statisticsService" />
-      <recent name="E:\M3 SE\EmoF\EmoF\server\services\statisticsService\models" />
-      <recent name="E:\M3 SE\EmoF\EmoF\server\services\loginService" />
+      <recent name="E:\M3 SE\EmoF\EmoF\server\services\reviewService" />
       <recent name="E:\M3 SE\EmoF\EmoF\server\services\registerService" />
+      <recent name="E:\M3 SE\EmoF\EmoF\server\services\productsService" />
+      <recent name="E:\M3 SE\EmoF\EmoF\server\services\picturesService" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\M3 SE\EmoF\EmoF\server\services" />
@@ -70,7 +97,7 @@
       <recent name="E:\M3 SE\EmoF\EmoF\server\userInfoService" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.products">
+  <component name="RunManager" selected="npm.login">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -123,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.login" />
         <item itemvalue="npm.products" />
         <item itemvalue="npm.review" />
         <item itemvalue="npm.userInfo" />
         <item itemvalue="npm.dev" />
-        <item itemvalue="npm.login" />
       </list>
     </recent_temporary>
   </component>
@@ -154,7 +181,7 @@
       <workItem from="1686856979470" duration="12546000" />
       <workItem from="1686902045664" duration="38078000" />
       <workItem from="1686949698361" duration="1718000" />
-      <workItem from="1686982201690" duration="4578000" />
+      <workItem from="1686982201690" duration="7838000" />
     </task>
     <servers />
   </component>

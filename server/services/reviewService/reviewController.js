@@ -1,4 +1,4 @@
-const Review = require("../../../models/reviewModel");
+const Review = require("./models/reviewModel");
 const jwt = require("jsonwebtoken");
 
 defaultHandler = (request, response) => {

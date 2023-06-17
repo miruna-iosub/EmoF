@@ -1,9 +1,9 @@
 var url = require("url");
 var fs = require("fs");
 var qs = require("querystring");
-const { getPostData } = require("../../../utils/utils");
-const User = require("../../../models/usersModel");
-const getDb = require("../../../utils/database").getDb;
+const { getPostData } = require("./utils/database");
+const User = require("./models/usersModel");
+const getDb = require("./utils/database").getDb;
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 

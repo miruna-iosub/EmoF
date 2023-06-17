@@ -1,6 +1,6 @@
 const http = require("http");
 var controller = require("./registerController.js");
-const mongodbConnect = require('../../../utils/database.js').mongodbConnect
+const mongodbConnect = require('./database/database.js').mongodbConnect
 
 mongodbConnect(async () => {
     server.listen(3001, () => console.log(`[server] Server running on port ${3001}`))
