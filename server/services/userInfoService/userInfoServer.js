@@ -19,13 +19,13 @@ const server = http.createServer((request, response) => {
     
     switch (reqMethod) { 
         case "GET": {
-            if (reqURL ==="/userinfo" ) {
+            if (reqURL ==="/api/v1/userinfo" ) {
                 controller.getHandler(request, response)
             }
             break;
         }
         case "PATCH": {
-            if (reqURL === "/updateinfo") {
+            if (reqURL === "/api/v1/updateinfo") {
                 controller.patchHandler(request, response);
             } 
             break;

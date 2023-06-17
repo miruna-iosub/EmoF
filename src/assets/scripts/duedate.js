@@ -1,7 +1,7 @@
 async function duedate() {
   console.log("[client ruta spre duedate]");
   try {
-    const response = await fetch("http://127.0.0.1:3007/duedate", {
+    const response = await fetch("http://127.0.0.1:3007/api/v1/duedate", {
       method: "PATCH",
       credentials: "include",
       headers: {

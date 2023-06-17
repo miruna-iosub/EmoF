@@ -153,7 +153,7 @@ async function postHandler(request, response) {
             response.writeHead(200, { "Content-Type": "application/json" });
             response.end(
               JSON.stringify({
-                route: "/homepage-loggedin.html",
+                route: "/homepage",
                 message: "Login successful!",
                 information: token,
               })
@@ -242,8 +242,6 @@ async function deleteHandler(request, response) {
 }
   
 }
-
-
 
 
 

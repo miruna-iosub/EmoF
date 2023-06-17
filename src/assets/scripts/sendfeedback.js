@@ -86,7 +86,7 @@ async function sendFeedback(idRef) {
     }
 
     try {
-        const response = await fetch('http://localhost:3004/review', {
+        const response = await fetch('http://localhost:3004/api/v1/review', {
             method: 'POST',
             body: JSON.stringify({
                 idProduct: id,

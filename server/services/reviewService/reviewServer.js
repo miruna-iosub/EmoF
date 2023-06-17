@@ -18,7 +18,7 @@ const server = http.createServer((request, response) => {
 
 
         case "POST": {
-            if (reqURL === "/review") {
+            if (reqURL === "/api/v1/review") {
                 controller.postHandler(request, response);
             }
             break;

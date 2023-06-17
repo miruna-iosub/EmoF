@@ -17,13 +17,13 @@ const server = http.createServer((request, response) => {
     const reqMethod = request.method;
     switch (reqMethod) {
         case "POST": {
-            if (reqURL === "/api/login") {
+            if (reqURL === "/api/v1/login") {
                 controller.postHandler(request, response);
             }
             break;
         }
         case "DELETE": {
-            if (reqURL === "/api/delete") {
+            if (reqURL === "/api/v1/delete") {
                 controller.deleteHandler(request, response);
             }
             break;

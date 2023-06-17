@@ -41,7 +41,7 @@ async function updateInfo(event) {
     const jwtToken = getJWTToken();
 
     try {
-        const response = await fetch('http://127.0.0.1:3006/updateinfo', {
+        const response = await fetch('http://127.0.0.1:3006/api/v1/updateinfo', {
             method: 'PATCH',
             credentials: 'include',
             headers: {

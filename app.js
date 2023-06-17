@@ -71,7 +71,6 @@ mongodbConnect(async () => {
     server.listen(4000, () => console.log(`[server] Server running on port ${4000}`))
 })
 
-const server = http.createServer((req, res) => {
-    handleRequest(req, res);
-    //router(req, res);
+const server = http.createServer(function(req, res){
+    router(req, res, req.url, req.method);
 });

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="..\assets\images\logo.png">
+    <link rel="stylesheet" href="../assets/css/reviewconfirmation.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@200&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>EmoF</title>
+</head>
+
+<body onload="getChart();">
+
+<!-- Start Navbar -->
+<nav>
+    <div class="logo">
+        <a href="homepage-logged.html">
+            <img src="..\assets\images\logo.png" alt="Logo">
+        </a>
+    </div>
+</nav>
+
+<canvas id="chartCanvas" width="400" height="200"></canvas>
+
+
+<pre class="container5" id="statisticsJson">
+</pre>
+
+<pre class="container5" id="statisticsCsv">
+
+</pre>
+
+<div id="chart">
+
+</div>
+
+<!--<script src="https://cdn.jsdelivr.net/npm/frappe-charts@1.2.4/dist/frappe-charts.min.iife.js"></script>-->
+<script type="text/javascript" src="..\assets\scripts\statistics.js"> </script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
