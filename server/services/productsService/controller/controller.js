@@ -47,7 +47,6 @@ async function postHandler(request, response) {
         let index = 0;
         let formFields = [];
 
-        // console.log(parsedData);
         const parsedData = JSON.parse(
             data,
             (key, value) => {
@@ -68,7 +67,11 @@ async function postHandler(request, response) {
                     type = value;
                     return true;
                 } else if (key === "picture") {
-                    picture = value;
+                    if (value === "" || value === " " || value === null) {
+                        picture = new PicturePlaceholder().prettyNoPicture;
+                    } else {
+                        picture = value;
+                    }
                     return true;
                 } else if (key === "expirationDate") {
                     expirationDate = value;
@@ -96,16 +99,6 @@ async function postHandler(request, response) {
         expirationDate = expirationDate.replaceAll("-", "/");
 
         let usernames;
-        /** try {
-            userExists = productImport.tokenUsername(token, username);
-            if(userExists===false){
-                responseBody = "Invalid user details. ";
-            }
-        } catch (e) {
-            responseBody = "Invalid user details. ";
-            userExists = false;
-        }
-         **/
         let userExists = false;
         let pr;
         let frm;
@@ -120,17 +113,13 @@ async function postHandler(request, response) {
 
             try {
                 usernames = await productImport.findByUsername(username);
-                console.log(usernames);
             } catch (err) {
                 userExists = false;
             }
             if (usernames.length > 0) {
                 userExists = true;
             }
-            console.log(userExists);
-            console.log(formFields.toString());
-            console.log("username: " + username + ", name: " + name + ", description: " + description + ", type: " + type + ", picture: " + picture + ", status: " + status + ", category: " + category + ", subcategory: " + subcategory + formFields);
-            pr = new Product(username, name, description, type, picture, status, expirationDate, category, subcategory);
+           pr = new Product(username, name, description, type, picture, status, expirationDate, category, subcategory);
             frm = new Form(formFields, pr._id);
             pr.setFormFieldsId(frm._id.toString());
 
@@ -142,7 +131,7 @@ async function postHandler(request, response) {
         }
 
 
-        if (username === null || name === null || description === null || type === null || picture === null || status === null || category === null || subcategory === null) {
+        if (username === null || name === null || description === null || type === null || status === null || category === null || subcategory === null) {
             responseBody = responseBody + "Invalid Json format.";
             console.log("[Error] A field is null.")
         } else if (userExists) {
@@ -159,7 +148,6 @@ async function postHandler(request, response) {
                 responseBody = err.toString();
                 alert(err);
             }
-            console.log(responseBody);
             if (responseBody === null) {
                 responseBody = "POST successful."
             }
@@ -183,7 +171,7 @@ async function getHandler(request, response, type, string) {
     const product = new ProductService();
     let number;
     let findid = false;
-    console.log(type);
+
     if (type === "all") {
         extractedProducts = await product.findAll();
         number = await product.countAll();
@@ -199,7 +187,7 @@ async function getHandler(request, response, type, string) {
         number = extractedProducts1.length;
     } else if (type === "idorcategory") {
 
-        if (string === "product" || string === "event" || string === "geographicalPlace" || string === "service" || string === "artisticArtefact") {
+        if (string === "product" || string === "event" || string === "geographicalPlace" || string === "service" || string === "artisticArtefact"||string === "person") {
             extractedProducts = await product.findByCategory(string);
             // number = await product.countByCategory(string);
 
@@ -226,8 +214,6 @@ async function getHandler(request, response, type, string) {
         number = extractedProducts.length;
     }
 
-    console.log(extractedProducts);
-
     response.write(
         JSON.stringify({
             numberProducts: number,
@@ -247,7 +233,7 @@ async function getHandlerAuth(request, response) {
     let usernames = [];
     let username;
     let id;
-    let extractedProducts=[];
+    let extractedProducts = [];
     const authorizationHeader = request.headers.authorization;
     let number;
     try {
@@ -260,19 +246,18 @@ async function getHandlerAuth(request, response) {
 
         try {
             usernames = await productImport.findByUsername(username);
-            console.log(usernames);
         } catch (err) {
             userExists = false;
         }
         if (usernames.length > 0) {
-        //    id=usernames[0]._id.toString();
+            //    id=usernames[0]._id.toString();
             userExists = true;
         }
         if (userExists) {
             try {
-                extractedProducts=await productImport.getUserByUsername(username);
-                if(!extractedProducts.length>0){
-                    number="No products.";
+                extractedProducts = await productImport.getUserByUsername(username);
+                if (!extractedProducts.length > 0) {
+                    number = "No products.";
                 }
             } catch (err) {
                 number = err.toString();
@@ -291,12 +276,10 @@ async function getHandlerAuth(request, response) {
             })
         );
         response.end();
-    }
-    catch (e){
+    } catch (e) {
         console.log(e);
     }
 }
-
 
 
 module.exports = {defaultHandler, postHandler, getHandler, getHandlerAuth};

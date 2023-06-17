@@ -5,39 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7a5c9b6-48db-43d9-a853-ef38ef6e3be5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/services/loginService/database/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/loginService/database/database.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/loginService/database/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/registerService/database/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/registerService/database/database.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/registerService/database/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/registerService/models/reviewModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/registerService/models/usersModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/reviewService/database/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/reviewService/database/database.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/reviewService/database/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/reviewService/models/reviewModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/reviewService/models/usersModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/userInfoService/models/reviewModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/userInfoService/models/usersModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/userInfoService/utils/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/userInfoService/utils/database.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/userInfoService/utils/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/services/productsService/models/picturePlaceholder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scripts/productsMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scripts/productsMyAccount.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/reviewModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/loginService/models/reviewModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/usersModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/loginService/models/usersModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/loginService/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/loginService/loginController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/loginService/loginServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/loginService/loginServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/picturesService/pictureServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/monitoringService/pictureServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/registerService/registerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/registerService/registerController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/registerService/registerServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/registerService/registerServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/reviewService/reviewController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/reviewService/reviewController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/reviewService/reviewServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/reviewService/reviewServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/userInfoService/userInfoController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/userInfoService/userInfoController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/userInfoService/userInfoServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/userInfoService/userInfoServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/assetsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/assetsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/productsService/service/productServiceImplementation.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/service/productServiceImplementation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scripts/accountinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/accountinfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/scripts/addProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/addProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scripts/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scripts/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/statistics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scripts/updateinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/updateinfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/addaproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/addaproduct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/charts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/myaccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/myaccount.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/myaccountvechi.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/products-logged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/products-logged.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +81,7 @@
       <recent name="E:\M3 SE\EmoF\EmoF\server\userInfoService" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.login">
+  <component name="RunManager" selected="npm.products">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -150,8 +134,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.login" />
         <item itemvalue="npm.products" />
+        <item itemvalue="npm.login" />
         <item itemvalue="npm.review" />
         <item itemvalue="npm.userInfo" />
         <item itemvalue="npm.dev" />
@@ -181,7 +165,7 @@
       <workItem from="1686856979470" duration="12546000" />
       <workItem from="1686902045664" duration="38078000" />
       <workItem from="1686949698361" duration="1718000" />
-      <workItem from="1686982201690" duration="7838000" />
+      <workItem from="1686982201690" duration="21635000" />
     </task>
     <servers />
   </component>
@@ -211,6 +195,66 @@
           <url>file://$PROJECT_DIR$/server/services/productsService/productsServer.js</url>
           <line>35</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/productsService/productsServer.js</url>
+          <line>38</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/productsService/productsServer.js</url>
+          <line>44</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
+          <line>187</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
+          <line>194</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
+          <line>200</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
+          <line>209</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
+          <line>211</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
+          <line>214</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
+          <line>213</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/productsService/controller/controller.js</url>
+          <line>220</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

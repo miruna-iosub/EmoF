@@ -132,12 +132,11 @@ async function repeatProductHomepageLogged() {
                 var oneContainer = 0;
                 oneContainer = 1;
                 button1 = button2 = "Send Feedback";
-                console.log(productImageSource);
                 //    if(numberProd!==4)numberProd = 4;
                 let i = 0;
                 while (i < numberProd) {
                     document.getElementById("products").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="http://localhost:4000/' + productId[i] + '/' + windowLoc + '">' + button1 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + '" alt="' + productType[i] + '"></div></div>';
-                    console.log(productId[i] + '/' + windowLoc);
+
                     i++;
                     if (i < numberProd) {
                         document.getElementById("products1").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="http://localhost:4000/' + productId[i] + "/" + windowLoc + '">' + button2 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + ' alt="' + productType[i] + '"></div></div>';
@@ -148,8 +147,7 @@ async function repeatProductHomepageLogged() {
     } catch (e) {
         console.log(e);
     }
-// });
-// }).catch(err => console.error(err));
+
 }
 
 async function repeatProductHomepage() {
@@ -181,11 +179,10 @@ async function repeatProductHomepage() {
                 numberProd = productId.length;
                 var button1, button2;
                 button1 = button2 = "Send Feedback";
-                console.log(productImageSource);
                 let index1 = 0;
                 while (index1 < numberProd) {
                     document.getElementById("products").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + index1 + '"><p><b>' + productName[index1] + '</b><br>' + productDescription[index1] + '</p><a class="sendfeedback-button" href="' + productId[index1] + '/' + windowLoc + '">' + button1 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[index1] + '" alt="' + productType[index1] + '"></div></div>';
-                    console.log(productId[productType[index1]] + '/' + windowLoc);
+
                     index1++;
                     if (index1 < numberProd) {
                         document.getElementById("products1").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + index1 + '"><p><b>' + productName[index1] + '</b><br>' + productDescription[index1] + '</p><a class="sendfeedback-button" href="' + productId[index1] + "/" + windowLoc + '">' + button2 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[index1] + '" alt="' + productType[index1] + '"></div></div>';
@@ -219,12 +216,11 @@ async function repeatProductAllUnlogged(givenCategory) {
             .then((data) => {
                 // numberProd = parseInt(data.numberProducts);
                 data.products.forEach(prod => {
-                    productImageSource[index] = prod.picture.toString();
-                    productType[index] = prod.type.toString();
-                    productDescription[index] = prod.description.toString();
-                    productName[index] = prod.name.toString();
-                    productId[index] = prod._id.toString();
-                    console.log(productImageSource);
+                    productImageSource[index] = prod.picture;
+                    productType[index] = prod.type;
+                    productDescription[index] = prod.description;
+                    productName[index] = prod.name;
+                    productId[index] = prod._id;
                     index++;
                 })
                 numberProd = index;
@@ -287,26 +283,14 @@ async function repeatProductAllLogged(givenCategory) {
                     productDescription[index] = prod.description.toString();
                     productName[index] = prod.name.toString();
                     productId[index] = prod._id.toString();
-                    console.log(productImageSource);
                     index++;
                 })
-
+numberProd=index;
                 var i;
-                // var productImageSource = ["../assets/images/sunglasses.png", '../assets/images/artefacts.png', '../assets/images/arizona.png', '../assets/images/painting.png'];
-                // var productDescription = ['Elevate your style with these luxurious and fashionable eyewear pieces from one of the most iconic brands in the world.', 'Artefacts exist as a result of behavioural and transformational processes, manufacturing these for a specific purpose and then discarding after use.', 'Arizona\'s Green Tea is a premium blend of green tea, with just the right amount of ginseng, honey and cane sugar. 100% NATURAL: Contains 100% natural green tea.', 'Green wall art is a great way to bring a bit of nature into your space, or just to channel the calming influence of the outdoors. Green is proven to calm us, so introduce this colour in sleeping or resting spaces.'];
-                // var productName = ['Luxorius Eyewear', 'Gift an Artefact', 'Arizona Green Tea', 'Green Wall Art'];
-                // var productType = ['sunglasses', 'art', 'art', 'painting'];
                 var windowLoc = "sendfeedbacklogged.html"
                 var button1, button2;
-                var oneContainer = 0;
-                // if (window.location.href.slice(-14) === "myaccount.html") {
-                //     button1 = "Delete Form";
-                //     button2 = "See Statistics";
-                //     windowLoc = "deleteproductconfirmation.html";
-                // } else {
-                button1 = button2 = "Send Feedback";
-                //   }
 
+                button1 ="Send Feedback";
                 for (i = 0; i < numberProd; i++) {
                     document.getElementById("products").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="http://localhost:4000/' + productId[i] + "/" + windowLoc + '">' + button1 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + '" alt="' + productType[i] + '"></div></div>';
                 }
@@ -318,8 +302,6 @@ async function repeatProductAllLogged(givenCategory) {
     } catch (e) {
         console.log(e);
     }
-// });
-// }).catch(err => console.error(err));
 }
 
 function addBasic() {

@@ -25,8 +25,8 @@ class MapObject {
 
 function getChart() {
     try {
-        let prodId = '648c84c13bbc8ab24a97c074';
-        let category = 'product';
+        let prodId = window.location.href.toString().substring(22, window.location.href.lastIndexOf("/"));
+        let category = 'person';
         var index = 0;
         fetch('http://localhost:3005/statistics/' + prodId + '/' + category,
             {

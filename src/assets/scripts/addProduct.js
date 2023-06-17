@@ -135,18 +135,20 @@ async function addProduct() {
             }),
         });
 
-        // const json = await response.json();
-        //
-        // if (!response.ok) {
-        //     throw new Error('Posting product failed');
-        // }
-        //
-        // console.log(`http://localhost:3003{json.route}`)
-        //
-        // window.alert(json.message)
+        const json = await response.json();
+
+        if (json.responseBody!=="POST successful.") {
+            window.window.alert(json.message);
+            window.location.reload();
+           // throw new Error('Posting product failed');
+    }
+
+    else {window.location.href = "addaproductconfirmation.html";}
+
     } catch (error) {
         console.error(error);
-        window.alert('Posting product failed');
+        window.location.href="addaproduct.html";
+       // window.alert('Posting product failed');
     }
 
 }

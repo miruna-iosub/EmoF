@@ -18,7 +18,7 @@ object=object.toString().substring(object.toString().lastIndexOf("/"));
 }
 function renderCSS(path, response) {
     fs.readFile( "./src"+path, function (error, cssContent) {
-        console.log(path);
+
         if (error) {
             response.writeHead(404);
             response.write("Couldn't load CSS / not found");
