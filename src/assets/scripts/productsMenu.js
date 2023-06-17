@@ -20,12 +20,12 @@ let leftOff=0;
  }
 async function repeatProductAllLogged(givenCategory) {
 
-    category= givenCategory.toString().substring(22, givenCategory.toString().lastIndexOf("/"));
-
+    category=givenCategory.toString().substring(22, givenCategory.toString().lastIndexOf("/"));
+console.log(category);
 
     try {
         var index = 0;
-        fetch('http://localhost:3003/products/' + category.toString(),
+        fetch('http://localhost:3003/api/v1/products/' + category.toString(),
 
             {method: 'GET'})
             .then((response) => {
@@ -58,7 +58,7 @@ async function repeatProductAllLogged(givenCategory) {
 
 function addProductsInPage(){
     var i;
-    var windowLoc = "sendfeedbacklogged.html"
+    var windowLoc = "reviewLogged"
     var button1, button2;
 
     button1 ="Send Feedback";
@@ -66,7 +66,7 @@ function addProductsInPage(){
         if(i>numberProd){
             break;
         }
-        document.getElementById("products1").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="http://localhost:4000/' + productId[i] + "/" + windowLoc + '">' + button1 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + '" alt="' + productType[i] + '"></div></div> ';
+        document.getElementById("products1").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="/' + productId[i] + "/" + windowLoc + '">' + button1 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + '" alt="' + productType[i] + '"></div></div> ';
     }
 
 }
@@ -95,7 +95,7 @@ function addProductsInPageAgain(number){
          leftOff=leftOff-4;
      }
     var i;
-    var windowLoc = "sendfeedbacklogged.html"
+    var windowLoc = "reviewLogged"
     var button1, button2;
     if(ok===true){
         window.scrollTo(0, 0);

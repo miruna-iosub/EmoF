@@ -58,19 +58,27 @@ async function router(request, response) {
         });
     } */
   if (request.url === "/") {
-    if(cookie){
-        fs.readFile("./src/html/homepage-loggedin.html", null, function (error, data) {
-            if (error) {
-              response.writeHead(404);
-              response.write("Whoops! File not found!");
-            } else {
-              response.write(data);
-            }
-            response.end();
-          });
-    }
-    else{
-        fileRouter(request, response);
+    if (cookie) {
+      fs.readFile("./src/html/homepage-loggedin.html", null, function (error, data) {
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
+    } else {
+      //  fileRouter(request, response);
+      fs.readFile("./src/html/index.html", null, function (error, data) {
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
     }
   } else if (request.url === "/login") {
     if (cookie) {
@@ -137,8 +145,8 @@ async function router(request, response) {
         }
         response.end();
       });
-    } 
-} else if (request.url === "/all/productsunlogged") {
+    }
+  } else if (request.url === "/all/productsunlogged") {
     if (cookie) {
       fs.readFile("./src/html/products-logged.html", null, function (error, data) {
         if (error) {
@@ -162,7 +170,7 @@ async function router(request, response) {
     }
   } else if (request.url === "/service/productsunlogged" || request.url === "/person/productsunlogged" || request.url === "/product/productsunlogged" || request.url === "/artisticArtefact/productsunlogged" || request.url === "/geographicalPlace/productsunlogged") {
     if (cookie) {
-      fs.readFile("./src/html/products-unlogged.html", null, function (error, data) {
+      fs.readFile("./src/html/products-logged.html", null, function (error, data) {
         if (error) {
           response.writeHead(404);
           response.write("Whoops! File not found!");
@@ -172,7 +180,7 @@ async function router(request, response) {
         response.end();
       });
     } else {
-      fs.readFile("./src/html/products-logged.html", null, function (error, data) {
+      fs.readFile("./src/html/products-unlogged.html", null, function (error, data) {
         if (error) {
           response.writeHead(404);
           response.write("Whoops! File not found!");
@@ -204,7 +212,7 @@ async function router(request, response) {
         response.end();
       });
     }
-  } else if (request.url === "/addproduct") {
+  } else if (request.url === "/addProduct") {
     if (cookie) {
       fs.readFile("./src/html/addaproduct.html", null, function (error, data) {
         if (error) {
@@ -225,7 +233,7 @@ async function router(request, response) {
         }
         response.end();
       });
-    } 
+    }
   } else if (request.url === "/homepage") {
     if (cookie) {
       fs.readFile("./src/html/homepage-loggedin.html", null, function (error, data) {
@@ -247,10 +255,10 @@ async function router(request, response) {
         }
         response.end();
       });
-    } 
-  } else if (request.url === "all/productslogged") {
+    }
+  } else if (request.url.slice(-15) === "/reviewUnlogged") {
     if (cookie) {
-      fs.readFile("./src/html/products-logged.html", null, function (error, data) {
+      fs.readFile("./src/html/sendfeedbacklogged.html", null, function (error, data) {
         if (error) {
           response.writeHead(404);
           response.write("Whoops! File not found!");
@@ -260,7 +268,7 @@ async function router(request, response) {
         response.end();
       });
     } else {
-      fs.readFile("./src/html/products-unlogged.html", null, function (error, data) {
+      fs.readFile("./src/html/sendfeedbackunlogged.html", null, function (error, data) {
         if (error) {
           response.writeHead(404);
           response.write("Whoops! File not found!");
@@ -269,12 +277,126 @@ async function router(request, response) {
         }
         response.end();
       });
-    } 
-  } else if (request.url.substring(request.url.length - 4) === ".css") {
+    }
+  } else if (request.url.slice(-13) === "/reviewLogged") {
+    if (cookie) {
+      fs.readFile("./src/html/sendfeedbacklogged.html", null, function (error, data) {
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
+    } else {
+      fs.readFile("./src/html/sendfeedbackunlogged.html", null, function (error, data) {
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
+    }
+  } else if (request.url.slice(-27) === "/reviewConfirmationUnlogged") {
+    if (cookie) {
+      fs.readFile("./src/html/reviewconfirmation-loggedin.html", null, function (error, data) {
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
+    } else {
+      fs.readFile("./src/html/reviewconfirmation-unlogged.html", null, function (error, data) {
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
+    }
+  } else if (request.url.slice(-25) === "/reviewConfirmationLogged") {
+    if (cookie) {
+      fs.readFile("./src/html/reviewconfirmation-loggedin.html", null, function (error, data) {
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
+    } else {
+      fs.readFile("./src/html/reviewconfirmation-unlogged.html", null, function (error, data) {
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
+    }
+  } else if (request.url.slice(-26) === "/deleteAccountConfirmation") {
+    if (cookie) {
+      fs.readFile("./src/html/deleteaccountconfirmation.html", null, function (error, data) {
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
+    } else {
+      fs.readFile("./src/html/index.html", null, function (error, data) {
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
+    }
+  }
+
+  // } else if (request.url === "all/productslogged") {
+  //   if (cookie) {
+  //     fs.readFile("./src/html/products-logged.html", null, function (error, data) {
+  //       if (error) {
+  //         response.writeHead(404);
+  //         response.write("Whoops! File not found!");
+  //       } else {
+  //         response.write(data);
+  //       }
+  //       response.end();
+  //     });
+  //   } else {
+  //     fs.readFile("./src/html/products-unlogged.html", null, function (error, data) {
+  //       if (error) {
+  //         response.writeHead(404);
+  //         response.write("Whoops! File not found!");
+  //       } else {
+  //         response.write(data);
+  //       }
+  //       response.end();
+  //     });
+  //   }
+   else if (request.url.substring(request.url.length - 4) === ".css") {
     controller.renderCSS(request.url, response);
-  } else if (request.url.substring(request.url.length - 5) === ".html") {
-    controller.renderHTML(request.url, response);
-  } else if (request.url.substring(request.url.length - 3) === ".js") {
+  }
+  //else if (request.url.substring(request.url.length - 5) === ".html") {
+   // controller.renderHTML(request.url, response);
+  //}
+  else if (request.url.substring(request.url.length - 3) === ".js") {
     controller.renderJavascript(request.url, response);
   } else if (request.url.slice(request.url.length - 4) === ".png") {
     controller.renderImage(request.url, response);

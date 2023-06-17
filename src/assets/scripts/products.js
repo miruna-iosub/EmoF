@@ -30,10 +30,12 @@ function repeatProduct1() {
 
     var windowLoc;
 
-    if (window.location.href.slice(-20) === "products-logged.html")
-        windowLoc = 'sendfeedbacklogged.html';
-    else if (window.location.href.slice(-22) === "products-unlogged.html")
-        windowLoc = 'sendfeedbackunlogged.html';
+    if (window.location.href.slice(-20) === "homepage"){
+        windowLoc = '/reviewLogged';
+    }
+    else
+    {windowLoc = '/reviewUnogged';
+    }
 
 
     const createImgElementFromProduct = (product) => {
@@ -87,17 +89,17 @@ function productOfTheWeek() {
     var type = "camera";
     var button;
     var redirect;
-    if (window.location.href.slice(-22) === "homepage-loggedin.html") {
+    if (window.location.href.slice(-8) === "homepage") {
         button = "My Account";
-redirect="myaccount.html";
+redirect="account";
     } else {
         button = "Sign Up Now";
-        redirect="signup.html";
+        redirect="signup";
     }
 
 
     var productDescription = "Our initiative is to bring closer together any type of provider and their clients. <br>You can become either anytime.<br><br><br>";
-    document.getElementById("products3").innerHTML += ' <div class="grid-container" id="productoftheweek"><div class="grid-item"><img src="' + location + '" alt="' + type + '"></div> <div class="grid-item item2"> <div class="grid-item item2-top"> <h2>Emotion-based Feedback</h2></div> <div class="grid-item item2-bottom"><p>' + productDescription + '</p> </div><div class="sendfeedback-button"> <a href="'+redirect+'">'+button+'</a> </div> </div> </div>';
+    document.getElementById("products3").innerHTML += ' <div class="grid-container" id="productoftheweek"><div class="grid-item"><img src="' + location + '" alt="' + type + '"></div> <div class="grid-item item2"> <div class="grid-item item2-top"> <h2>Emotion-based Feedback</h2></div> <div class="grid-item item2-bottom"><p>' + productDescription + '</p> </div><div class="sendfeedback-button"> <a href="/'+redirect+'">'+button+'</a> </div> </div> </div>';
 }
 
 async function repeatProductHomepageLogged() {
@@ -127,7 +129,7 @@ async function repeatProductHomepageLogged() {
                     }
                 })
                 numberProd = productId.length;
-                var windowLoc = "sendfeedbacklogged.html";
+                var windowLoc = "reviewLogged";
                 var button1, button2;
                 var oneContainer = 0;
                 oneContainer = 1;
@@ -135,11 +137,11 @@ async function repeatProductHomepageLogged() {
                 //    if(numberProd!==4)numberProd = 4;
                 let i = 0;
                 while (i < numberProd) {
-                    document.getElementById("products").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="http://localhost:4000/' + productId[i] + '/' + windowLoc + '">' + button1 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + '" alt="' + productType[i] + '"></div></div>';
+                    document.getElementById("products").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="/' + productId[i] + '/' + windowLoc + '">' + button1 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + '" alt="' + productType[i] + '"></div></div>';
 
                     i++;
                     if (i < numberProd) {
-                        document.getElementById("products1").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="http://localhost:4000/' + productId[i] + "/" + windowLoc + '">' + button2 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + ' alt="' + productType[i] + '"></div></div>';
+                        document.getElementById("products1").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="/' + productId[i] + '/' + windowLoc + '">' + button2 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + ' alt="' + productType[i] + '"></div></div>';
                     }
                     i++;
                 }
@@ -175,17 +177,17 @@ async function repeatProductHomepage() {
                     productName[index] = prod.name;
                     index++;
                 })
-                var windowLoc = "sendfeedbackunlogged.html";
+                var windowLoc = "reviewUnlogged";
                 numberProd = productId.length;
                 var button1, button2;
                 button1 = button2 = "Send Feedback";
                 let index1 = 0;
                 while (index1 < numberProd) {
-                    document.getElementById("products").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + index1 + '"><p><b>' + productName[index1] + '</b><br>' + productDescription[index1] + '</p><a class="sendfeedback-button" href="' + productId[index1] + '/' + windowLoc + '">' + button1 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[index1] + '" alt="' + productType[index1] + '"></div></div>';
+                    document.getElementById("products").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + index1 + '"><p><b>' + productName[index1] + '</b><br>' + productDescription[index1] + '</p><a class="sendfeedback-button" href="/' + productId[index1] + '/' + windowLoc + '">' + button1 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[index1] + '" alt="' + productType[index1] + '"></div></div>';
 
                     index1++;
                     if (index1 < numberProd) {
-                        document.getElementById("products1").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + index1 + '"><p><b>' + productName[index1] + '</b><br>' + productDescription[index1] + '</p><a class="sendfeedback-button" href="' + productId[index1] + "/" + windowLoc + '">' + button2 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[index1] + '" alt="' + productType[index1] + '"></div></div>';
+                        document.getElementById("products1").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + index1 + '"><p><b>' + productName[index1] + '</b><br>' + productDescription[index1] + '</p><a class="sendfeedback-button" href="/' + productId[index1] + "/" + windowLoc + '">' + button2 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[index1] + '" alt="' + productType[index1] + '"></div></div>';
                     }
                     index1++;
                 }
@@ -201,18 +203,18 @@ function addBasic() {
     var type = "product";
     let button;
     var productDescription, linkedTo, productHeader;
-    if (window.location.href.slice(-22) === "homepage-loggedin.html") {
+    if (window.location.href.slice(-8)=== "homepage") {
         productDescription = "Do you want to receive honest reviews on something? You can add your products, services, art, even yourself.";
         productHeader = "Are you interested in seeing clients' emotions with accurate charts?";
-        linkedTo = "/addaproduct.html";
+        linkedTo = "addaproduct";
         button = "Add A Product";
     } else {
         productDescription = "Are you interested in receiving honest reviews on something? You can add your products, services, art, even yourself.<br>Create an account and add your first product.";
         productHeader = "Create an account or log in to add!";
-        linkedTo = "/signup.html";
-        button = "Sign In Now";
+        linkedTo = "signup";
+        button = "Sign Up Now";
     }
-    document.getElementById("products4").innerHTML += ' <div class="grid-containerblank" id="addbasic"><div class="grid-item"><img src="' + location + '" alt="' + type + '"></div> <div class="grid-item item2"> <div class="grid-item item2-top"> <h2>' + productHeader + '</h2></div> <div class="grid-item item2-bottom"><p>' + productDescription + '</p> <br></div> <div class="sendfeedback-button"> <a href="' + linkedTo + '">' + button + '</a> </div> </div> </div>';
+    document.getElementById("products4").innerHTML += ' <div class="grid-containerblank" id="addbasic"><div class="grid-item"><img src="' + location + '" alt="' + type + '"></div> <div class="grid-item item2"> <div class="grid-item item2-top"> <h2>' + productHeader + '</h2></div> <div class="grid-item item2-bottom"><p>' + productDescription + '</p> <br></div> <div class="sendfeedback-button"> <a href="/' + linkedTo + '">' + button + '</a> </div> </div> </div>';
 
 }
 

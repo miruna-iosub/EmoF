@@ -100,10 +100,10 @@ async function sendFeedback(idRef) {
         });
 
         const json = await response.json();
-        if (window.location.href.slice(-23) === 'sendfeedbacklogged.html') {
-            where = 'http://localhost:4000/reviewconfirmation-loggedin.html';
+        if (window.location.href.slice(-18) === 'sendfeedbacklogged') {
+            where = 'reviewCnfirmationLogged';
         } else {
-            where = 'http://localhost:4000/reviewconfirmation-unlogged.html'
+            where = 'reviewConfirmationUnlogged'
         }
         window.location.href = where;
         // if (!response.ok) {

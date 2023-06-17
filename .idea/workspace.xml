@@ -6,19 +6,30 @@
   <component name="ChangeListManager">
     <list default="true" id="a7a5c9b6-48db-43d9-a853-ef38ef6e3be5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/monitoringService/pictureServer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/models/picturePlaceholder.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/models/picturePlaceholder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/productsServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/productsServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/reviewService/reviewServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/reviewService/reviewServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/scripts/addProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/addProduct.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/scripts/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scripts/productsMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/productsMenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/scripts/productsMyAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/productsMyAccount.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/scripts/sendfeedback.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/sendfeedback.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/addaproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/addaproduct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/addaproductconfirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/addaproductconfirmation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/chartVisualisation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/chartVisualisation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/charts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/deleteaccountconfirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/deleteaccountconfirmation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/deleteproductconfirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/deleteproductconfirmation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/homepage-loggedin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/homepage-loggedin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/htmlVisualisation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/htmlVisualisation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/myaccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/myaccount.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/products-logged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/products-logged.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/products-unlogged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/products-unlogged.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/reviewconfirmation-loggedin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/reviewconfirmation-loggedin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/reviewconfirmation-unlogged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/reviewconfirmation-unlogged.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/sendfeedbacklogged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/sendfeedbacklogged.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/sendfeedbackunlogged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/sendfeedbackunlogged.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/signin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/signupconfirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/signupconfirmation.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

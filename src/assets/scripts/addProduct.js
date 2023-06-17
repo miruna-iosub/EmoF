@@ -121,7 +121,7 @@ async function addProduct() {
     else if(expirationDate==="")
     {
         window.alert('Please fill all the fields.');
-        window.location.href = 'http://localhost:4000/addaproduct.html';
+        window.location.href = 'addaproduct';
     }
     else {
         try {
@@ -155,13 +155,13 @@ async function addProduct() {
             //         window.location.reload();
             //        // throw new Error('Posting product failed');
             // }
-            window.location.href = 'http://localhost:4000/addaproductconfirmation.html';
+            window.location.href = 'addaproductconfirmation';
             // else {
             //}
 
         } catch (error) {
             console.error(error);
-            window.location.href = 'addaproduct.html';
+            window.location.href = 'addaproduct';
             // window.alert('Posting product failed');
         }
     }

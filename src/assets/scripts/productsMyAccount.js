@@ -54,7 +54,7 @@ async function repeatProductMyAccount() {
                     index++;
                 })
                 numberProd = index;
-                var windowLocSeeStats="charts.html";
+                var windowLocSeeStats="charts";
                 var button1, button2;
                 button1 = "Close Forms";
                 button2 = "See Statistics";
