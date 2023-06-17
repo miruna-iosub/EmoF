@@ -7,9 +7,6 @@
     <list default="true" id="a7a5c9b6-48db-43d9-a853-ef38ef6e3be5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/controller/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/models/fields.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/models/fields.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/models/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/models/form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/scripts/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/products.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,15 +67,22 @@
       <recent name="E:\M3 SE\EmoF\EmoF\server\userInfoService" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.products">
-    <configuration name="productsServer.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server/services/productsService/productsServer.js" working-dir="$PROJECT_DIR$/server/services/productsService">
-      <method v="2" />
-    </configuration>
-    <configuration name="mom" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.review">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="mom" />
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="login" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/services/loginService/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="login" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -94,11 +98,11 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/server/services/productsService/package.json" />
+    <configuration name="review" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/services/reviewService/package.json" />
       <command value="run" />
       <scripts>
-        <script value="test" />
+        <script value="review" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -116,11 +120,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.products" />
-        <item itemvalue="npm.test" />
-        <item itemvalue="Node.js.productsServer.js" />
-        <item itemvalue="npm.mom" />
+        <item itemvalue="npm.review" />
         <item itemvalue="npm.userInfo" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.login" />
+        <item itemvalue="npm.products" />
       </list>
     </recent_temporary>
   </component>
@@ -147,6 +151,7 @@
       <workItem from="1686856979470" duration="12546000" />
       <workItem from="1686902045664" duration="38078000" />
       <workItem from="1686949698361" duration="1718000" />
+      <workItem from="1686982201690" duration="1845000" />
     </task>
     <servers />
   </component>
@@ -170,13 +175,11 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/productsServer.js</url>
           <line>34</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/productsService/productsServer.js</url>
           <line>35</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

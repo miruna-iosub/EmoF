@@ -108,14 +108,14 @@ async function repeatProductHomepageLogged() {
                 data.products.forEach(prod => {
                     if (prod == null) {
                         productId[index] = prod._id.toString();
-                        // productImageSource[index] = prod.picture.toString();
+                        productImageSource[index] = prod.picture.toString();
                         productType[index] = prod.type.toString();
                         productDescription[index] = prod.description.toString();
                         productName[index] = prod.name.toString();
                         index++;
                     }
                 })
-
+                numberProd = productId.length;
                 var windowLoc = "sendfeedbacklogged.html";
                 var button1, button2;
                 var oneContainer = 0;
@@ -167,7 +167,7 @@ async function repeatProductHomepage() {
                     index++;
                 })
                 var windowLoc = "sendfeedbackunlogged.html";
-
+                numberProd = productId.length;
                 var button1, button2;
                 button1 = button2 = "Send Feedback";
                 console.log(productImageSource);

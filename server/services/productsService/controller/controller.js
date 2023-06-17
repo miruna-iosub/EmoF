@@ -190,7 +190,7 @@ async function getHandler(request, response, type, string) {
         findid = true;
     } else if (type === "homepage") {
         let extractedProducts1 = await product.findAll();
-        for (let index = 0; index < 5; index++) {
+        for (let index = 0; index < 6; index++) {
             if (index > extractedProducts1.length) {
                 break;
             }
@@ -227,7 +227,6 @@ async function getHandler(request, response, type, string) {
     }
 
     console.log(extractedProducts);
-
 
     response.write(
         JSON.stringify({
