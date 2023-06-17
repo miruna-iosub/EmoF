@@ -17,22 +17,23 @@
 
 <body>
 <!-- Start Navbar -->
+
+<body onload="repeatProductHomepageLogged();productOfTheWeek();addBasic();">
 <nav>
     <div class="logo">
-        <a href="homepage-loggedin.html">
-            <img src="..\assets\images\logo.png" alt="Logo">
+        <a href="http://localhost:4000/homepage-loggedin.html">
+            <a href=""><img src="../assets/images/logo.png" alt="Logo"></a>            </a>
         </a>
     </div>
     <div class="nav-links">
         <ul>
             <li>
-                <a href="myaccount.html">
-                    <ion-icon name="person-outline">
-
-                    </ion-icon>
+                <a href="http://localhost:4000/myaccount.html">
+                    <ion-icon name="person-outline"></ion-icon>
                     My account
                 </a>
             </li>
+
 
             <li>
                 <a href="addaproduct.html">
@@ -46,54 +47,52 @@
 
             <div class="dropdown">
                 <li>
-                    <a href="#">
+                    <a href="all/products-logged.html">
                         <ion-icon name="menu-outline">
 
-                        </ion-icon>
-                        Search by category
+                        </ion-icon> Search by category
                     </a>
 
                     <ul>
-                        <li><a id="service" href="products-logged.html">Service</a>
+                        <li><a href="service/products-logged.html">Service</a>
                             <ul>
-                                <li><a href="products-logged.html">Event organiser</a></li>
-                                <li><a href="products-logged.html">Small business</a></li>
-                                <li><a href="products-logged.html">Cleaning</a></li>
-                                <li><a href="products-logged.html">Clinic</a></li>
+                                <li><a href="service/products-logged.html">Event organiser</a></li>
+                                <li><a href="service/products-logged.html">Small business</a></li>
+                                <li><a href="service/products-logged.html">Cleaning</a></li>
+                                <li><a href="service/products-logged.html">Clinic</a></li>
                             </ul>
                         </li>
-                        <li><a href="products-logged.html">Person</a>
+                        <li><a href="person/products-logged.html">Person</a>
                             <ul>
-                                <li><a href="products-logged.html">Teacher</a></li>
-                                <li><a href="products-logged.html">Artist</a></li>
+                                <li><a href="person/products-logged.html">Teacher</a></li>
+                                <li><a href="person/products-logged.html">Artist</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Product</a>
+                        <li><a href="product/products-logged.html">Product</a>
                             <ul>
-                                <li><a href="products-logged.html">Skincare</a></li>
-                                <li><a href="products-logged.html">Drink</a></li>
-                                <li><a href="products-logged.html">Eyewear</a></li>
+                                <li><a href="product/products-logged.html">Skincare</a></li>
+                                <li><a href="product/products-logged.html">Drink</a></li>
+                                <li><a href="product/products-logged.html">Eyewear</a></li>
                             </ul>
                         </li>
-                        <li><a href="products-logged.html">Artistic Artefact</a>
+                        <li><a href="artisticArtefact/products-logged.html">Artistic Artefact</a>
                             <ul>
-                                <li><a href="products-logged.html">Artwork</a></li>
-                                <li><a href="products-logged.html">Photography</a></li>
-                                <li><a href="products-logged.html">Home-made</a></li>
+                                <li><a href="artisticArtefact/products-logged.html">Artwork</a></li>
+                                <li><a href="artisticArtefact/products-logged.html">Photography</a></li>
+                                <li><a href="artisticArtefact/products-logged.html">Home-made</a></li>
                             </ul>
                         </li>
-                        <li><a href="products-logged.html">Geographical place</a>
+                        <li><a href="geographicalPlace/products-logged.html">Geographical place</a>
                             <ul>
-                                <li><a href="products-logged.html">Monument</a></li>
-                                <li><a href="products-logged.html">Mall</a></li>
-                                <li><a href="products-logged.html">Airport</a></li>
+                                <li><a href="geographicalPlace/products-logged.html">Monument</a></li>
+                                <li><a href="geographicalPlace/products-logged.html">Mall</a></li>
+                                <li><a href="geographicalPlace/products-logged.html">Airport</a></li>
                             </ul>
                         </li>
 
                     </ul>
                 </li>
             </div>
-
         </ul>
     </div>
 </nav>
@@ -105,51 +104,29 @@
 
 <form id="addProduct-form" action="/" method="POST">
     <div class="grid-container">
-        <label for="name">
-            Name:
-        </label>
-        <input type="text" class="name" name="name" id="name">
 
-        <label for="type">
-            Product type:
-        </label>
-
-        <input type="text" class="type" name="type" id="type">
-
-        <label for="description">
-            Description:
-        </label>
-        <input type="text" class="description" name="description" id="description">
+        <label for="name">Name:</label>
+        <input type="text" class="name" name="name" id="name" required>
 
 
-        <label for="picture">
-            Upload a picture of your product:
-        </label>
-        <!--            <input type="file" id="picture" name="picture" onclick="addPicture()">-->
-
-<!--      <input type="file" id="picture" name="picture" accept="image/jpeg, image/png, image/jpg">-->
-        <input type="file" id="picture" name="picture" onChange="getPath()" accept="">
-
-        <!--            <label for="production-date">-->
-        <!--                Production Date:-->
-        <!--            </label>-->
-        <!--            <input type="date" name="production-date" id="production-date">-->
-
-        <!--            -->
-        <label for="expiration-date">
-            Closing Date:
-        </label>
-        <input class="date" type="date" name="expiration-date" id="expiration-date">
+        <label for="type">Product type:</label>
+        <input type="text" class="type" name="type" id="type" required>
 
 
-        <!--            <label for="production-date">-->
-        <!--                Add the category:-->
-        <!--            </label>-->
-        <!--            <input class="category" type="text" name="category" id="category">-->
+        <label for="description">Description:</label>
+        <input type="text" class="description" name="description" id="description" required>
+
+
+        <label for="picture">Upload a picture of your product:</label>
+        <input type="file" id="picture" name="picture" onChange="getPath()" accept="image/*">
+
+
+        <label for="expiration-date">Closing Date:</label>
+        <input class="date" type="date" name="expiration-date" id="expiration-date" required>
 
 
         <label for="category">Add the category and subcategory:</label>
-        <select name="category" id="category" onChange="addQuestions()">
+        <select name="category" id="category" onChange="addQuestions()" required>
 
             <optgroup label="Service">
                 <option value="eventOrganiser">Event organiser</option>
@@ -183,12 +160,9 @@
         </select>
 
 
-        <label for="questions-checkboxes">
-            Choose your questions:
-        </label>
+        <label for="questions-checkboxes">Choose your questions:</label>
         <div class="question-checkboxes" id="questions-checkboxes">
-            <div class="question-checkboxes" id="questions-checkboxes1">
-            </div>
+            <div class="question-checkboxes" id="questions-checkboxes1"></div>
         </div>
 
 
@@ -197,7 +171,8 @@
         </label>
         <input type="text" name="new-question" id="new-question">
 
-        <input class="button" type="submit" value="Submit" id="submit_id" onclick="addProduct()">
+
+        <input class="button" type="submit" value="Submit" id="submit_id" onclick="addProduct();" >
     </div>
 </form>
 

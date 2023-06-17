@@ -118,11 +118,11 @@ async function repeatProductHomepageLogged() {
                 numberProd = parseInt(data.numberProducts);
                 data.products.forEach(prod => {
                     if (prod !== null) {
-                        productId[index] = prod._id.toString();
-                        productImageSource[index] = prod.picture.toString();
-                        productType[index] = prod.type.toString();
-                        productDescription[index] = prod.description.toString();
-                        productName[index] = prod.name.toString();
+                        productId[index] = prod._id;
+                        productImageSource[index] = prod.picture;
+                        productType[index] = prod.type;
+                        productDescription[index] = prod.description;
+                        productName[index] = prod.name;
                         index++;
                     }
                 })
@@ -168,11 +168,11 @@ async function repeatProductHomepage() {
             .then((data) => {
                 numberProd = parseInt(data.numberProducts);
                 data.products.forEach(prod => {
-                    productId[index] = prod._id.toString();
-                    productImageSource[index] = prod.picture.toString();
-                    productType[index] = prod.type.toString();
-                    productDescription[index] = prod.description.toString();
-                    productName[index] = prod.name.toString();
+                    productId[index] = prod._id;
+                    productImageSource[index] = prod.picture;
+                    productType[index] = prod.type;
+                    productDescription[index] = prod.description;
+                    productName[index] = prod.name;
                     index++;
                 })
                 var windowLoc = "sendfeedbackunlogged.html";
@@ -195,114 +195,6 @@ async function repeatProductHomepage() {
     }
 }
 
-
-async function repeatProductAllUnlogged(givenCategory) {
-    let category = givenCategory.toString().substring(22, givenCategory.toString().lastIndexOf("/"));
-    let numberProd;
-    let productImageSource = [];
-    let productDescription = [];
-    let productName = [];
-    let productType = [];
-    let productId = [];
-
-    try {
-        var index = 0;
-        fetch('http://localhost:3003/products/' + category.toString(),
-
-            {method: 'GET'})
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                // numberProd = parseInt(data.numberProducts);
-                data.products.forEach(prod => {
-                    productImageSource[index] = prod.picture;
-                    productType[index] = prod.type;
-                    productDescription[index] = prod.description;
-                    productName[index] = prod.name;
-                    productId[index] = prod._id;
-                    index++;
-                })
-                numberProd = index;
-                var i;
-                var windowLoc;
-                var button1;
-
-                if (window.location.href.slice(-20) === "products-logged.html" || window.location.href.slice(-22) === "homepage-loggedin.html")
-                    windowLoc = 'sendfeedbacklogged.html';
-                else if (window.location.href.slice(-22) === "products-unlogged.html" || window.location.href.slice(-24) === "homepage-unloggedin.html")
-                    windowLoc = 'sendfeedbackunlogged.html';
-
-                button1 = "Send Feedback";
-
-
-                for (i = 0; i < numberProd; i++) {
-                    document.getElementById("products").innerHTML += ' <div class="container2" id="container2">' +
-                        '<div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '">' +
-                        '<p><b>' + productName[i] + '</b><br>' + productDescription[i] +
-                        '</p><a class="sendfeedback-button" href="http://localhost:4000/' + productId[i] + "/" + windowLoc + '">' + button1 + '</a>  </div>' +
-                        '<div class="item3" style="grid-column: 2/3; grid-row: 1/2;">' +
-                        '<img src="' + productImageSource[i] + '" alt="' + productType[i] + '" >' +
-                        '</div></div>';
-                }
-
-                category = category.substring(0, 1).toUpperCase() + category.substring(1, category.length);
-                const result = category.split(/(?=[A-Z])/);
-                category = result.join(" ");
-                document.getElementById("category").innerHTML += '<h2><b>Category: ' + category + '</b></h2>';
-            });
-    } catch (e) {
-        console.log(e);
-    }
-}
-
-
-async function repeatProductAllLogged(givenCategory) {
-    let category = givenCategory.toString().substring(22, givenCategory.toString().lastIndexOf("/"));
-    let numberProd, apiRequest;
-    let productImageSource = [];
-    let productDescription = [];
-    let productName = [];
-    let productType = [];
-    let productId = [];
-
-    try {
-
-        var index = 0;
-        fetch('http://localhost:3003/products/' + category.toString(),
-
-            {method: 'GET'})
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                numberProd = parseInt(data.numberProducts);
-                data.products.forEach(prod => {
-                    productImageSource[index] = prod.picture.toString();
-                    productType[index] = prod.type.toString();
-                    productDescription[index] = prod.description.toString();
-                    productName[index] = prod.name.toString();
-                    productId[index] = prod._id.toString();
-                    index++;
-                })
-numberProd=index;
-                var i;
-                var windowLoc = "sendfeedbacklogged.html"
-                var button1, button2;
-
-                button1 ="Send Feedback";
-                for (i = 0; i < numberProd; i++) {
-                    document.getElementById("products").innerHTML += ' <div class="container2" id="container2"><div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + i + '"><p><b>' + productName[i] + '</b><br>' + productDescription[i] + '</p><a class="sendfeedback-button" href="http://localhost:4000/' + productId[i] + "/" + windowLoc + '">' + button1 + '</a>  </div><div class="item3" style="grid-column: 2/3; grid-row: 1/2;"><img src="' + productImageSource[i] + '" alt="' + productType[i] + '"></div></div>';
-                }
-                category = category.substring(0, 1).toUpperCase() + category.substring(1, category.length);
-                const result = category.split(/(?=[A-Z])/);
-                category = result.join(" ");
-                document.getElementById("category").innerHTML += '<h2><b>Category: ' + category + '</b></h2>';
-            });
-    } catch (e) {
-        console.log(e);
-    }
-}
 
 function addBasic() {
     var location = "../assets/images/rituals.png";

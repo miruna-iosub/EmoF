@@ -8,7 +8,6 @@ require("dotenv").config();
 function handleRequest(request, response) { 
 
     const reqURL = request.url;
-    console.log(reqURL); 
     const reqMethod = request.method;
 
     if (reqURL.toString().includes(".css")) {

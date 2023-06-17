@@ -5,23 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7a5c9b6-48db-43d9-a853-ef38ef6e3be5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/services/productsService/models/picturePlaceholder.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scripts/productsMenu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scripts/productsMyAccount.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/assetsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/assetsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/service/productServiceImplementation.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/service/productServiceImplementation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/accountinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/accountinfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/scripts/addProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/addProduct.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/scripts/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/statistics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/updateinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/updateinfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scripts/productsMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/productsMenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/addaproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/addaproduct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/charts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/myaccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/myaccount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/myaccountvechi.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/products-logged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/products-logged.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/products-unlogged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/products-unlogged.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,14 +74,7 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.products">
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
+    <configuration name="myaccount.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/EmoF/src/html/myaccount.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="login" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -135,10 +120,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.products" />
+        <item itemvalue="JavaScript Debug.myaccount.html" />
         <item itemvalue="npm.login" />
         <item itemvalue="npm.review" />
         <item itemvalue="npm.userInfo" />
-        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -165,7 +150,7 @@
       <workItem from="1686856979470" duration="12546000" />
       <workItem from="1686902045664" duration="38078000" />
       <workItem from="1686949698361" duration="1718000" />
-      <workItem from="1686982201690" duration="21635000" />
+      <workItem from="1686982201690" duration="36331000" />
     </task>
     <servers />
   </component>

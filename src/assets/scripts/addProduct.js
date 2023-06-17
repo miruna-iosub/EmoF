@@ -94,6 +94,9 @@ function addQuestions() {
 
 
 async function addProduct() {
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementsByName("expiration-date")[0].setAttribute('min', today);
+
     let picture = fileName;
     let name = document.getElementById("name").value.toString();
     let description = document.getElementById("description").value.toString();
@@ -101,6 +104,7 @@ async function addProduct() {
     let expirationDate = document.getElementById("expiration-date").value.toString();
     let newFormFields = document.getElementById("new-question").value.toString().split(",");
     let index = newFormFields.length;
+
     for (let checkbox of document.getElementsByName("defaultQuests")) {
         console.log(checkbox.checked);
         console.log(checkbox.value);
@@ -111,44 +115,55 @@ async function addProduct() {
             index++;
         }
     }
-    try {
-        const jwtToken = getJWTToken();
+    if((name===""||description===""||type===""||expirationDate===""||newFormFields.length===0)&&expirationDate!=="") {
 
-        const response = await fetch('http://127.0.0.1:3003/products', {
-            method: 'POST',
-            credentials: 'include',
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Credentials': true,
-                'Authorization': `Bearer ${jwtToken}`,
-            },
-            body: JSON.stringify({
-                token: jwtToken,
-                name: name,
-                description: description,
-                type: type,
-                picture: picture,
-                category: category,
-                subcategory: subcategory,
-                expirationDate: expirationDate,
-                formFields: newFormFields,
-            }),
-        });
-
-        const json = await response.json();
-
-        if (json.responseBody!=="POST successful.") {
-            window.window.alert(json.message);
-            window.location.reload();
-           // throw new Error('Posting product failed');
     }
+    else if(expirationDate==="")
+    {
+        window.alert('Please fill all the fields.');
+        window.location.href = 'http://localhost:4000/addaproduct.html';
+    }
+    else {
+        try {
+            const jwtToken = getJWTToken();
 
-    else {window.location.href = "addaproductconfirmation.html";}
+            const response = await fetch('http://127.0.0.1:3003/products', {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Credentials': true,
+                    'Authorization': `Bearer ${jwtToken}`,
+                },
+                body: JSON.stringify({
+                    token: jwtToken,
+                    name: name,
+                    description: description,
+                    type: type,
+                    picture: picture,
+                    category: category,
+                    subcategory: subcategory,
+                    expirationDate: expirationDate,
+                    formFields: newFormFields,
+                }),
+            });
 
-    } catch (error) {
-        console.error(error);
-        window.location.href="addaproduct.html";
-       // window.alert('Posting product failed');
+            const json = await response.json();
+            //
+            //     if (json.responseBody!=="POST successful.") {
+            //         window.window.alert(json.message);
+            //         window.location.reload();
+            //        // throw new Error('Posting product failed');
+            // }
+            window.location.href = 'http://localhost:4000/addaproductconfirmation.html';
+            // else {
+            //}
+
+        } catch (error) {
+            console.error(error);
+            window.location.href = 'addaproduct.html';
+            // window.alert('Posting product failed');
+        }
     }
 
 }
