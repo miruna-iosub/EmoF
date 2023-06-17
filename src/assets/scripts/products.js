@@ -109,7 +109,7 @@ async function repeatProductHomepageLogged() {
     let productId = [];
     try {
         var index = 0;
-        fetch('http://localhost:3003/products/homepage',
+        fetch('http://localhost:3003/api/v1/products/homepage',
             {method: 'GET'})
             .then((response) => {
                 return response.json();
@@ -159,7 +159,7 @@ async function repeatProductHomepage() {
     let productId = [];
     try {
         var index = 0;
-        fetch('http://localhost:3003/products/homepage',
+        fetch('http://localhost:3003/api/v1/products/homepage',
 
             {method: 'GET'})
             .then((response) => {

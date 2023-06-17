@@ -28,7 +28,7 @@ async function repeatProductMyAccount() {
     try {
 
         var index = 0;
-        fetch('http://127.0.0.1:3003/products/userProducts', {
+        fetch('http://localhost:3003/api/v1/products/userProducts', {
             method: 'GET',
             credentials: 'include',
             headers: {

@@ -12,7 +12,7 @@ const server = http.createServer((request, response) => {
     response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     response.setHeader('Access-Control-Allow-Credentials', true);
 
-    const reqURL = request.url;
+    const reqURL = request.url.substring(7);
     const reqMethod = request.method;
     switch (reqMethod) {
 
@@ -24,9 +24,7 @@ const server = http.createServer((request, response) => {
             break;
         }
         case "GET": {
-
             if (reqURL.toString().substring(1,reqURL.toString().lastIndexOf("/")) === "sendReview") {
-                console.log(reqURL);
                 controller.getHandler(request, response,reqURL.toString().substring(reqURL.toString().lastIndexOf("/")+1), null);
             }
             break;

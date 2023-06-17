@@ -18,7 +18,7 @@ const server = http.createServer((request, response) => {
     response.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, access-control-allow-credentials');
 
 
-    const reqURL = request.url;
+    const reqURL = request.url.slice(7);
     const reqMethod = request.method;
     switch (reqMethod) {
         case "POST": {
@@ -28,6 +28,7 @@ const server = http.createServer((request, response) => {
             break;
         }
         case "GET": {
+
             console.log(reqURL)
             if (reqURL === "/products/all") {
                 controller.getHandler(request, response, "all", "all");

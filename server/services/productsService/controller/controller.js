@@ -67,7 +67,7 @@ async function postHandler(request, response) {
                     type = value;
                     return true;
                 } else if (key === "picture") {
-                    if (value === "" || value === " " || value === null) {
+                    if (value === "" || value === " " || value === "  " || value === "   " ||value === null) {
                         picture = new PicturePlaceholder().prettyNoPicture;
                     } else {
                         picture = value;

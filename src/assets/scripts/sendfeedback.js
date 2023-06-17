@@ -69,20 +69,25 @@ function getIntensityNames(intensityNumber, emotionType) {
 
 }
 
-function showHowManyTimes() {
-    var numberOfTimes = 5;
-
-}
-
 async function sendFeedback(idRef) {
     let id = idRef.toString().substring(22, idRef.lastIndexOf("/"));
     let emotions = [];
+    let where;
     let index = 0;
     let questions = [];
     let fieldsEmotions = document.getElementsByName('x');
     for (let fields of fieldsEmotions) {
         emotions[index] = fields.value.toString().toLowerCase();
         index++;
+    }
+
+
+    for (let index = 0; index < emotions.length; index++) {
+        if (emotions[index] === "   ") {
+            window.alert('Failed at saving review. Please try again and make sure to fill all fields.');
+            window.location.href = idRef;
+            return;
+        }
     }
 
     try {
@@ -95,36 +100,32 @@ async function sendFeedback(idRef) {
         });
 
         const json = await response.json();
-
-        if (!response.ok) {
-            throw new Error('Eroare');
+        if (window.location.href.slice(-23) === 'sendfeedbacklogged.html') {
+            where = 'http://localhost:4000/reviewconfirmation-loggedin.html';
+        } else {
+            where = 'http://localhost:4000/reviewconfirmation-unlogged.html'
         }
+        window.location.href = where;
+        // if (!response.ok) {
+        //     throw new Error('Eroare');
+        //     window.alert('Failed at saving review. Please try again.');
+        // }
 
         console.log(response.body.toString());
-        window.location.href = json.route
-        window.alert(json.message)
+
     } catch (error) {
         console.error(error);
-        window.alert('Register failed');
+        //  window.alert('Failed at saving review. Please try again.');
     }
 
-
 }
-
-
-// function repeatEmotion() {
-//     var i;
-//     for (i = 0; i < 4; i++) {
-//         document.getElementById("repeat-emotions").innerHTML += '<fieldset class="emotions" id="emotions' + i + '"> <legend>Thing-to-be-reviewed</legend><div class="emotion-section"> <label for="emotion' + i + '">Choose an emotion<label><br> <select name="emotion' + i + '" id="emotion' + i + '"> <option value="happy">Happy</option><option value="surprised">Surprised</option><option value="sad">Sad</option><option value="fearful">Fearful</option>  <option value="disgusted">Disgusted</option>  <option value="angry">Angry</option> <option value="appreciation">Apreciation</option>  <option value="expectant">Expectant</option> </select></div> <div class="intensity-section">  <label for="intensity">Choose an intensity</label> <form oninput="x.value=getIntensityNames(parseInt(intensity.value),' + i + ');">   <input type="range" value="1" max="2" id="intensity" name="intensity"><br><br>  <output name="x" for="intensity"> <p>  </p></output>  </form> </div> </fieldset> </div><br><br>';
-//     }
-// }
 
 function repeatEmotion1(idRef) {
     let id = idRef.toString().substring(22, idRef.lastIndexOf("/"));
     var index = 0;
     let questions = [];
     try {
-        fetch('http://localhost:3004/sendReview/' + id,
+        fetch('http://localhost:3004/api/v1/sendReview/' + id,
 
             {method: 'GET'})
             .then((response) => {
@@ -137,16 +138,6 @@ function repeatEmotion1(idRef) {
                         //index++;
 
                     });
-                    // for(let i=0; i<data.reviewFields.toArray().length;i++){
-                    //     questions[i]=data.reviewFields[i];
-                    // }
-                    // data.reviewFields.forEach(field => {
-                    //     questions[index] = field.toString();
-                    //     index++;
-                    //     return true;
-                    // })
-
-
                     for (index = 0; index < questions.length; index++) {
                         document.getElementById("repeat-emotions1").innerHTML +=
                             '<fieldset class="emotions" id="emotions' + index + '"> ' +
@@ -166,7 +157,7 @@ function repeatEmotion1(idRef) {
                             '</div> <div class="intensity-section"> ' +
                             ' <label for="intensity">Choose an intensity</label> ' +
                             '<form oninput="x.value=getIntensityNames(parseInt(intensity.value),' + index + ');" >' +
-                            '  <input type="range" value="1" max="2" id="intensity" name="intensity"><br><br> ' +
+                            '  <input type="range" value="1" max="2" id="intensity" name="intensity" required><br><br> ' +
                             ' <output name="x" for="intensity" id="x"> <p>  </p></output>  ' +
                             '</form> ' +
                             '</div> ' +
@@ -188,7 +179,7 @@ function productToReview(idRef) {
     var productName; //= "The Ritual of Karma Medium Gift Set";
     var productDescription;// = "Inspired by positivity and civility, The Ritual of More set makes the perfect gift for a friend or family member, or just to treat yourself. Enjoy summer energy all year round with these soothing products based on the floral aroma of lotus flower and white tea. The gift box contains a shower foam 200 ml, an interior perfume 250 ml, a body cream 100 g and a body scrub 125 g."
     try {
-        fetch('http://localhost:3003/products/' + id,
+        fetch('http://localhost:3003/api/v1/products/' + id,
 
             {method: 'GET'})
             .then((response) => {
