@@ -15,16 +15,16 @@ const server = http.createServer((request, response) => {
     response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, OPTIONS');
     response.setHeader('Access-Control-Allow-Credentials', true);
     response.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, access-control-allow-credentials');
-     console.log(request.method)
+    console.log(request.method)
     
     switch (reqMethod) { 
         case "PATCH": {
-            if (reqURL ==="/duedate" ) {
+            if (reqURL ==="/api/v1/duedate" ) {
                 controller.dateHandler(request, response);
             }
         } 
         case "OPTIONS": {
-            if (reqURL ==="/duedate" ) {
+            if (reqURL ==="/api/v1/duedate" ) {
                 controller.dateHandler(request, response);
             }
         }
