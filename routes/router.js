@@ -393,6 +393,29 @@ async function router(request, response) {
       });
     }
   }
+  else if (request.url.slice(-19) === "/chartVisualisation") {
+    if (cookie) {
+      fs.readFile("./src/html/chartVisualisation.html", null, function (error, data) {
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
+    } else {
+      fs.readFile("./src/html/index.html", null, function (error, data) {
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
+    }
+  }
   else if (request.url.slice(-7) === "/charts") {
     if (cookie) {
       fs.readFile("./src/html/charts.html", null, function (error, data) {

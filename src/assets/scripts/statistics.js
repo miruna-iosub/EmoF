@@ -1,6 +1,9 @@
 function getStatistics(format) {
     if (format === "inPage") {
         window.location = "htmlVisualisation";
+    }else if(format === 'chart'){
+      window.location = "chartVisualisation";
+
     } else {
         downloadJson();
     }
@@ -393,7 +396,6 @@ function getCSV6() {
                     const statistics = {
                         questions: data.allFields,
                         matrix: data.mostFeltEmotionPerQuestionCategory,
-                        emotions: data.arrayOfEmotions,
                     };
                     const csvData = convertToCSV1(statistics);
                     const filename = `${prodId}_${category}_statistics.csv`;
@@ -403,4 +405,59 @@ function getCSV6() {
     } catch (e) {
         console.log(e);
     }
-}
+  }
+////////////////
+function getChart1() {
+    try {
+      let array = window.location.href.split("/");
+      let prodId = array[4];
+      let category = array[3];
+      console.log(prodId + " " + category);
+      fetch('http://localhost:3005/statistics/' + prodId + '/' + category, {
+        method: 'GET'
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          let coloane = [];
+          for(let i=0; i<data.matrixCategory.length; i++){
+            for(let j = 0; j< data.arrayOfEmotions.length; j++){
+              coloane[j] = data.matrixProduct[i][j];
+            }
+          }
+  
+          const chartData = {
+            labels: data.arrayOfEmotions,
+            datasets: [
+              {
+                label: 'Statistics',
+                backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                borderColor: 'rgba(0, 123, 255, 1)',
+                borderWidth: 1,
+                data: coloane
+              }
+            ]
+          };
+  
+          const chartOptions = {
+            responsive: true,
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          };
+  
+          const ctx = document.getElementById('chartCanvas').getContext('2d');
+          new Chart(ctx, {
+            type: 'bar',
+            data: chartData,
+            options: chartOptions
+          });
+        });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+  

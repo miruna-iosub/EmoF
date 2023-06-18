@@ -28,16 +28,21 @@ async function loginUser(event) {
     const json = await response.json();
 
     if (!response.ok) {
-      throw new Error(json.information);
+      window.alert('Login failed');
+      window.alert(json.information);
+
     }
-    console.log("[login]", json.information);
+    else{
 
-    let date = new Date();
-    date.setTime(date.getTime() + (35 * 60 * 1000)); // 35 min cookie
-    const expires = date.toUTCString();
-    ///document.cookie = `jwt=${json.information}; expires=${expires}; path=/`;
-    document.cookie = `jwt=${json.information}; expires=${expires}; path=/`;
+      console.log("[login]", json.information);
 
+      let date = new Date();
+      date.setTime(date.getTime() + (35 * 60 * 1000)); // 35 min cookie
+      const expires = date.toUTCString();
+      ///document.cookie = `jwt=${json.information}; expires=${expires}; path=/`;
+      document.cookie = `jwt=${json.information}; expires=${expires}; path=/`;
+  
+    }
    window.location.href = json.route;
  
    window.alert(json.message);

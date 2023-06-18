@@ -107,6 +107,7 @@ async function patchHandler(request, response) {
           {
             $set: {
               email: email,
+              age: age,
               occupation: occupation,
               password: hashPassword,
               password1: password2,
