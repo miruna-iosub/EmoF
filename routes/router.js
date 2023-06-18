@@ -47,6 +47,8 @@ function renderImage(path, response) {
 async function router(request, response) {
   const cookie = request.headers.cookie;
 
+
+
   /*if (request.url === '/' ) {
         console.log("[router] public route", request.url)
         fs.readFile('./src/html/index.html', function (error, data) {
@@ -368,6 +370,53 @@ async function router(request, response) {
       });
     }
   }
+  else if (request.url.slice(-18) === "/htmlVisualisation") {
+    if (cookie) {
+      fs.readFile("./src/html/htmlVisualisation.html", null, function (error, data) {
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
+    } else {
+      fs.readFile("./src/html/index.html", null, function (error, data) {
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
+    }
+  }
+  else if (request.url.slice(-7) === "/charts") {
+    if (cookie) {
+      fs.readFile("./src/html/charts.html", null, function (error, data) {
+        renderCSS("./src/assets/css/reviewconfirmation.css",response)
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
+    } else {
+      fs.readFile("./src/html/index.html", null, function (error, data) {
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
+    }
+  }
 
 
 
@@ -393,8 +442,18 @@ async function router(request, response) {
   //       response.end();
   //     });
   //   }
+
+   else if (request.url.substring(request.url.length - 22) === "reviewconfirmation.css") {
+    controller.renderCSS("/assets/css/reviewconfirmation.css", response);
+  }
+  else if (request.url.substring(request.url.length - 8) === "logo.png") {
+    controller.renderImage("/assets/images/logo.png", response);
+  }
+  else if (request.url.substring(request.url.length - 13) === "statistics.js") {
+    controller.renderJavascript("/assets/scripts/statistics.js", response);
+  }
    else if (request.url.substring(request.url.length - 4) === ".css") {
-    controller.renderCSS(request.url, response);
+     controller.renderCSS(request.url, response);
   }
   //else if (request.url.substring(request.url.length - 5) === ".html") {
    // controller.renderHTML(request.url, response);

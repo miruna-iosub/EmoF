@@ -89,7 +89,7 @@ function productOfTheWeek() {
     var type = "camera";
     var button;
     var redirect;
-    if (window.location.href.slice(-8) === "homepage") {
+    if (getJWTToken()!==null) {
         button = "My Account";
 redirect="account";
     } else {
@@ -199,13 +199,27 @@ async function repeatProductHomepage() {
     }
 }
 
+function getJWTToken() {
+    const cookies = document.cookie.split(';');
+
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+
+        if (cookie.startsWith('jwt=')) {
+            return cookie.substring(4); // Retrieve the value after 'jwt='
+        }
+    }
+    return null; // Return null if JWT token is not found
+
+}
+
 
 function addBasic() {
     var location = "../assets/images/rituals.png";
     var type = "product";
     let button;
     var productDescription, linkedTo, productHeader;
-    if (window.location.href.slice(-8)=== "homepage") {
+    if (getJWTToken()!==null) {
         productDescription = "Do you want to receive honest reviews on something? You can add your products, services, art, even yourself.";
         productHeader = "Are you interested in seeing clients' emotions with accurate charts?";
         linkedTo = "addProduct";

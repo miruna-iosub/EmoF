@@ -1,11 +1,11 @@
 
 function getStatistics(format) {
     if (format === 'html') {
-        window.location = 'htmlVisualisation.html';
+        window.location = 'htmlVisualisation';
     } else if (format === 'csv') {
-        window.location = 'htmlVisualisation.html';
+        window.location = 'csvVisualisation.html';
     } else if (format === 'json') {
-        window.location = 'htmlVisualisation.html';
+        window.location = 'jsonlVisualisation.html';
     }
 
 
@@ -25,9 +25,10 @@ class MapObject {
 
 function getChart() {
     try {
-       // let prodId = window.location.href.toString().substring(22, window.location.href.lastIndexOf("/"));
-       let prodId='648c84c13bbc8ab24a97c074' 
-       let category = 'person';
+        let array = window.location.href.split("/");
+        let prodId =array[4];
+        let category=array[3];
+     console.log(prodId+ " " +category);
         var index = 0;
         fetch('http://localhost:3005/statistics/' + prodId + '/' + category,
             {
@@ -53,7 +54,8 @@ function getChart() {
                     'Average emotion felt in category': questNameValuesInCategory,//data.mapsCategory,
                 };
 
-
+let ok=data.allFields;
+console.log(ok[1]);
 
                 document.getElementById("statisticsJson").innerHTML =JSON.stringify(statistics,undefined,4);
 

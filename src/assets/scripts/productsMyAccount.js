@@ -79,7 +79,7 @@ async function repeatProductMyAccount() {
                             ' <div class="container2" id="container2">' +
                             '<div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + index + '">' +
                             '<p><b>' + productName[index] + '</b><br>' + productDescription[index] + '</p>' +
-                            '<a class="sendfeedback-button" href="' + productCategory[index]+'/'+productId[index] + '/' + windowLocSeeStats+'">' + button2 + '</a> ' +
+                            '<a class="sendfeedback-button" href="/' + productCategory[index]+'/'+productId[index] + '/' + windowLocSeeStats+'">' + button2 + '</a> ' +
                             '<a class="sendfeedback-button"  onclick="deleteForm(\''+productId[index]+'\')">' + button3 + '</a> ' +
                             ' </div>' +
                             '<div class="item3" style="grid-column: 2/3; grid-row: 1/2;">' +

@@ -52,30 +52,30 @@ async function defaultHandlerStats(request, response, reqUrl) {
             //
             //     });
 
-productId=reqUrl.substring(12,reqUrl.lastIndexOf("/"));
-    category=reqUrl.substring(reqUrl.lastIndexOf("/")+1);
-    console.log(category);
+            productId = reqUrl.substring(12, reqUrl.lastIndexOf("/"));
+            category = reqUrl.substring(reqUrl.lastIndexOf("/") + 1);
+            console.log(category);
             /** if token exists
-            let tokens;
-            let userExists = false;
-            let username;
-            try {
+             let tokens;
+             let userExists = false;
+             let username;
+             try {
                 tokens = await productImport.findByToken(token);
                 console.log(tokens);
             } catch (err) {
                 userExists = false;
                 responseBody = "Bad user info";
             }
-            if (tokens.length > 0) {
+             if (tokens.length > 0) {
                 userExists = true;
             }
-            if (userExists === false) {
+             if (userExists === false) {
                 responseBody = "Bad user info";
             }
-        **/
+             **/
             /**verify product id**/
 
-let userExists=true;
+            let userExists = true;
             /**product statistics in category**/
             let extractedProducts;
             if (userExists) {
@@ -95,42 +95,43 @@ let userExists=true;
             if (userExists) {
                 const fields = await productImport.findFormByObjectId(productId);//toate (doar 1)
                 console.log(fields);
-                for (const field of fields[0].fields) {
-                    if (category === "product") {
-                        if (defaultFields.productFields.includes(field.toString())) {
-                            existingFields[index] = field.toString();
-                            index++;
+                if (fields[0] !== null) {
+                    for (const field of fields[0].fields) {
+                        if (category === "product") {
+                            if (defaultFields.productFields.includes(field.toString())) {
+                                existingFields[index] = field.toString();
+                                index++;
+                            }
+                        } else if (category === "person") {
+                            if (defaultFields.personFields.includes(field.toString())) {
+                                existingFields[index] = field.toString();
+                                index++;
+                            }
+                        } else if (category === "event") {
+                            if (defaultFields.eventFields.includes(field.toString())) {
+                                existingFields[index] = field.toString();
+                                index++;
+                            }
+                        } else if (category === "geographicalPlace") {
+                            if (defaultFields.geoPlaceFields.includes(field.toString())) {
+                                existingFields[index] = field.toString();
+                                index++;
+                            }
+                        } else if (category === "service") {
+                            if (defaultFields.serviceFields.includes(field.toString())) {
+                                existingFields[index] = field.toString();
+                                index++;
+                            }
+                        } else if (category === "artisticArtefacts") {
+                            if (defaultFields.artisticArtefactFields.includes(field.toString())) {
+                                existingFields[index] = field.toString();
+                                index++;
+                            }
                         }
-                    } else if (category === "person") {
-                        if (defaultFields.personFields.includes(field.toString())) {
-                            existingFields[index] = field.toString();
-                            index++;
-                        }
-                    } else if (category === "event") {
-                        if (defaultFields.eventFields.includes(field.toString())) {
-                            existingFields[index] = field.toString();
-                            index++;
-                        }
-                    } else if (category === "geographicalPlace") {
-                        if (defaultFields.geoPlaceFields.includes(field.toString())) {
-                            existingFields[index] = field.toString();
-                            index++;
-                        }
-                    } else if (category === "service") {
-                        if (defaultFields.serviceFields.includes(field.toString())) {
-                            existingFields[index] = field.toString();
-                            index++;
-                        }
-                    } else if (category === "artisticArtefacts") {
-                        if (defaultFields.artisticArtefactFields.includes(field.toString())) {
-                            existingFields[index] = field.toString();
-                            index++;
-                        }
+                        allFields[index2] = field.toString();
+                        index2++;
                     }
-                    allFields[index2] = field.toString();
-                    index2++;
                 }
-
             }
 
             /**all stats**/
@@ -163,15 +164,15 @@ let userExists=true;
 
             var mapsOfEmotionsProduct = [];
             if (userExists) {
-                let index3=0;
-                for(const field1 of allFields){
-                    mapsOfEmotionsProduct[index3]=new AllStatistics(field1);
+                let index3 = 0;
+                for (const field1 of allFields) {
+                    mapsOfEmotionsProduct[index3] = new AllStatistics(field1);
                     index3++;
                 }
 
                 const productReviews = await productImport.findReviewsByProductId(productId);// strange toate reviews de la produs si aduna emotiile individuale si comune
                 for (const review of productReviews) {
-                    let index4=0;
+                    let index4 = 0;
                     for (const emotion of review.fieldsEmotions) {
                         mapsOfEmotionsProduct[index4].addOneEmotion(emotion);
                         index4++;
@@ -179,21 +180,62 @@ let userExists=true;
 
                 }
             }
-        console.log(mapsOfEmotionsProduct);
+            console.log(mapsOfEmotionsProduct);
 
-            let arrayOfEmotionsMapsOnlyAll=[];
-            for(let index=0;index<mapsOfEmotions.length;index++){
-                arrayOfEmotionsMapsOnlyAll[index]=Object.fromEntries(mapsOfEmotions[index].mapEmotions);
+            let arrayOfEmotionsMapsOnlyAll = [];
+            for (let index = 0; index < mapsOfEmotions.length; index++) {
+                arrayOfEmotionsMapsOnlyAll[index] = Object.fromEntries(mapsOfEmotions[index].mapEmotions);
             }
-            let arrayOfEmotionsMapsOnlyProduct=[];
-            for(let index=0;index<mapsOfEmotionsProduct.length;index++){
-                arrayOfEmotionsMapsOnlyProduct[index]=Object.fromEntries(mapsOfEmotionsProduct[index].mapEmotions);
+            let arrayOfEmotionsMapsOnlyProduct = [];
+            for (let index = 0; index < mapsOfEmotionsProduct.length; index++) {
+                arrayOfEmotionsMapsOnlyProduct[index] = Object.fromEntries(mapsOfEmotionsProduct[index].mapEmotions);
             }
 
-console.log(allFields);
-console.log(mapsOfEmotions);
-console.log(existingFields);
-console.log(mapsOfEmotions);
+            console.log(allFields);
+            console.log(mapsOfEmotions);
+            console.log(existingFields);
+            console.log(mapsOfEmotions);
+
+
+            /**matrix*/
+            let emotions = ['vigilance', 'anticipation', 'interest', 'rage', 'anger',
+                'annoyance', 'loathing', 'disgust', 'boredom', 'grief',
+                'sadness', 'pensiveness', 'amazement', 'surprise', 'distraction',
+                'terror', 'fear', 'apprehension', 'admiration',
+                'trust', 'acceptance', 'ecstasy', 'joy', 'serenity'];
+
+            let sumMatrixPoduct = [];
+            for (let questionIndex = 0; questionIndex < allFields.length; questionIndex++) {
+                sumMatrixPoduct[questionIndex] = [];
+                for (let emotionIndex = 0; emotionIndex < 25; emotionIndex++) {
+                    let number = mapsOfEmotionsProduct[questionIndex].mapEmotions.get(emotions[emotionIndex]);   //mostr left emption, most felt per question
+                    if (number >= 0) {
+                        sumMatrixPoduct[questionIndex][emotionIndex] = number;
+                    } else {
+                        sumMatrixPoduct[questionIndex][emotionIndex] = 0;
+                    }
+                }
+            }
+            let sumMatrixCategory = [];
+            for (let questionIndex = 0; questionIndex < existingFields.length; questionIndex++) {
+                sumMatrixCategory[questionIndex] = [];
+                for (let emotionIndex = 0; emotionIndex < 25; emotionIndex++) {
+                    let number = mapsOfEmotions[questionIndex].mapEmotions.get(emotions[emotionIndex]);   //mostr left emption, most felt per question
+                    if (number >= 0) {
+                        sumMatrixCategory[questionIndex][emotionIndex] = number;
+                    } else {
+                        sumMatrixCategory[questionIndex][emotionIndex] = 0;
+                    }
+
+                }
+            }
+
+            console.log(sumMatrixCategory.toString());
+            console.log(sumMatrixPoduct.toString());
+
+            /**most felt emotion per question??*/
+
+
             response.writeHead(200, {
                 "Content-Type": "application/json",
                 "Access-Control-Allow-Origin": "*",
@@ -204,9 +246,11 @@ console.log(mapsOfEmotions);
             response.write(
                 JSON.stringify({
                     allFields: allFields,
-                    mapsProduct:arrayOfEmotionsMapsOnlyProduct,
-                    commonFields:existingFields,
-                    mapsCategory:arrayOfEmotionsMapsOnlyAll,
+                    mapsProduct: arrayOfEmotionsMapsOnlyProduct,
+                    commonFields: existingFields,
+                    mapsCategory: arrayOfEmotionsMapsOnlyAll,
+                    matrixCategory: sumMatrixCategory,
+                    matrixProduct:sumMatrixPoduct,
                 })
             );
             response.end();
