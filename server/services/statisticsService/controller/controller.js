@@ -207,7 +207,7 @@ async function defaultHandlerStats(request, response, reqUrl) {
             let sumMatrixPoduct = [];
             for (let questionIndex = 0; questionIndex < allFields.length; questionIndex++) {
                 sumMatrixPoduct[questionIndex] = [];
-                for (let emotionIndex = 0; emotionIndex < 25; emotionIndex++) {
+                for (let emotionIndex = 0; emotionIndex < 24; emotionIndex++) {
                     let number = mapsOfEmotionsProduct[questionIndex].mapEmotions.get(emotions[emotionIndex]);   //mostr left emption, most felt per question
                     if (number >= 0) {
                         sumMatrixPoduct[questionIndex][emotionIndex] = number;
@@ -229,18 +229,18 @@ async function defaultHandlerStats(request, response, reqUrl) {
 
                 }
             }
-
-            console.log(sumMatrixCategory.toString());
-            console.log(sumMatrixPoduct.toString());
+console.log(emotions.length);
 
             /**most felt emotion per question??*/
-
-
+            let mostFeltEmotionPerQuestionProduct = [];
+            let mostFeltEmotionperQuestionCategory = [];
+            for (let indexQuestion = 0; indexQuestion < allFields.length; indexQuestion++) {
+            }
             response.writeHead(200, {
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Credentials": true
-            });
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Credentials": true
+                });
 
 
             response.write(
@@ -250,7 +250,8 @@ async function defaultHandlerStats(request, response, reqUrl) {
                     commonFields: existingFields,
                     mapsCategory: arrayOfEmotionsMapsOnlyAll,
                     matrixCategory: sumMatrixCategory,
-                    matrixProduct:sumMatrixPoduct,
+                    matrixProduct: sumMatrixPoduct,
+                    arrayOfEmotions:emotions,
                 })
             );
             response.end();

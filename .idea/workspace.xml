@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7a5c9b6-48db-43d9-a853-ef38ef6e3be5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/html/productCharts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/services/statisticsService/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/controller/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/reviewconfirmation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/reviewconfirmation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/productsMyAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/productsMyAccount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/statistics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/charts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/deleteproductconfirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/deleteproductconfirmation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/homepage-loggedin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/homepage-loggedin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/myaccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/myaccount.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +66,7 @@
       <recent name="E:\M3 SE\EmoF\EmoF\server\userInfoService" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.login">
     <configuration name="login" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/server/services/loginService/package.json" />
       <command value="run" />
@@ -153,7 +142,7 @@
       <workItem from="1686902045664" duration="38078000" />
       <workItem from="1686949698361" duration="1718000" />
       <workItem from="1686982201690" duration="47425000" />
-      <workItem from="1687080674201" duration="20089000" />
+      <workItem from="1687080674201" duration="20741000" />
     </task>
     <servers />
   </component>
