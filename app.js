@@ -9,7 +9,7 @@ function handleRequest(request, response) {
 
     const reqURL = request.url;
     const reqMethod = request.method;
-
+ 
     if (reqURL.toString().includes(".css")) {
         controller.renderCSS(reqURL, response);
     } else if (reqURL.toString().includes(".html")) {
