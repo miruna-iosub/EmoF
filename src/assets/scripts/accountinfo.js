@@ -31,7 +31,7 @@ function accountInfo() {
     let age = "";
     let name = "";
 
-    fetch('http://127.0.0.1:3006/api/v1/userinfo', {
+    fetch('http://127.0.0.1:3006/api/v1/userInfo', {
         method: 'GET',
         credentials: 'include',
         headers: {

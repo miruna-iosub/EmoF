@@ -38,7 +38,7 @@ async function deleteUser() {
   const jwtToken = getJWTToken();
 
   try {
-    const response = await fetch('http://127.0.0.1:3002/api/v1/delete', {
+    const response = await fetch('http://127.0.0.1:3002/api/v1/deleteAccount', {
       method: 'DELETE',
       credentials: 'include',
       headers: {

@@ -72,7 +72,7 @@ async function postHandler(request, response) {
           });
           response.write(
             JSON.stringify({
-              route: "/signup.html",
+              route: "/register",
               message: responseBody,
             })
           );
@@ -98,7 +98,7 @@ async function postHandler(request, response) {
               });
               response.write(
                 JSON.stringify({
-                  route: "/signup.html",
+                  route: "/register",
                   message: responseBody,
                 })
               );
@@ -119,7 +119,7 @@ async function postHandler(request, response) {
               });
               response.write(
                 JSON.stringify({
-                  route: "/signup.html",
+                  route: "/register",
                   message: responseBody,
                 })
               );
@@ -136,7 +136,7 @@ async function postHandler(request, response) {
               });
               response.write(
                 JSON.stringify({
-                  route: "/signup.html",
+                  route: "/register",
                   message: responseBody,
                 })
               );
@@ -154,7 +154,7 @@ async function postHandler(request, response) {
               });
               response.write(
                 JSON.stringify({
-                  route: "/signup.html",
+                  route: "/register",
                   message: responseBody,
                 })
               );
@@ -171,14 +171,14 @@ async function postHandler(request, response) {
   
               await user.save();
   
-              responseBody = "POST successful.";
+              responseBody = "Your account has been created.";
   
               response.writeHead(200, {
                 "Content-Type": "application/json",
               });
               response.write(
                 JSON.stringify({
-                  route: "/signin.html",
+                  route: "/login",
                   message: responseBody,
                 })
               );
@@ -193,7 +193,7 @@ async function postHandler(request, response) {
   
             response.end(
               JSON.stringify({
-                route: "/signup.html",
+                route: "/register",
                 message: "Username already exists!",
               })
             );

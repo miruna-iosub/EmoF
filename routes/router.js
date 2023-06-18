@@ -146,7 +146,7 @@ async function router(request, response) {
         response.end();
       });
     }
-  } else if (request.url === "/all/productsunlogged") {
+  }  else if (request.url === "/all/productsunlogged"||request.url === "/service/productsunlogged"||request.url === "/service/productsunlogged" || request.url === "/person/productsunlogged" || request.url === "/product/productsunlogged" || request.url === "/artisticArtefact/productsunlogged" || request.url === "/geographicalPlace/productsunlogged") {
     if (cookie) {
       fs.readFile("./src/html/products-logged.html", null, function (error, data) {
         if (error) {
@@ -168,29 +168,7 @@ async function router(request, response) {
         response.end();
       });
     }
-  } else if (request.url === "/service/productsunlogged" || request.url === "/person/productsunlogged" || request.url === "/product/productsunlogged" || request.url === "/artisticArtefact/productsunlogged" || request.url === "/geographicalPlace/productsunlogged") {
-    if (cookie) {
-      fs.readFile("./src/html/products-logged.html", null, function (error, data) {
-        if (error) {
-          response.writeHead(404);
-          response.write("Whoops! File not found!");
-        } else {
-          response.write(data);
-        }
-        response.end();
-      });
-    } else {
-      fs.readFile("./src/html/products-unlogged.html", null, function (error, data) {
-        if (error) {
-          response.writeHead(404);
-          response.write("Whoops! File not found!");
-        } else {
-          response.write(data);
-        }
-        response.end();
-      });
-    }
-  } else if (request.url === "/service/productslogged" || request.url === "/person/productslogged" || request.url === "/product/productslogged" || request.url === "/artisticArtefact/productslogged" || request.url === "/geographicalPlace/productslogged") {
+  } else if (request.url === "/all/productslogged"|| request.url === "/service/productslogged" || request.url === "/person/productslogged" || request.url === "/product/productslogged" || request.url === "/artisticArtefact/productslogged" || request.url === "/geographicalPlace/productslogged") {
     if (cookie) {
       fs.readFile("./src/html/products-logged.html", null, function (error, data) {
         if (error) {
@@ -367,6 +345,31 @@ async function router(request, response) {
       });
     }
   }
+  else if (request.url.slice(-23) === "/addProductConfirmation") {
+    if (cookie) {
+      fs.readFile("./src/html/addaproductconfirmation.html", null, function (error, data) {
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
+    } else {
+      fs.readFile("./src/html/index.html", null, function (error, data) {
+        if (error) {
+          response.writeHead(404);
+          response.write("Whoops! File not found!");
+        } else {
+          response.write(data);
+        }
+        response.end();
+      });
+    }
+  }
+
+
 
   // } else if (request.url === "all/productslogged") {
   //   if (cookie) {

@@ -67,7 +67,7 @@ async function postHandler(request, response) {
                     type = value;
                     return true;
                 } else if (key === "picture") {
-                    if (value === "" || value === " " || value === "  " || value === "   " ||value === null) {
+                    if (value === "" || value === " " || value === "  " || value === "   " || value === null) {
                         picture = new PicturePlaceholder().prettyNoPicture;
                     } else {
                         picture = value;
@@ -119,7 +119,7 @@ async function postHandler(request, response) {
             if (usernames.length > 0) {
                 userExists = true;
             }
-           pr = new Product(username, name, description, type, picture, status, expirationDate, category, subcategory);
+            pr = new Product(username, name, description, type, picture, status, expirationDate, category, subcategory);
             frm = new Form(formFields, pr._id);
             pr.setFormFieldsId(frm._id.toString());
 
@@ -187,7 +187,7 @@ async function getHandler(request, response, type, string) {
         number = extractedProducts1.length;
     } else if (type === "idorcategory") {
 
-        if (string === "product" || string === "event" || string === "geographicalPlace" || string === "service" || string === "artisticArtefact"||string === "person") {
+        if (string === "product" || string === "event" || string === "geographicalPlace" || string === "service" || string === "artisticArtefact" || string === "person") {
             extractedProducts = await product.findByCategory(string);
             // number = await product.countByCategory(string);
 
@@ -282,4 +282,143 @@ async function getHandlerAuth(request, response) {
 }
 
 
-module.exports = {defaultHandler, postHandler, getHandler, getHandlerAuth};
+async function deleteHandlerAuth(request, response,id) {
+    const productImport = new ProductService();
+    let responseBody;
+    let userExists = false;
+    let usernames = [];
+    let username;
+    let extractedProducts = [];
+    let chunks = [];
+    let message="Form deleted.";
+    const authorizationHeader = request.headers.authorization;
+    try {
+        if (authorizationHeader && authorizationHeader.startsWith('Bearer ')) {
+            let token = authorizationHeader.substring(7);
+            const decodedToken = jwt.verify(token, "secret");
+            username = decodedToken['data']['username'];
+            try {
+                usernames = await productImport.findByUsername(username);
+           userExists=true;
+            } catch (err) {
+                userExists = false;
+            }
+            if (usernames.length < 0) {
+
+                userExists = false;
+            }
+
+            if (!userExists) {
+                response.writeHead(404, {"Content-Type": "application/json"});
+                response.end(JSON.stringify({message: "User Not Found.",route:"/"}));
+             } else {
+                 try {
+            //         request.on("data", (chunk) => {
+            //             chunks.push(chunk);
+            //         });
+            //         request.on("end", async () => {
+            //             const data = Buffer.concat(chunks);
+            //             const parsedData = JSON.parse(
+            //                 data,
+            //                 (key, value) => {
+            //                     if (key === "id") {
+            //                         id = value.toString();
+            //                         return true;
+            //                     }
+            //                     return false;
+            //                 }
+            //             );
+            //         });
+
+                    await productImport.deleteById(username, id);
+                } catch (err) {
+                    alert(err);
+                    message = "Failed At Deleting Form.";
+                }
+            }
+        } else message = "Unauthorized To Delete.";
+    }catch(err){
+        message="Failed At Deleting Form.";
+    }
+    try{
+
+
+    response.writeHead(200, {
+        "Content-Type": "application/json",
+        'Access-Control-Allow-Credentials': true
+    });
+    response.write(
+        JSON.stringify({
+            route: "/account",
+            message: message,
+        })
+    );
+    response.end();
+}catch (err){}
+}
+
+
+
+async function patchHandlerAuth(request, response,id) {
+    const productImport = new ProductService();
+    let responseBody;
+    let userExists = false;
+    let usernames = [];
+    let username;
+    let extractedProducts = [];
+    let chunks = [];
+    let message="Form closed.";
+    const authorizationHeader = request.headers.authorization;
+    try {
+        if (authorizationHeader && authorizationHeader.startsWith('Bearer ')) {
+            let token = authorizationHeader.substring(7);
+            const decodedToken = jwt.verify(token, "secret");
+            username = decodedToken['data']['username'];
+            try {
+                usernames = await productImport.findByUsername(username);
+                userExists=true;
+            } catch (err) {
+                userExists = false;
+            }
+            if (usernames.length < 0) {
+
+                userExists = false;
+            }
+
+            if (!userExists) {
+                response.writeHead(404, {"Content-Type": "application/json"});
+                response.end(JSON.stringify({message: "User Not Found.",route:"/"}));
+            } else {
+                try {
+                    await productImport.changeStatus(username, id);
+                } catch (err) {
+                    alert(err);
+                    message = "Failed At Closing Form.";
+                }
+            }
+        } else message = "Unauthorized To Close.";
+    }catch(err){
+        message="Failed At Deleting Form.";
+    }
+    try{
+
+
+    response.writeHead(200, {
+        "Content-Type": "application/json",
+        'Access-Control-Allow-Credentials': true
+    });
+    response.write(
+        JSON.stringify({
+            route: "/account",
+            message: message,
+        })
+    );
+    response.end();
+}
+catch (err){
+
+}
+}
+
+
+module.exports = {defaultHandler, postHandler, getHandler, getHandlerAuth, deleteHandlerAuth, patchHandlerAuth};

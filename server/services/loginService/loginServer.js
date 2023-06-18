@@ -23,7 +23,7 @@ const server = http.createServer((request, response) => {
             break;
         }
         case "DELETE": {
-            if (reqURL === "/api/v1/delete") {
+            if (reqURL === "/api/v1/deleteAccount") {
                 controller.deleteHandler(request, response);
             }
             break;

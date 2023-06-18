@@ -168,15 +168,17 @@ async function repeatProductHomepage() {
                 return response.json();
             })
             .then((data) => {
+
                 numberProd = parseInt(data.numberProducts);
                 data.products.forEach(prod => {
+                    if(prod!==null){
                     productId[index] = prod._id;
                     productImageSource[index] = prod.picture;
                     productType[index] = prod.type;
                     productDescription[index] = prod.description;
                     productName[index] = prod.name;
                     index++;
-                })
+                }  })
                 var windowLoc = "reviewUnlogged";
                 numberProd = productId.length;
                 var button1, button2;
@@ -206,7 +208,7 @@ function addBasic() {
     if (window.location.href.slice(-8)=== "homepage") {
         productDescription = "Do you want to receive honest reviews on something? You can add your products, services, art, even yourself.";
         productHeader = "Are you interested in seeing clients' emotions with accurate charts?";
-        linkedTo = "addaproduct";
+        linkedTo = "addProduct";
         button = "Add A Product";
     } else {
         productDescription = "Are you interested in receiving honest reviews on something? You can add your products, services, art, even yourself.<br>Create an account and add your first product.";

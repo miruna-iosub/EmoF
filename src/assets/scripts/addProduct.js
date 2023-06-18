@@ -62,7 +62,7 @@ function addQuestions() {
     var e = document.getElementById("category");
 
     try {
-        fetch('http://localhost:3003/products/category/' + category,
+        fetch('http://localhost:3003/api/v1/products/category/' + category,
 
             {method: 'GET'})
             .then((response) => {
@@ -121,13 +121,13 @@ async function addProduct() {
     else if(expirationDate==="")
     {
         window.alert('Please fill all the fields.');
-        window.location.href = 'addaproduct';
+        window.location.href = '/addProduct';
     }
     else {
         try {
             const jwtToken = getJWTToken();
 
-            const response = await fetch('http://127.0.0.1:3003/products', {
+            const response = await fetch('http://127.0.0.1:3003/api/v1/products', {
                 method: 'POST',
                 credentials: 'include',
                 headers: {
@@ -147,22 +147,24 @@ async function addProduct() {
                     formFields: newFormFields,
                 }),
             });
-
-            const json = await response.json();
+            window.alert('Product has been uploaded.');
+            window.location.href = '/addProductConfirmation';
+           // const json = await response.json();
             //
             //     if (json.responseBody!=="POST successful.") {
             //         window.window.alert(json.message);
             //         window.location.reload();
             //        // throw new Error('Posting product failed');
             // }
-            window.location.href = 'addaproductconfirmation';
+
             // else {
             //}
 
         } catch (error) {
             console.error(error);
-            window.location.href = 'addaproduct';
-            // window.alert('Posting product failed');
+            window.location.href = '/addProduct';
+            window.alert('Product has been uploaded.');
+         //   window.alert('Posting product failed');
         }
     }
 

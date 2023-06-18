@@ -135,7 +135,7 @@ async function patchHandler(request, response) {
         });
         response.write(
           JSON.stringify({
-            route: "/homepage",
+            route: "/account",
             message: responseBody,
             information: token
           })

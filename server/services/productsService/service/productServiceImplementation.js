@@ -126,6 +126,41 @@ class ProductService {
             throw new UserInfoError();
         }
     }
+
+    async deleteById(givenUsername,prodId){
+        const db = getDb();
+        try {
+            db.collection('Products').deleteOne({username:givenUsername,_id: new mongo.ObjectId(prodId)});
+        } catch (e) {
+            console.log("[Error]: " + e);
+            throw new UserInfoError();
+        }
+    }
+    async changeStatus(givenUsername,prodId){
+        const filter = { _id: new mongo.ObjectId(prodId),username:givenUsername };
+        const date = new Date();
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+
+// This arrangement can be altered based on how we want the date's format to appear.
+        let currentDate = `${year}/${month}/${day}`;
+        const updateDocument = {
+            $set: {
+                status: "closed",
+                expirationdate:currentDate,
+            },
+        };
+        const db = getDb();
+        try {
+            db.collection('Products').updateOne(filter, updateDocument);
+        } catch (e) {
+            console.log("[Error]: " + e);
+            throw new UserInfoError();
+        }
+    }
+
+
 }
 
 module.exports = {ProductService};

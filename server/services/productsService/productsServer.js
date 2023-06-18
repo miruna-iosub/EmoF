@@ -39,11 +39,24 @@ const server = http.createServer((request, response) => {
             else if (reqURL.slice(0, 19) === "/products/category/") {
                 controller.getHandler(request, response, "formfields", reqURL.slice(19));
             }
-            else if (reqURL=== "/products/userProducts") {
+            else if (reqURL=== "/products/user") {
                 controller.getHandlerAuth(request, response);
             }
             else if (reqURL.slice(0, 9) === "/products") {
                 controller.getHandler(request, response, "idorcategory", reqURL.slice(10));
+            }
+            break;
+        }
+
+        case "PATCH":{
+            if (reqURL.slice(0,16)=== "/products/status") {
+                controller.patchHandlerAuth(request, response,reqURL.slice(17));
+            }
+
+        }
+        case "DELETE":{
+            if (reqURL.substring(0,9)=== "/products") {
+                controller.deleteHandlerAuth(request, response,reqURL.substring(10,reqURL.length));
             }
             break;
         }

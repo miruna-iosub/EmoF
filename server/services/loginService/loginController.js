@@ -224,7 +224,7 @@ async function deleteHandler(request, response) {
               });
               response.write(
                 JSON.stringify({
-                  route: "/deleteaccountconfirmation.html",
+                  route: "/",
                   message: "User deleted!!",
                 })
               );
