@@ -86,45 +86,47 @@ async function defaultHandlerStats(request, response, reqUrl) {
             if (userExists) {
                 const fields = await productImport.findFormByObjectId(productId);//toate (doar 1)
                 console.log(fields);
-                if (fields[0] !== null) {try{
+                if (fields[0] !== null) {
+                    try {
 
 
-                    for (const field of fields[0].fields) {
-                        if (category === "product") {
-                            if (defaultFields.productFields.includes(field.toString())) {
-                                existingFields[index] = field.toString();
-                                index++;
+                        for (const field of fields[0].fields) {
+                            if (category === "product") {
+                                if (defaultFields.productFields.includes(field.toString())) {
+                                    existingFields[index] = field.toString();
+                                    index++;
+                                }
+                            } else if (category === "person") {
+                                if (defaultFields.personFields.includes(field.toString())) {
+                                    existingFields[index] = field.toString();
+                                    index++;
+                                }
+                            } else if (category === "event") {
+                                if (defaultFields.eventFields.includes(field.toString())) {
+                                    existingFields[index] = field.toString();
+                                    index++;
+                                }
+                            } else if (category === "geographicalPlace") {
+                                if (defaultFields.geoPlaceFields.includes(field.toString())) {
+                                    existingFields[index] = field.toString();
+                                    index++;
+                                }
+                            } else if (category === "service") {
+                                if (defaultFields.serviceFields.includes(field.toString())) {
+                                    existingFields[index] = field.toString();
+                                    index++;
+                                }
+                            } else if (category === "artisticArtefacts") {
+                                if (defaultFields.artisticArtefactFields.includes(field.toString())) {
+                                    existingFields[index] = field.toString();
+                                    index++;
+                                }
                             }
-                        } else if (category === "person") {
-                            if (defaultFields.personFields.includes(field.toString())) {
-                                existingFields[index] = field.toString();
-                                index++;
-                            }
-                        } else if (category === "event") {
-                            if (defaultFields.eventFields.includes(field.toString())) {
-                                existingFields[index] = field.toString();
-                                index++;
-                            }
-                        } else if (category === "geographicalPlace") {
-                            if (defaultFields.geoPlaceFields.includes(field.toString())) {
-                                existingFields[index] = field.toString();
-                                index++;
-                            }
-                        } else if (category === "service") {
-                            if (defaultFields.serviceFields.includes(field.toString())) {
-                                existingFields[index] = field.toString();
-                                index++;
-                            }
-                        } else if (category === "artisticArtefacts") {
-                            if (defaultFields.artisticArtefactFields.includes(field.toString())) {
-                                existingFields[index] = field.toString();
-                                index++;
-                            }
+                            allFields[index2] = field.toString();
+                            index2++;
                         }
-                        allFields[index2] = field.toString();
-                        index2++;
-                    }}
-                    catch (e){}
+                    } catch (e) {
+                    }
                 }
             }
 
@@ -269,9 +271,16 @@ async function defaultHandlerStats(request, response, reqUrl) {
                 percentMatrixProduct[questionIndex] = [];
                 percentMatrixProductWith[questionIndex] = [];
                 for (let emotionIndex = 0; emotionIndex < 24; emotionIndex++) {
-                    percentMatrixProduct[questionIndex][emotionIndex] = (sumMatrixPoduct[questionIndex][emotionIndex] / totalNumberOfReviewsCategory).toFixed(3);
-                    percentMatrixProductWith[questionIndex][emotionIndex] = percentMatrixProduct[questionIndex][emotionIndex].toString() + '%';
+                    if (!Number.isNaN(sumMatrixPoduct[questionIndex][emotionIndex] / totalNumberOfReviewsCategory)) {
+                        percentMatrixProduct[questionIndex][emotionIndex] = (sumMatrixPoduct[questionIndex][emotionIndex] / totalNumberOfReviewsCategory).toFixed(3);
+                        percentMatrixProductWith[questionIndex][emotionIndex] = percentMatrixProduct[questionIndex][emotionIndex].toString() + '%';
+                    } else {
+                        percentMatrixProduct[questionIndex][emotionIndex] = 0;
+                        percentMatrixProductWith[questionIndex][emotionIndex] = 0;
+
+                    }
                 }
+
             }
             let percentMatrixCategoryWith = [];
             let percentMatrixCategory = [];
@@ -279,8 +288,14 @@ async function defaultHandlerStats(request, response, reqUrl) {
                 percentMatrixCategory[questionIndex] = [];
                 percentMatrixCategoryWith[questionIndex] = [];
                 for (let emotionIndex = 0; emotionIndex < 24; emotionIndex++) {
-                    percentMatrixCategory[questionIndex][emotionIndex] = (sumMatrixCategory[questionIndex][emotionIndex] / totalNumberOfReviewsCategory).toFixed(3);
-                    percentMatrixCategoryWith[questionIndex][emotionIndex] = percentMatrixCategory[questionIndex][emotionIndex].toString() + '%';
+                    if (!Number.isNaN(sumMatrixCategory[questionIndex][emotionIndex] / totalNumberOfReviewsCategory)) {
+                        percentMatrixCategory[questionIndex][emotionIndex] = 0;
+                        percentMatrixCategoryWith[questionIndex][emotionIndex] = 0;
+                    }
+                    else {
+                        percentMatrixCategory[questionIndex][emotionIndex] = (sumMatrixCategory[questionIndex][emotionIndex] / totalNumberOfReviewsCategory).toFixed(3);
+                        percentMatrixCategoryWith[questionIndex][emotionIndex] = percentMatrixCategory[questionIndex][emotionIndex].toString() + '%';
+                    }
                 }
             }
             console.log("mostFeltEmotionPerQuestionProduct: " + mostFeltEmotionPerQuestionProduct.toString());
@@ -291,8 +306,6 @@ async function defaultHandlerStats(request, response, reqUrl) {
             console.log("percentMatrixCategory: " + percentMatrixCategory.toString());
             response.writeHead(200, {
                 "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Credentials": true
             });
 
 

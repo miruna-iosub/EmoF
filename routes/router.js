@@ -446,25 +446,20 @@ async function router(request, response) {
    else if (request.url.substring(request.url.length - 22) === "reviewconfirmation.css") {
     controller.renderCSS("/assets/css/reviewconfirmation.css", response);
   }
-  else if (request.url.substring(request.url.length - 8) === "logo.png") {
-    controller.renderImage("/assets/images/logo.png", response);
-  }
   else if (request.url.substring(request.url.length - 13) === "statistics.js") {
     controller.renderJavascript("/assets/scripts/statistics.js", response);
+  }
+  else if (request.url.substring(request.url.length - 8) === "logo.png") {
+    controller.renderImage("/assets/images/logo.png", response);
   }
    else if (request.url.substring(request.url.length - 4) === ".css") {
      controller.renderCSS(request.url, response);
   }
-  //else if (request.url.substring(request.url.length - 5) === ".html") {
-   // controller.renderHTML(request.url, response);
-  //}
   else if (request.url.substring(request.url.length - 3) === ".js") {
     controller.renderJavascript(request.url, response);
   } else if (request.url.slice(request.url.length - 4) === ".png") {
     controller.renderImage(request.url, response);
-  } else if (request.url.substring(request.url.length - 3) === ".js") {
-    controller.renderImage(request.url, response);
-  } else {
+  }  else {
     console.log("[router] 404 error Page Not Found");
     response.writeHead(404, { "Content-Type": "application/json" });
     response.end(JSON.stringify({ message: "Page not found" }));

@@ -6,17 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a7a5c9b6-48db-43d9-a853-ef38ef6e3be5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/reviewService/reviewController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/reviewService/reviewController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/reviewService/reviewServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/reviewService/reviewServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/services/statisticsService/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/controller/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/service/StatisticsServiceImplementation.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/service/StatisticsServiceImplementation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/statisticsServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/statisticsServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/sendfeedback.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/sendfeedback.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/statistics.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/charts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/homepage-loggedin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/homepage-loggedin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/htmlVisualisation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/htmlVisualisation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/sendfeedbacklogged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/sendfeedbacklogged.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,73 +223,73 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/statisticsService/controller/controller.js</url>
-          <line>94</line>
+          <line>95</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="105" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/statisticsService/controller/controller.js</url>
-          <line>99</line>
+          <line>100</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/statisticsService/controller/controller.js</url>
-          <line>108</line>
+          <line>109</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/statisticsService/controller/controller.js</url>
-          <line>123</line>
+          <line>124</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/statisticsService/controller/controller.js</url>
-          <line>136</line>
+          <line>138</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/statisticsService/controller/controller.js</url>
-          <line>168</line>
+          <line>170</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="112" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/statisticsService/controller/controller.js</url>
-          <line>178</line>
+          <line>180</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="114" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/statisticsService/controller/controller.js</url>
-          <line>184</line>
+          <line>186</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="115" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/statisticsService/controller/controller.js</url>
-          <line>193</line>
+          <line>195</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/statisticsService/controller/controller.js</url>
-          <line>205</line>
+          <line>207</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/statisticsService/controller/controller.js</url>
-          <line>255</line>
+          <line>257</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="118" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/services/statisticsService/controller/controller.js</url>
-          <line>265</line>
+          <line>267</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="119" />
         </line-breakpoint>

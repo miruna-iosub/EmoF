@@ -125,6 +125,7 @@ async function postHandler(request, response) {
 
 
             /**if picture is null -> placeholder**/
+
         } catch (e) {
             console.log(e);
             userExists = false;
