@@ -133,7 +133,7 @@ function downloadCSV(csvData, filename) {
   link.click();
 }
 
-function getCSV() {
+function getCSV1() {
   try {
     let array = window.location.href.split("/");
     let prodId = array[4];
@@ -153,10 +153,184 @@ function getCSV() {
           emotions: data.arrayOfEmotions,
         };
         const csvData = convertToCSV(statistics);
-        const filename = "statistics.csv";
+        const filename = `${prodId}_${category}_statistics.csv`;
         downloadCSV(csvData, filename);
       });
   } catch (e) {
     console.log(e);
   }
 }
+/////////////////
+  
+  function getCSV2() {
+    try {
+      let array = window.location.href.split("/");
+      let prodId = array[4];
+      let category = array[3];
+      console.log(prodId + " " + category);
+      var index = 0;
+      fetch("http://localhost:3005/statistics/" + prodId + "/" + category, {
+        method: "GET",
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          const statistics = {
+            questions: data.allFields,
+            matrix: data.percentMatrixProductWith,
+            emotions: data.arrayOfEmotions,
+          };
+          const csvData = convertToCSV(statistics);
+          const filename = `${prodId}_${category}_statistics.csv`;
+          downloadCSV(csvData, filename);
+        });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+  
+  ////////
+
+  function convertToCSV1(statistics) {
+    const csvHeader = `Question, Most Felt, Frequency \n`;
+  
+    // Prepare the CSV content
+    let csvContent = "";
+  
+    // Iterate over each question and its corresponding row in the matrix
+    for (let i = 0; i < statistics.questions.length; i++) {
+      const question = statistics.questions[i];
+      const row = statistics.matrix[i];
+  
+      // Convert the row values to a comma-separated string
+      const rowValues = row.join(",");
+  
+      // Append the question and row values to the CSV content
+      csvContent += `${question},${rowValues}\n`;
+    }
+  
+    // Combine the header and content to form the complete CSV data
+    const csvData = csvHeader + csvContent;
+    return csvData;
+  }
+  
+  
+  
+  function getCSV3() {
+    try {
+      let array = window.location.href.split("/");
+      let prodId = array[4];
+      let category = array[3];
+      console.log(prodId + " " + category);
+      var index = 0;
+      fetch("http://localhost:3005/statistics/" + prodId + "/" + category, {
+        method: "GET",
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          const statistics = {
+            questions: data.allFields,
+            matrix: data.mostFeltEmotionPerQuestionProduct,
+          };
+          const csvData = convertToCSV1(statistics);
+          const filename = `${prodId}_${category}_statistics.csv`;
+          downloadCSV(csvData, filename);
+        });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+//////////////
+
+
+function getCSV4() {
+    try {
+      let array = window.location.href.split("/");
+      let prodId = array[4];
+      let category = array[3];
+      console.log(prodId + " " + category);
+      var index = 0;
+      fetch("http://localhost:3005/statistics/" + prodId + "/" + category, {
+        method: "GET",
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          const statistics = {
+            questions: data.allFields,
+            matrix: data.matrixCategory,
+            emotions: data.arrayOfEmotions,
+          };
+          const csvData = convertToCSV(statistics);
+          const filename = `${prodId}_${category}_statistics.csv`;
+          downloadCSV(csvData, filename);
+        });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+  ////////////
+  
+function getCSV5() {
+    try {
+      let array = window.location.href.split("/");
+      let prodId = array[4];
+      let category = array[3];
+      console.log(prodId + " " + category);
+      var index = 0;
+      fetch("http://localhost:3005/statistics/" + prodId + "/" + category, {
+        method: "GET",
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          const statistics = {
+            questions: data.allFields,
+            matrix: data.percentMatrixCategoryWith,
+            emotions: data.arrayOfEmotions,
+          };
+          const csvData = convertToCSV(statistics);
+          const filename = `${prodId}_${category}_statistics.csv`;
+          downloadCSV(csvData, filename);
+        });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  /////////////////
+  
+  
+  
+function getCSV6() {
+    try {
+      let array = window.location.href.split("/");
+      let prodId = array[4];
+      let category = array[3];
+      console.log(prodId + " " + category);
+      var index = 0;
+      fetch("http://localhost:3005/statistics/" + prodId + "/" + category, {
+        method: "GET",
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          const statistics = {
+            questions: data.allFields,
+            matrix: data.mostFeltEmotionPerQuestionCategory,
+            emotions: data.arrayOfEmotions,
+          };
+          const csvData = convertToCSV1(statistics);
+          const filename = `${prodId}_${category}_statistics.csv`;
+          downloadCSV(csvData, filename);
+        });
+    } catch (e) {
+      console.log(e);
+    }
+  }
