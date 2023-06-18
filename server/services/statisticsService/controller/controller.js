@@ -229,18 +229,83 @@ async function defaultHandlerStats(request, response, reqUrl) {
 
                 }
             }
-console.log(emotions.length);
 
             /**most felt emotion per question??*/
+
+
             let mostFeltEmotionPerQuestionProduct = [];
-            let mostFeltEmotionperQuestionCategory = [];
             for (let indexQuestion = 0; indexQuestion < allFields.length; indexQuestion++) {
+                let max = 0;
+                let emotion = "";
+                for (let indexEmotion = 0; indexEmotion < 24; indexEmotion++) {
+                    if (max <= sumMatrixPoduct[indexQuestion][indexEmotion]) {
+                        max = sumMatrixPoduct[indexQuestion][indexEmotion];
+                        emotion = emotions[indexEmotion];
+                    }
+                    mostFeltEmotionPerQuestionProduct[indexQuestion] = [emotion, max.toString()];
+                }
             }
+
+            let mostFeltEmotionPerQuestionCategory = [];  // question + most felt emotion
+            for (let indexQuestion = 0; indexQuestion < existingFields.length; indexQuestion++) {
+
+                let max = 0;
+                let emotion = "";
+                for (let indexEmotion = 0; indexEmotion < 24; indexEmotion++) {
+
+                    if (max <= sumMatrixCategory[indexQuestion][indexEmotion]) {
+                        max = sumMatrixCategory[indexQuestion][indexEmotion];
+                        emotion = emotions[indexEmotion];
+                    }
+                    mostFeltEmotionPerQuestionCategory[indexQuestion] = [emotion, max.toString()];
+                }
+            }
+
+
+            /**total number of reviews**/
+
+            let totalNumberOfReviewsCategory = 0;
+            for (let indexEmotion = 0; indexEmotion < 24; indexEmotion++) {
+                totalNumberOfReviewsCategory += sumMatrixCategory[0][indexEmotion];
+            }
+            let totalNumberOfReviewsProduct = 0;
+            for (let indexEmotion = 0; indexEmotion < 24; indexEmotion++) {
+                totalNumberOfReviewsProduct += sumMatrixPoduct[0][indexEmotion];
+            }
+
+            /**emotions percent**/
+
+            let percentMatrixProduct = [];
+            let percentMatrixProductWith = [];
+            for (let questionIndex = 0; questionIndex < existingFields.length; questionIndex++) {
+                percentMatrixProduct[questionIndex] = [];
+                 percentMatrixProductWith[questionIndex] = [];
+                for (let emotionIndex = 0; emotionIndex < 24; emotionIndex++) {
+                    percentMatrixProduct[questionIndex][emotionIndex] = (sumMatrixPoduct[questionIndex][emotionIndex] / totalNumberOfReviewsCategory).toFixed(3);
+                    percentMatrixProductWith[questionIndex][emotionIndex] = percentMatrixProduct[questionIndex][emotionIndex].toString() + '%';
+                }
+            }
+            let percentMatrixCategoryWith = [];
+            let percentMatrixCategory = [];
+            for (let questionIndex = 0; questionIndex < existingFields.length; questionIndex++) {
+                percentMatrixCategory[questionIndex] = [];
+                 percentMatrixCategoryWith[questionIndex] = [];
+                for (let emotionIndex = 0; emotionIndex < 24; emotionIndex++) {
+                    percentMatrixCategory[questionIndex][emotionIndex] = (sumMatrixCategory[questionIndex][emotionIndex] / totalNumberOfReviewsCategory).toFixed(3);
+                    percentMatrixCategoryWith[questionIndex][emotionIndex] = percentMatrixCategory[questionIndex][emotionIndex].toString() + '%';
+                }
+            }
+            console.log("mostFeltEmotionPerQuestionProduct: " + mostFeltEmotionPerQuestionProduct.toString());
+            console.log("mostFeltEmotionPerQuestionCategory: " + mostFeltEmotionPerQuestionCategory.toString())
+            console.log("totalNumberOfReviewsProduct: " + totalNumberOfReviewsProduct.toString());
+            console.log("totalNumberOfReviewsCategory: " + totalNumberOfReviewsCategory.toString());
+            console.log("percentMatrixPoduct: " + percentMatrixProduct.toString());
+            console.log("percentMatrixCategory: " + percentMatrixCategory.toString());
             response.writeHead(200, {
-                    "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "*",
-                    "Access-Control-Allow-Credentials": true
-                });
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Credentials": true
+            });
 
 
             response.write(
@@ -249,9 +314,17 @@ console.log(emotions.length);
                     mapsProduct: arrayOfEmotionsMapsOnlyProduct,
                     commonFields: existingFields,
                     mapsCategory: arrayOfEmotionsMapsOnlyAll,
-                    matrixCategory: sumMatrixCategory,
+                    matrixCategory: sumMatrixCategory, //count
                     matrixProduct: sumMatrixPoduct,
-                    arrayOfEmotions:emotions,
+                    arrayOfEmotions: emotions,
+                    mostFeltEmotionPerQuestionProduct: mostFeltEmotionPerQuestionProduct, //[emotie, cate]
+                    mostFeltEmotionPerQuestionCategory: mostFeltEmotionPerQuestionCategory,
+                    totalNumberOfReviewsCategory: totalNumberOfReviewsCategory,
+                    totalNumberOfReviewsProduct: totalNumberOfReviewsProduct,
+                    percentMatrixProduct: percentMatrixProduct,
+                    percentMatrixCategory: percentMatrixCategory,
+                    percentMatrixProductWith: percentMatrixProductWith, // %
+                    percentMatrixCategoryWith: percentMatrixCategoryWith, 
                 })
             );
             response.end();

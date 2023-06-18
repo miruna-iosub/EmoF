@@ -7,6 +7,9 @@
     <list default="true" id="a7a5c9b6-48db-43d9-a853-ef38ef6e3be5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/services/statisticsService/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/controller/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/models/fields.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/models/fields.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scripts/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/statistics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/charts.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +145,7 @@
       <workItem from="1686902045664" duration="38078000" />
       <workItem from="1686949698361" duration="1718000" />
       <workItem from="1686982201690" duration="47425000" />
-      <workItem from="1687080674201" duration="20741000" />
+      <workItem from="1687080674201" duration="26267000" />
     </task>
     <servers />
   </component>

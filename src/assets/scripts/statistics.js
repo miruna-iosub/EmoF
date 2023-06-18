@@ -25,42 +25,47 @@ function getChart() {
     let category = array[3];
     console.log(prodId + " " + category);
     var index = 0;
-    fetch("http://localhost:3005/statistics/" + prodId + "/" + category, {
-      method: "GET",
-    })
+    fetch('http://localhost:3005/statistics/' + prodId + '/' + category,
+      {
+        method: 'GET'
+      })
+
       .then((response) => {
         return response.json();
       })
       .then((data) => {
         let questNameValuesProduct = [];
         for (let index = 0; index < data.mapsProduct.length; index++) {
-          questNameValuesProduct[index] = new MapObject(
-            data.allFields[index],
-            data.mapsProduct[index]
-          );
+          questNameValuesProduct[index] = new MapObject(data.allFields[index], data.mapsProduct[index]);
         }
         let questNameValuesInCategory = [];
         for (let index = 0; index < data.mapsCategory.length; index++) {
-          questNameValuesInCategory[index] = new MapObject(
-            data.commonFields[index],
-            data.mapsCategory[index]
-          );
+          questNameValuesInCategory[index] = new MapObject(data.commonFields[index], data.mapsCategory[index]);
         }
         const statistics = {
-          "All fields": data.allFields,
-          "Fields Common with other in category": data.commonFields,
-          "Emotion for each field of the product": questNameValuesProduct, //data.mapsProduct,
-          "Average emotion felt in category": questNameValuesInCategory, //data.mapsCategory,
+          'Available emotions': data.arrayOfEmotions,
+          'All fields': data.allFields,
+          'Fields common with other in category': data.commonFields,
+          'Emotion for each field of the product': questNameValuesProduct,//    data.mapsProduct,
+          'Average emotion felt in category': questNameValuesInCategory,//data.mapsCategory,
+          'Most felt emotion per question product': data.mostFeltEmotionPerQuestionProduct,//
+          'Most felt emotion per question category': data.mostFeltEmotionPerQuestionCategory,//
+          'Total number of reviews product': data.totalNumberOfReviewsProduct,//
+          'Total number of reviews category': data.totalNumberOfReviewsCategory,//
+          'Percent matrix product float': data.percentMatrixProduct,//
+          'Percent matrix category float': data.percentMatrixCategory,//
+          'Percent matrix product': data.percentMatrixProductWith,//
+          'Percent matrix category': data.percentMatrixCategoryWith, //
         };
+
+
+
 
         let ok = data.allFields;
         console.log(ok[1]);
 
-        document.getElementById("statisticsJson").innerHTML = JSON.stringify(
-          statistics,
-          undefined,
-          4
-        );
+        document.getElementById("statisticsJson").innerHTML = JSON.stringify(statistics, undefined, 4);
+
 
         // import { parse } from 'json2csv';
         //
@@ -87,10 +92,12 @@ function getChart() {
         //
         //
         // document.getElementById("statisticsCsv").innerHTML =csv;
-      });
+      })
   } catch (e) {
     console.log(e);
   }
+
+
 }
 
 /////////////////
