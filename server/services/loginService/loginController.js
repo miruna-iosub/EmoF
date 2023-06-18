@@ -108,7 +108,7 @@ async function postHandler(request, response) {
         response.writeHead(200, { "Content-Type": "application/json" });
         response.end(
           JSON.stringify({
-            route: "/signin.html",
+            route: "/login",
             message: "Username format is invalid.",
           })
         );
@@ -162,7 +162,7 @@ async function postHandler(request, response) {
             response.writeHead(403, { "Content-Type": "application/json" });
             response.end(
               JSON.stringify({
-                route: "/signin.html",
+                route: "/login",
                 message: "Wrong password!",
               })
             );
@@ -176,7 +176,7 @@ async function postHandler(request, response) {
 
           response.end(
             JSON.stringify({
-              route: "/signin.html",
+              route: "/login",
               message: "Wrong username!",
             })
           );

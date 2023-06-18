@@ -11,7 +11,7 @@ async function loginUser(event) {
 
   console.log("[login]", username, password);
 
-  try {
+
     const response = await fetch('http://localhost:3002/api/v1/login', {
       credentials: 'include',
       method: 'POST',
@@ -24,12 +24,12 @@ async function loginUser(event) {
       }),
     });
 
-    if (!response.ok) {
-      throw new Error('Login failed');
-    }
 
     const json = await response.json();
 
+    if (!response.ok) {
+      throw new Error(json.information);
+    }
     console.log("[login]", json.information);
 
     let date = new Date();
@@ -41,8 +41,5 @@ async function loginUser(event) {
    window.location.href = json.route;
  
    window.alert(json.message);
-  } catch (error) {
-    console.error(error);
-    window.alert('Login failed');
-  }
+  
 }

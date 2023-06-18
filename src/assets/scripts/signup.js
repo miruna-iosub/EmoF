@@ -34,7 +34,7 @@ async function userRegister(event) {
     const json = await response.json();
     console.log(json)
     if (!response.ok) {
-      throw new Error('Register failed');
+      throw new Error(json.message);
     }
 
     console.log(`http://localhost:3001{json.route}`)
