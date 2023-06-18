@@ -88,8 +88,6 @@ async function defaultHandlerStats(request, response, reqUrl) {
                 console.log(fields);
                 if (fields[0] !== null) {
                     try {
-
-
                         for (const field of fields[0].fields) {
                             if (category === "product") {
                                 if (defaultFields.productFields.includes(field.toString())) {
@@ -165,6 +163,9 @@ async function defaultHandlerStats(request, response, reqUrl) {
                     index3++;
                 }
 
+                try{
+
+
                 const productReviews = await productImport.findReviewsByProductId(productId);// strange toate reviews de la produs si aduna emotiile individuale si comune
                 for (const review of productReviews) {
                     let index4 = 0;
@@ -172,8 +173,8 @@ async function defaultHandlerStats(request, response, reqUrl) {
                         mapsOfEmotionsProduct[index4].addOneEmotion(emotion);
                         index4++;
                     }
-
                 }
+                }catch (e){console.log(e);}
             }
             console.log(mapsOfEmotionsProduct);
 
@@ -199,15 +200,16 @@ async function defaultHandlerStats(request, response, reqUrl) {
                 'terror', 'fear', 'apprehension', 'admiration',
                 'trust', 'acceptance', 'ecstasy', 'joy', 'serenity'];
 
-            let sumMatrixPoduct = [];
+            let sumMatrixProduct = [];
             for (let questionIndex = 0; questionIndex < allFields.length; questionIndex++) {
-                sumMatrixPoduct[questionIndex] = [];
+                sumMatrixProduct[questionIndex] = [];
                 for (let emotionIndex = 0; emotionIndex < 24; emotionIndex++) {
+                    console.log(mapsOfEmotionsProduct[questionIndex]);
                     let number = mapsOfEmotionsProduct[questionIndex].mapEmotions.get(emotions[emotionIndex]);   //mostr left emption, most felt per question
                     if (number >= 0) {
-                        sumMatrixPoduct[questionIndex][emotionIndex] = number;
+                        sumMatrixProduct[questionIndex][emotionIndex] = number;
                     } else {
-                        sumMatrixPoduct[questionIndex][emotionIndex] = 0;
+                        sumMatrixProduct[questionIndex][emotionIndex] = 0;
                     }
                 }
             }
@@ -231,12 +233,13 @@ async function defaultHandlerStats(request, response, reqUrl) {
                 let max = 0;
                 let emotion = "";
                 for (let indexEmotion = 0; indexEmotion < 24; indexEmotion++) {
-                    if (max <= sumMatrixPoduct[indexQuestion][indexEmotion]) {
-                        max = sumMatrixPoduct[indexQuestion][indexEmotion];
+                    if (max <= sumMatrixProduct[indexQuestion][indexEmotion]) {
+                        max = sumMatrixProduct[indexQuestion][indexEmotion];
                         emotion = emotions[indexEmotion];
                     }
-                    mostFeltEmotionPerQuestionProduct[indexQuestion] = [emotion, max.toString()];
                 }
+                    mostFeltEmotionPerQuestionProduct[indexQuestion] = [emotion, max.toString()];
+
             }
 
             let mostFeltEmotionPerQuestionCategory = [];  // question + most felt emotion
@@ -248,31 +251,32 @@ async function defaultHandlerStats(request, response, reqUrl) {
                     if (max <= sumMatrixCategory[indexQuestion][indexEmotion]) {
                         max = sumMatrixCategory[indexQuestion][indexEmotion];
                         emotion = emotions[indexEmotion];
-                    }
+                    }}
                     mostFeltEmotionPerQuestionCategory[indexQuestion] = [emotion, max.toString()];
-                }
+
             }
 
 
             /**total number of reviews**/
-            let totalNumberOfReviewsCategory = 0;
+            let totalNumberOfReviewsCategory = 1;
             for (let indexEmotion = 0; indexEmotion < 24; indexEmotion++) {
                 totalNumberOfReviewsCategory += sumMatrixCategory[0][indexEmotion];
             }
-            let totalNumberOfReviewsProduct = 0;
+            let totalNumberOfReviewsProduct = 1;
             for (let indexEmotion = 0; indexEmotion < 24; indexEmotion++) {
-                totalNumberOfReviewsProduct += sumMatrixPoduct[0][indexEmotion];
+                totalNumberOfReviewsProduct += sumMatrixProduct[0][indexEmotion];
             }
 
             /**emotions percent**/
+
             let percentMatrixProduct = [];
             let percentMatrixProductWith = [];
             for (let questionIndex = 0; questionIndex < existingFields.length; questionIndex++) {
                 percentMatrixProduct[questionIndex] = [];
                 percentMatrixProductWith[questionIndex] = [];
                 for (let emotionIndex = 0; emotionIndex < 24; emotionIndex++) {
-                    if (!Number.isNaN(sumMatrixPoduct[questionIndex][emotionIndex] / totalNumberOfReviewsCategory)) {
-                        percentMatrixProduct[questionIndex][emotionIndex] = (sumMatrixPoduct[questionIndex][emotionIndex] / totalNumberOfReviewsCategory).toFixed(3);
+                    if ( totalNumberOfReviewsCategory>0&&sumMatrixProduct[questionIndex][emotionIndex]>0) {
+                        percentMatrixProduct[questionIndex][emotionIndex] = (sumMatrixProduct[questionIndex][emotionIndex] / totalNumberOfReviewsCategory).toFixed(3);
                         percentMatrixProductWith[questionIndex][emotionIndex] = percentMatrixProduct[questionIndex][emotionIndex].toString() + '%';
                     } else {
                         percentMatrixProduct[questionIndex][emotionIndex] = 0;
@@ -288,21 +292,20 @@ async function defaultHandlerStats(request, response, reqUrl) {
                 percentMatrixCategory[questionIndex] = [];
                 percentMatrixCategoryWith[questionIndex] = [];
                 for (let emotionIndex = 0; emotionIndex < 24; emotionIndex++) {
-                    if (!Number.isNaN(sumMatrixCategory[questionIndex][emotionIndex] / totalNumberOfReviewsCategory)) {
-                        percentMatrixCategory[questionIndex][emotionIndex] = 0;
-                        percentMatrixCategoryWith[questionIndex][emotionIndex] = 0;
-                    }
-                    else {
+                    if (totalNumberOfReviewsCategory>0&&sumMatrixCategory[questionIndex][emotionIndex]) {
                         percentMatrixCategory[questionIndex][emotionIndex] = (sumMatrixCategory[questionIndex][emotionIndex] / totalNumberOfReviewsCategory).toFixed(3);
                         percentMatrixCategoryWith[questionIndex][emotionIndex] = percentMatrixCategory[questionIndex][emotionIndex].toString() + '%';
                     }
+                    else {  percentMatrixCategory[questionIndex][emotionIndex] = 0;
+                        percentMatrixCategoryWith[questionIndex][emotionIndex] = 0;
+                          }
                 }
             }
             console.log("mostFeltEmotionPerQuestionProduct: " + mostFeltEmotionPerQuestionProduct.toString());
             console.log("mostFeltEmotionPerQuestionCategory: " + mostFeltEmotionPerQuestionCategory.toString())
             console.log("totalNumberOfReviewsProduct: " + totalNumberOfReviewsProduct.toString());
             console.log("totalNumberOfReviewsCategory: " + totalNumberOfReviewsCategory.toString());
-            console.log("percentMatrixPoduct: " + percentMatrixProduct.toString());
+            console.log("percentMatrixProduct: " + percentMatrixProduct.toString());
             console.log("percentMatrixCategory: " + percentMatrixCategory.toString());
             response.writeHead(200, {
                 "Content-Type": "application/json",
@@ -316,7 +319,7 @@ async function defaultHandlerStats(request, response, reqUrl) {
                     commonFields: existingFields,
                     mapsCategory: arrayOfEmotionsMapsOnlyAll,
                     matrixCategory: sumMatrixCategory, //count
-                    matrixProduct: sumMatrixPoduct,
+                    matrixProduct: sumMatrixProduct,
                     arrayOfEmotions: emotions,
                     mostFeltEmotionPerQuestionProduct: mostFeltEmotionPerQuestionProduct, //[emotie, cate]
                     mostFeltEmotionPerQuestionCategory: mostFeltEmotionPerQuestionCategory,
