@@ -127,7 +127,7 @@ class ProductMod {
     async findReviewsByProductId(productId){
         const db = getDb();
         try {
-            return db.collection('Reviews').find({productid :productId}).toArray();
+            return db.collection('Reviews').find({productid :new ObjectId(productId)}).toArray();
         } catch (e) {
             console.log("[Error]: " + e);
         }

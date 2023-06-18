@@ -169,7 +169,7 @@ async function defaultHandlerStats(request, response, reqUrl) {
                 const productReviews = await productImport.findReviewsByProductId(productId);// strange toate reviews de la produs si aduna emotiile individuale si comune
                 for (const review of productReviews) {
                     let index4 = 0;
-                    for (const emotion of review.fieldsEmotions) {
+                    for (let emotion of review.fieldsEmotions) {
                         mapsOfEmotionsProduct[index4].addOneEmotion(emotion);
                         index4++;
                     }
@@ -188,7 +188,7 @@ async function defaultHandlerStats(request, response, reqUrl) {
             }
 
             console.log(allFields);
-            console.log(mapsOfEmotions);
+            console.log(mapsOfEmotionsProduct);
             console.log(existingFields);
             console.log(mapsOfEmotions);
 
@@ -204,7 +204,6 @@ async function defaultHandlerStats(request, response, reqUrl) {
             for (let questionIndex = 0; questionIndex < allFields.length; questionIndex++) {
                 sumMatrixProduct[questionIndex] = [];
                 for (let emotionIndex = 0; emotionIndex < 24; emotionIndex++) {
-                    console.log(mapsOfEmotionsProduct[questionIndex]);
                     let number = mapsOfEmotionsProduct[questionIndex].mapEmotions.get(emotions[emotionIndex]);   //mostr left emption, most felt per question
                     if (number >= 0) {
                         sumMatrixProduct[questionIndex][emotionIndex] = number;
@@ -216,7 +215,7 @@ async function defaultHandlerStats(request, response, reqUrl) {
             let sumMatrixCategory = [];
             for (let questionIndex = 0; questionIndex < existingFields.length; questionIndex++) {
                 sumMatrixCategory[questionIndex] = [];
-                for (let emotionIndex = 0; emotionIndex < 25; emotionIndex++) {
+                for (let emotionIndex = 0; emotionIndex < 24; emotionIndex++) {
                     let number = mapsOfEmotions[questionIndex].mapEmotions.get(emotions[emotionIndex]);   //mostr left emption, most felt per question
                     if (number >= 0) {
                         sumMatrixCategory[questionIndex][emotionIndex] = number;
