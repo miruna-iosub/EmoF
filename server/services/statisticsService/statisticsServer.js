@@ -10,16 +10,20 @@ mongodbConnect(async () => {
 
 
 const server = http.createServer((request, response) => {
+    response.setHeader('Access-Control-Allow-Origin', 'http://localhost:4000');
+    response.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    response.setHeader('Access-Control-Allow-Credentials', true);
+    response.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, access-control-allow-credentials');
+
     const reqURL = request.url;
     const reqMethod = request.method;
     switch (reqMethod) {
         case "GET": {
-            if (reqURL.slice(0,11) === "/statistics") {
-                controller.defaultHandlerStats(request, response,reqURL);
+            if (reqURL.slice(0, 11) === "/statistics") {
+                controller.defaultHandlerStats(request, response, reqURL);
+            } else {
+                controller.defaultHandler(request, response);
             }
-
-            else { controller.defaultHandler(request, response); }
-
             break;
         }
         default: {

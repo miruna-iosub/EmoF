@@ -11,7 +11,16 @@ class ProductMod {
         return db.collection('Products').find({name: givenName}).toArray();
     }
 
+    async findByUsername(givenUsername) {
+        const db = getDb();
+        try {
+            return db.collection('Users').find({username: givenUsername}).toArray();
+        } catch (e) {
+            console.log("[Error]: " + e);
+            throw new UserInfoError();
+        }
 
+    }
     async findAll() {
         const db = getDb();
         try {

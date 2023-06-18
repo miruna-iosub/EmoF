@@ -5,6 +5,7 @@ const {Form} = require("../models/form");
 
 const DefaultFields = require("../models/fields");
 const AllStatistics = require("../models/statistics");
+const jwt = require("jsonwebtoken");
 
 defaultHandler = (request, response) => {
     response.writeHead(200, {
@@ -34,48 +35,38 @@ async function defaultHandlerStats(request, response, reqUrl) {
             var token = null, productId = null, category = null;
             var formfields = [];
             var val = 0;
-            // console.log(parsedData);
-            // const parsedData = JSON.parse(
-            //     data,
-            //     (key, value) => {
-            //         if (key === "token") {
-            //             token = value;
-            //             return true;
-            //         } else if (key === "productid") {
-            //             productId = value;
-            //             return true;
-            //         } else if (key === "category") {
-            //             category = value;
-            //             return true;
-            //         }
-            //         return false;
-            //
-            //     });
-
             productId = reqUrl.substring(12, reqUrl.lastIndexOf("/"));
             category = reqUrl.substring(reqUrl.lastIndexOf("/") + 1);
             console.log(category);
-            /** if token exists
-             let tokens;
-             let userExists = false;
-             let username;
-             try {
-                tokens = await productImport.findByToken(token);
-                console.log(tokens);
-            } catch (err) {
-                userExists = false;
-                responseBody = "Bad user info";
-            }
-             if (tokens.length > 0) {
-                userExists = true;
-            }
-             if (userExists === false) {
-                responseBody = "Bad user info";
-            }
-             **/
-            /**verify product id**/
+            let userExists = false;
+            let username;
+            let usernames = [];
+            const authorizationHeader = request.headers.authorization;
 
-            let userExists = true;
+            try {
+                if (authorizationHeader && authorizationHeader.startsWith('Bearer ')) {
+                    let token = authorizationHeader.substring(7);
+                    const decodedToken = jwt.verify(token, "secret");
+                    username = decodedToken['data']['username'];
+                }
+
+
+                try {
+                    usernames = await productImport.findByUsername(username);
+                    userExists = true;
+                } catch (err) {
+                    userExists = false;
+                }
+                if (usernames.length > 0) {
+                    userExists = true;
+                }
+            } catch (err) {
+                response.write(
+                    JSON.stringify({
+                        message: "Unauthorised."
+                    }))
+            }
+
             /**product statistics in category**/
             let extractedProducts;
             if (userExists) {
@@ -95,7 +86,9 @@ async function defaultHandlerStats(request, response, reqUrl) {
             if (userExists) {
                 const fields = await productImport.findFormByObjectId(productId);//toate (doar 1)
                 console.log(fields);
-                if (fields[0] !== null) {
+                if (fields[0] !== null) {try{
+
+
                     for (const field of fields[0].fields) {
                         if (category === "product") {
                             if (defaultFields.productFields.includes(field.toString())) {
@@ -130,7 +123,8 @@ async function defaultHandlerStats(request, response, reqUrl) {
                         }
                         allFields[index2] = field.toString();
                         index2++;
-                    }
+                    }}
+                    catch (e){}
                 }
             }
 
@@ -161,7 +155,6 @@ async function defaultHandlerStats(request, response, reqUrl) {
 
 
             /**prod stats**/
-
             var mapsOfEmotionsProduct = [];
             if (userExists) {
                 let index3 = 0;
@@ -231,8 +224,6 @@ async function defaultHandlerStats(request, response, reqUrl) {
             }
 
             /**most felt emotion per question??*/
-
-
             let mostFeltEmotionPerQuestionProduct = [];
             for (let indexQuestion = 0; indexQuestion < allFields.length; indexQuestion++) {
                 let max = 0;
@@ -248,7 +239,6 @@ async function defaultHandlerStats(request, response, reqUrl) {
 
             let mostFeltEmotionPerQuestionCategory = [];  // question + most felt emotion
             for (let indexQuestion = 0; indexQuestion < existingFields.length; indexQuestion++) {
-
                 let max = 0;
                 let emotion = "";
                 for (let indexEmotion = 0; indexEmotion < 24; indexEmotion++) {
@@ -263,7 +253,6 @@ async function defaultHandlerStats(request, response, reqUrl) {
 
 
             /**total number of reviews**/
-
             let totalNumberOfReviewsCategory = 0;
             for (let indexEmotion = 0; indexEmotion < 24; indexEmotion++) {
                 totalNumberOfReviewsCategory += sumMatrixCategory[0][indexEmotion];
@@ -274,12 +263,11 @@ async function defaultHandlerStats(request, response, reqUrl) {
             }
 
             /**emotions percent**/
-
             let percentMatrixProduct = [];
             let percentMatrixProductWith = [];
             for (let questionIndex = 0; questionIndex < existingFields.length; questionIndex++) {
                 percentMatrixProduct[questionIndex] = [];
-                 percentMatrixProductWith[questionIndex] = [];
+                percentMatrixProductWith[questionIndex] = [];
                 for (let emotionIndex = 0; emotionIndex < 24; emotionIndex++) {
                     percentMatrixProduct[questionIndex][emotionIndex] = (sumMatrixPoduct[questionIndex][emotionIndex] / totalNumberOfReviewsCategory).toFixed(3);
                     percentMatrixProductWith[questionIndex][emotionIndex] = percentMatrixProduct[questionIndex][emotionIndex].toString() + '%';
@@ -289,7 +277,7 @@ async function defaultHandlerStats(request, response, reqUrl) {
             let percentMatrixCategory = [];
             for (let questionIndex = 0; questionIndex < existingFields.length; questionIndex++) {
                 percentMatrixCategory[questionIndex] = [];
-                 percentMatrixCategoryWith[questionIndex] = [];
+                percentMatrixCategoryWith[questionIndex] = [];
                 for (let emotionIndex = 0; emotionIndex < 24; emotionIndex++) {
                     percentMatrixCategory[questionIndex][emotionIndex] = (sumMatrixCategory[questionIndex][emotionIndex] / totalNumberOfReviewsCategory).toFixed(3);
                     percentMatrixCategoryWith[questionIndex][emotionIndex] = percentMatrixCategory[questionIndex][emotionIndex].toString() + '%';
@@ -324,7 +312,7 @@ async function defaultHandlerStats(request, response, reqUrl) {
                     percentMatrixProduct: percentMatrixProduct,
                     percentMatrixCategory: percentMatrixCategory,
                     percentMatrixProductWith: percentMatrixProductWith, // %
-                    percentMatrixCategoryWith: percentMatrixCategoryWith, 
+                    percentMatrixCategoryWith: percentMatrixCategoryWith,
                 })
             );
             response.end();
@@ -380,49 +368,5 @@ async function htmlHandler(request, response) {
 
 }
 
-
-// async function getHandler(request, response, type, string) {
-//     let extractedProducts;
-//     const product = new ProductMod();
-//     let number;
-//     let findid = false;
-//     if (type === "all") {
-//         extractedProducts = await product.findAll();
-//         number = await product.countAll();
-//     } else if (type === "idorcategory") {
-//
-//         if (string === "product" || string === "event" || string === "geographicalPlace" || string === "service" || string === "artisticArtefact") {
-//             extractedProducts = await product.findByCategory(string);
-//             // number = await product.countByCategory(string);
-//
-//         } else {
-//             extractedProducts = await product.findById(string);
-//             findid = true;
-//         }
-//     }
-//     if (extractedProducts.length === 0) {
-//         number = "No product in this category."
-//     } else if (!extractedProducts.length > 0) {
-//         number = "Failed to extract product."
-//     } else {
-//         number = extractedProducts.length;
-//     }
-//
-//     console.log(extractedProducts);
-//
-//
-//     response.writeHead(200, {
-//         "Content-Type": "application/json",
-//     });
-//
-//     response.write(
-//         JSON.stringify({
-//             numberProducts: number,
-//             extractedProducts
-//         })
-//     );
-//
-//     response.end();
-// }
 
 module.exports = {defaultHandler, defaultHandlerStats};

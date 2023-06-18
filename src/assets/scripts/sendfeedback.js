@@ -70,7 +70,9 @@ function getIntensityNames(intensityNumber, emotionType) {
 }
 
 async function sendFeedback(idRef) {
-    let id = idRef.toString().substring(22, idRef.lastIndexOf("/"));
+    let array= idRef.split("/");
+    let id=array[3];
+
     let emotions = [];
     let where;
     let index = 0;
@@ -101,7 +103,7 @@ async function sendFeedback(idRef) {
 
         const json = await response.json();
         if (window.location.href.slice(-18) === 'sendfeedbacklogged') {
-            where = 'reviewCnfirmationLogged';
+            where = 'reviewConfirmationLogged';
         } else {
             where = 'reviewConfirmationUnlogged'
         }
