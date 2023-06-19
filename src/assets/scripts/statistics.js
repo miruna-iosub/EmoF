@@ -1,8 +1,8 @@
 function getStatistics(format) {
     if (format === "inPage") {
         window.location = "htmlVisualisation";
-    }else if(format === 'chart'){
-      window.location = "chartVisualisation";
+    } else if (format === 'chart') {
+        window.location = "chartVisualisation";
 
     } else {
         downloadJson();
@@ -36,11 +36,10 @@ function downloadJson() {
                 return response.json();
             })
             .then((data) => {
-                if(data.message==="Unauthorised"){
+                if (data.message === "Unauthorised") {
                     window.alert(data.message);
-                    window.location="/";
-                }
-                else {
+                    window.location = "/";
+                } else {
                     let questNameValuesProduct = [];
                     for (let index = 0; index < data.mapsProduct.length; index++) {
                         questNameValuesProduct[index] = new MapObject(data.allFields[index], data.mapsProduct[index]);
@@ -73,10 +72,10 @@ function downloadJson() {
                     downloadAnchorNode.click();
                     downloadAnchorNode.remove();
                 }
-    });
-    }catch (e) {
+            });
+    } catch (e) {
         console.log(e);
-    window.alert('Failed at getting data.');
+        window.alert('Failed at getting data.');
     }
 
 }
@@ -98,36 +97,37 @@ function getChart() {
                 return response.json();
             })
             .then((data) => {
-                if(data.message==="Unauthorized."){
+                if (data.message === "Unauthorized.") {
                     window.alert(data.message);
-                    window.location="/";
-                }else{
+                    window.location = "/";
+                } else {
                     let questNameValuesProduct = [];
-                for (let index = 0; index < data.mapsProduct.length; index++) {
-                    questNameValuesProduct[index] = new MapObject(data.allFields[index], data.mapsProduct[index]);
-                }
-                let questNameValuesInCategory = [];
-                for (let index = 0; index < data.mapsCategory.length; index++) {
-                    questNameValuesInCategory[index] = new MapObject(data.commonFields[index], data.mapsCategory[index]);
-                }
+                    for (let index = 0; index < data.mapsProduct.length; index++) {
+                        questNameValuesProduct[index] = new MapObject(data.allFields[index], data.mapsProduct[index]);
+                    }
+                    let questNameValuesInCategory = [];
+                    for (let index = 0; index < data.mapsCategory.length; index++) {
+                        questNameValuesInCategory[index] = new MapObject(data.commonFields[index], data.mapsCategory[index]);
+                    }
 
-                const statistics = {
-                    'Available emotions': data.arrayOfEmotions,
-                    'All fields': data.allFields,
-                    'Fields common with other in category': data.commonFields,
-                    'Emotion for each field of the product': questNameValuesProduct,//    data.mapsProduct,
-                    'Average emotion felt in category': questNameValuesInCategory,//data.mapsCategory,
-                    'Most felt emotion per question product': data.mostFeltEmotionPerQuestionProduct,//
-                    'Most felt emotion per question category': data.mostFeltEmotionPerQuestionCategory,//
-                    'Total number of reviews product': data.totalNumberOfReviewsProduct,//
-                    'Total number of reviews category': data.totalNumberOfReviewsCategory,//
-                    'Percent matrix product float': data.percentMatrixProduct,//
-                    'Percent matrix category float': data.percentMatrixCategory,//
-                    'Percent matrix product': data.percentMatrixProductWith,//
-                    'Percent matrix category': data.percentMatrixCategoryWith, //
-                };
-                document.getElementById("statisticsJson").innerHTML = JSON.stringify(statistics, undefined, 4);
-            } })
+                    const statistics = {
+                        'Available emotions': data.arrayOfEmotions,
+                        'All fields': data.allFields,
+                        'Fields common with other in category': data.commonFields,
+                        'Emotion for each field of the product': questNameValuesProduct,//    data.mapsProduct,
+                        'Average emotion felt in category': questNameValuesInCategory,//data.mapsCategory,
+                        'Most felt emotion per question product': data.mostFeltEmotionPerQuestionProduct,//
+                        'Most felt emotion per question category': data.mostFeltEmotionPerQuestionCategory,//
+                        'Total number of reviews product': data.totalNumberOfReviewsProduct,//
+                        'Total number of reviews category': data.totalNumberOfReviewsCategory,//
+                        'Percent matrix product float': data.percentMatrixProduct,//
+                        'Percent matrix category float': data.percentMatrixCategory,//
+                        'Percent matrix product': data.percentMatrixProductWith,//
+                        'Percent matrix category': data.percentMatrixCategoryWith, //
+                    };
+                    document.getElementById("statisticsJson").innerHTML = JSON.stringify(statistics, undefined, 4);
+                }
+            })
     } catch (e) {
         console.log(e);
     }
@@ -184,10 +184,10 @@ function getCSV1() {
                 return response.json();
             })
             .then((data) => {
-                if(data.message==="Unauthorized."){
+                if (data.message === "Unauthorized.") {
                     window.alert(data.message);
-                    window.location="/";
-                }else {
+                    window.location = "/";
+                } else {
                     const statistics = {
                         questions: data.allFields,
                         matrix: data.matrixProduct,
@@ -220,10 +220,10 @@ function getCSV2() {
                 return response.json();
             })
             .then((data) => {
-                if(data.message==="Unauthorized."){
+                if (data.message === "Unauthorized.") {
                     window.alert(data.message);
-                    window.location="/";
-                }else {
+                    window.location = "/";
+                } else {
                     const statistics = {
                         questions: data.allFields,
                         matrix: data.percentMatrixProductWith,
@@ -280,10 +280,10 @@ function getCSV3() {
                 return response.json();
             })
             .then((data) => {
-                if(data.message==="Unauthorized."){
+                if (data.message === "Unauthorized.") {
                     window.alert(data.message);
-                    window.location="/";
-                }else {
+                    window.location = "/";
+                } else {
                     const statistics = {
                         questions: data.allFields,
                         matrix: data.mostFeltEmotionPerQuestionProduct,
@@ -316,10 +316,10 @@ function getCSV4() {
                 return response.json();
             })
             .then((data) => {
-                if(data.message==="Unauthorized."){
+                if (data.message === "Unauthorized.") {
                     window.alert(data.message);
-                    window.location="/";
-                }else {
+                    window.location = "/";
+                } else {
                     const statistics = {
                         questions: data.allFields,
                         matrix: data.matrixCategory,
@@ -352,10 +352,10 @@ function getCSV5() {
                 return response.json();
             })
             .then((data) => {
-                if(data.message==="Unauthorized."){
+                if (data.message === "Unauthorized.") {
                     window.alert(data.message);
-                    window.location="/";
-                }else {
+                    window.location = "/";
+                } else {
                     const statistics = {
                         questions: data.allFields,
                         matrix: data.percentMatrixCategoryWith,
@@ -389,10 +389,10 @@ function getCSV6() {
                 return response.json();
             })
             .then((data) => {
-                if(data.message==="Unauthorized."){
+                if (data.message === "Unauthorized.") {
                     window.alert(data.message);
-                    window.location="/";
-                }else {
+                    window.location = "/";
+                } else {
                     const statistics = {
                         questions: data.allFields,
                         matrix: data.mostFeltEmotionPerQuestionCategory,
@@ -405,59 +405,60 @@ function getCSV6() {
     } catch (e) {
         console.log(e);
     }
-  }
+}
+
 ////////////////
 function getChart1() {
     try {
-      let array = window.location.href.split("/");
-      let prodId = array[4];
-      let category = array[3];
-      console.log(prodId + " " + category);
-      fetch('http://localhost:3005/statistics/' + prodId + '/' + category, {
-        method: 'GET'
-      })
-        .then((response) => {
-          return response.json();
+        let array = window.location.href.split("/");
+        let prodId = array[4];
+        let category = array[3];
+        console.log(prodId + " " + category);
+        fetch('http://localhost:3005/statistics/' + prodId + '/' + category, {
+            method: 'GET'
         })
-        .then((data) => {
-          let coloane = [];
-          for(let i=0; i<data.matrixCategory.length; i++){
-            for(let j = 0; j< data.arrayOfEmotions.length; j++){
-              coloane[j] = data.matrixProduct[i][j];
-            }
-          }
-  
-          const chartData = {
-            labels: data.arrayOfEmotions,
-            datasets: [
-              {
-                label: 'Statistics',
-                backgroundColor: 'rgba(0, 123, 255, 0.5)',
-                borderColor: 'rgba(0, 123, 255, 1)',
-                borderWidth: 1,
-                data: coloane
-              }
-            ]
-          };
-  
-          const chartOptions = {
-            responsive: true,
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          };
-  
-          const ctx = document.getElementById('chartCanvas').getContext('2d');
-          new Chart(ctx, {
-            type: 'bar',
-            data: chartData,
-            options: chartOptions
-          });
-        });
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                let coloane = [];
+                for (let i = 0; i < data.matrixCategory.length; i++) {
+                    for (let j = 0; j < data.arrayOfEmotions.length; j++) {
+                        coloane[j] = data.matrixProduct[i][j];
+                    }
+                }
+
+                const chartData = {
+                    labels: data.arrayOfEmotions,
+                    datasets: [
+                        {
+                            label: 'Statistics',
+                            backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                            borderColor: 'rgba(0, 123, 255, 1)',
+                            borderWidth: 1,
+                            data: coloane
+                        }
+                    ]
+                };
+
+                const chartOptions = {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                };
+
+                const ctx = document.getElementById('chartCanvas').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: chartData,
+                    options: chartOptions
+                });
+            });
     } catch (e) {
-      console.log(e);
+        console.log(e);
     }
-  }
+}
   

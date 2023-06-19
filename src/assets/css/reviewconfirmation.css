@@ -15,7 +15,6 @@
 }
 
 
-
 body {
     font-family: 'Taviraj';
     font-style: normal;
@@ -41,13 +40,10 @@ nav {
 }
 
 
-
 .logo img {
     height: 100px;
     margin-left: 40px;
 }
-
-
 
 
 .grid-container {
@@ -60,17 +56,12 @@ nav {
     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
 
 
-
     margin-top: 80px;
     margin-bottom: 77px;
 
     padding-bottom: 75px;
     padding-top: 30px;
 }
-
-
-
-
 
 
 table {
@@ -86,13 +77,10 @@ table {
 }
 
 
-
 .grid-container table {
     padding-left: 50px;
 
 }
-
-
 
 
 body {
@@ -120,13 +108,10 @@ nav {
 }
 
 
-
 .logo img {
     height: 100px;
     margin-left: 40px;
 }
-
-
 
 
 .grid-container {
@@ -142,8 +127,7 @@ nav {
 }
 
 table {
-    margin-left: 400px;
-;
+    margin-left: 400px;;
 }
 
 
@@ -218,7 +202,7 @@ table {
 .footer-container > div {
     order: 2;
     margin-right: 100px;
-    margin-top:50px;
+    margin-top: 50px;
 }
 
 .footer-container > div:first-child {

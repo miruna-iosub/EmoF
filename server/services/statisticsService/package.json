@@ -1,11 +1,11 @@
 {
   "name": "statistics",
   "version": "1.0.0",
-  "description": "extracts the products from the database",
+  "description": "Creates statistics for a product",
   "main": "index.js",
   "scripts": {
-    "statics": "echo \"Error: no test specified\" && exit 1",
-    "statistics": "nodemon statisticsServer.js"
+    "statistics": "nodemon statisticsServer.js",
+    "statics": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "EmoF",
   "license": "ISC",

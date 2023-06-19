@@ -24,8 +24,8 @@ const server = http.createServer((request, response) => {
             break;
         }
         case "GET": {
-            if (reqURL.toString().substring(1,reqURL.toString().lastIndexOf("/")) === "sendReview") {
-                controller.getHandler(request, response,reqURL.toString().substring(reqURL.toString().lastIndexOf("/")+1), null);
+            if (reqURL.toString().substring(1, reqURL.toString().lastIndexOf("/")) === "review") {
+                controller.getHandler(request, response, reqURL.toString().substring(reqURL.toString().lastIndexOf("/") + 1), null);
             }
             break;
         }

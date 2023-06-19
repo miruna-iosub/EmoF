@@ -163,18 +163,20 @@ async function defaultHandlerStats(request, response, reqUrl) {
                     index3++;
                 }
 
-                try{
+                try {
 
 
-                const productReviews = await productImport.findReviewsByProductId(productId);// strange toate reviews de la produs si aduna emotiile individuale si comune
-                for (const review of productReviews) {
-                    let index4 = 0;
-                    for (let emotion of review.fieldsEmotions) {
-                        mapsOfEmotionsProduct[index4].addOneEmotion(emotion);
-                        index4++;
+                    const productReviews = await productImport.findReviewsByProductId(productId);// strange toate reviews de la produs si aduna emotiile individuale si comune
+                    for (const review of productReviews) {
+                        let index4 = 0;
+                        for (let emotion of review.fieldsEmotions) {
+                            mapsOfEmotionsProduct[index4].addOneEmotion(emotion);
+                            index4++;
+                        }
                     }
+                } catch (e) {
+                    console.log(e);
                 }
-                }catch (e){console.log(e);}
             }
             console.log(mapsOfEmotionsProduct);
 
@@ -237,7 +239,7 @@ async function defaultHandlerStats(request, response, reqUrl) {
                         emotion = emotions[indexEmotion];
                     }
                 }
-                    mostFeltEmotionPerQuestionProduct[indexQuestion] = [emotion, max.toString()];
+                mostFeltEmotionPerQuestionProduct[indexQuestion] = [emotion, max.toString()];
 
             }
 
@@ -250,8 +252,9 @@ async function defaultHandlerStats(request, response, reqUrl) {
                     if (max <= sumMatrixCategory[indexQuestion][indexEmotion]) {
                         max = sumMatrixCategory[indexQuestion][indexEmotion];
                         emotion = emotions[indexEmotion];
-                    }}
-                    mostFeltEmotionPerQuestionCategory[indexQuestion] = [emotion, max.toString()];
+                    }
+                }
+                mostFeltEmotionPerQuestionCategory[indexQuestion] = [emotion, max.toString()];
 
             }
 
@@ -274,7 +277,7 @@ async function defaultHandlerStats(request, response, reqUrl) {
                 percentMatrixProduct[questionIndex] = [];
                 percentMatrixProductWith[questionIndex] = [];
                 for (let emotionIndex = 0; emotionIndex < 24; emotionIndex++) {
-                    if ( totalNumberOfReviewsCategory>0&&sumMatrixProduct[questionIndex][emotionIndex]>0) {
+                    if (totalNumberOfReviewsCategory > 0 && sumMatrixProduct[questionIndex][emotionIndex] > 0) {
                         percentMatrixProduct[questionIndex][emotionIndex] = (sumMatrixProduct[questionIndex][emotionIndex] / totalNumberOfReviewsCategory).toFixed(3);
                         percentMatrixProductWith[questionIndex][emotionIndex] = percentMatrixProduct[questionIndex][emotionIndex].toString() + '%';
                     } else {
@@ -291,21 +294,23 @@ async function defaultHandlerStats(request, response, reqUrl) {
                 percentMatrixCategory[questionIndex] = [];
                 percentMatrixCategoryWith[questionIndex] = [];
                 for (let emotionIndex = 0; emotionIndex < 24; emotionIndex++) {
-                    if (totalNumberOfReviewsCategory>0&&sumMatrixCategory[questionIndex][emotionIndex]) {
+                    if (totalNumberOfReviewsCategory > 0 && sumMatrixCategory[questionIndex][emotionIndex]) {
                         percentMatrixCategory[questionIndex][emotionIndex] = (sumMatrixCategory[questionIndex][emotionIndex] / totalNumberOfReviewsCategory).toFixed(3);
                         percentMatrixCategoryWith[questionIndex][emotionIndex] = percentMatrixCategory[questionIndex][emotionIndex].toString() + '%';
-                    }
-                    else {  percentMatrixCategory[questionIndex][emotionIndex] = 0;
+                    } else {
+                        percentMatrixCategory[questionIndex][emotionIndex] = 0;
                         percentMatrixCategoryWith[questionIndex][emotionIndex] = 0;
-                          }
+                    }
                 }
             }
-            console.log("mostFeltEmotionPerQuestionProduct: " + mostFeltEmotionPerQuestionProduct.toString());
-            console.log("mostFeltEmotionPerQuestionCategory: " + mostFeltEmotionPerQuestionCategory.toString())
-            console.log("totalNumberOfReviewsProduct: " + totalNumberOfReviewsProduct.toString());
-            console.log("totalNumberOfReviewsCategory: " + totalNumberOfReviewsCategory.toString());
-            console.log("percentMatrixProduct: " + percentMatrixProduct.toString());
-            console.log("percentMatrixCategory: " + percentMatrixCategory.toString());
+
+
+            //    console.log("mostFeltEmotionPerQuestionProduct: " + mostFeltEmotionPerQuestionProduct.toString());
+            //    console.log("mostFeltEmotionPerQuestionCategory: " + mostFeltEmotionPerQuestionCategory.toString())
+            //   console.log("totalNumberOfReviewsProduct: " + totalNumberOfReviewsProduct.toString());
+            //   console.log("totalNumberOfReviewsCategory: " + totalNumberOfReviewsCategory.toString());
+            //  console.log("percentMatrixProduct: " + percentMatrixProduct.toString());
+            //  console.log("percentMatrixCategory: " + percentMatrixCategory.toString());
             response.writeHead(200, {
                 "Content-Type": "application/json",
             });

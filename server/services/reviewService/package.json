@@ -1,7 +1,7 @@
 {
     "name": "emof",
     "version": "1.0.0",
-    "description": "Emotion Based Feedback",
+    "description": "Manages sending feedback",
     "scripts": {
         "review": "nodemon reviewServer.js",
         "test": "echo \"No tests yet\" && exit 1"

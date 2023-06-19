@@ -2,7 +2,7 @@ const mongo = require('mongodb');
 const {Product} = require('../models/product');
 const {User} = require('../models/user');
 const {Token} = require('../models/token');
-const {BadProductError, BadFormError,UserInfoError} = require("../models/exception");
+const {BadProductError, BadFormError, UserInfoError} = require("../models/exception");
 const ObjectId = mongo.ObjectId;
 const getDb = require('../database/database').getDb;
 
@@ -17,12 +17,13 @@ class ProductService {
     async findAll() {
         const db = getDb();
         try {
-            return db.collection('Products').find({status:"ongoing"}).toArray();
+            return db.collection('Products').find({status: "ongoing"}).toArray();
         } catch (e) {
             console.log("[Error]: " + e);
         }
         return false;
     }
+
     async findFirst() {
         const db = getDb();
         try {
@@ -47,7 +48,7 @@ class ProductService {
     async findByCategory(givenCategory) {
         const db = getDb();
         try {
-            return db.collection('Products').find({category: givenCategory,status:"ongoing"}).toArray();
+            return db.collection('Products').find({category: givenCategory, status: "ongoing"}).toArray();
         } catch (e) {
             console.log("[Error]: " + e);
         }
@@ -110,7 +111,7 @@ class ProductService {
     async findFormFields(string) {
         const db = getDb();
         try {
-            return db.collection('DefaultFormFields').find({productcategory:string}).toArray();
+            return db.collection('DefaultFormFields').find({productcategory: string}).toArray();
         } catch (e) {
             console.log("[Error]: " + e);
             throw new UserInfoError();
@@ -120,24 +121,25 @@ class ProductService {
     async getUserByUsername(givenUsername) {
         const db = getDb();
         try {
-            return db.collection('Products').find({username:givenUsername}).toArray();
+            return db.collection('Products').find({username: givenUsername}).toArray();
         } catch (e) {
             console.log("[Error]: " + e);
             throw new UserInfoError();
         }
     }
 
-    async deleteById(givenUsername,prodId){
+    async deleteById(givenUsername, prodId) {
         const db = getDb();
         try {
-            db.collection('Products').deleteOne({username:givenUsername,_id: new mongo.ObjectId(prodId)});
+            db.collection('Products').deleteOne({username: givenUsername, _id: new mongo.ObjectId(prodId)});
         } catch (e) {
             console.log("[Error]: " + e);
             throw new UserInfoError();
         }
     }
-    async changeStatus(givenUsername,prodId){
-        const filter = { _id: new mongo.ObjectId(prodId),username:givenUsername };
+
+    async changeStatus(givenUsername, prodId) {
+        const filter = {_id: new mongo.ObjectId(prodId), username: givenUsername};
         const date = new Date();
         let day = date.getDate();
         let month = date.getMonth() + 1;
@@ -148,7 +150,7 @@ class ProductService {
         const updateDocument = {
             $set: {
                 status: "closed",
-                expirationdate:currentDate,
+                expirationdate: currentDate,
             },
         };
         const db = getDb();

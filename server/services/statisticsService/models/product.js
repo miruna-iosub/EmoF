@@ -1,5 +1,6 @@
 const mongo = require('mongodb');
 const ObjectId = mongo.ObjectId;
+
 class Product {
     _id;
     userid;
@@ -11,8 +12,9 @@ class Product {
     category;
     subcategory;
     formfieldsid;
+
     constructor(userid, name, description, type, picture, status, category, subcategory) {
-        this._id=new ObjectId();
+        this._id = new ObjectId();
         this.userid = userid;
         this.name = name;
         this.description = description;
@@ -22,7 +24,6 @@ class Product {
         this.category = category;
         this.subcategory = subcategory;
     }
-
 
 
     // constructor(userid,
@@ -53,4 +54,4 @@ class Product {
 
 }
 
-module.exports = { Product };
+module.exports = {Product};

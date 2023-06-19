@@ -127,7 +127,7 @@ function repeatEmotion1(idRef) {
     var index = 0;
     let questions = [];
     try {
-        fetch('http://localhost:3004/api/v1/sendReview/' + id,
+        fetch('http://localhost:3004/api/v1/review/' + id,
 
             {method: 'GET'})
             .then((response) => {

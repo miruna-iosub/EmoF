@@ -10,16 +10,16 @@ const server = http.createServer((request, response) => {
     const reqURL = request.url;
     const reqMethod = request.method;
 
-    
+
     response.setHeader('Access-Control-Allow-Origin', 'http://localhost:4000');
     response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, OPTIONS');
     response.setHeader('Access-Control-Allow-Credentials', true);
     response.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, access-control-allow-credentials');
-     
-    
-    switch (reqMethod) { 
+
+
+    switch (reqMethod) {
         case "GET": {
-            if (reqURL ==="/api/v1/userInfo" ) {
+            if (reqURL === "/api/v1/userInfo") {
                 controller.getHandler(request, response)
             }
             break;
@@ -27,13 +27,13 @@ const server = http.createServer((request, response) => {
         case "PATCH": {
             if (reqURL === "/api/v1/userInfo") {
                 controller.patchHandler(request, response);
-            } 
+            }
             break;
         }
         default: {
             controller.defaultHandler(request, response)
             break;
-        } 
+        }
 
     }
 });

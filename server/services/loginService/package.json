@@ -1,7 +1,7 @@
 {
     "name": "emof",
     "version": "1.0.0",
-    "description": "Emotion Based Feedback",
+    "description": "Handles login",
     "scripts": {
         "login": "nodemon loginServer.js",
         "test": "echo \"No tests yet\" && exit 1"

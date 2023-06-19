@@ -30,11 +30,10 @@ function repeatProduct1() {
 
     var windowLoc;
 
-    if (window.location.href.slice(-20) === "homepage"){
+    if (window.location.href.slice(-20) === "homepage") {
         windowLoc = '/reviewLogged';
-    }
-    else
-    {windowLoc = '/reviewUnogged';
+    } else {
+        windowLoc = '/reviewUnogged';
     }
 
 
@@ -89,17 +88,17 @@ function productOfTheWeek() {
     var type = "camera";
     var button;
     var redirect;
-    if (getJWTToken()!==null) {
+    if (getJWTToken() !== null) {
         button = "My Account";
-redirect="account";
+        redirect = "account";
     } else {
         button = "Sign Up Now";
-        redirect="signup";
+        redirect = "signup";
     }
 
 
     var productDescription = "Our initiative is to bring closer together any type of provider and their clients. <br>You can become either anytime.<br><br><br>";
-    document.getElementById("products3").innerHTML += ' <div class="grid-container" id="productoftheweek"><div class="grid-item"><img src="' + location + '" alt="' + type + '"></div> <div class="grid-item item2"> <div class="grid-item item2-top"> <h2>Emotion-based Feedback</h2></div> <div class="grid-item item2-bottom"><p>' + productDescription + '</p> </div><div class="sendfeedback-button"> <a href="/'+redirect+'">'+button+'</a> </div> </div> </div>';
+    document.getElementById("products3").innerHTML += ' <div class="grid-container" id="productoftheweek"><div class="grid-item"><img src="' + location + '" alt="' + type + '"></div> <div class="grid-item item2"> <div class="grid-item item2-top"> <h2>Emotion-based Feedback</h2></div> <div class="grid-item item2-bottom"><p>' + productDescription + '</p> </div><div class="sendfeedback-button"> <a href="/' + redirect + '">' + button + '</a> </div> </div> </div>';
 }
 
 async function repeatProductHomepageLogged() {
@@ -171,14 +170,15 @@ async function repeatProductHomepage() {
 
                 numberProd = parseInt(data.numberProducts);
                 data.products.forEach(prod => {
-                    if(prod!==null){
-                    productId[index] = prod._id;
-                    productImageSource[index] = prod.picture;
-                    productType[index] = prod.type;
-                    productDescription[index] = prod.description;
-                    productName[index] = prod.name;
-                    index++;
-                }  })
+                    if (prod !== null) {
+                        productId[index] = prod._id;
+                        productImageSource[index] = prod.picture;
+                        productType[index] = prod.type;
+                        productDescription[index] = prod.description;
+                        productName[index] = prod.name;
+                        index++;
+                    }
+                })
                 var windowLoc = "reviewUnlogged";
                 numberProd = productId.length;
                 var button1, button2;
@@ -219,7 +219,7 @@ function addBasic() {
     var type = "product";
     let button;
     var productDescription, linkedTo, productHeader;
-    if (getJWTToken()!==null) {
+    if (getJWTToken() !== null) {
         productDescription = "Do you want to receive honest reviews on something? You can add your products, services, art, even yourself.";
         productHeader = "Are you interested in seeing clients' emotions with accurate charts?";
         linkedTo = "addProduct";

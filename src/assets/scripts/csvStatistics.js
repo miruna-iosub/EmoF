@@ -25,14 +25,13 @@ function convertToCSV(objArray) {
 }
 
 function downloadCSV(csvData, filename) {
-    const blob = new Blob([csvData], { type: 'text/csv' });
+    const blob = new Blob([csvData], {type: 'text/csv'});
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
     link.download = filename;
     link.click();
 }
-
 
 
 class MapObject {
@@ -49,9 +48,9 @@ class MapObject {
 function getChart() {
     try {
         let array = window.location.href.split("/");
-        let prodId =array[4];
-        let category=array[3];
-        console.log(prodId+ " " +category);
+        let prodId = array[4];
+        let category = array[3];
+        console.log(prodId + " " + category);
         var index = 0;
         fetch('http://localhost:3005/statistics/' + prodId + '/' + category,
             {
@@ -70,22 +69,20 @@ function getChart() {
                 for (let index = 0; index < data.mapsCategory.length; index++) {
                     questNameValuesInCategory[index] = new MapObject(data.commonFields[index], data.mapsCategory[index]);
                 }
-                const statistics= {
+                const statistics = {
                     'All fields': data.allFields,
                     'Fields Common with other in category': data.commonFields,
                     'Emotion for each field of the product': questNameValuesProduct,//data.mapsProduct,
                     'Average emotion felt in category': questNameValuesInCategory,//data.mapsCategory,
                 };
 
-let ok=data.allFields;
-console.log(ok[1]);
-
-                
-const csvData = convertToCSV(statistics);
-const filename = 'statistics.csv';
-downloadCSV(csvData, filename);
+                let ok = data.allFields;
+                console.log(ok[1]);
 
 
+                const csvData = convertToCSV(statistics);
+                const filename = 'statistics.csv';
+                downloadCSV(csvData, filename);
 
 
             })

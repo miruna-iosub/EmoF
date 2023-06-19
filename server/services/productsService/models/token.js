@@ -1,5 +1,6 @@
 const mongo = require('mongodb');
 const ObjectId = mongo.ObjectId;
+
 class Token {
     _id;
     createdAt;
@@ -13,4 +14,5 @@ class Token {
     //     this.cont_id = cont_id;
     // }
 }
-module.exports = { Token };
+
+module.exports = {Token};

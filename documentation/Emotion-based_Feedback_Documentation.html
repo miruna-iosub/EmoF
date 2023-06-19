@@ -153,8 +153,8 @@
             <a href="#OverallDescription">Overall description</a>
             <a href="#ExternalInterfaceRequirements">External interface requirements</a>
             <a href="#SystemFeatures">System features</a>
-            <a href="#FurtherDevelopment">Further Development Strategies</a>
-            <a href="#ResourcesDocumentation">Project Documentation</a>
+            <a href="#FurtherDevelopment">Further development strategies</a>
+            <a href="#ResourcesDocumentation">Project documentation</a>
             <a target="_blank" href="https://github.com/elenaopait/EmoF">Github Repository</a>
             <a target="_blank"
                 href="https://www.figma.com/file/roQXo0e0agj7Os4Wpa4ara/ECommerce-(Community)?node-id=2-6&t=bgmUtrEWDOOwFXyV-0">Figma
@@ -284,7 +284,8 @@
                         <img src="Images/Emotions.jpg" alt="Plutchik’s Wheel of Emotions" width="750"
                             class="responsive">
 
-                    </center><br>
+                    </center>
+                    <br>
 
                 </p1>
             </section>
@@ -296,12 +297,14 @@
                 <p1>&emsp;We will split the functionalities into more subcategories, as follows:
 
                     <section id="LoggedUsersFunctions" typeof="sa:LoggedUsersFunctions">
-                        <h4>&nbsp;Logged Users Functions <h4>
+                        <h4>&nbsp;Logged Users Functions
+                            <h4>
                                 <p2> Uploading a form as a “post” and request reviews from any category of people
                                     that are willing to help, or are interested in giving their review, in case they
                                     personally benefited from its usage, or from the provided service, such as events,
-                                    firms, sole proprietorships and any other kind of service providers.<br>
-                                </p2> 2. Set an expiration date for the uploaded form and wait for the reviews to pile
+                                    firms, sole proprietorship's and any other kind of service providers.<br>
+                                </p2>
+                                2. Set an expiration date for the uploaded form and wait for the reviews to pile
                                 up. Once the expiration date has passed, a graphical analysis of the messages is
                                 provided by the application, that consists of elegantly structured data, that sums up
                                 the emotions chosen by the reviewers when sending feedback on the characteristics
@@ -339,7 +342,7 @@
             <section id="UserClassesAndCharacteristics" typeof="sa:UserClassesAndCharacteristics">
                 <h3>&emsp; User Classes and Characteristics</h3>
                 <p1>&emsp;
-                    The indentified users from the practical point of view are people that are exposed the difficulties
+                    The identified users from the practical point of view are people that are exposed the difficulties
                     presented above.<br>
                     &emsp;Approaching from a more theoretical perspective, the identified users are split
                     into three main categories, as users without accounts, with limited access to the provided features,
@@ -356,7 +359,7 @@
             <section id="OperatingEnvironment" typeof="sa:OperatingEnvironment">
                 <h3>&emsp; Operating Environment</h3>
                 <p1>&emsp;
-                    Given the fact that this is an web application, it is browser-dependent, so the only requirement is
+                    Given the fact that this is a web application, it is browser-dependent, so the only requirement is
                     for a browser to be present, in order for the application to work properly.
                 </p1>
             </section>
@@ -378,10 +381,10 @@
                 <p1>&emsp;
                     There are no commercial or third-party components included in this application, as well as no
                     imported software, meaning that no requirement will be oppressed by running the application in any
-                    other environment.
+                    other environment. The used libraries are the ones required by the Node server and the charts
+                    open-source library, Chart.js, used for displaying the statistics in an engaging manner.
                 </p1>
             </section>
-
 
         </section>
         <br><br><br><br>
@@ -404,10 +407,14 @@
                     </center>
                     <br><br>
 
-                    &emsp;The logged users header has different buttons, as shown in the next picture.
+                    &emsp;The logged users header has different buttons, as shown in the next pictures.
                     <br><br>
                     <center>
                         <img src="Design/LoggedHeader.png" alt="Logged Header" width="560">
+                    </center>
+                    <br>
+                    <center>
+                        <img src="Design/LoggedHeaderM.jpeg" alt="Logged Header" width="560">
                     </center>
                     <br><br>
                     &emsp;The footer has the following structure for unlogged users.
@@ -429,7 +436,7 @@
                     <br><br>
 
                     &emsp;In order to go to the Homepage, users must press the
-                    icon on the top left corner of all pages, as it does not matter if they are logged or not.
+                    icon in the top left corner of all pages, as it does not matter if they are logged or not.
                     <br><br>
                     <center>
                         <img src="Images/logo.png" alt="EmoF Logo" width="230">
@@ -497,12 +504,15 @@
                     picture. Each category has default characteristics to be reviewed, which will be compared, when the
                     form is closed, between the products belonging to the same category. Each uploader will decide which
                     characteristics seem fit and which characteristics they want to compare with other products'. They
-                    can also write some specific characteristics they want users to review.<br>
+                    can also write some specific features they want users to review.<br>
                     &emsp;Each form with a product is being kept available to users for a period of time selected by the
                     uploader, at the time of uploading. The form submission process can be seen below.
                     <br><br>
                     <center>
                         <img src="Design/AddProducts.png" alt="Add Product Page" width="700">
+                    </center><br>
+                    <center>
+                        <img src="Design/AddProducts2.jpeg" alt="Add Product Page" width="700">
                     </center>
                     <br><br>
                     &emsp; Logged users can access their information on the top right button and view their profile. The
@@ -514,7 +524,7 @@
 
                     <br><br>
                     <center>
-                        <img src="Design/EditMyData.png" alt="My Account Page" width="700">
+                        <img src="Design/EditMyData.jpeg" alt="My Account Page" width="700">
                     </center>
                     <br><br>
 
@@ -524,13 +534,30 @@
                     passed the closing date.<br>
                     &emsp;The ongoing forms can be closed, or deleted, while on the other hand, for the closed forms,
                     the uploader is able to see an interpreted result of the emotions felt, which is downloadable in
-                    many formats, such as HTML, CSV and JSON, as well as with more user-friendly data representation, in
-                    a PDF format.<br>
+                    many formats, such as HTML, CSV and JSON, as well as with more user-friendly data
+                    representation.<br>
                     &emsp;Once products have been deleted, the conformation page opens up.
 
                     <br><br>
                     <center>
                         <img src="Design/DeleteConfirm.png" alt="Delete Confirmation Page" width="700">
+                    </center>
+                    <br><br>
+
+                    &emsp;By clicking on "See Statistics", the users can acces a new page.
+
+                    <br><br>
+                    <center>
+                        <img src="Design/SeeStatistics.jpeg" alt="See Statistics Page" width="700">
+                    </center>
+                    <br><br>
+
+                    &emsp;Here, the desired format of statistics can be downloaded or viewed. An example of a chart
+                    opened in a new page can be seen below.
+
+                    <br><br>
+                    <center>
+                        <img src="Design/Chart.jpeg" alt="Chart Page" width="700">
                     </center>
                     <br><br>
 
@@ -542,10 +569,17 @@
                         <img src="Design/MenuAllProducts.png" alt="Menu And All Products Page" width="700">
                     </center>
                     <br><br>
+
                     &emsp;Each contains a subcategory, such that searching for the desired product can be done with
                     ease, and the interpretation can be developed with as many common characteristics as possible.<br>
                     &emsp;In the background, the entire list of products from the selected category or subcategory are
                     shown.
+
+                    <br><br>
+                    <center>
+                        <img src="Design/Products.jpeg" alt="Menu And All Products Page" width="700">
+                    </center>
+                    <br><br>
             </section>
 
         </section>
@@ -563,7 +597,7 @@
 
         <section id="SoftwareInterfaces" typeof="sa:SoftwareInterfaces">
             <h3>&emsp; Software Interfaces
-                <h5><b>1.&nbsp;Frontend</b><br><br>
+                <h5><b>1.&nbsp;Client</b> (Frontend)<br><br>
                     <p1>
                         &emsp;The project will be sectioned by pages and the full structure can be found in our <u><a
                                 target="_blank" href="https://github.com/elenaopait/EmoF">Github Repository</a></u>, as
@@ -576,7 +610,7 @@
                         Javascript. Each HTML file has a personal CSS file, while Javascript files are separated by the
                         type of functionalities they have, such as repeating code, validating input data, or formatting
                         information from files to be shown in the HTML divisions. The following types of files will put
-                        together the frontend of the application:
+                        together the client side of the application, which is in Node.js:
                         <ul>
                             <li><b>HTML</b> as markup in order to implement the structure and basic features.
                             </li>
@@ -584,62 +618,73 @@
                                 limited, such as grids and divisions classes, in order to assure the responsiveness.
                             </li>
                             <li><b>Javascript</b> used to implement important functions that replicate sections of code
-                                and to disaplay the needed information about the account, if logged, the displayed
+                                and to display the needed information about the account, if logged, the displayed
                                 products, as well as to validate basic structures of information on input, an example
-                                being the email-input section at signup. The Json files will also be recived here
-                                in the needed fromat, in order to create the duplicated HTML divisions with products
+                                being the email-input section at signup. The Json files will also be received here
+                                in the needed format, in order to create the duplicated HTML divisions with products
                                 information.
                             </li>
                         </ul>
                     </p1>
                 </h5>
 
-                <h5><b>2.&nbsp;Backend</b>
+                <h5><b>2.&nbsp;Services and Server</b> (Backend)<br><br>
                     <p1>
                         <ul>
                             <li><b>Node.js</b> as runtime environment for JavaScript code, to create the server and run
                                 the web application outside the browser and create the API. As it is non-blocking and
-                                single threaded, it is highly scalable.
+                                single threaded, it is highly scalable.<br>
                                 The requests differ from multi-threaded servers, as there is no process where the thread
-                                is being picked up from the thread pool, an then each thread runs independently. This
+                                is being picked up from the thread pool, and then each thread runs independently. This
                                 implies that for each request, no data sharing between the threads is needed.
-
+                                There will be seven main services that will interact with the database, the
+                                <b>register</b>, <b>login</b>, <b>products</b>, <b>forms</b>, <b>user-info</b>,
+                                <b>statistics</b>
+                                , <b>database-monitoring</b>.
                             </li>
                         </ul>
                     </p1>
                 </h5>
 
                 <h5><b>3.&nbsp;Communication</b><br><br>
-                    <p1>&emsp;The communication between the backend, frontend and the database will be done using Json
+                    <p1>&emsp;The communication between the services, frontend and the database will be done using Json
                         files mainly, as there will be information such as forms, account and product data, which will
                         be stored and passed with ease.<br>
-                        Although the used server can also initiate the request given it's nature, the request-response
-                        format is used uni-directionaly for our project, as the interraction is conditioned by the forms
+                        Although the used server can also initiate the request given its nature, the request-response
+                        format is used uni-directionaly for our project, as the interaction is conditioned by the forms
                         that are passed from the client.<br>
                         The connection will be ensured by pooling, which have TCP Keep-Alive enabled for them, although
                         new connections might be required. More on the connection and communication implementation <u><a
-                                target="_blank" href="https://nodejs.org/api/http.html">here</a></u>.
+                                target="_blank" href="https://nodejs.org/api/http.html">here</a></u>.<br>
+                        The communication between the server and the services will be ensured by the following usage of
+                        the HTTP methods.
                     </p1>
                 </h5>
+                <div style="text-align: center;"><img src="Images/HTTP.png" alt="HTTP methods" width="400" id="http">
+                </div>
 
                 <h5><b>4.&nbsp;Database</b><br>
                     <p1>
                         <ul>
-                            <li><b>PostgreSql</b>, the open-source relational database management system, to keep
-                                all information and media, with the schema of what the database must contain shown
-                                below, while the reviewable aspects that are being held in the database can e seen
-                                lower.
+                            <li><b>Mongodb</b>, the open-source non-relational (NoSQL) database program, to keep all
+                                information and media. Its JSON type documents favor the extraction and insertion of
+                                files, as it is facile to use with Node.js applications. The database schema can be seen
+                                in the diagrams below, containing all the collections and the field types for each, as
+                                well as the default questions for products.
                             </li>
                         </ul>
                     </p1>
                 </h5>
                 <br>
             </h3>
-            <center> <img src="Images/DatabaseSchema.png" alt="Database Schema" width="750" id="UseCaseDiagram">
-            </center>
+            <div style="text-align: center;"><img src="Images/DatabaseStructure.png" alt="Database Schema" width="500"
+                    id="DatabaseDiagram">
+            </div>
             <br><br>
-            <center> <img src="Images/Categories.png" alt="Categories" width="700" id="Categories">
-            </center>
+            The product categories that are available are the following:<br><br>
+            <div style="text-align: center;"><img src="Images/Categories.png" alt="Categories" width="700"
+                    id="Categories">
+            </div>
             <br>
             </p1>
 
@@ -649,30 +694,71 @@
         <section id="CommunicationInterfaces" typeof="sa:CommunicationInterfaces">
             <h3>&emsp; Communication Interfaces</h3>
 
-            &emsp; The application has the following communication requirements, in order to work properly:
+            &emsp; The application, and mostly the services, have the following communication requirements, in order to
+            work
+            properly:
             <ul>
-                <li>Connection and constant communication with the relational database, in order to extract and upload
-                    data.</li>
-                <li>Access to the network while running, as it requires a browser. </li>
-                <li>Using HTTP, the frontend will send simple requests to the backend, while the backend will respond
-                    with static files, such as images, for profiles, and JavaScript files, for any other kind of
-                    information extracted from the database and interpreted in the backend, as well as HTML-formatted
-                    responses. In order to support the full spectrum of possible HTTP applications, the Node.js HTTP API
-                    is very low-level. This means that the communication will be done with stream handling and message
-                    parsing only.
+                <li>Connection and constant communication with the non-relational database, in order to extract and
+                    upload
+                    data.
+                </li>
+                <li>Access to the network while running, as it requires a browser.</li>
+                <li>Using HTTP, the server will send HTTP requests with JSON body to the services, while the services
+                    will respond with static files, such as images, and JSON-formatted files, for any other kind of
+                    information extracted from the database, with the methods: GET, PUT, POST, PATCH and DELETE. In
+                    order to
+                    support the full spectrum of possible HTTP applications, the Node.js HTTP API is very low-level.
+                    This
+                    means that the communication will be done with stream handling and message parsing only, with REST
+                    constrains.<br>
+                    The <b>Server</b> is running on PORT 3000, while the available services are: <b>register</b> (PORT
+                    3001), <b>login</b> (PORT 3002),<b>products</b> (PORT 3003), <b>forms</b> (PORT 3004),
+                    <b>statistics</b> (PORT 3005), <b>user-information</b> (PORT 3006), <b>database-monitoring</b> (PORT
+                    3007).<br>
                 </li>
             </ul>
+            &emsp; The application is structured in one main component, the Server and seven other services that
+            interact with the database. To ensure security, all interactions with the database are first
+            verified with a token, created by the login service and sent from the Client, and if the user does
+            not have the permission to access, then the request will be denied.<br>
+            &emsp;Also, for security concerns, only generic errors will be displayed, as any error will be treated
+            internally and no exceptions messages will be accessible to the Client.
+            This assures that the services protect the database and the chances of a successfull attack from
+            fake clients, or from malicious data input are significantly decreased.<br><br>
+            &emsp;<b>Register</b> - will create the account and store the hashed-coded password and other user
+            information in the database.<br>
+            &emsp;<b>Login</b> - will create the token used by the user to log in their account. <br>
+            &emsp;<b>Products</b> - will manage the extraction of information about the products, as well as insert
+            new products.<br>
+            &emsp;<b>Forms</b> - provides the information about the fields selected by the user, and inserts in the
+            database the reviews.<br>
+            &emsp;<b>Statistics</b> - will provide the data that is parsed and used in the Client, to create
+            charts.<br>
+            &emsp;<b>User-information</b> - extracts information about the user, for the "My Account" page, as well as
+            updates information, in case the user wants to change it.<br>
+            &emsp;<b>Database-monitoring</b> - given the fact that the application shall not have any kind of
+            restriction, the "administrator" is an independent service, that will close forms when it's their due date,
+            and clean up any information that is no longer valuable.
+            <br><br>
+
         </section>
-        &emsp; The basic project structure:
+        &emsp; The project structure:
         <br>
-        <center> <img src="Images/Structure.jpg" alt="Enotion-based Feedback Structure" width="500" id="UseCaseDiagram">
-        </center>
+        <div style="text-align: center;"><img src="Images/Structure.jpg" alt="Emotion-based Feedback Structure"
+                width="500" id="Structure">
+        </div>
+        <br>
+        </section><br>
+        </section>
+        &emsp; The interaction:
+        <br> <br>
+        <div style="text-align: center;"><img src="Images/Interaction.png" alt="Emotion-based Feedback Interaction"
+                width="500" id="Interaction">
+        </div>
         <br>
         </section>
 
         <br><br><br><br>
-
-
 
 
         <section id="SystemFeatures" typeof="sa:SystemFeatures">
@@ -680,12 +766,10 @@
 
             &emsp;Below is the Use Case diagram:
             <br>
-            <center> <img src="Images/UseCaseDiagram.jpg" alt="Enotion-based Feedback Use-case Diagram" width="550"
-                    id="UseCseDiagram">
-            </center>
+            <div style="text-align: center;"><img src="Images/UseCaseDiagram.jpg"
+                    alt="Emotion-based Feedback Use Case Diagram" width="550" id="UseCaseDiagram">
+            </div>
             <br>
-
-
 
 
             <section id="CreatingAnAccount" typeof="sa:CreatingAnAccount">
@@ -698,18 +782,15 @@
                     user wants to log in, or new statistics are requested.<br>
                     <b>Functional Requirements:</b> In case the process has an error, the user can refresh the page
                     safely and try inserting the information again. The invalid inputs will also create an error, such
-                    as wrongly formatted emails from the Javascript functions, in whitch case, the process will hold,
-                    and
-                    the user has to type a
-                    correct format. The information and the encrypted password must be sent to the database and stored
-                    in order to be validated at the
-                    next login process.
+                    as wrongly formatted emails from the JavaScript functions, in which case, the process will hold, and
+                    the user has to type a correct format. The information and the encrypted password must be sent to
+                    the database and stored in order to be validated at the next login process.
                 </p1>
             </section>
-            <h3>&emsp; Log in </h3>
+            <h3>&emsp; Login </h3>
             <p1>
                 <b>Priority:</b> High.<br>
-                <b>Stimulus:</b> In order to accces any of the functionalities presented above, at the "Creating an
+                <b>Stimulus:</b> In order to access any of the functionalities presented above, at the "Creating an
                 account" section, the user must also be able to access their account again.<br>
                 <b>Functional Requirements:</b> In case of an error, the user can refresh the page
                 safely and try inserting the information again. Just as above, the invalid inputs will create an error,
@@ -724,12 +805,13 @@
             <p1>
                 <b>Priority:</b> High.<br>
                 <b>Stimulus:</b> After possessing an account, the user will be able to add a new product by
-                accessing the top button. A new form is dispalyed and the uploader can choose the category and basic
+                accessing the top button. A new form is displayed and the uploader can choose the category and basic
                 points to be reviewed, and add new features that are specific to their product. Adding a deadline is
-                mandatory. A picture and a basic description can also be provided. <br>
+                mandatory. A picture which will be encoded in Base64, as well as a basic description can be provided,
+                together with the date when the form shall close.<br>
                 <b>Functional Requirements:</b> If an error occurs, the inserted information about the product will
-                be lost and must be inserted again. File containing information about the product and it's link to the
-                uploader's account will then be validated and sent to the backend, where it will be inserted in the
+                be lost and must be inserted again. File containing information about the product, and it's link to the
+                uploader account will then be validated and sent to the services, where it will be inserted in the
                 database.
             </p1>
         </section>
@@ -741,9 +823,10 @@
                 <b>Priority:</b> High.<br>
                 <b>Stimulus:</b> By accessing the full list of products from a category, or by scrolling through the
                 popular, or "For You" sections and pressing the button displayed for adding a review, a new page
-                with a form will open. The form will be generated based on the infoarmation in the database, as the
+                with a form will open. The form will be generated based on the information in the database, as the
                 uploader chose which aspects to be reviewed. <br>
-                <b>Functional Requirements:</b>In case of interruptions, the form will not be saved. The file containing
+                <b>Functional Requirements:</b> In case of interruptions, the form will not be saved. The file
+                containing
                 all the reviewed aspects, as well as the users data in case they are logged is then stored in the
                 database and the information is used for the statistics of the full category the product belongs to.
             </p1>
@@ -755,14 +838,28 @@
             <p1>
                 <b>Priority:</b> Medium.<br>
                 <b>Stimulus:</b> The uploaders can access the list of products on their account. The ongoing forms
-                and the ones that have reached their deadline have different functionalities. The on going ones can
-                be edited or deleted, while the finalised ones can only provide the files containig the statistics,
-                extracted from the database, intrepreted and formatted in the backend.<br>
-                <b>Functional Requirements:</b>If the deletion of a product is done by mistake, the product will
-                still be available for a few more days on their page.
+                and the ones that have reached their deadline have different functionalities. The ongoing ones can
+                be edited or deleted, while the finalised ones can only provide the files containing the statistics,
+                extracted from the database, interpreted and formatted in a service.<br>
+                <b>Functional Requirements:</b> If the deletion of a product or closing of a form is done, the product
+                will change state, or be deleted.
             </p1>
         </section>
-
+        <br>
+        <section id="SeeStatistics" typeof="sa:SeeStatistics">
+            <h3>&emsp; See statistics </h3>
+            <p1>
+                <b>Priority:</b> Medium.<br>
+                <b>Stimulus:</b> On the users personal page, they can access the product forms that have been closed.
+                The statistics will provide information about the other products from the same category, such that the
+                user
+                can get a better idea about how the selected aspects of the uploaded products have been perceived by
+                other
+                users.<br>
+                <b>Functional Requirements:</b> If the button is pressed, the available formats must be HTML, for
+                engaging data, JSON and CSV, downloadable or not.
+            </p1>
+        </section>
         <br>
         <section id="UpdateAccount" typeof="sa:UpdateAccount">
             <h3>&emsp; Update account information</h3>
@@ -779,9 +876,9 @@
             <h3>&emsp; Search for a desired product</h3>
             <p1>
                 <b>Priority:</b> Low.<br>
-                <b>Stimulus:</b>By accessing the side menu, the products will be displayed and the user will be able
+                <b>Stimulus:</b> By accessing the side menu, the products will be displayed and the user will be able
                 to choose what product they want to review.<br>
-                <b>Functional Requirements:</b>The full list of products must be displayed, by most recent, or by
+                <b>Functional Requirements:</b> The full list of products must be displayed, by most recent, or by
                 the most reviewed.<br>
             </p1>
         </section>
@@ -789,18 +886,15 @@
         <br><br><br><br>
 
 
-
-
-
         <section id="FurtherDevelopment" typeof="sa:FurtherDevelopment">
             <h2>&emsp; Further Development Strategies</h2>
             <p1> &emsp;The project can be further developed by creating a descriptive review of products, such that
                 using NLP, the emotion that is felt can be interpreted directly from the fully written review. Other
-                special faetures can be added aswell, such as seeing overall ratings for products, in order to create a
+                special features can be added as well, such as seeing overall ratings for products, in order to create a
                 top with the most liked or disliked products. A new type of account can be developed, for "investors",
                 who could see the top ratings presented above, in order to find products that are worth sponsoring, with
-                more detailed information about the whole market. The admin feature will also be necessary givem the
-                increasig number of account types.<br>
+                more detailed information about the whole market. The admin fearure, not only a service, will also be
+                necessary given the increasing number of account types.<br>
                 &emsp; Given the project's structure and implementation, the ground for improvement has been already
                 prepared, therefore, the source can be further developed, not modified, straightforwardly.
             </p1>
@@ -822,7 +916,7 @@
 
                 <br>
                 <small> Mozilla Foundation</small><br>
-                <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML">CSS: Cascading Style
+                <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS: Cascading Style
                     Sheets.</a><br>
 
 
@@ -830,40 +924,43 @@
                 <small> Mozilla Foundation</small><br>
                 <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML">An overview of HTTP.</a><br>
 
+
                 <br>
                 <small> Prof.dr. Buraga Sabin Corneliu </small><br>
                 <a target="_blank"
                     href="https://profs.info.uaic.ro/~busaco/teach/courses/web/presentations/web-ArhitecturaServerWeb.pdf">Arhitectura
                     Server Web.</a><br>
 
+
                 <br>
-                <small> Mozilla Foundation </small><br>
+                <small> Mozilla Corporation </small><br>
                 <a target="_blank"
                     href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Node_server_without_framework">Node.js
                     server without a framework.</a><br>
 
-                <br>
-                <small> Node.js</small><br>
-                <a target="_blank" href="https://nodejs.org/api/documentation.html">Node.js Documentation.</a><br>
 
                 <br>
-                <small> PostgreSQL </small><br>
-                <a target="_blank" href="https://www.postgresqltutorial.com/"> Introduction to PostgreSQL.</a><br>
-
+                <small> Mozilla Corporation</small><br>
+                <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">
+                    Using the Fetch API. </a><br>
 
 
                 <br>
-                <small>Brian Carlson</small><br>
-                <a target="_blank" href="https://node-postgres.com/apis/client">
-                    Node-Postgres Introduction.</a><br>
-                <small>2020.</small><br>
+                <small> Mozilla Corporation</small><br>
+                <a target="_blank"
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON">
+                    JSON. </a><br>
+
+                <br>
+                <small> W3Schools </small><br>
+                <a target="_blank" href="https://www.w3schools.com/mongodb/index.php"> MongoDB Tutorial.</a><br>
 
 
                 <br>
-                <small>W.S. Toh</small><br>
-                <a target="_blank" href="https://code-boxx.com/simple-javascript-password-encryption-decryption/">Simple
-                    Javascript Password Encryption & Decryption </a><br>
-                <small>February 16, 2023.</small>
+                <small> Chart.js </small><br>
+                <a target="_blank" href="https://www.chartjs.org/docs/latest/getting-started/">CDN by jsDelivr - A free,
+                    fast, and reliable Open Source CDN. </a><br>
+
             </p1>
             <br><br><br>
 

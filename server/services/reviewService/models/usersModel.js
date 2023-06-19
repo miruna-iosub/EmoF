@@ -10,6 +10,7 @@ class User {
         this.occupation = occupation
         this.password1 = password1
     }
+
     static validatePasswordFormat(password) {
         return String(password).match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/)
     }
@@ -32,30 +33,30 @@ class User {
         return db.collection('Users').find().toArray()
     }
 
-    static findProducts(name){
+    static findProducts(name) {
         const db = getDb()
-        return db.collection('Products').find({ username: name }).toArray()
+        return db.collection('Products').find({username: name}).toArray()
     }
 
     static findById(id) {
         const db = getDb()
-        return db.collection('Users').find({ _id: id }).toArray()
+        return db.collection('Users').find({_id: id}).toArray()
     }
 
     static findByUsername(name) {
         const db = getDb()
-        return db.collection('Users').find({ username: name }).toArray()
+        return db.collection('Users').find({username: name}).toArray()
     }
 
-    static findByPassword(password){
+    static findByPassword(password) {
         const db = getDb()
-        return db.collection('Users').find({ password1: password }).toArray()
+        return db.collection('Users').find({password1: password}).toArray()
     }
 
-    
+
     static remove(id) {
         const db = getDb()
-        db.collection('Users').deleteOne({ username: id })
+        db.collection('Users').deleteOne({username: id})
     }
 
 }

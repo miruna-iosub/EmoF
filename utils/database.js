@@ -14,7 +14,7 @@ const mongodbConnect = (callback) => {
 
     mongoClient
         .connect(
-        `mongodb+srv://${config['db_username']}:${config['db_password']}@cluster.5nyiyva.mongodb.net/?retryWrites=true&w=majority`)
+            `mongodb+srv://${config['db_username']}:${config['db_password']}@cluster.5nyiyva.mongodb.net/?retryWrites=true&w=majority`)
         .then(client => {
             _database = client.db(config['db'])
             console.log("[database] Connected to mongodb database!")
@@ -27,10 +27,9 @@ const mongodbConnect = (callback) => {
 }
 
 const getDb = () => {
-    if(_database) {
+    if (_database) {
         return _database
-    }
-    else {
+    } else {
         console.log('No database found!!!')
     }
 }

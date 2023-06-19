@@ -2,201 +2,201 @@
 <html xmlns="">
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My account</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <link rel="stylesheet" type="text/css" href="../assets/css/myaccount.css">
-  <link rel="stylesheet" href="../assets/css/myaccount.css" type="text/css">
-  <link rel="icon" type="image/x-icon" href="..\assets\images\logo.png">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="../assets/css/myaccount.css">
+    <link rel="stylesheet" href="../assets/css/myaccount.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="..\assets\images\logo.png">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@200&display=swap" rel="stylesheet">
-  <script src="../assets/scripts/updateinfo.js" defer></script>
-  <script src="../assets/scripts/accountinfo.js" defer></script>
-  <script src="../assets/scripts/logout.js" defer></script>
-  <script src="../assets/scripts/deleteuser.js" defer></script>
-  <script src="../assets/scripts/productsMyAccount.js" defer></script>
-  <script src="../assets/scripts/duedate.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@200&display=swap" rel="stylesheet">
+    <script src="../assets/scripts/updateinfo.js" defer></script>
+    <script src="../assets/scripts/accountinfo.js" defer></script>
+    <script src="../assets/scripts/logout.js" defer></script>
+    <script src="../assets/scripts/deleteuser.js" defer></script>
+    <script src="../assets/scripts/productsMyAccount.js" defer></script>
+    <script src="../assets/scripts/duedate.js" defer></script>
 
-    
-        <!-- <h1>HEADER</h1> -->
-    
+
+    <!-- <h1>HEADER</h1> -->
+
 </head>
 
 <body onload="updateInfo();repeatProductMyAccount();accountInfo();duedate();">
-  <!-- Start Navbar -->
-  <nav>
+<!-- Start Navbar -->
+<nav>
     <div class="logo">
-      <a href="/">
-        <img src="..\assets\images\logo.png" alt="Logo">
-      </a>
+        <a href="/">
+            <img src="..\assets\images\logo.png" alt="Logo">
+        </a>
     </div>
     <div class="nav-links">
-      <ul>
+        <ul>
 
-        <li>
-          <a href="/addProduct">
-            <ion-icon name="add-circle-outline">
+            <li>
+                <a href="/addProduct">
+                    <ion-icon name="add-circle-outline">
 
-            </ion-icon>
-            Add a product
-          </a>
-        </li>
-
-
-        <li>
-          <a href="/"  onclick="delete_cookie('jwt', '/')">
-            <ion-icon name="person-outline">
-
-            </ion-icon>
-            Log out
-          </a>
-        </li>
-
-        <li>
-          <a href="/deleteAccountConfirmation" onclick="deleteUser();">
-            <ion-icon name="person-outline"></ion-icon>
-            Delete account
-          </a>
-        </li>
+                    </ion-icon>
+                    Add a product
+                </a>
+            </li>
 
 
+            <li>
+                <a href="/" onclick="delete_cookie('jwt', '/')">
+                    <ion-icon name="person-outline">
 
-        <div class="dropdown">
-          <li>
-            <a href="/all/productslogged">
-              <ion-icon name="menu-outline">
+                    </ion-icon>
+                    Log out
+                </a>
+            </li>
 
-              </ion-icon> Search by category
-            </a>
+            <li>
+                <a href="/deleteAccountConfirmation" onclick="deleteUser();">
+                    <ion-icon name="person-outline"></ion-icon>
+                    Delete account
+                </a>
+            </li>
 
-            <ul>
-              <li><a href="/service/productslogged">Service</a>
-                <ul>
-                  <li><a href="/service/productslogged">Event organiser</a></li>
-                  <li><a href="/service/productslogged">Small business</a></li>
-                  <li><a href="/service/productslogged">Cleaning</a></li>
-                  <li><a href="/service/productslogged">Clinic</a></li>
-                </ul>
-              </li>
-              <li><a href="/person/productslogged">Person</a>
-                <ul>
-                  <li><a href="/person/productslogged">Teacher</a></li>
-                  <li><a href="/person/productslogged">Artist</a></li>
-                </ul>
-              </li>
-              <li><a href="/product/productslogged">Product</a>
-                <ul>
-                  <li><a href="/product/productslogged">Skincare</a></li>
-                  <li><a href="/product/productslogged">Drink</a></li>
-                  <li><a href="/product/productslogged">Eyewear</a></li>
-                </ul>
-              </li>
-              <li><a href="/artisticArtefact/productslogged">Artistic Artefact</a>
-                <ul>
-                  <li><a href="/artisticArtefact/productslogged">Artwork</a></li>
-                  <li><a href="/artisticArtefact/productslogged">Photography</a></li>
-                  <li><a href="/artisticArtefact/productslogged">Home-made</a></li>
-                </ul>
-              </li>
-              <li><a href="/geographicalPlace/productslogged">Geographical place</a>
-                <ul>
-                  <li><a href="/geographicalPlace/productslogged">Monument</a></li>
-                  <li><a href="/geographicalPlace/productslogged">Mall</a></li>
-                  <li><a href="/geographicalPlace/productslogged">Airport</a></li>
-                </ul>
-              </li>
 
-            </ul>
-          </li>
-        </div>
-      </ul>
+            <div class="dropdown">
+                <li>
+                    <a href="/all/productslogged">
+                        <ion-icon name="menu-outline">
+
+                        </ion-icon>
+                        Search by category
+                    </a>
+
+                    <ul>
+                        <li><a href="/service/productslogged">Service</a>
+                            <ul>
+                                <li><a href="/service/productslogged">Event organiser</a></li>
+                                <li><a href="/service/productslogged">Small business</a></li>
+                                <li><a href="/service/productslogged">Cleaning</a></li>
+                                <li><a href="/service/productslogged">Clinic</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/person/productslogged">Person</a>
+                            <ul>
+                                <li><a href="/person/productslogged">Teacher</a></li>
+                                <li><a href="/person/productslogged">Artist</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/product/productslogged">Product</a>
+                            <ul>
+                                <li><a href="/product/productslogged">Skincare</a></li>
+                                <li><a href="/product/productslogged">Drink</a></li>
+                                <li><a href="/product/productslogged">Eyewear</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/artisticArtefact/productslogged">Artistic Artefact</a>
+                            <ul>
+                                <li><a href="/artisticArtefact/productslogged">Artwork</a></li>
+                                <li><a href="/artisticArtefact/productslogged">Photography</a></li>
+                                <li><a href="/artisticArtefact/productslogged">Home-made</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/geographicalPlace/productslogged">Geographical place</a>
+                            <ul>
+                                <li><a href="/geographicalPlace/productslogged">Monument</a></li>
+                                <li><a href="/geographicalPlace/productslogged">Mall</a></li>
+                                <li><a href="/geographicalPlace/productslogged">Airport</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
+            </div>
+        </ul>
     </div>
-  </nav>
-    
-    
-  <div class="grid-container" id="myaccount">
+</nav>
 
-  </div>
 
-  <div class="container">
+<div class="grid-container" id="myaccount">
+
+</div>
+
+<div class="container">
     <div>
-      <h3>My information</h3>
+        <h3>My information</h3>
     </div>
 
 
+    <form id="accountForm" action="/" method="PATCH">
+        <div class="formRow">
+            <label for="username_id_old"></label>
+            <span></span>
+            <input type="text" id="username_id_old" placeholder="Email" required>
+        </div>
 
-        <form id="accountForm" action="/" method="PATCH">
-            <div class="formRow">
-              <label for="username_id_old"></label>
-              <span></span>
-              <input type="text" id="username_id_old" placeholder="Email" required>
-          </div>
-      
-            <div class="formRow">
-              <label for="username_id"></label>
-              <span></span>
-              <input type="text" name="username" id="username_id" placeholder="Occupation" required>
-          </div>
-      
-          <div class="formRow">
-              <label for="age_id"></label>
-              <span></span>
-              <input type="age" name="age" id="age_id" placeholder="Age" required>
-          </div>
-      
-          <div class="formRow">
-              <label for="password_id"></label>
-              <span></span>
-              <input type="password" name="password" id="password_id" placeholder="Old Password" required>
-          </div>
-      
-          <div class="formRow">
-              <label for="repeat_password_id"></label>
-              <span></span>
-              <input type="password" name="repeat_password" id="repeat_password_id" placeholder="New/Confirm Password" required>
-          </div>
-      
-            <input class="topButton" type="submit" id="update_id" value="Submit">
-          </form>
-    </div>
+        <div class="formRow">
+            <label for="username_id"></label>
+            <span></span>
+            <input type="text" name="username" id="username_id" placeholder="Occupation" required>
+        </div>
+
+        <div class="formRow">
+            <label for="age_id"></label>
+            <span></span>
+            <input type="age" name="age" id="age_id" placeholder="Age" required>
+        </div>
+
+        <div class="formRow">
+            <label for="password_id"></label>
+            <span></span>
+            <input type="password" name="password" id="password_id" placeholder="Old Password" required>
+        </div>
+
+        <div class="formRow">
+            <label for="repeat_password_id"></label>
+            <span></span>
+            <input type="password" name="repeat_password" id="repeat_password_id" placeholder="New/Confirm Password"
+                   required>
+        </div>
+
+        <input class="topButton" type="submit" id="update_id" value="Submit">
+    </form>
+</div>
 
 
-  <div class="products" id="products1">
+<div class="products" id="products1">
     <div class="container3">
-      <h2>My ongoing forms</h2>
+        <h2>My ongoing forms</h2>
     </div>
     <div class="container2" id="container2"></div>
-  </div>
+</div>
 
 
-  <div class="products" id="products">
+<div class="products" id="products">
     <div class="container3">
-      <h2>Past forms</h2>
+        <h2>Past forms</h2>
     </div>
     <div class="container2" id="container2"></div>
-  </div>
+</div>
 
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
 
 <footer class="footer">
-  <div class="footer-container">
+    <div class="footer-container">
 
-    <div>
-      <p>Leave a review on any product. <br>
-        They are anonymous, whether you logged in or not.</p>
+        <div>
+            <p>Leave a review on any product. <br>
+                They are anonymous, whether you logged in or not.</p>
+        </div>
+
+
+        <div class="second-item">
+            <a href="/addProduct">Add your products</a>
+        </div>
     </div>
-
-
-    <div class="second-item">
-      <a href="/addProduct">Add your products</a>
-    </div>
-  </div>
 </footer>
 <script src="../assets/scripts/duedate.js"></script>
 <script src="../assets/scripts/productsMyAccount.js"></script>
@@ -204,7 +204,6 @@
 <script src="../assets/scripts/accountinfo.js"></script>
 <script src="../assets/scripts/logout.js"></script>
 <script src="../assets/scripts/deleteuser.js"></script>
-
 
 
 </html>

@@ -1,4 +1,3 @@
-
 function getJWTToken() {
     const cookies = document.cookie.split(';');
 
@@ -12,7 +11,8 @@ function getJWTToken() {
     return null; // Return null if JWT token is not found
 
 }
-function get_cookie(name){
+
+function get_cookie(name) {
     return document.cookie.split(';').some(c => {
         return c.trim().startsWith(name + '=');
     });
@@ -22,7 +22,7 @@ function get_cookie(name){
 async function repeatProductMyAccount() {
     const jwtToken = getJWTToken();
     let numberProd;
-    let productId=[]
+    let productId = []
     let productImageSource = [];
     let productDescription = [];
     let productName = [];
@@ -47,19 +47,19 @@ async function repeatProductMyAccount() {
             .then((data) => {
                 // numberProd = data.numberProducts.toInt();
                 data.products.forEach(prod => {
-                    productId[index]=prod._id;
+                    productId[index] = prod._id;
                     productImageSource[index] = prod.picture;
                     productType[index] = prod.type;
                     productDescription[index] = prod.description;
                     productName[index] = prod.name;
                     productStatus[index] = prod.status;
-                    productCategory[index]=prod.category;
+                    productCategory[index] = prod.category;
                     console.log(productImageSource);
                     index++;
                 })
                 numberProd = index;
-                var windowLocSeeStats="charts";
-                var button1, button2,button3=3;
+                var windowLocSeeStats = "charts";
+                var button1, button2, button3 = 3;
                 button1 = "Close Form";
                 button2 = "See Statistics";
                 button3 = "Delete Form";
@@ -68,8 +68,8 @@ async function repeatProductMyAccount() {
                         document.getElementById("products1").innerHTML += ' <div class="container2" id="container2">' +
                             '<div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + index + '">' +
                             '<p><b>' + productName[index] + '</b><br>' + productDescription[index] + '</p>' +
-                            '<a class="sendfeedback-button"  onclick="closeForm(\''+productId[index]+'\')">' + button1 + '</a> ' +
-                            '<a class="sendfeedback-button"  onclick="deleteForm(\''+productId[index]+'\')">' + button3 + '</a> ' +
+                            '<a class="sendfeedback-button"  onclick="closeForm(\'' + productId[index] + '\')">' + button1 + '</a> ' +
+                            '<a class="sendfeedback-button"  onclick="deleteForm(\'' + productId[index] + '\')">' + button3 + '</a> ' +
                             ' </div>' +
                             '<div class="item3" style="grid-column: 2/3; grid-row: 1/2;">' +
                             '<img src="' + productImageSource[index] + '" alt="' + productType[index] + '">' +
@@ -79,8 +79,8 @@ async function repeatProductMyAccount() {
                             ' <div class="container2" id="container2">' +
                             '<div class="item3" style="grid-column: 1/2; grid-row: 1/2;" id="product' + index + '">' +
                             '<p><b>' + productName[index] + '</b><br>' + productDescription[index] + '</p>' +
-                            '<a class="sendfeedback-button" href="/' + productCategory[index]+'/'+productId[index] + '/' + windowLocSeeStats+'">' + button2 + '</a> ' +
-                            '<a class="sendfeedback-button"  onclick="deleteForm(\''+productId[index]+'\')">' + button3 + '</a> ' +
+                            '<a class="sendfeedback-button" href="/' + productCategory[index] + '/' + productId[index] + '/' + windowLocSeeStats + '">' + button2 + '</a> ' +
+                            '<a class="sendfeedback-button"  onclick="deleteForm(\'' + productId[index] + '\')">' + button3 + '</a> ' +
                             ' </div>' +
                             '<div class="item3" style="grid-column: 2/3; grid-row: 1/2;">' +
                             '<img src="' + productImageSource[index] + '" alt="' + productType[index] + '">' +
@@ -101,7 +101,7 @@ async function deleteForm(id) {
     const jwtToken = getJWTToken();
 
     try {
-        const response = await fetch('http://127.0.0.1:3003/api/v1/products/'+id, {
+        const response = await fetch('http://127.0.0.1:3003/api/v1/products/' + id, {
             method: 'DELETE',
             credentials: 'include',
             headers: {
@@ -127,14 +127,13 @@ async function deleteForm(id) {
 }
 
 
-
 async function closeForm(id) {
 
 
     const jwtToken = getJWTToken();
 
     try {
-        const response = await fetch('http://127.0.0.1:3003/api/v1/products/status/'+id, {
+        const response = await fetch('http://127.0.0.1:3003/api/v1/products/status/' + id, {
             method: 'PATCH',
             credentials: 'include',
             headers: {

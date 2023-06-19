@@ -73,7 +73,7 @@ function accountInfo() {
                 '" alt="' +
                 type +
                 '"></div><div class="grid-item item2"><div class="grid-item item2-top"><h2>' +
-                 usernameText +
+                usernameText +
                 '</h2></div><div class="grid-item item2-bottom"><p>' +
                 ageText +
                 occupationText +

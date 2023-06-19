@@ -32,31 +32,27 @@ const server = http.createServer((request, response) => {
             console.log(reqURL)
             if (reqURL === "/products/all") {
                 controller.getHandler(request, response, "all", "all");
-            }
-            else if (reqURL === "/products/homepage") {
+            } else if (reqURL === "/products/homepage") {
                 controller.getHandler(request, response, "homepage", null);
-            }
-            else if (reqURL.slice(0, 19) === "/products/category/") {
+            } else if (reqURL.slice(0, 19) === "/products/category/") {
                 controller.getHandler(request, response, "formfields", reqURL.slice(19));
-            }
-            else if (reqURL=== "/products/user") {
+            } else if (reqURL === "/products/user") {
                 controller.getHandlerAuth(request, response);
-            }
-            else if (reqURL.slice(0, 9) === "/products") {
+            } else if (reqURL.slice(0, 9) === "/products") {
                 controller.getHandler(request, response, "idorcategory", reqURL.slice(10));
             }
             break;
         }
 
-        case "PATCH":{
-            if (reqURL.slice(0,16)=== "/products/status") {
-                controller.patchHandlerAuth(request, response,reqURL.slice(17));
+        case "PATCH": {
+            if (reqURL.slice(0, 16) === "/products/status") {
+                controller.patchHandlerAuth(request, response, reqURL.slice(17));
             }
 
         }
-        case "DELETE":{
-            if (reqURL.substring(0,9)=== "/products") {
-                controller.deleteHandlerAuth(request, response,reqURL.substring(10,reqURL.length));
+        case "DELETE": {
+            if (reqURL.substring(0, 9) === "/products") {
+                controller.deleteHandlerAuth(request, response, reqURL.substring(10, reqURL.length));
             }
             break;
         }

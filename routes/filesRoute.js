@@ -1,4 +1,4 @@
-const { fileHandling } = require('../controllers/fileController')
+const {fileHandling} = require('../controllers/fileController')
 var sanitize = require('mongo-sanitize')
 const controller = require("../controllers/assetsController");
 const fs = require('fs');
@@ -9,7 +9,7 @@ async function fileRouter(request, response) {
     console.log(reqURL);
     const reqMethod = request.method;
 
-    if (reqURL.substring( reqURL.length-4) === ".css") {
+    if (reqURL.substring(reqURL.length - 4) === ".css") {
         controller.renderCSS(reqURL, response);
     } else if (reqURL.substring(reqURL.length - 5) === ".html") {
         controller.renderHTML(reqURL, response);
@@ -19,7 +19,7 @@ async function fileRouter(request, response) {
         controller.renderImage(reqURL, response);
     } else if (reqURL.substring(reqURL.length - 3) === ".js") {
         controller.renderImage(reqURL, response);
-    }else {
+    } else {
 
         response.writeHead(200, {
             'Content-Type': 'text/html'

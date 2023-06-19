@@ -1,13 +1,11 @@
-
-
 const mongodb = require('mongodb');
 const ObjectId = mongodb.ObjectId;
 const getDb = require('../databese/database').getDb
 
 class Review {
 
-    constructor( category, productid, fieldsQuestions, fieldsEmotions) {
-    //    this.username = username;
+    constructor(category, productid, fieldsQuestions, fieldsEmotions) {
+        //    this.username = username;
         this.category = category;
         this.productid = new ObjectId(productid);
         this.fieldsQuestions = fieldsQuestions;
@@ -31,6 +29,7 @@ class Review {
             console.log("[Error]: " + e);
         }
     }
+
     async findProductById(id) {
         const db = getDb();
         try {
@@ -43,8 +42,8 @@ class Review {
 
     static findAll(prodId) {
         const db = getDb()
-        try{
-        return db.collection('FormFields').find({productId: new mongodb.ObjectId(prodId)}).toArray()
+        try {
+            return db.collection('FormFields').find({productId: new mongodb.ObjectId(prodId)}).toArray()
         } catch (e) {
             console.log("[Error3]: " + e);
         }
@@ -54,8 +53,8 @@ class Review {
 
     static remove(id) {
         const db = getDb()
-        try{
-        db.collection('Reviews').deleteOne({_id: new mongodb.ObjectId(id)})
+        try {
+            db.collection('Reviews').deleteOne({_id: new mongodb.ObjectId(id)})
         } catch (e) {
             console.log("[Error4]: " + e);
         }
@@ -66,7 +65,6 @@ class Review {
 }
 
 module.exports = Review;
-
 
 
 /*const mongodb = require('mongodb')

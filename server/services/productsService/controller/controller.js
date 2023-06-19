@@ -4,6 +4,7 @@ const {Product} = require("../models/product");
 const {Form} = require("../models/form");
 const {isArray, isNumber} = require("util");
 const jwt = require("jsonwebtoken");
+const {PicturePlaceholder} = require("../models/picturePlaceholder");
 
 defaultHandler = (request, response) => {
     response.writeHead(200, {
@@ -67,7 +68,9 @@ async function postHandler(request, response) {
                     type = value;
                     return true;
                 } else if (key === "picture") {
+                    console.log(value);
                     if (value === "" || value === " " || value === "  " || value === "   " || value === null) {
+
                         picture = new PicturePlaceholder().prettyNoPicture;
                     } else {
                         picture = value;
@@ -96,6 +99,11 @@ async function postHandler(request, response) {
             expirationDate = date.toLocaleString();
 
         }
+        if (picture === "" || picture === " " || picture === "  " || picture === "   " || picture === null) {
+            picture = new PicturePlaceholder().prettyNoPicture;
+        }
+
+
         expirationDate = expirationDate.replaceAll("-", "/");
 
         let usernames;
@@ -187,7 +195,9 @@ async function getHandler(request, response, type, string) {
         }
         number = extractedProducts1.length;
     } else if (type === "idorcategory") {
-
+        if (string === "artefact") {
+            string = "artisticArtefact";
+        }
         if (string === "product" || string === "event" || string === "geographicalPlace" || string === "service" || string === "artisticArtefact" || string === "person") {
             extractedProducts = await product.findByCategory(string);
             // number = await product.countByCategory(string);
@@ -197,6 +207,9 @@ async function getHandler(request, response, type, string) {
             findid = true;
         }
     } else if (type === "formfields") {
+        if (string === "artefact") {
+            string = "artisticArtefact";
+        }
         if (string === "product" || string === "event" || string === "geographicalPlace" || string === "service" || string === "artisticArtefact" || string === "person") {
             let extractedProducts1 = await product.findFormFields(string);
             extractedProducts = extractedProducts1[0];
@@ -283,7 +296,7 @@ async function getHandlerAuth(request, response) {
 }
 
 
-async function deleteHandlerAuth(request, response,id) {
+async function deleteHandlerAuth(request, response, id) {
     const productImport = new ProductService();
     let responseBody;
     let userExists = false;
@@ -291,7 +304,7 @@ async function deleteHandlerAuth(request, response,id) {
     let username;
     let extractedProducts = [];
     let chunks = [];
-    let message="Form deleted.";
+    let message = "Form deleted.";
     const authorizationHeader = request.headers.authorization;
     try {
         if (authorizationHeader && authorizationHeader.startsWith('Bearer ')) {
@@ -300,7 +313,7 @@ async function deleteHandlerAuth(request, response,id) {
             username = decodedToken['data']['username'];
             try {
                 usernames = await productImport.findByUsername(username);
-           userExists=true;
+                userExists = true;
             } catch (err) {
                 userExists = false;
             }
@@ -311,25 +324,25 @@ async function deleteHandlerAuth(request, response,id) {
 
             if (!userExists) {
                 response.writeHead(404, {"Content-Type": "application/json"});
-                response.end(JSON.stringify({message: "User Not Found.",route:"/"}));
-             } else {
-                 try {
-            //         request.on("data", (chunk) => {
-            //             chunks.push(chunk);
-            //         });
-            //         request.on("end", async () => {
-            //             const data = Buffer.concat(chunks);
-            //             const parsedData = JSON.parse(
-            //                 data,
-            //                 (key, value) => {
-            //                     if (key === "id") {
-            //                         id = value.toString();
-            //                         return true;
-            //                     }
-            //                     return false;
-            //                 }
-            //             );
-            //         });
+                response.end(JSON.stringify({message: "User Not Found.", route: "/"}));
+            } else {
+                try {
+                    //         request.on("data", (chunk) => {
+                    //             chunks.push(chunk);
+                    //         });
+                    //         request.on("end", async () => {
+                    //             const data = Buffer.concat(chunks);
+                    //             const parsedData = JSON.parse(
+                    //                 data,
+                    //                 (key, value) => {
+                    //                     if (key === "id") {
+                    //                         id = value.toString();
+                    //                         return true;
+                    //                     }
+                    //                     return false;
+                    //                 }
+                    //             );
+                    //         });
 
                     await productImport.deleteById(username, id);
                 } catch (err) {
@@ -338,29 +351,29 @@ async function deleteHandlerAuth(request, response,id) {
                 }
             }
         } else message = "Unauthorized To Delete.";
-    }catch(err){
-        message="Failed At Deleting Form.";
+    } catch (err) {
+        message = "Failed At Deleting Form.";
     }
-    try{
+    try {
 
 
-    response.writeHead(200, {
-        "Content-Type": "application/json",
-        'Access-Control-Allow-Credentials': true
-    });
-    response.write(
-        JSON.stringify({
-            route: "/account",
-            message: message,
-        })
-    );
-    response.end();
-}catch (err){}
+        response.writeHead(200, {
+            "Content-Type": "application/json",
+            'Access-Control-Allow-Credentials': true
+        });
+        response.write(
+            JSON.stringify({
+                route: "/account",
+                message: message,
+            })
+        );
+        response.end();
+    } catch (err) {
+    }
 }
 
 
-
-async function patchHandlerAuth(request, response,id) {
+async function patchHandlerAuth(request, response, id) {
     const productImport = new ProductService();
     let responseBody;
     let userExists = false;
@@ -368,7 +381,7 @@ async function patchHandlerAuth(request, response,id) {
     let username;
     let extractedProducts = [];
     let chunks = [];
-    let message="Form closed.";
+    let message = "Form closed.";
     const authorizationHeader = request.headers.authorization;
     try {
         if (authorizationHeader && authorizationHeader.startsWith('Bearer ')) {
@@ -377,7 +390,7 @@ async function patchHandlerAuth(request, response,id) {
             username = decodedToken['data']['username'];
             try {
                 usernames = await productImport.findByUsername(username);
-                userExists=true;
+                userExists = true;
             } catch (err) {
                 userExists = false;
             }
@@ -388,7 +401,7 @@ async function patchHandlerAuth(request, response,id) {
 
             if (!userExists) {
                 response.writeHead(404, {"Content-Type": "application/json"});
-                response.end(JSON.stringify({message: "User Not Found.",route:"/"}));
+                response.end(JSON.stringify({message: "User Not Found.", route: "/"}));
             } else {
                 try {
                     await productImport.changeStatus(username, id);
@@ -398,27 +411,26 @@ async function patchHandlerAuth(request, response,id) {
                 }
             }
         } else message = "Unauthorized To Close.";
-    }catch(err){
-        message="Failed At Deleting Form.";
+    } catch (err) {
+        message = "Failed At Deleting Form.";
     }
-    try{
+    try {
 
 
-    response.writeHead(200, {
-        "Content-Type": "application/json",
-        'Access-Control-Allow-Credentials': true
-    });
-    response.write(
-        JSON.stringify({
-            route: "/account",
-            message: message,
-        })
-    );
-    response.end();
-}
-catch (err){
+        response.writeHead(200, {
+            "Content-Type": "application/json",
+            'Access-Control-Allow-Credentials': true
+        });
+        response.write(
+            JSON.stringify({
+                route: "/account",
+                message: message,
+            })
+        );
+        response.end();
+    } catch (err) {
 
-}
+    }
 }
 
 

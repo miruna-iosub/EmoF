@@ -1,4 +1,4 @@
-class BadProductError extends Error{
+class BadProductError extends Error {
     constructor() {
         super();
         this.message = "Bad product.";
@@ -7,7 +7,7 @@ class BadProductError extends Error{
     }
 }
 
-class DatabaseError  extends Error{
+class DatabaseError extends Error {
     constructor() {
         super();
         this.message = "Failed to add product.";
@@ -15,7 +15,8 @@ class DatabaseError  extends Error{
         // this.stack = <call stack>; // non-standard, but most environments support it
     }
 }
-class BadFormError  extends Error{
+
+class BadFormError extends Error {
     constructor() {
         super();
         this.message = "Bad Form Fields Error";
@@ -23,7 +24,8 @@ class BadFormError  extends Error{
         // this.stack = <call stack>; // non-standard, but most environments support it
     }
 }
-class UserInfoError  extends Error{
+
+class UserInfoError extends Error {
     constructor() {
         super();
         this.message = "User Information Error";
@@ -32,4 +34,4 @@ class UserInfoError  extends Error{
     }
 }
 
-module.exports = {BadProductError, DatabaseError,BadFormError,UserInfoError};
+module.exports = {BadProductError, DatabaseError, BadFormError, UserInfoError};

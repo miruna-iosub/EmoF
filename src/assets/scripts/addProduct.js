@@ -115,15 +115,12 @@ async function addProduct() {
             index++;
         }
     }
-    if((name===""||description===""||type===""||expirationDate===""||newFormFields.length===0)&&expirationDate!=="") {
+    if ((name === "" || description === "" || type === "" || expirationDate === "" || newFormFields.length === 0) && expirationDate !== "") {
 
-    }
-    else if(expirationDate==="")
-    {
+    } else if (expirationDate === "") {
         window.alert('Please fill all the fields.');
         window.location.href = '/addProduct';
-    }
-    else {
+    } else {
         try {
             const jwtToken = getJWTToken();
 
@@ -149,7 +146,7 @@ async function addProduct() {
             });
             window.alert('Product has been uploaded.');
             window.location.href = '/addProductConfirmation';
-           // const json = await response.json();
+            // const json = await response.json();
             //
             //     if (json.responseBody!=="POST successful.") {
             //         window.window.alert(json.message);
@@ -164,7 +161,7 @@ async function addProduct() {
             console.error(error);
             window.location.href = '/addProduct';
             window.alert('Product has been uploaded.');
-         //   window.alert('Posting product failed');
+            //   window.alert('Posting product failed');
         }
     }
 

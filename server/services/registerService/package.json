@@ -1,7 +1,7 @@
 {
     "name": "emof",
     "version": "1.0.0",
-    "description": "Emotion Based Feedback",
+    "description": "Manages register",
     "scripts": {
         "register": "nodemon registerServer.js",
         "test": "echo \"No tests yet\" && exit 1"

@@ -21,6 +21,7 @@ class ProductMod {
         }
 
     }
+
     async findAll() {
         const db = getDb();
         try {
@@ -95,6 +96,7 @@ class ProductMod {
             throw new BadFormError();
         }
     }
+
     async findByToken(givenToken) {
         const db = getDb();
         try {
@@ -115,6 +117,7 @@ class ProductMod {
         }
 
     }
+
     async findReviewsByCategory(givenCategory) {
         const db = getDb();
         try {
@@ -124,10 +127,11 @@ class ProductMod {
         }
 
     }
-    async findReviewsByProductId(productId){
+
+    async findReviewsByProductId(productId) {
         const db = getDb();
         try {
-            return db.collection('Reviews').find({productid :new ObjectId(productId)}).toArray();
+            return db.collection('Reviews').find({productid: new ObjectId(productId)}).toArray();
         } catch (e) {
             console.log("[Error]: " + e);
         }

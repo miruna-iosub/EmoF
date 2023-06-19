@@ -5,7 +5,7 @@ class AllStatistics {
 
 
     constructor(fieldName) {
-        this.fieldName=fieldName;
+        this.fieldName = fieldName;
         this.mapEmotions = new Map();
         this.mapEmotions.set('vigilance', 0);
         this.mapEmotions.set('anticipation', 0);
@@ -35,13 +35,14 @@ class AllStatistics {
     }
 
     addOneEmotion(emotion) {
-       let oldVal=this.mapEmotions.get(emotion);
-       this.mapEmotions.delete(emotion);
-        this.mapEmotions.set(emotion,oldVal + 1);
+        let oldVal = this.mapEmotions.get(emotion);
+        this.mapEmotions.delete(emotion);
+        this.mapEmotions.set(emotion, oldVal + 1);
         console.log(this.mapEmotions.toString());
     }
-    setNumberInCategory(number){
-        this.totalNumberCategory=number;
+
+    setNumberInCategory(number) {
+        this.totalNumberCategory = number;
     }
 
 }

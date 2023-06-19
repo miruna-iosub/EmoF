@@ -1,15 +1,15 @@
 const http = require('http')
-const { router } = require('./routes/router')
+const {router} = require('./routes/router')
 const mongodbConnect = require('./utils/database').mongodbConnect
 const fs = require('fs');
 const controller = require("./controllers/assetsController");
 require("dotenv").config();
 
-function handleRequest(request, response) { 
+function handleRequest(request, response) {
 
     const reqURL = request.url;
     const reqMethod = request.method;
- 
+
     if (reqURL.toString().includes(".css")) {
         controller.renderCSS(reqURL, response);
     } else if (reqURL.toString().includes(".html")) {
@@ -20,8 +20,7 @@ function handleRequest(request, response) {
         controller.renderImage(reqURL, response);
     } else if (reqURL.toString().includes(".esm")) {
         controller.renderEms(reqURL, response);
-    }
-    else {
+    } else {
         response.writeHead(200, {
             'Content-Type': 'text/html'
         });
@@ -36,6 +35,7 @@ function handleRequest(request, response) {
         });
     }
 }
+
 //
 // if (request.url === '/loggedin.css') {
 //     response.writeHead(200, {
@@ -71,6 +71,6 @@ mongodbConnect(async () => {
     server.listen(4000, () => console.log(`[server] Server running on port ${4000}`))
 })
 
-const server = http.createServer(function(req, res){
+const server = http.createServer(function (req, res) {
     router(req, res, req.url, req.method);
 });

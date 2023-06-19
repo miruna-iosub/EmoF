@@ -9,24 +9,23 @@ mongodbConnect(async () => {
 const server = http.createServer((request, response) => {
     const reqURL = request.url;
     const reqMethod = request.method;
-    
+
     response.setHeader('Access-Control-Allow-Origin', 'http://localhost:4000');
     response.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     response.setHeader('Access-Control-Allow-Credentials', true);
-    
-    switch (reqMethod) { 
+
+    switch (reqMethod) {
         case "POST": {
             if (reqURL === "/api/v1/register") {
                 controller.postHandler(request, response)
             }
             break;
-        } 
+        }
         case "GET": {
-            if(reqURL === '/api/v1/users') {
+            if (reqURL === '/api/v1/users') {
                 controller.getHandlerAll(request, response)
-            }
-            else if (reqURL.match(/^\/get-user\/([0-9a-z]{24})$/) ) {
+            } else if (reqURL.match(/^\/get-user\/([0-9a-z]{24})$/)) {
                 console.log(reqURL)
                 const id = reqURL.split('/')[2]
                 console.log(id)

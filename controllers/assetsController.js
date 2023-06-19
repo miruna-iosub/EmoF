@@ -1,29 +1,30 @@
 var url = require('url');
 var fs = require('fs');
 
-function renderHTML(object, response){
-object=object.toString().substring(object.toString().lastIndexOf("/"));
-        fs.readFile("./src/html"+object, function (error, htmlContent) {
-            if (error) {
-                response.writeHead(404);
+function renderHTML(object, response) {
+    object = object.toString().substring(object.toString().lastIndexOf("/"));
+    fs.readFile("./src/html" + object, function (error, htmlContent) {
+        if (error) {
+            response.writeHead(404);
 
-                response.write("Couldn't load HTML / not found");
-            } else {
-                response.writeHead(200, { 'Content-Type': 'text/html' })
-                response.write(htmlContent);
-            }
-            response.end();
-        });
+            response.write("Couldn't load HTML / not found");
+        } else {
+            response.writeHead(200, {'Content-Type': 'text/html'})
+            response.write(htmlContent);
+        }
+        response.end();
+    });
 
 }
+
 function renderCSS(path, response) {
-    fs.readFile( "./src"+path, function (error, cssContent) {
+    fs.readFile("./src" + path, function (error, cssContent) {
 
         if (error) {
             response.writeHead(404);
             response.write("Couldn't load CSS / not found");
         } else {
-            response.writeHead(200, { 'Content-Type': 'text/css' })
+            response.writeHead(200, {'Content-Type': 'text/css'})
             response.write(cssContent);
         }
         response.end();
@@ -31,7 +32,7 @@ function renderCSS(path, response) {
 }
 
 function renderImage(path, response) {
-    fs.readFile("./src"+ path, function (error, image) {
+    fs.readFile("./src" + path, function (error, image) {
         if (error) {
             response.writeHead(404);
             response.write("Couldn't load Image / not found");
@@ -71,18 +72,20 @@ function renderJavascript(path, response) {
         response.end();
     });
 }
-function defaultHandler(response){
+
+function defaultHandler(response) {
     response.writeHead(404);
     response.write("No rendering file found.");
     response.end();
 
 }
-    // var file = fs.createReadStream("../src/assets" + path);
-    // file.on('open', function () {
-    //     response.setHeader('Content-Type', 'image/png');
-    //     file.pipe(response);
-    // });
-    // response.sendfile("../src/assets"+path);
+
+// var file = fs.createReadStream("../src/assets" + path);
+// file.on('open', function () {
+//     response.setHeader('Content-Type', 'image/png');
+//     file.pipe(response);
+// });
+// response.sendfile("../src/assets"+path);
 
 
-module.exports = {renderCSS,renderImage,renderHTML, defaultHandler,renderJavascript,renderEms}
+module.exports = {renderCSS, renderImage, renderHTML, defaultHandler, renderJavascript, renderEms}
