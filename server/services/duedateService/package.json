@@ -2,10 +2,9 @@
   "name": "products",
   "version": "1.0.0",
   "description": "Monitors products that reached closing date",
-  "main": "index.js",
   "scripts": {
-    "duedate": "nodemon duedateServer.js.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "duedate": "nodemon duedateServer.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "EmoF",
   "license": "ISC",

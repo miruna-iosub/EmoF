@@ -5,102 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7a5c9b6-48db-43d9-a853-ef38ef6e3be5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/services/duedateService/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/assetsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/assetsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/fileController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/fileController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/usersController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/usersController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/filesRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/filesRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/productsRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/productsRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/usersRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/usersRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.bat" beforeDir="false" afterPath="$PROJECT_DIR$/server.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/duedateService/duedateController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/duedateService/duedateController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/duedateService/duedateServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/duedateService/duedateServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/loginService/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/loginService/loginController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/loginService/models/reviewModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/loginService/models/reviewModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/loginService/models/usersModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/loginService/models/usersModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/loginService/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/loginService/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/controller/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/models/exception.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/models/exception.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/models/picturePlaceholder.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/models/picturePlaceholder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/models/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/models/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/models/token.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/models/token.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/productsServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/productsServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/productsService/service/productServiceImplementation.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/productsService/service/productServiceImplementation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/registerService/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/registerService/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/registerService/registerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/registerService/registerController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/registerService/registerServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/registerService/registerServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/reviewService/models/reviewModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/reviewService/models/reviewModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/reviewService/models/usersModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/reviewService/models/usersModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/reviewService/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/reviewService/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/reviewService/reviewController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/reviewService/reviewController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/reviewService/reviewServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/reviewService/reviewServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/controller/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/models/exception.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/models/exception.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/models/fields.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/models/fields.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/models/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/models/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/models/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/models/statistics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/service/StatisticsServiceImplementation.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/service/StatisticsServiceImplementation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/userInfoService/models/reviewModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/userInfoService/models/reviewModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/userInfoService/models/usersModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/userInfoService/models/usersModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/userInfoService/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/userInfoService/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/userInfoService/userInfoController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/userInfoService/userInfoController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/userInfoService/userInfoServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/userInfoService/userInfoServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/userInfoService/utils/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/userInfoService/utils/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/userInfoService/utils/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/userInfoService/utils/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/userInfoService/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/userInfoService/utils/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/addaproduct.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/addaproduct.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/loggedin.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/loggedin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/myaccount.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/myaccount.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/products.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/products.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/reviewconfirmation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/reviewconfirmation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/sendfeedback.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/sendfeedback.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/signin.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/signin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/signup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/accountinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/accountinfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/addProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/addProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/chartStatistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/chartStatistics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/csvStatistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/csvStatistics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/deleteuser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/deleteuser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/duedate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/duedate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/logout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/productsMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/productsMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/productsMyAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/productsMyAccount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/sendfeedback.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/sendfeedback.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/signin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scripts/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/statistics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/addaproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/addaproduct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/addaproductconfirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/addaproductconfirmation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/chartVisualisation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/chartVisualisation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/charts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/deleteaccountconfirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/deleteaccountconfirmation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/deleteproductconfirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/deleteproductconfirmation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/homepage-loggedin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/homepage-loggedin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/htmlVisualisation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/htmlVisualisation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/myaccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/myaccount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/productCharts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/productCharts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/products-logged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/products-logged.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/products-unlogged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/products-unlogged.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/reviewconfirmation-loggedin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/reviewconfirmation-loggedin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/reviewconfirmation-unlogged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/reviewconfirmation-unlogged.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/sendfeedbacklogged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/sendfeedbacklogged.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/sendfeedbackunlogged.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/sendfeedbackunlogged.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/signin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/signupconfirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/signupconfirmation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/duedateService/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/duedateService/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +66,27 @@
       <recent name="E:\M3 SE\EmoF\EmoF\server\userInfoService" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.register">
+  <component name="RunManager" selected="npm.mom">
+    <configuration name="duedate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/services/duedateService/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="duedate" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="login" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/services/loginService/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="login" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="mom" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -191,33 +117,13 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="statics" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/server/services/statisticsService/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="statics" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="statistics" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/server/services/statisticsService/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="statistics" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.register" />
-        <item itemvalue="npm.products" />
-        <item itemvalue="npm.statistics" />
-        <item itemvalue="npm.statics" />
         <item itemvalue="npm.mom" />
+        <item itemvalue="npm.duedate" />
+        <item itemvalue="npm.login" />
+        <item itemvalue="npm.products" />
+        <item itemvalue="npm.register" />
       </list>
     </recent_temporary>
   </component>
