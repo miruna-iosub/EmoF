@@ -19,7 +19,7 @@ const server = http.createServer((request, response) => {
     const reqMethod = request.method;
     switch (reqMethod) {
         case "GET": {
-            if (reqURL.slice(0, 11) === "/statistics") {
+            if (reqURL.slice(0, 18) === "/api/v1/statistics") {
                 controller.defaultHandlerStats(request, response, reqURL);
             } else {
                 controller.defaultHandler(request, response);

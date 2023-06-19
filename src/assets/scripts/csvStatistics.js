@@ -52,7 +52,7 @@ function getChart() {
         let category = array[3];
         console.log(prodId + " " + category);
         var index = 0;
-        fetch('http://localhost:3005/statistics/' + prodId + '/' + category,
+        fetch('http://localhost:3005/api/v1/statistics/' + prodId + '/' + category,
             {
                 method: 'GET'
             })

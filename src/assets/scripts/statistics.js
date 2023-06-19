@@ -26,7 +26,7 @@ function downloadJson() {
         let category = array[3];
         console.log(prodId + " " + category);
         var index = 0;
-        fetch('http://localhost:3005/statistics/' + prodId + '/' + category,
+        fetch('http://localhost:3005/api/v1/statistics/' + prodId + '/' + category,
             {
                 method: 'GET',
                 credentials: 'include',
@@ -88,7 +88,7 @@ function getChart() {
         let category = array[3];
         console.log(prodId + " " + category);
         var index = 0;
-        fetch('http://localhost:3005/statistics/' + prodId + '/' + category,
+        fetch('http://localhost:3005/api/v1/statistics/' + prodId + '/' + category,
             {
                 method: 'GET',
                 credentials: 'include',
@@ -175,7 +175,7 @@ function getCSV1() {
         let category = array[3];
         console.log(prodId + " " + category);
         var index = 0;
-        fetch("http://localhost:3005/statistics/" + prodId + "/" + category, {
+        fetch("http://localhost:3005/api/v1/statistics/" + prodId + "/" + category, {
             method: "GET",
             credentials: 'include',
 
@@ -212,7 +212,7 @@ function getCSV2() {
         let category = array[3];
         console.log(prodId + " " + category);
         var index = 0;
-        fetch("http://localhost:3005/statistics/" + prodId + "/" + category, {
+        fetch("http://localhost:3005/api/v1/statistics/" + prodId + "/" + category, {
             method: "GET",
             credentials: 'include',
         })
@@ -272,7 +272,7 @@ function getCSV3() {
         let category = array[3];
         console.log(prodId + " " + category);
         var index = 0;
-        fetch("http://localhost:3005/statistics/" + prodId + "/" + category, {
+        fetch("http://localhost:3005/api/v1/statistics/" + prodId + "/" + category, {
             method: "GET",
             credentials: 'include',
         })
@@ -308,7 +308,7 @@ function getCSV4() {
         let category = array[3];
         console.log(prodId + " " + category);
         var index = 0;
-        fetch("http://localhost:3005/statistics/" + prodId + "/" + category, {
+        fetch("http://localhost:3005/api/v1/statistics/" + prodId + "/" + category, {
             method: "GET",
             credentials: 'include',
         })
@@ -344,7 +344,7 @@ function getCSV5() {
         let category = array[3];
         console.log(prodId + " " + category);
         var index = 0;
-        fetch("http://localhost:3005/statistics/" + prodId + "/" + category, {
+        fetch("http://localhost:3005/api/v1/statistics/" + prodId + "/" + category, {
             method: "GET",
             credentials: 'include',
         })
@@ -381,7 +381,7 @@ function getCSV6() {
         let category = array[3];
         console.log(prodId + " " + category);
         var index = 0;
-        fetch("http://localhost:3005/statistics/" + prodId + "/" + category, {
+        fetch("http://localhost:3005/api/v1/statistics/" + prodId + "/" + category, {
             method: "GET",
             credentials: 'include',
         })
@@ -414,7 +414,7 @@ function getChart1() {
         let prodId = array[4];
         let category = array[3];
         console.log(prodId + " " + category);
-        fetch('http://localhost:3005/statistics/' + prodId + '/' + category, {
+        fetch('http://localhost:3005/api/v1/statistics/' + prodId + '/' + category, {
             method: 'GET'
         })
             .then((response) => {

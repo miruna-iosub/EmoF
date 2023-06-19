@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a7a5c9b6-48db-43d9-a853-ef38ef6e3be5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.bat" beforeDir="false" afterPath="$PROJECT_DIR$/server.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/controller/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/controller/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/statisticsService/statisticsServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/statisticsService/statisticsServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scripts/chartStatistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/chartStatistics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scripts/csvStatistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/csvStatistics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scripts/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scripts/statistics.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +70,7 @@
       <recent name="E:\M3 SE\EmoF\EmoF\server\userInfoService" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.mom">
+  <component name="RunManager" selected="npm.statistics">
     <configuration name="duedate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/server/services/duedateService/package.json" />
       <command value="run" />
@@ -107,11 +111,11 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="register" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/server/services/registerService/package.json" />
+    <configuration name="statistics" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/services/statisticsService/package.json" />
       <command value="run" />
       <scripts>
-        <script value="register" />
+        <script value="statistics" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -119,11 +123,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.statistics" />
         <item itemvalue="npm.mom" />
-        <item itemvalue="npm.duedate" />
-        <item itemvalue="npm.login" />
         <item itemvalue="npm.products" />
-        <item itemvalue="npm.register" />
+        <item itemvalue="npm.login" />
+        <item itemvalue="npm.duedate" />
       </list>
     </recent_temporary>
   </component>
@@ -152,6 +156,7 @@
       <workItem from="1686949698361" duration="1718000" />
       <workItem from="1686982201690" duration="47425000" />
       <workItem from="1687080674201" duration="26267000" />
+      <workItem from="1687152445171" duration="944000" />
     </task>
     <servers />
   </component>
@@ -836,6 +841,66 @@
           <url>file://$PROJECT_DIR$/server/services/statisticsService/statisticsServer.js</url>
           <line>11</line>
           <option name="timeStamp" value="307" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/statisticsService/statisticsServer.js</url>
+          <line>20</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="308" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/statisticsService/statisticsServer.js</url>
+          <line>22</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="309" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/statisticsService/statisticsServer.js</url>
+          <line>24</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="310" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/statisticsService/statisticsServer.js</url>
+          <line>23</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="311" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/statisticsService/statisticsServer.js</url>
+          <line>17</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="312" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/statisticsService/controller/controller.js</url>
+          <line>31</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="313" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/statisticsService/controller/controller.js</url>
+          <line>24</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="314" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/statisticsService/controller/controller.js</url>
+          <line>25</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="315" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/statisticsService/controller/controller.js</url>
+          <line>26</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="316" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/services/statisticsService/controller/controller.js</url>
+          <line>28</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="317" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -27,7 +27,7 @@ function getChart() {
         let prodId = '648c84c13bbc8ab24a97c074';
         let category = 'product';
         var index = 0;
-        fetch('http://localhost:3005/statistics/' + prodId + '/' + category, {
+        fetch('http://localhost:3005/api/v1/statistics/' + prodId + '/' + category, {
             method: 'GET'
         })
             .then((response) => {

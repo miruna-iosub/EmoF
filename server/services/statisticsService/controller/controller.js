@@ -35,7 +35,7 @@ async function defaultHandlerStats(request, response, reqUrl) {
             var token = null, productId = null, category = null;
             var formfields = [];
             var val = 0;
-            productId = reqUrl.substring(12, reqUrl.lastIndexOf("/"));
+            productId = reqUrl.substring(19, reqUrl.lastIndexOf("/"));
             category = reqUrl.substring(reqUrl.lastIndexOf("/") + 1);
             console.log(category);
             let userExists = false;
